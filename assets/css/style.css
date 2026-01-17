@@ -129,26 +129,31 @@ img {
 
 /* Theme Toggle Button */
 .theme-toggle-btn {
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-main);
-    padding: 0.5rem;
+    background: var(--bg-card); /* Gives it a solid background so it stands out */
+    border: 2px solid var(--text-muted); /* Thicker, visible outline */
+    color: var(--text-main); /* Icon matches text color (White or Black) */
+    width: 40px; /* Fixed width for a perfect circle */
+    height: 40px; /* Fixed height for a perfect circle */
     border-radius: 50%;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 1rem;
-    transition: 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Adds depth */
 }
 
     .theme-toggle-btn:hover {
-        background-color: var(--bg-section);
+        border-color: var(--brand-cyan); /* Glows Cyan on hover */
+        color: var(--brand-cyan);
+        transform: scale(1.05); /* Slight zoom effect */
     }
 
     .theme-toggle-btn i {
-        font-size: 1rem;
-        color: currentColor;
+        font-size: 1.1rem;
+        /* Adds a tiny shadow to the icon itself for extra clarity */
+        filter: drop-shadow(0 0 2px rgba(0,0,0,0.2));
     }
 
 /* Buttons */

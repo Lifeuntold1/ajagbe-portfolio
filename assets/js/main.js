@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- 1. THEME SWITCHER LOGIC --- */
+    /* --- 1. THEME SWITCHER LOGIC (Sun/Moon) --- */
     const themeToggleBtn = document.getElementById('theme-toggle');
     const rootElement = document.documentElement; // Targets <html> tag
     const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-    // 1a. Check Local Storage on Load
+    // 1a. Check Local Storage on Page Load
     const currentTheme = localStorage.getItem('theme');
+
+    // If user previously chose Light Mode, apply it and show SUN
     if (currentTheme === 'light') {
         rootElement.setAttribute('data-theme', 'light');
         if (icon) {
-            icon.classList.remove('fa-moon');
-            icon.classList.add('fa-sun');
+            icon.classList.remove('fa-moon'); // Remove Moon
+            icon.classList.add('fa-sun');     // Add Sun
         }
     }
 
@@ -22,19 +24,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (isLight) {
                 // Switch to Dark Mode
-                rootElement.removeAttribute('data-theme'); // Removes 'light', falls back to default :root (Dark)
+                rootElement.removeAttribute('data-theme'); // Removes 'light', falls back to default
                 localStorage.setItem('theme', 'dark');
                 if (icon) {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
+                    icon.classList.remove('fa-sun');  // Remove Sun
+                    icon.classList.add('fa-moon');    // Add Moon
                 }
             } else {
                 // Switch to Light Mode
                 rootElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
                 if (icon) {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
+                    icon.classList.remove('fa-moon'); // Remove Moon
+                    icon.classList.add('fa-sun');     // Add Sun
                 }
             }
         });
