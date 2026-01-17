@@ -1,60 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. DARK/LIGHT MODE LOGIC ---
-    const toggleButton = document.getElementById('theme-toggle');
-    const htmlElement = document.documentElement;
-    const icon = toggleButton.querySelector('svg');
+    /* --- 1. THEME SWITCHER LOGIC --- */
+    const themeToggleBtn = document.getElementById('theme-toggle');
+    const rootElement = document.documentElement; // Targets <html> tag
+    const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-    // Check Local Storage for saved preference
+    // 1a. Check Local Storage on Load
     const currentTheme = localStorage.getItem('theme');
-
-    if (currentTheme) {
-        htmlElement.setAttribute('data-theme', currentTheme);
+    if (currentTheme === 'light') {
+        rootElement.setAttribute('data-theme', 'light');
+        if (icon) {
+            icon.classList.remove('fa-moon');
+            icon.classList.add('fa-sun');
+        }
     }
 
-    toggleButton.addEventListener('click', () => {
-        const hasLightTheme = htmlElement.getAttribute('data-theme') === 'light';
+    // 1b. Toggle Event Listener
+    if (themeToggleBtn) {
+        themeToggleBtn.addEventListener('click', () => {
+            const isLight = rootElement.getAttribute('data-theme') === 'light';
 
-        if (hasLightTheme) {
-            // Switch to Dark
-            htmlElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            // Switch to Light
-            htmlElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }
-    });
-
-
-    // --- 2. MOBILE MENU LOGIC ---
-    const hamburger = document.querySelector('.mobile-toggle');
-    const navMenu = document.querySelector('.main-nav');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('is-active');
-    });
-
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('is-active');
+            if (isLight) {
+                // Switch to Dark Mode
+                rootElement.removeAttribute('data-theme'); // Removes 'light', falls back to default :root (Dark)
+                localStorage.setItem('theme', 'dark');
+                if (icon) {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            } else {
+                // Switch to Light Mode
+                rootElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                if (icon) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                }
+            }
         });
-    });
+    }
 
-    // --- 3. SMOOTH SCROLL ---
+    /* --- 2. MOBILE MENU LOGIC --- */
+    const mobileToggle = document.querySelector('.mobile-toggle');
+    const navLinksContainer = document.querySelector('.nav-links'); // Matches your CSS class
+
+    if (mobileToggle && navLinksContainer) {
+        mobileToggle.addEventListener('click', () => {
+            // Toggles the "X" animation on the hamburger
+            mobileToggle.classList.toggle('is-active');
+            // Slides the menu in/out
+            navLinksContainer.classList.toggle('active');
+        });
+
+        // Auto-close menu when a link is clicked
+        const pageLinks = document.querySelectorAll('.nav-links a');
+        pageLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('is-active');
+                navLinksContainer.classList.remove('active');
+            });
+        });
+    }
+
+    /* --- 3. SMOOTH SCROLL --- */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
-            if (targetId === '#') return; // Avoid errors on empty links
+            if (targetId === '#' || targetId === '') return;
 
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
+                e.preventDefault();
                 targetElement.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
+
 });

@@ -96,8 +96,14 @@ img {
 }
 
 .brand-logo {
+    display: flex;
+    align-items: center;
+}
+
+.brand-logo-img {
     height: 40px;
     width: auto;
+    display: block;
 }
 
 .nav-links {
@@ -135,10 +141,9 @@ img {
         background-color: var(--bg-section);
     }
 
-    .theme-toggle-btn svg {
-        width: 20px;
-        height: 20px;
-        fill: currentColor;
+    .theme-toggle-btn i {
+        font-size: 1rem;
+        color: currentColor;
     }
 
 /* Buttons */
@@ -568,6 +573,7 @@ option {
 .mobile-toggle {
     display: none;
     cursor: pointer;
+    z-index: 1001; /* Above menu */
 }
 
 .bar {
@@ -586,8 +592,15 @@ option {
 
     .grid-2, .grid-3, .bio-container, .form-grid {
         grid-template-columns: 1fr;
+    }
+
+    .story-section {
         flex-direction: column;
     }
+
+        .story-section[style*="row-reverse"] {
+            flex-direction: column; /* Force normal column on mobile */
+        }
 
     .bio-image {
         width: 100%;
@@ -610,41 +623,32 @@ option {
     }
 
     .desktop-cta-container {
-        display: none;
-    }
-
-    .mobile-cta-item {
-        display: block;
-        margin-top: 1rem;
+        display: flex;
+        margin-right: 1rem;
     }
 
     .mobile-toggle {
         display: block;
     }
 
-    .main-nav {
+    .nav-links {
         position: fixed;
         top: 0;
         right: -100%;
         height: 100vh;
-        width: 80%;
+        width: 70%;
         background-color: var(--bg-card);
         flex-direction: column;
-        padding-top: 6rem;
+        justify-content: center;
+        gap: 2rem;
         transition: 0.4s ease;
         box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-        z-index: 999;
+        z-index: 1000;
     }
 
-        .main-nav.active {
+        .nav-links.active {
             right: 0;
         }
-
-    .nav-links {
-        flex-direction: column;
-        width: 100%;
-        gap: 1.5rem;
-    }
 
     .mobile-toggle.is-active .bar:nth-child(2) {
         opacity: 0;
@@ -659,7 +663,7 @@ option {
     }
 }
 
-/* --- 8. ABOUT PAGE SPECIFIC (NEW ADDITIONS) --- */
+/* --- 8. ABOUT PAGE SPECIFIC --- */
 .about-hero {
     padding: 8rem 0 4rem;
     text-align: center;
@@ -672,7 +676,7 @@ option {
     }
 
 .highlight {
-    color: var(--brand-green); /* Mapped from original accent-color */
+    color: var(--brand-green);
 }
 
 /* Story Section */
@@ -772,21 +776,4 @@ option {
     font-size: 2.5rem;
     color: var(--brand-green);
     margin-bottom: 1rem;
-}
-
-@media(max-width: 768px) {
-    .story-section {
-        flex-direction: column;
-    }
-
-    .values-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* Add to assets/css/style.css */
-.brand-logo-img {
-    height: 40px; /* Adjust based on your logo's aspect ratio */
-    width: auto;
-    display: block;
 }
