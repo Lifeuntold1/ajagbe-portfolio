@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Project Portfolio | Ajagbe Emmanuel</title>
+    <meta name="description" content="A curated list of technical and creative projects by Ajagbe Emmanuel. Marketplace development, Real Estate UI, and Data Analysis.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .tech-stack {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            font-size: 0.75rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid #333;
+            color: var(--text-muted);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+        }
+
+        .project-card-preview {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="index.html" class="logo-container">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Life Untold Logo" class="brand-logo">
+            </a>
+
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="projects.html" class="active-link">Projects</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="mobile-cta-item"><a href="contact.html" class="cta-button mobile-btn">Hire Me</a></li>
+                </ul>
+            </nav>
+
+            <div class="desktop-cta-container">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark/Light Mode">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+                    </svg>
+                </button>
+
+                <a href="contact.html" class="cta-button">Hire Me</a>
+            </div>
+
+            <div class="mobile-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" style="min-height: 40vh;">
+            <div class="container">
+                <p class="hero-subtitle">MY WORK</p>
+                <h1>Portfolio.</h1>
+                <p class="hero-desc">A selection of technical solutions, strategic copy, and creative design.</p>
+            </div>
+        </section>
+
+        <section class="section-light" style="padding-top: 2rem;">
+            <div class="container">
+                <div class="grid-2">
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">Live Project</div>
+                            <h3>Nexus Market</h3>
+                            <p>A robust multivendor digital marketplace featuring advanced affiliate tracking, vendor dashboards, and secure payment gateways. Premium features are currently in active development.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">Laravel</span>
+                                <span class="tech-badge">PHP</span>
+                                <span class="tech-badge">MySQL</span>
+                                <span class="tech-badge">Bootstrap</span>
+                            </div>
+                        </div>
+                        <a href="https://nexusmkt.com.ng" class="cta-button" target="_blank" style="text-align: center; margin-top: auto;">Visit Live Marketplace</a>
+                    </div>
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">Real Estate UI</div>
+                            <h3>Jaoos Luxury Estates</h3>
+                            <p>A high-conversion property showcase platform. Features immersive virtual tour integration, dynamic mortgage calculators, and a lead-capture focused layout for high-ticket sales.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">HTML5</span>
+                                <span class="tech-badge">CSS3</span>
+                                <span class="tech-badge">JavaScript</span>
+                                <span class="tech-badge">Figma</span>
+                            </div>
+                        </div>
+                        <a href="projects/jaoos/index.html" class="text-link">View Prototype Build →</a>
+                    </div>
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">Data Analysis</div>
+                            <h3>PhysLab Visualizer</h3>
+                            <p>An automated data processing tool for physics students. It cleans raw experimental CSV data and generates publication-ready Matplotlib graphs, reducing manual error by 90%.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Pandas</span>
+                                <span class="tech-badge">Matplotlib</span>
+                                <span class="tech-badge">Jupyter</span>
+                            </div>
+                        </div>
+                        <a href="projects/physlab/index.html" class="text-link">View Documentation →</a>
+                    </div>
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">HealthTech UX</div>
+                            <h3>CareConnect</h3>
+                            <p>A simplified appointment booking system designed for elderly accessibility. Focuses on high-contrast UI, large touch targets, and a 3-step booking flow to reduce drop-off rates.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">UI/UX Design</span>
+                                <span class="tech-badge">Prototyping</span>
+                                <span class="tech-badge">User Research</span>
+                            </div>
+                        </div>
+                        <a href="projects/careconnect/index.html" class="text-link">View UX Case Study →</a>
+                    </div>
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">SaaS Copywriting</div>
+                            <h3>TaskFlow Landing Page</h3>
+                            <p>A conversion-focused landing page for a productivity app. I rewrote the messaging using the "Problem-Agitation-Solution" framework, resulting in a clearer value proposition.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">Copywriting</span>
+                                <span class="tech-badge">CRO Strategy</span>
+                                <span class="tech-badge">A/B Testing</span>
+                            </div>
+                        </div>
+                        <a href="projects/taskflow/index.html" class="text-link">Read The Copy →</a>
+                    </div>
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">Academic Writing</div>
+                            <h3>The Scholar’s Hub</h3>
+                            <p>A resource platform for final-year students. I structured the information architecture to make finding thesis guidelines and research methodologies intuitive and fast.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">Research</span>
+                                <span class="tech-badge">Content Strategy</span>
+                                <span class="tech-badge">Information Arch</span>
+                            </div>
+                        </div>
+                        <a href="projects/scholarhub/index.html" class="text-link">View Hub Design →</a>
+                    </div>
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">Tech Coaching</div>
+                            <h3>Python 4 Physics</h3>
+                            <p>A curriculum design project. I broke down complex computational physics concepts into a 6-week beginner roadmap using real-world simulation examples.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">Curriculum Design</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Teaching</span>
+                            </div>
+                        </div>
+                        <a href="projects/p4p/index.html" class="text-link">View Curriculum →</a>
+                    </div>
+
+                    <div class="project-card-preview">
+                        <div>
+                            <div class="project-tag">Data Science</div>
+                            <h3>Trend Analyzer Script</h3>
+                            <p>A Python script that scrapes social media keywords to identify rising market trends. Visualizes frequency distribution to help businesses spot demand early.</p>
+
+                            <div class="tech-stack">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Scrapy</span>
+                                <span class="tech-badge">Seaborn</span>
+                            </div>
+                        </div>
+                        <a href="projects/trendanalyzer/index.html" class="text-link">View Analysis Code →</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section" style="text-align: center; padding: 6rem 0;">
+            <div class="container centered-content">
+                <h2>Ready to start your project?</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">I treat every project with the same precision I apply to my own.</p>
+                <a href="contact.html" class="cta-button large-btn">Hire Me Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Logo" class="footer-logo">
+                <p><strong>Ajagbe Emmanuel Oluwatobi</strong><br>Strategic Web Design & Development.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#bio">About Me</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="services.html">Custom Development</a></li>
+                    <li><a href="services.html">Strategic Copywriting</a></li>
+                    <li><a href="services.html">Academic Writing</a></li>
+                    <li><a href="services.html">Data Analysis</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-socials">
+                <h4>Connect</h4>
+                <div class="social-icons" style="display: flex; gap: 1rem;">
+                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi">LinkedIn</a>
+                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi">Facebook</a>
+                    <a href="https://github.com/Lifeuntold1/">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright container">
+            &copy; 2026 Life Untold. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

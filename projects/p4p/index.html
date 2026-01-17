@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python 4 Physics | Computational Curriculum</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <span class="py-icon">🐍</span> P4P
+        </div>
+        <a href="../../projects.html" class="back-link">← Return to Portfolio</a>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="tag">CURRICULUM DESIGN</span>
+                <h1>Bridge the gap between <br><span class="highlight">Theory</span> and <span class="highlight-code">Code</span>.</h1>
+                <p class="lead">A specialized 6-week roadmap designed to take Physics undergraduates from "Hello World" to simulating Projectile Motion and Quantum Wavefunctions.</p>
+                <a href="#roadmap" class="btn-primary">View The Roadmap</a>
+            </div>
+            <div class="hero-visual">
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+                        <span class="filename">projectile_motion.py</span>
+                    </div>
+                    <pre class="code-block">
+<span class="keyword">import</span> numpy <span class="keyword">as</span> np
+<span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt
+
+<span class="comment"># Define Initial Conditions</span>
+v0 = <span class="number">50</span>  <span class="comment"># Initial velocity (m/s)</span>
+angle = <span class="number">45</span> <span class="comment"># Launch angle</span>
+g = <span class="number">9.8</span>  <span class="comment"># Gravity</span>
+
+<span class="comment"># Calculate Trajectory</span>
+t = np.linspace(<span class="number">0</span>, <span class="number">10</span>, <span class="number">100</span>)
+x = v0 * np.cos(np.radians(angle)) * t
+y = v0 * np.sin(np.radians(angle)) * t - <span class="number">0.5</span> * g * t**2
+
+<span class="func">plt.plot</span>(x, y)
+<span class="func">plt.show()</span></pre>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="section-problem">
+        <div class="container">
+            <div class="problem-grid">
+                <div class="text-col">
+                    <h2>The Academic Gap</h2>
+                    <p>Physics students are taught complex mathematics but often lack the computational skills to visualize them. Theoretical mechanics becomes abstract and difficult to grasp without simulation.</p>
+                </div>
+                <div class="stat-col">
+                    <div class="stat-card">
+                        <h3>80%</h3>
+                        <p>of research now requires coding skills.</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>0</h3>
+                        <p>Coding classes in standard 100-level curriculum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="section-roadmap">
+        <div class="container">
+            <div class="section-header">
+                <h2>The 6-Week Roadmap</h2>
+                <p>From syntax to simulation.</p>
+            </div>
+
+            <div class="timeline">
+
+                <div class="module-card">
+                    <div class="week-badge">Week 01</div>
+                    <div class="module-content">
+                        <h3>Python Fundamentals</h3>
+                        <p>Setting up Anaconda/Jupyter. Variables, Data Types, and basic logic.</p>
+                        <ul class="topics">
+                            <li>Installation & Environment</li>
+                            <li>Lists, Tuples, Dictionaries</li>
+                            <li>If/Else Logic</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="week-badge">Week 02</div>
+                    <div class="module-content">
+                        <h3>The Math Engines</h3>
+                        <p>Introduction to NumPy for vector math and Matplotlib for graphing.</p>
+                        <ul class="topics">
+                            <li>NumPy Arrays vs Lists</li>
+                            <li>Vector Operations</li>
+                            <li>Basic Plotting (2D)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="week-badge">Week 03</div>
+                    <div class="module-content">
+                        <h3>Kinematics Simulation</h3>
+                        <p><strong>Project:</strong> Building a Projectile Motion calculator that accounts for drag.</p>
+                        <ul class="topics">
+                            <li>Defining Functions</li>
+                            <li>Physics Equations to Code</li>
+                            <li>Visualizing Trajectories</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="week-badge">Week 04</div>
+                    <div class="module-content">
+                        <h3>Data Analysis</h3>
+                        <p>Processing raw experimental data from CSV files using Pandas.</p>
+                        <ul class="topics">
+                            <li>Reading .CSV files</li>
+                            <li>Data Cleaning</li>
+                            <li>Error Bars & Best Fit Lines</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card">
+                    <div class="week-badge">Week 05</div>
+                    <div class="module-content">
+                        <h3>Computational Logic</h3>
+                        <p>Solving differential equations using Euler's Method.</p>
+                        <ul class="topics">
+                            <li>Loops & Iteration</li>
+                            <li>Numerical Integration</li>
+                            <li>Simple Harmonic Motion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="module-card highlight-card">
+                    <div class="week-badge">Week 06</div>
+                    <div class="module-content">
+                        <h3>Final Capstone</h3>
+                        <p>Students build a complete simulation of a real-world physics phenomenon.</p>
+                        <ul class="topics">
+                            <li>Solar System Orbit</li>
+                            <li>Electric Field Mapping</li>
+                            <li>Heat Diffusion</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section-results">
+        <div class="container">
+            <h2>Student Outcomes</h2>
+            <div class="grid-3">
+                <div class="result-card">
+                    <div class="icon">🚀</div>
+                    <h4>Confidence</h4>
+                    <p>Students moved from fearing syntax errors to debugging their own scripts.</p>
+                </div>
+                <div class="result-card">
+                    <div class="icon">📊</div>
+                    <h4>Research Ready</h4>
+                    <p>Graduates could automate data analysis for their final year projects.</p>
+                </div>
+                <div class="result-card">
+                    <div class="icon">💼</div>
+                    <h4>Career Boost</h4>
+                    <p>Added Python & Data Analysis to their CVs, opening roles in Tech & Finance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-flex">
+            <div>
+                <h3>Python 4 Physics</h3>
+                <p>Designed by Ajagbe Emmanuel.</p>
+            </div>
+            <a href="../../contact.html" class="btn-primary">Hire Me for Coaching</a>
+        </div>
+    </footer>
+
+</body>
+</html>

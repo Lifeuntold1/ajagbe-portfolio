@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resource Library | The Scholar's Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container flex-between">
+            <div class="brand">
+                <div class="logo-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="brand-text"><h1>The Scholar's Hub</h1><p>Resources</p></div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="resources.html" class="active">Resources</a></li>
+                    <li><a href="methodology.html">Methodologies</a></li>
+                    <li><a href="tools.html">Tools</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+            </nav>
+            <div class="header-cta">
+                <a href="../../projects.html" class="btn-outline">Portfolio</a>
+                <a href="#" class="btn-solid">Upload</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-hero">
+        <div class="container">
+            <h1>Academic Repository</h1>
+            <p>120+ verified templates, datasets, and guides for your thesis.</p>
+        </div>
+    </div>
+
+    <div class="container sidebar-layout">
+        <aside class="sidebar-filter">
+            <div class="filter-group">
+                <h4>Category</h4>
+                <label><input type="checkbox" checked> Thesis Templates</label>
+                <label><input type="checkbox"> Journal Articles</label>
+                <label><input type="checkbox"> Datasets (CSV/SPSS)</label>
+                <label><input type="checkbox"> Presentation Decks</label>
+            </div>
+            <div class="filter-group">
+                <h4>Format</h4>
+                <label><input type="checkbox"> MS Word (.docx)</label>
+                <label><input type="checkbox"> PDF</label>
+                <label><input type="checkbox"> Excel (.xlsx)</label>
+                <label><input type="checkbox"> LaTeX</label>
+            </div>
+        </aside>
+
+        <main class="res-grid">
+            <div class="res-card">
+                <span class="file-type">DOCX</span>
+                <i class="fas fa-file-word res-icon icon-word"></i>
+                <h3>APA 7th Thesis Template</h3>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Standard layout with pre-formatted headings and citation styles.</p>
+                <button class="btn-outline" style="width:100%">Download</button>
+            </div>
+
+            <div class="res-card">
+                <span class="file-type">XLSX</span>
+                <i class="fas fa-file-excel res-icon icon-excel"></i>
+                <h3>Gantt Chart Scheduler</h3>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Track your research milestones from proposal to defense.</p>
+                <button class="btn-outline" style="width:100%">Download</button>
+            </div>
+
+            <div class="res-card">
+                <span class="file-type">PDF</span>
+                <i class="fas fa-file-pdf res-icon icon-pdf"></i>
+                <h3>Research Ethics Guide</h3>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">University standard protocols for human subject research.</p>
+                <button class="btn-outline" style="width:100%">Download</button>
+            </div>
+
+            <div class="res-card">
+                <span class="file-type">PPTX</span>
+                <i class="fas fa-file-powerpoint res-icon" style="color:#d24726;"></i>
+                <h3>Defense Presentation</h3>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">20-slide deck template for your final oral defense.</p>
+                <button class="btn-outline" style="width:100%">Download</button>
+            </div>
+
+            <div class="res-card">
+                <span class="file-type">SAV</span>
+                <i class="fas fa-table res-icon" style="color:#003366;"></i>
+                <h3>Sample Survey Data</h3>
+                <p style="font-size: 0.85rem; color: #666; margin-bottom: 1rem;">Clean SPSS dataset for practicing regression analysis.</p>
+                <button class="btn-outline" style="width:100%">Download</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

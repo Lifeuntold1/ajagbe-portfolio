@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhysLab Data Visualizer | Scientific Plotting Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="brand">
+            <h2>PHYSLAB <span class="accent">v2.0</span></h2>
+            <p>Data Analysis Tool</p>
+        </div>
+
+        <div class="control-group">
+            <label>Experiment Title</label>
+            <input type="text" id="chartTitle" placeholder="e.g. Ohm's Law">
+        </div>
+
+        <div class="control-group">
+            <label>X-Axis Label</label>
+            <input type="text" id="xLabel" placeholder="Voltage (V)">
+        </div>
+
+        <div class="control-group">
+            <label>Y-Axis Label</label>
+            <input type="text" id="yLabel" placeholder="Current (I)">
+        </div>
+
+        <div class="data-input-area">
+            <label>Raw Data (X, Y)</label>
+            <textarea id="dataInput" placeholder="1.0, 0.5&#10;2.0, 1.0&#10;3.0, 1.5&#10;4.0, 2.0"></textarea>
+            <p class="hint">One pair per line. Comma separated.</p>
+        </div>
+
+        <button onclick="generateGraph()" class="btn-primary">Plot Graph</button>
+        <button onclick="clearData()" class="btn-secondary">Reset</button>
+
+        <a href="../../projects.html" class="back-link">← Return to Portfolio</a>
+    </aside>
+
+    <main class="workspace">
+        <header class="top-bar">
+            <div class="status">System Status: <span class="online">● Ready</span></div>
+            <div class="export-tools">
+                <button onclick="exportImage()">📷 Download Graph</button>
+            </div>
+        </header>
+
+        <div class="info-bar">
+            <div class="scale-box">
+                <span class="label">Recommended Scale</span>
+                <span class="value" id="scaleDisplay">Waiting for data...</span>
+            </div>
+        </div>
+
+        <div class="graph-container">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <div class="bottom-panel">
+            <div class="analysis-panel">
+                <h3>Regression Analysis</h3>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="label">Slope (m)</span>
+                        <span class="value" id="slopeVal">--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Intercept (c)</span>
+                        <span class="value" id="interceptVal">--</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="label">Data Points</span>
+                        <span class="value" id="countVal">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-panel">
+                <h3>Plotted Points</h3>
+                <div class="table-wrapper">
+                    <table id="pointsTable">
+                        <thead>
+                            <tr>
+                                <th>X Values</th>
+                                <th>Y Values</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>
