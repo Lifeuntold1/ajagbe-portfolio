@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareConnect | Patient Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="app-container">
+
+        <header class="app-header">
+            <div class="logo">Care<span class="blue">Connect</span></div>
+            <div class="user-profile">
+                <span>JD</span>
+            </div>
+        </header>
+
+        <div class="progress-bar">
+            <div class="step active" id="p-step1">1</div>
+            <div class="line"></div>
+            <div class="step" id="p-step2">2</div>
+            <div class="line"></div>
+            <div class="step" id="p-step3">3</div>
+        </div>
+
+        <div id="step1" class="screen active-screen">
+            <h1 class="headline">Who do you need to see?</h1>
+            <p class="subhead">Select a specialist below.</p>
+
+            <div class="grid-options">
+                <div class="option-card" onclick="selectSpecialty('Cardiology', this)">
+                    <div class="icon">❤️</div>
+                    <h3>Heart Specialist</h3>
+                    <p>Cardiology</p>
+                </div>
+                <div class="option-card" onclick="selectSpecialty('Dentist', this)">
+                    <div class="icon">🦷</div>
+                    <h3>Tooth Care</h3>
+                    <p>Dentistry</p>
+                </div>
+                <div class="option-card" onclick="selectSpecialty('General', this)">
+                    <div class="icon">🩺</div>
+                    <h3>General Doctor</h3>
+                    <p>Primary Care</p>
+                </div>
+                <div class="option-card" onclick="selectSpecialty('Eyes', this)">
+                    <div class="icon">👁️</div>
+                    <h3>Eye Doctor</h3>
+                    <p>Optometry</p>
+                </div>
+            </div>
+
+            <button class="btn-next" onclick="goToStep(2)" disabled id="btn-step1">Continue</button>
+        </div>
+
+        <div id="step2" class="screen">
+            <button class="btn-back" onclick="goToStep(1)">← Back</button>
+            <h1 class="headline">When are you free?</h1>
+            <p class="subhead">Available slots for <span id="selected-doc" class="blue">...</span></p>
+
+            <div class="date-picker">
+                <div class="date-card active">
+                    <span class="day">Today</span>
+                    <span class="num">12</span>
+                </div>
+                <div class="date-card">
+                    <span class="day">Tomorrow</span>
+                    <span class="num">13</span>
+                </div>
+                <div class="date-card">
+                    <span class="day">Wed</span>
+                    <span class="num">14</span>
+                </div>
+            </div>
+
+            <div class="time-grid">
+                <button class="time-slot" onclick="selectTime('09:00 AM', this)">09:00 AM</button>
+                <button class="time-slot" onclick="selectTime('10:30 AM', this)">10:30 AM</button>
+                <button class="time-slot" onclick="selectTime('02:00 PM', this)">02:00 PM</button>
+                <button class="time-slot" onclick="selectTime('04:15 PM', this)">04:15 PM</button>
+            </div>
+
+            <button class="btn-next" onclick="goToStep(3)" disabled id="btn-step2">Confirm Time</button>
+        </div>
+
+        <div id="step3" class="screen">
+            <div class="success-box">
+                <div class="check-icon">✓</div>
+                <h2>Appointment Confirmed!</h2>
+                <p>You are all set, John.</p>
+            </div>
+
+            <div class="summary-card">
+                <div class="row">
+                    <span>Specialist</span>
+                    <strong id="final-doc">--</strong>
+                </div>
+                <div class="row">
+                    <span>Date</span>
+                    <strong>Today, Jan 12</strong>
+                </div>
+                <div class="row">
+                    <span>Time</span>
+                    <strong id="final-time">--</strong>
+                </div>
+            </div>
+
+            <button class="btn-home" onclick="location.reload()">Book Another</button>
+            <a href="../../projects.html" class="portfolio-link">Exit to Portfolio</a>
+        </div>
+
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

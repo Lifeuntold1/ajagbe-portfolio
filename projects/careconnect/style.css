@@ -1,0 +1,323 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #0066ff; /* Trust Blue */
+    --primary-dark: #004ec2;
+    --bg: #f4f7fa; /* Light Clinical Gray */
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-gray: #666666;
+    --success: #28a745;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #e0e5ec; /* Background behind the "phone" */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text-dark);
+}
+
+/* PHONE CONTAINER (Simulates Mobile App on Desktop) */
+.app-container {
+    width: 100%;
+    max-width: 400px; /* Mobile Width */
+    height: 800px;
+    background-color: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+.app-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--white);
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.blue {
+    color: var(--primary);
+}
+
+.user-profile {
+    width: 35px;
+    height: 35px;
+    background: var(--bg);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.step {
+    width: 25px;
+    height: 25px;
+    background: #eee;
+    color: #999;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+    .step.active {
+        background: var(--primary);
+        color: white;
+    }
+
+.line {
+    width: 30px;
+    height: 2px;
+    background: #eee;
+    margin: 0 5px;
+}
+
+/* SCREENS */
+.screen {
+    flex: 1;
+    padding: 1.5rem;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    animation: fadeIn 0.4s ease;
+}
+
+.active-screen {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.headline {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subhead {
+    color: var(--text-gray);
+    margin-bottom: 2rem;
+}
+
+/* STEP 1: CARDS */
+.grid-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: auto; /* Pushes button to bottom */
+}
+
+.option-card {
+    background: var(--bg);
+    padding: 1.5rem;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.2s;
+}
+
+    .option-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .option-card.selected {
+        border-color: var(--primary);
+        background: #eef5ff;
+    }
+
+.icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.option-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.option-card p {
+    font-size: 0.75rem;
+    color: var(--text-gray);
+}
+
+/* STEP 2: TIME */
+.date-picker {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.date-card {
+    flex: 1;
+    text-align: center;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 1px solid #eee;
+    color: var(--text-gray);
+}
+
+    .date-card.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+
+.day {
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 0.2rem;
+}
+
+.num {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: auto;
+}
+
+.time-slot {
+    padding: 1rem;
+    border: 1px solid #eee;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+    .time-slot.selected {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+    }
+
+/* STEP 3: SUCCESS */
+.success-box {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+.check-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--success);
+    color: white;
+    border-radius: 50%;
+    font-size: 3rem;
+    line-height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
+.summary-card {
+    background: var(--bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: auto;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+    .row:last-child {
+        margin-bottom: 0;
+    }
+
+/* BUTTONS */
+.btn-next, .btn-home {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+    .btn-next:disabled {
+        background: #ccc;
+        cursor: not-allowed;
+    }
+
+.btn-back {
+    border: none;
+    background: none;
+    color: var(--text-gray);
+    cursor: pointer;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+
+.portfolio-link {
+    display: block;
+    text-align: center;
+    margin-top: 1rem;
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+/* RESPONSIVE FULL SCREEN ON MOBILE */
+@media (max-width: 480px) {
+    .app-container {
+        height: 100vh;
+        border-radius: 0;
+        max-width: 100%;
+    }
+
+    body {
+        background-color: var(--white);
+    }
+}

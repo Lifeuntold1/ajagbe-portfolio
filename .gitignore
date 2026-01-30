@@ -1,0 +1,15 @@
+# Visual Studio & VS Code cache
+.vs/
+.vscode/
+*.slnx
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# System Files
+Thumbs.db
+Desktop.ini
+
+# Dependencies (Good practice for later)
+node_modules/

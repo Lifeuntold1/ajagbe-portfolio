@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend Analyzer | Data Science Documentation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="doc-layout">
+
+        <nav class="doc-sidebar">
+            <div class="brand">
+                <i class="fas fa-chart-line"></i> TrendAnalyzer
+            </div>
+            <ul class="doc-nav">
+                <li><a href="#overview" class="active">1. Overview</a></li>
+                <li><a href="#architecture">2. Architecture</a></li>
+                <li><a href="#scraping">3. Data Scraping</a></li>
+                <li><a href="#processing">4. Data Processing</a></li>
+                <li><a href="#visualization">5. Visualization</a></li>
+                <li><a href="#results">6. Final Report</a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="../../projects.html" class="back-link">← Portfolio</a>
+                <a href="https://github.com/Lifeuntold1" target="_blank" class="github-link"><i class="fab fa-github"></i> View Repo</a>
+            </div>
+        </nav>
+
+        <main class="doc-content">
+
+            <section id="overview">
+                <span class="tag">PYTHON SCRIPT v2.1</span>
+                <h1>Social Media Trend Detector</h1>
+                <p class="lead">An automated Python tool that scrapes unstructured social media data (Twitter/X & Reddit) to identify rising consumer interests before they hit mainstream news.</p>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="label">Processing Speed</span>
+                        <span class="value">5k Posts/min</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="label">Accuracy</span>
+                        <span class="value">92%</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="label">Tech Stack</span>
+                        <span class="value">Python, Pandas</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="architecture">
+                <h2>System Architecture</h2>
+                <p>The script follows an ETL (Extract, Transform, Load) pipeline structure.</p>
+
+                <div class="diagram-box">
+                    <div class="diagram-step">
+                        <i class="fas fa-spider"></i>
+                        <strong>Scraper</strong>
+                        <span>BeautifulSoup & Selenium</span>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="diagram-step">
+                        <i class="fas fa-filter"></i>
+                        <strong>Cleaner</strong>
+                        <span>Regex & NLTK</span>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="diagram-step">
+                        <i class="fas fa-brain"></i>
+                        <strong>Analyzer</strong>
+                        <span>Pandas Frequency Map</span>
+                    </div>
+                    <div class="arrow">→</div>
+                    <div class="diagram-step">
+                        <i class="fas fa-chart-bar"></i>
+                        <strong>Visualizer</strong>
+                        <span>Matplotlib & Seaborn</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="scraping">
+                <h2>Step 1: The Scraper</h2>
+                <p>We use <code>Selenium</code> to handle dynamic JavaScript content and scroll infinitely to gather historical data.</p>
+
+                <div class="code-window">
+                    <div class="window-bar">scrapper.py</div>
+                    <pre><code><span class="kw">def</span> <span class="func">fetch_tweets</span>(keyword, count):
+    driver = webdriver.Chrome()
+    driver.get(<span class="str">f"https://twitter.com/search?q={keyword}"</span>)
+    
+    data = []
+                    <span class="kw">while</span> <span class="func">len</span>(data) < count:
+        tweets = driver.find_elements(By.CSS_SELECTOR, <span class="str">'[data-testid="tweet"]'</span>)
+                    <span class="kw">for</span> tweet <span class="kw">in</span> tweets:
+            text = tweet.text
+            timestamp = tweet.find_element(By.TAG_NAME, <span class="str">'time'</span>).get_attribute(<span class="str">'datetime'</span>)
+            data.append({<span class="str">'text'</span>: text, <span class="str">'date'</span>: timestamp})
+        
+        driver.execute_script(<span class="str">"window.scrollTo(0, document.body.scrollHeight);"</span>)
+        time.sleep(<span class="num">2</span>)
+        
+                    <span class="kw">return</span> pd.DataFrame(data)</code></pre>
+                </div>
+            </section>
+
+            <section id="processing">
+                <h2>Step 2: Data Cleaning</h2>
+                <p>Raw social media data is messy. We remove emojis, URLs, and stop-words using Regex.</p>
+
+                <div class="code-window">
+                    <div class="window-bar">cleaner.py</div>
+                    <pre><code><span class="kw">import</span> re
+<span class="kw">from</span> nltk.corpus <span class="kw">import</span> stopwords
+
+<span class="kw">def</span> <span class="func">clean_text</span>(text):
+                    <span class="comment"># Remove URLs</span>
+    text = re.sub(<span class="str">r'http\S+'</span>, <span class="str">''</span>, text)
+                    <span class="comment"># Remove Emojis & Special Chars</span>
+    text = re.sub(<span class="str">r'[^\w\s]'</span>, <span class="str">''</span>, text)
+                    <span class="comment"># Lowercase & Remove Stopwords</span>
+    words = [w <span class="kw">for</span> w <span class="kw">in</span> text.lower().split() <span class="kw">if</span> w <span class="kw">not in</span> stopwords.words(<span class="str">'english'</span>)]
+    
+                    <span class="kw">return</span> <span class="str">" "</span>.join(words)</code></pre>
+                </div>
+            </section>
+
+            <section id="visualization">
+                <h2>Step 3: Trend Visualization</h2>
+                <p>We use <code>Seaborn</code> to create a time-series heatmap of keyword frequency.</p>
+
+                <div class="graph-container">
+                    <div class="graph-header">
+                        <strong>Keyword Frequency: "Generative AI" (Last 30 Days)</strong>
+                    </div>
+                    <div class="chart-area">
+                        <div class="bar" style="height: 20%;"><span>Day 1</span></div>
+                        <div class="bar" style="height: 35%;"><span>Day 5</span></div>
+                        <div class="bar" style="height: 45%;"><span>Day 10</span></div>
+                        <div class="bar" style="height: 80%;"><span>Day 15</span></div>
+                        <div class="bar" style="height: 60%;"><span>Day 20</span></div>
+                        <div class="bar" style="height: 90%;"><span>Day 25</span></div>
+                        <div class="bar" style="height: 95%;"><span>Day 30</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="results">
+                <h2>Final Business Impact</h2>
+                <p>This script was deployed for a niche e-commerce client to track "Sustainable Fashion" trends.</p>
+
+                <div class="result-box">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> <strong>Early Detection:</strong> Identified "Bamboo Fabric" trend 2 weeks before competitors.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Cost Saving:</strong> Replaced $2,000/mo manual research agency.</li>
+                        <li><i class="fas fa-check-circle"></i> <strong>Automation:</strong> Runs daily at 08:00 AM via Cron Job.</li>
+                    </ul>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
