@@ -1,76 +1,97 @@
+/**
+ * Ajagbe Emmanuel Oluwatobi — Core Controller
+ * Handles theme toggling, full-screen mobile menu overrides, 
+ * smooth scrolling, and scroll reveal animations.
+ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* --- 1. THEME SWITCHER LOGIC (Sun/Moon) --- */
+    /* ==========================================================================
+       1. PERSISTENT THEME SWITCHER (Light/Dark Mode Synchronization)
+       ========================================================================== */
     const themeToggleBtn = document.getElementById('theme-toggle');
-    const rootElement = document.documentElement; // Targets <html> tag
-    const icon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
+    const rootElement = document.documentElement;
+    
+    // Select the font-awesome icon inside the toggle button
+    const themeIcon = themeToggleBtn ? themeToggleBtn.querySelector('i') : null;
 
-    // 1a. Check Local Storage on Page Load
-    const currentTheme = localStorage.getItem('theme');
+    // Check active theme state on DOM completion
+    const activeTheme = localStorage.getItem('theme') || 'dark';
 
-    // If user previously chose Light Mode, apply it and show SUN
-    if (currentTheme === 'light') {
-        rootElement.setAttribute('data-theme', 'light');
-        if (icon) {
-            icon.classList.remove('fa-moon'); // Remove Moon
-            icon.classList.add('fa-sun');     // Add Sun
+    // Synchronize toggle icon shape on load
+    if (activeTheme === 'light') {
+        if (themeIcon) {
+            themeIcon.className = 'fa-solid fa-sun';
+        }
+    } else {
+        if (themeIcon) {
+            themeIcon.className = 'fa-solid fa-moon';
         }
     }
 
-    // 1b. Toggle Event Listener
+    // Toggle button event click responder
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener('click', () => {
-            const isLight = rootElement.getAttribute('data-theme') === 'light';
+            const isCurrentlyLight = rootElement.getAttribute('data-theme') === 'light';
 
-            if (isLight) {
-                // Switch to Dark Mode
-                rootElement.removeAttribute('data-theme'); // Removes 'light', falls back to default
+            if (isCurrentlyLight) {
+                // Shift to Dark Mode
+                rootElement.removeAttribute('data-theme');
                 localStorage.setItem('theme', 'dark');
-                if (icon) {
-                    icon.classList.remove('fa-sun');  // Remove Sun
-                    icon.classList.add('fa-moon');    // Add Moon
+                if (themeIcon) {
+                    themeIcon.className = 'fa-solid fa-moon';
                 }
             } else {
-                // Switch to Light Mode
+                // Shift to Light Mode
                 rootElement.setAttribute('data-theme', 'light');
                 localStorage.setItem('theme', 'light');
-                if (icon) {
-                    icon.classList.remove('fa-moon'); // Remove Moon
-                    icon.classList.add('fa-sun');     // Add Sun
+                if (themeIcon) {
+                    themeIcon.className = 'fa-solid fa-sun';
                 }
             }
         });
     }
 
-    /* --- 2. MOBILE MENU LOGIC --- */
+    /* ==========================================================================
+       2. MOBILE MENU OVERLAY & SCROLL LOCK
+       ========================================================================== */
     const mobileToggle = document.querySelector('.mobile-toggle');
-    const navLinksContainer = document.querySelector('.nav-links'); // Matches your CSS class
+    const navLinksContainer = document.querySelector('.nav-links');
+    const bodyElement = document.body;
 
     if (mobileToggle && navLinksContainer) {
         mobileToggle.addEventListener('click', () => {
-            // Toggles the "X" animation on the hamburger
-            mobileToggle.classList.toggle('is-active');
-            // Slides the menu in/out
+            const isActive = mobileToggle.classList.toggle('is-active');
             navLinksContainer.classList.toggle('active');
+            
+            // Toggle body overflow to lock background scrolling while full screen overlay is open
+            if (isActive) {
+                bodyElement.style.overflow = 'hidden';
+            } else {
+                bodyElement.style.overflow = '';
+            }
         });
 
-        // Auto-close menu when a link is clicked
-        const pageLinks = document.querySelectorAll('.nav-links a');
-        pageLinks.forEach(link => {
+        // Close menu immediately and release scroll lock when navigation link is clicked
+        const navLinks = document.querySelectorAll('.nav-links a');
+        navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 mobileToggle.classList.remove('is-active');
                 navLinksContainer.classList.remove('active');
+                bodyElement.style.overflow = '';
             });
         });
     }
 
-    /* --- 3. SMOOTH SCROLL --- */
+    /* ==========================================================================
+       3. SMOOTH SCROLL ACCURACY
+       ========================================================================== */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#' || targetId === '') return;
+            const targetHash = this.getAttribute('href');
+            if (targetHash === '#' || targetHash === '') return;
 
-            const targetElement = document.querySelector(targetId);
+            const targetElement = document.querySelector(targetHash);
             if (targetElement) {
                 e.preventDefault();
                 targetElement.scrollIntoView({ behavior: 'smooth' });
@@ -78,4 +99,61 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* ==========================================================================
+       4. SCROLL-TRIGGERED REVEAL OBSERVER
+       ========================================================================== */
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // Unobserve so animation runs once per load
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0.08, 
+        rootMargin: '0px 0px -40px 0px' 
+    });
+
+    // Observe elements carrying reveal or reveal-group markup
+    document.querySelectorAll('[data-reveal], [data-reveal-group]').forEach(element => {
+        revealObserver.observe(element);
+    });
+
+    /* ==========================================================================
+       5. DYNAMIC PROCESS CARD OBSERVER
+       ========================================================================== */
+    const processObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                processObserver.unobserve(entry.target);
+
+                // Apply idle oscillation after all entrance transitions complete
+                const children = entry.target.querySelectorAll('.process-card');
+                const totalDelay = children.length * 120 + 600; // stagger + transition duration
+                setTimeout(() => {
+                    children.forEach(card => {
+                        card.classList.add('process-card--alive');
+                    });
+                }, totalDelay);
+            }
+        });
+    }, {
+        threshold: 0.08,
+        rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('[data-process-reveal]').forEach(element => {
+        processObserver.observe(element);
+    });
+
 });
+
+/* ==========================================================================
+   5. AUTO DYNAMIC COPYRIGHT YEAR
+   ========================================================================== */
+const footerYear = document.getElementById('footer-year');
+if (footerYear) {
+    footerYear.textContent = new Date().getFullYear();
+}

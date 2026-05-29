@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eoajagbe.name.ng/sitemap.xml

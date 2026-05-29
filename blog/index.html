@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- FOUC Blocking Theme Switcher -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <title>Web Development &amp; SEO Blog | Ajagbe Emmanuel</title>
+    <meta name="description" content="Read actionable guides on WordPress, Laravel web engineering, WooCommerce optimization, and search engine optimization by web expert Ajagbe Emmanuel.">
+    <meta name="keywords" content="WordPress developer Nigeria blog, Laravel developer Nigeria blog, SEO writer Nigeria blog, web development tips Nigeria, hire web developer Nigeria">
+    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://eoajagbe.name.ng/blog/index.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Web Development &amp; SEO Blog | Ajagbe Emmanuel Nigeria">
+    <meta property="og:description" content="Expert insights on WordPress, Laravel, SEO, and copywriting. Engineered for scaling businesses.">
+    <meta property="og:url" content="https://eoajagbe.name.ng/blog/index.html">
+    <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+    <meta property="og:site_name" content="Ajagbe Emmanuel - Web Developer">
+    <meta property="og:locale" content="en_NG">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Development &amp; SEO Blog | Ajagbe Emmanuel Nigeria">
+    <meta name="twitter:description" content="Expert insights on WordPress, Laravel, SEO, and copywriting. Engineered for scaling businesses.">
+    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Ajagbe Emmanuel Web Development Blog",
+      "url": "https://eoajagbe.name.ng/blog/index.html",
+      "description": "Expert insights on WordPress development, Laravel engineering, technical SEO, and copywriting in Nigeria.",
+      "publisher": {
+        "@type": "Person",
+        "name": "Ajagbe Emmanuel Oluwatobi"
+      }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="../assets/images/ajagbe-emmanuel-portfolio-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="../index.html" class="brand-logo">
+                <img src="../assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="brand-logo-img">
+            </a>
+
+            <nav class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../services.html">Services</a>
+                <a href="../projects.html">Projects</a>
+                <a href="index.html" class="active-link">Blog</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+
+                <a href="../contact.html" class="cta-button mobile-only-btn">Hire Me</a>
+            </nav>
+
+            <div class="desktop-cta-container">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="../contact.html" class="cta-button desktop-only-btn">Hire Me</a>
+            </div>
+
+            <div class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="section hero" style="min-height: 45vh;">
+            <div class="container" data-reveal="scale">
+                <p class="hero-subtitle">INSIGHTS &amp; STRATEGY</p>
+                <h1>The Technical Blog</h1>
+                <p class="hero-desc">B2B frameworks, database design playbooks, and structural engineering advice for growing digital platforms.</p>
+            </div>
+        </section>
+
+        <!-- Articles Grid -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <p>RESOURCES</p>
+                    <h2>Actionable Engineering Guides</h2>
+                    <p class="section-desc">Practical explanations of custom code, speed compliance, and SEO algorithms.</p>
+                </div>
+
+                <div class="grid-3" data-reveal-group>
+
+                    <!-- Post 1 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-file-signature" style="font-size: 2.5rem; color: var(--color-accent-2);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>WordPress Development</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">May 29, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="how-to-choose-a-wordpress-developer-in-nigeria.html" style="color: inherit; text-decoration: none;">How to Choose a WordPress Developer in Nigeria: Ultimate Guide</a></h3>
+                            <p class="card__text">Avoid indexing errors, security holes, and bloated layouts. Read the checklist to vet and hire a professional WordPress systems engineer.</p>
+                            <a href="how-to-choose-a-wordpress-developer-in-nigeria.html" class="card__cta">Read Full Guide <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 2 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-users" style="font-size: 2.5rem; color: var(--color-accent);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>WordPress Development</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">May 25, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="hire-a-wordpress-developer-in-nigeria-complete-guide.html" style="color: inherit; text-decoration: none;">Hire a WordPress Developer in Nigeria: The Complete Guide</a></h3>
+                            <p class="card__text">A project strategy overview on outsourcing corporate and e-commerce setups. Learn how to verify structural portfolios cleanly.</p>
+                            <a href="hire-a-wordpress-developer-in-nigeria-complete-guide.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 3 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-wallet" style="font-size: 2.5rem; color: var(--color-accent-2);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>Website Pricing</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">May 20, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="how-much-does-wordpress-website-cost-in-nigeria.html" style="color: inherit; text-decoration: none;">How Much Does a WordPress Website Cost in Nigeria?</a></h3>
+                            <p class="card__text">Get a clear cost calculation breakdown on hosting, custom modules, database setups, and maintenance to align with business ROI targets.</p>
+                            <a href="how-much-does-wordpress-website-cost-in-nigeria.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 4 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-code" style="font-size: 2.5rem; color: var(--color-accent);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>Fullstack Laravel</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">May 15, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="top-laravel-developer-in-nigeria-for-custom-web-apps.html" style="color: inherit; text-decoration: none;">Top Laravel Developer in Nigeria for Custom Web Apps</a></h3>
+                            <p class="card__text">Why expanding companies choose secure, custom PHP databases over drag-and-drop templates. Focus on performance and security properties.</p>
+                            <a href="top-laravel-developer-in-nigeria-for-custom-web-apps.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 5 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-laptop-code" style="font-size: 2.5rem; color: var(--color-accent-2);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>Freelance Laravel</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">May 10, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="hire-freelance-laravel-developer-nigeria.html" style="color: inherit; text-decoration: none;">Hire a Freelance Laravel Developer in Nigeria</a></h3>
+                            <p class="card__text">Learn how to vet fullstack freelancers who deploy normalized database architectures and secure REST endpoints with direct local payments.</p>
+                            <a href="hire-freelance-laravel-developer-nigeria.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 6 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-cubes" style="font-size: 2.5rem; color: var(--color-accent);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>SaaS Engineering</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">May 05, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="custom-saas-development-services-nigeria-complete-guide.html" style="color: inherit; text-decoration: none;">Custom SaaS Development Services in Nigeria: Complete Guide</a></h3>
+                            <p class="card__text">From micro-SaaS wireframes to multi-tenant structures. An overview of the custom software development lifecycle (SDLC) in Nigeria.</p>
+                            <a href="custom-saas-development-services-nigeria-complete-guide.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 7 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-shield-halved" style="font-size: 2.5rem; color: var(--color-accent-2);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>Website Maintenance</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">April 28, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="why-your-business-needs-custom-website-management.html" style="color: inherit; text-decoration: none;">Why Your Business Needs Custom Website Management</a></h3>
+                            <p class="card__text">Deploying is only half the battle. Discover why active server administration and scheduled backup scripts are needed to maintain uptime.</p>
+                            <a href="why-your-business-needs-custom-website-management.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 8 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-magnifying-glass-arrow-right" style="font-size: 2.5rem; color: var(--color-accent);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>SEO Copywriting</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">April 22, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="how-to-hire-an-seo-content-writer-in-nigeria-for-growth.html" style="color: inherit; text-decoration: none;">How to Hire an SEO Content Writer in Nigeria for Growth</a></h3>
+                            <p class="card__text">Bypass generic content spinner scripts. Review the checklist for hiring organic search specialists who understand data research.</p>
+                            <a href="how-to-hire-an-seo-content-writer-in-nigeria-for-growth.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 9 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-chart-line" style="font-size: 2.5rem; color: var(--color-accent-2);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>Data Analysis</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">April 15, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="data-analysis-services-nigeria-for-small-business.html" style="color: inherit; text-decoration: none;">Data Analysis Services in Nigeria for Small Business</a></h3>
+                            <p class="card__text">Turn raw customer spreadsheet data into operational roadmaps. Learn how custom Python scripts clean datasets to isolate trends.</p>
+                            <a href="data-analysis-services-nigeria-for-small-business.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                    <!-- Post 10 -->
+                    <div class="card">
+                        <div class="card__image" style="background: var(--color-bg); border-bottom: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; height: 120px;">
+                            <i class="fa-solid fa-atom" style="font-size: 2.5rem; color: var(--color-accent);"></i>
+                        </div>
+                        <div class="card__body">
+                            <span class="card__eyebrow" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                                <span>Academic / Coaching</span>
+                                <span style="text-transform: none; font-weight: normal; color: var(--color-muted); font-family: var(--font-mono); font-size: var(--text-xs);">April 08, 2026</span>
+                            </span>
+                            <h3 class="card__title"><a href="how-computational-physics-coaching-will-advance-your-career.html" style="color: inherit; text-decoration: none;">How Computational Physics Coaching Will Advance Your Career</a></h3>
+                            <p class="card__text">Mastering first-principles logic and modeling with scientific Python script tools prepares developers for advanced analytical work.</p>
+                            <a href="how-computational-physics-coaching-will-advance-your-career.html" class="card__cta">Read Article <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sitewide Grounded Topographic Footer -->
+    <footer class="site-footer">
+        <!-- Organic Topographic Wavy SVG Divider -->
+        <div class="site-footer-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
+        <div class="container footer-grid">
+            <!-- Footer Identity Column -->
+            <div class="footer-brand" data-reveal="fade">
+                <img src="../assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="footer-logo" loading="lazy">
+                <p><strong>Ajagbe Emmanuel Oluwatobi</strong></p>
+                <p class="footer-tagline">Fullstack Engineer. Technical Copywriter. System Architect.</p>
+                <p class="footer-location">Jos, Nigeria. Available for remote work.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
+                    <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">Facebook</a>
+                </div>
+            </div>
+
+            <!-- Footer Pages Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 80ms;">
+                <h4>Pages</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../services.html">Services</a></li>
+                    <li><a href="../projects.html">Projects</a></li>
+                    <li><a href="index.html">Blog</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Services Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 160ms;">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="../services.html#wordpress">WordPress Development</a></li>
+                    <li><a href="../services.html#laravel">Laravel Development</a></li>
+                    <li><a href="../services.html#woocommerce">WooCommerce Stores</a></li>
+                    <li><a href="../services.html#seo">SEO Content Writing</a></li>
+                    <li><a href="../services.html#management">Website Management</a></li>
+                    <li><a href="../services.html#data">Data Analysis</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Contact Column -->
+            <div class="footer-contact" data-reveal="fade" style="transition-delay: 240ms;">
+                <h4>Get in Touch</h4>
+                <p class="footer-contact-item">
+                    <a href="mailto:emmanuelajagbe6@gmail.com" class="footer-contact-link">
+                        emmanuelajagbe6@gmail.com
+                    </a>
+                </p>
+                <p class="footer-contact-item">
+                    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                        +234 703 631 6514
+                    </a>
+                </p>
+                <a href="../contact.html" class="btn-primary footer-cta">Start a Project</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom container">
+            <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+            <p class="footer-bottom-links">
+                <a href="../index.html">eoajagbe.name.ng</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,37 +1,78 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Project Portfolio | Ajagbe Emmanuel</title>
-    <meta name="description" content="A curated list of technical and creative projects by Ajagbe Emmanuel. Marketplace development, Real Estate UI, and Data Analysis.">
+    <!-- FOUC Blocking Theme Switcher -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 
+    <title>Portfolio of Web Engineering Projects | Ajagbe Emmanuel</title>
+    <meta name="description" content="Explore the web engineering portfolio of Ajagbe Emmanuel. Features custom Laravel SaaS, WordPress projects, data visualizations, and client platforms.">
+    <meta name="keywords" content="web engineering portfolio Nigeria, Laravel project portfolio, fullstack developer projects, WordPress portfolio Nigeria, React.js portfolio">
+    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://eoajagbe.name.ng/projects.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio of Web Engineering Projects | Ajagbe Emmanuel">
+    <meta property="og:description" content="Explore Laravel, React.js, WordPress, and Python data projects by fullstack engineer Ajagbe Emmanuel.">
+    <meta property="og:url" content="https://eoajagbe.name.ng/projects.html">
+    <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+    <meta property="og:site_name" content="Ajagbe Emmanuel - Fullstack Engineer">
+    <meta property="og:locale" content="en_NG">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Engineering Portfolio — Ajagbe Emmanuel">
+    <meta name="twitter:description" content="Explore Laravel, React.js, WordPress, and Python data projects.">
+    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Web Development Portfolio — Ajagbe Emmanuel",
+      "url": "https://eoajagbe.name.ng/projects.html",
+      "description": "Portfolio of web development projects by Ajagbe Emmanuel including Laravel, WordPress, Python, and React.js projects.",
+      "author": { "@type": "Person", "name": "Ajagbe Emmanuel Oluwatobi" }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
         .tech-stack {
             display: flex;
-            gap: 0.5rem;
+            gap: var(--space-2);
             flex-wrap: wrap;
-            margin-top: 1rem;
-            margin-bottom: 1.5rem;
+            margin-top: var(--space-3);
+            margin-bottom: var(--space-4);
         }
-
         .tech-badge {
-            font-size: 0.75rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid #333;
-            color: var(--text-muted);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-muted);
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-sm);
         }
-
         .project-card-preview {
             display: flex;
             flex-direction: column;
@@ -45,220 +86,287 @@
     <header class="site-header">
         <div class="container header-flex">
             <a href="index.html" class="brand-logo">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel" class="brand-logo-img">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="brand-logo-img">
             </a>
 
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="projects.html" class="active-link">Projects</a>
-                <a href="about.html">About</a> 
+                <a href="blog/index.html">Blog</a>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
 
                 <a href="contact.html" class="cta-button mobile-only-btn">Hire Me</a>
             </nav>
 
             <div class="desktop-cta-container">
-                <button id="theme-toggle" class="theme-toggle-btn">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <a href="contact.html" class="cta-button desktop-only-btn">Hire Me</a>
             </div>
 
-            <div class="mobile-toggle">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <div class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 40vh;">
-            <div class="container">
+        <!-- Hero Section -->
+        <section class="section hero" style="min-height: 40vh;">
+            <div class="container" data-reveal="scale">
                 <p class="hero-subtitle">MY WORK</p>
-                <h1>Portfolio.</h1>
-                <p class="hero-desc">A selection of technical solutions, strategic copy, and creative design.</p>
+                <h1>Case Studies &amp; Projects</h1>
+                <p class="hero-desc">Concrete web platforms, custom backend database systems, and analytical software implementations.</p>
             </div>
         </section>
 
-        <section class="section-light" style="padding-top: 2rem;">
+        <!-- Projects Grid Section -->
+        <section class="section section-light" style="padding-top: var(--space-4);">
             <div class="container">
-                <div class="grid-2">
+                <div class="projects-asymmetric-grid">
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">Live Project</div>
-                            <h3>Nexus Market</h3>
-                            <p>A robust multivendor digital marketplace featuring advanced affiliate tracking, vendor dashboards, and secure payment gateways. Premium features are currently in active development.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">Laravel</span>
-                                <span class="tech-badge">PHP</span>
-                                <span class="tech-badge">MySQL</span>
-                                <span class="tech-badge">Bootstrap</span>
+                    <!-- Project 1: Nexus Market -->
+                    <div class="project-row" id="nexus" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/nexus-market.png" alt="Nexus Market - Laravel Multi-Vendor Marketplace Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> Laravel · PHP · MySQL · Bootstrap</span>
+                                <span class="project-meta-item"><span>Year:</span> 2025</span>
+                                <span class="project-meta-item"><span>Role:</span> Fullstack Lead</span>
+                            </div>
+                            <h2 class="project-title">Nexus Market</h2>
+                            <p class="project-desc">A performant Laravel multi-vendor marketplace featuring affiliate commission models, customizable filters, and high-speed database configurations.</p>
+                            <div class="project-actions">
+                                <a href="https://nexusmkt.com.ng" class="btn-primary" target="_blank" rel="noopener noreferrer">Visit Live Marketplace <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="https://nexusmkt.com.ng" class="cta-button" target="_blank" style="text-align: center; margin-top: auto;">Visit Live Marketplace</a>
                     </div>
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">Real Estate UI</div>
-                            <h3>Jaoos Luxury Estates</h3>
-                            <p>A high-conversion property showcase platform. Features immersive virtual tour integration, dynamic mortgage calculators, and a lead-capture focused layout for high-ticket sales.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">HTML5</span>
-                                <span class="tech-badge">CSS3</span>
-                                <span class="tech-badge">JavaScript</span>
-                                <span class="tech-badge">Figma</span>
+                    <!-- Project 2: Jaoos Luxury Estates -->
+                    <div class="project-row" id="jaoos" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/jaoos-estates.png" alt="Jaoos Luxury Estates - Real Estate Property Directory Interface" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> HTML5 · CSS3 · JavaScript · Figma</span>
+                                <span class="project-meta-item"><span>Year:</span> 2024</span>
+                                <span class="project-meta-item"><span>Role:</span> Frontend UI</span>
+                            </div>
+                            <h2 class="project-title">Jaoos Luxury Estates</h2>
+                            <p class="project-desc">A sleek property directory UI featuring advanced structural filters, responsive maps, and tailored registration leads templates.</p>
+                            <div class="project-actions">
+                                <a href="projects/jaoos/index.html" class="btn-primary">View Prototype Build <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="projects/jaoos/index.html" class="text-link">View Prototype Build →</a>
                     </div>
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">Data Analysis</div>
-                            <h3>PhysLab Visualizer</h3>
-                            <p>An automated data processing tool for physics students. It cleans raw experimental CSV data and generates publication-ready Matplotlib graphs, reducing manual error by 90%.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Pandas</span>
-                                <span class="tech-badge">Matplotlib</span>
-                                <span class="tech-badge">Jupyter</span>
+                    <!-- Project 3: PhysLab Visualizer -->
+                    <div class="project-row" id="physlab" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/physlab-visualizer.png" alt="PhysLab Visualizer - Python Data Visualization Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> Python · Pandas · Matplotlib</span>
+                                <span class="project-meta-item"><span>Year:</span> 2024</span>
+                                <span class="project-meta-item"><span>Role:</span> Data Computation</span>
+                            </div>
+                            <h2 class="project-title">PhysLab Visualizer</h2>
+                            <p class="project-desc">A custom Python parsing tool configured to clean research datasets and render publication ready Matplotlib visualizations.</p>
+                            <div class="project-actions">
+                                <a href="projects/physlab/index.html" class="btn-primary">View Documentation <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="projects/physlab/index.html" class="text-link">View Documentation →</a>
                     </div>
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">HealthTech UX</div>
-                            <h3>CareConnect</h3>
-                            <p>A simplified appointment booking system designed for elderly accessibility. Focuses on high-contrast UI, large touch targets, and a 3-step booking flow to reduce drop-off rates.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">UI/UX Design</span>
-                                <span class="tech-badge">Prototyping</span>
-                                <span class="tech-badge">User Research</span>
+                    <!-- Project 4: CareConnect -->
+                    <div class="project-row" id="careconnect" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/careconnect.png" alt="CareConnect - Healthcare Patient Management Dashboard" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> UI/UX Design · Prototyping</span>
+                                <span class="project-meta-item"><span>Year:</span> 2023</span>
+                                <span class="project-meta-item"><span>Role:</span> User Researcher</span>
+                            </div>
+                            <h2 class="project-title">CareConnect</h2>
+                            <p class="project-desc">A patient appointment registration layout designed with high contrast viewports and simple navigation flow for senior users.</p>
+                            <div class="project-actions">
+                                <a href="projects/careconnect/index.html" class="btn-primary">View UX Case Study <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="projects/careconnect/index.html" class="text-link">View UX Case Study →</a>
                     </div>
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">SaaS Copywriting</div>
-                            <h3>TaskFlow Landing Page</h3>
-                            <p>A conversion-focused landing page for a productivity app. I rewrote the messaging using the "Problem-Agitation-Solution" framework, resulting in a clearer value proposition.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">Copywriting</span>
-                                <span class="tech-badge">CRO Strategy</span>
-                                <span class="tech-badge">A/B Testing</span>
+                    <!-- Project 5: TaskFlow Landing Page -->
+                    <div class="project-row" id="taskflow" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/taskflow.png" alt="TaskFlow - Conversion-Focused SaaS Landing Page" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> Copywriting · CRO Strategy</span>
+                                <span class="project-meta-item"><span>Year:</span> 2025</span>
+                                <span class="project-meta-item"><span>Role:</span> Conversion Copywriter</span>
+                            </div>
+                            <h2 class="project-title">TaskFlow Landing Page</h2>
+                            <p class="project-desc">A conversion-focused sales funnel copy project designed using structured marketing copy formulas and active voice triggers.</p>
+                            <div class="project-actions">
+                                <a href="projects/taskflow/index.html" class="btn-primary">Read The Copy <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="projects/taskflow/index.html" class="text-link">Read The Copy →</a>
                     </div>
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">Academic Writing</div>
-                            <h3>The Scholar’s Hub</h3>
-                            <p>A resource platform for final-year students. I structured the information architecture to make finding thesis guidelines and research methodologies intuitive and fast.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">Research</span>
-                                <span class="tech-badge">Content Strategy</span>
-                                <span class="tech-badge">Information Arch</span>
+                    <!-- Project 6: The Scholar's Hub -->
+                    <div class="project-row" id="scholarhub" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/scholars-hub.png" alt="The Scholar's Hub - Academic Resource Knowledge Base" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> Information Architecture</span>
+                                <span class="project-meta-item"><span>Year:</span> 2023</span>
+                                <span class="project-meta-item"><span>Role:</span> Content Strategist</span>
+                            </div>
+                            <h2 class="project-title">The Scholar's Hub</h2>
+                            <p class="project-desc">An academic documentation and resource hub engineered for quick navigation and highly structured content queries.</p>
+                            <div class="project-actions">
+                                <a href="projects/scholarhub/index.html" class="btn-primary">View Hub Design <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="projects/scholarhub/index.html" class="text-link">View Hub Design →</a>
                     </div>
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">Tech Coaching</div>
-                            <h3>Python 4 Physics</h3>
-                            <p>A curriculum design project. I broke down complex computational physics concepts into a 6-week beginner roadmap using real-world simulation examples.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">Curriculum Design</span>
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Teaching</span>
+                    <!-- Project 7: Python 4 Physics -->
+                    <div class="project-row" id="p4p" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/python4physics.png" alt="Python 4 Physics - Code Editor and Simulation Output" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> Curriculum Design · Python</span>
+                                <span class="project-meta-item"><span>Year:</span> 2024</span>
+                                <span class="project-meta-item"><span>Role:</span> Technical Coach</span>
+                            </div>
+                            <h2 class="project-title">Python 4 Physics</h2>
+                            <p class="project-desc">A comprehensive technical coaching syllabus mapping python scripts directly to statistical physics formulas and graphs.</p>
+                            <div class="project-actions">
+                                <a href="projects/p4p/index.html" class="btn-primary">View Curriculum <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="projects/p4p/index.html" class="text-link">View Curriculum →</a>
                     </div>
 
-                    <div class="project-card-preview">
-                        <div>
-                            <div class="project-tag">Data Science</div>
-                            <h3>Trend Analyzer Script</h3>
-                            <p>A Python script that scrapes social media keywords to identify rising market trends. Visualizes frequency distribution to help businesses spot demand early.</p>
-
-                            <div class="tech-stack">
-                                <span class="tech-badge">Python</span>
-                                <span class="tech-badge">Scrapy</span>
-                                <span class="tech-badge">Seaborn</span>
+                    <!-- Project 8: Trend Analyzer Script -->
+                    <div class="project-row" id="trendanalyzer" data-reveal>
+                        <div class="project-media">
+                            <img src="assets/images/projects/trend-analyzer.png" alt="Trend Analyzer - Data Analytics Dashboard with Metrics" loading="lazy">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-meta-strip">
+                                <span class="project-meta-item"><span>Stack:</span> Python · Scrapy · Seaborn</span>
+                                <span class="project-meta-item"><span>Year:</span> 2024</span>
+                                <span class="project-meta-item"><span>Role:</span> Analytics Engineer</span>
+                            </div>
+                            <h2 class="project-title">Trend Analyzer Script</h2>
+                            <p class="project-desc">A customized Python scraping script that parses targeted online repositories to evaluate and catalog trend metrics.</p>
+                            <div class="project-actions">
+                                <a href="projects/trendanalyzer/index.html" class="btn-primary">View Analysis Code <i class="fa-solid fa-arrow-right"></i></a>
                             </div>
                         </div>
-                        <a href="projects/trendanalyzer/index.html" class="text-link">View Analysis Code →</a>
                     </div>
 
                 </div>
             </div>
         </section>
 
-        <section class="cta-section" style="text-align: center; padding: 6rem 0;">
-            <div class="container centered-content">
-                <h2>Ready to start your project?</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">I treat every project with the same precision I apply to my own.</p>
-                <a href="contact.html" class="cta-button large-btn">Hire Me Now</a>
+        <!-- Conversational / Interactive Action Strip -->
+        <section class="section section-dark" style="text-align: center; padding-block: var(--space-12);">
+            <div class="container" data-reveal="scale" style="max-width: 800px;">
+                <h2>Require a customized operational platform?</h2>
+                <p style="color: var(--color-muted); margin-bottom: var(--space-6); font-size: var(--text-body-lg);">I apply technical precision to build secure database schemas and fast visual layers.</p>
+                <a href="contact.html" class="btn-primary">Initiate Project Onboarding</a>
             </div>
         </section>
     </main>
 
+    <!-- Sitewide Grounded Topographic Footer -->
     <footer class="site-footer">
+        <!-- Organic Topographic Wavy SVG Divider -->
+        <div class="site-footer-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Logo" class="footer-logo">
-                <p><strong>Ajagbe Emmanuel Oluwatobi</strong><br>Strategic Web Design & Development.</p>
+            <!-- Footer Identity Column -->
+            <div class="footer-brand" data-reveal="fade">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="footer-logo" loading="lazy">
+                <p><strong>Ajagbe Emmanuel Oluwatobi</strong></p>
+                <p class="footer-tagline">Fullstack Engineer. Technical Copywriter. System Architect.</p>
+                <p class="footer-location">Jos, Nigeria. Available for remote work.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
+                    <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">Facebook</a>
+                </div>
             </div>
 
-            <div class="footer-links">
-                <h4>Quick Links</h4>
+            <!-- Footer Pages Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 80ms;">
+                <h4>Pages</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#bio">About Me</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
 
-            <div class="footer-links">
+            <!-- Footer Services Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 160ms;">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services.html">Custom Development</a></li>
-                    <li><a href="services.html">Strategic Copywriting</a></li>
-                    <li><a href="services.html">Academic Writing</a></li>
-                    <li><a href="services.html">Data Analysis</a></li>
+                    <li><a href="services.html#wordpress">WordPress Development</a></li>
+                    <li><a href="services.html#laravel">Laravel Development</a></li>
+                    <li><a href="services.html#woocommerce">WooCommerce Stores</a></li>
+                    <li><a href="services.html#seo">SEO Content Writing</a></li>
+                    <li><a href="services.html#management">Website Management</a></li>
+                    <li><a href="services.html#data">Data Analysis</a></li>
                 </ul>
             </div>
 
-            <div class="footer-socials">
-                <h4>Connect</h4>
-                <div class="social-icons" style="display: flex; gap: 1rem;">
-                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi">LinkedIn</a>
-                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi">Facebook</a>
-                    <a href="https://github.com/Lifeuntold1/">GitHub</a>
-                </div>
+            <!-- Footer Contact Column -->
+            <div class="footer-contact" data-reveal="fade" style="transition-delay: 240ms;">
+                <h4>Get in Touch</h4>
+                <p class="footer-contact-item">
+                    <a href="mailto:emmanuelajagbe6@gmail.com" class="footer-contact-link">
+                        emmanuelajagbe6@gmail.com
+                    </a>
+                </p>
+                <p class="footer-contact-item">
+                    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                        +234 703 631 6514
+                    </a>
+                </p>
+                <a href="contact.html" class="btn-primary footer-cta">Start a Project</a>
             </div>
         </div>
-        <div class="copyright container">
-            &copy; 2026 Life Untold. All Rights Reserved.
+
+        <div class="footer-bottom container">
+            <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+            <p class="footer-bottom-links">
+                <a href="index.html">eoajagbe.name.ng</a>
+            </p>
         </div>
     </footer>
 

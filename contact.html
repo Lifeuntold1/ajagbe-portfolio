@@ -5,112 +5,137 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Hire Me | Ajagbe Emmanuel</title>
-    <meta name="description" content="Contact Ajagbe Emmanuel for custom web development, copywriting, or data analysis.">
+    <!-- FOUC Blocking Theme Switcher -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 
+    <title>Hire a Fullstack Engineer in Nigeria | Contact Ajagbe Emmanuel</title>
+    <meta name="description" content="Hire Ajagbe Emmanuel for fullstack web engineering, WordPress development, conversion copywriting, or website management. Based in Jos, Nigeria. Remote-ready.">
+    <meta name="keywords" content="hire fullstack engineer Nigeria, hire Laravel developer Nigeria, freelance web engineer Nigeria contact, hire copywriter Nigeria">
+    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://eoajagbe.name.ng/contact.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Hire Ajagbe Emmanuel | Fullstack Engineer Nigeria">
+    <meta property="og:description" content="Hire a fullstack web engineer and technical copywriter based in Jos, Nigeria. Remote-ready. Responds within 12 hours.">
+    <meta property="og:url" content="https://eoajagbe.name.ng/contact.html">
+    <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+    <meta property="og:site_name" content="Ajagbe Emmanuel - Fullstack Engineer">
+    <meta property="og:locale" content="en_NG">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Hire Ajagbe Emmanuel | Fullstack Engineer Nigeria">
+    <meta name="twitter:description" content="Hire a fullstack web engineer and technical copywriter in Nigeria. Remote-ready. Responds within 12 hours.">
+    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Ajagbe Emmanuel Oluwatobi",
+      "url": "https://eoajagbe.name.ng/contact.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Ajagbe Emmanuel Oluwatobi",
+        "email": "emmanuelajagbe6@gmail.com",
+        "telephone": "+2347036316514",
+        "contactType": "Professional Inquiry"
+      }
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 
     <style>
         .form-wrapper {
-            background: var(--bg-card);
-            padding: 2.5rem;
-            border-radius: 12px;
-            border: 1px solid #333;
+            background: var(--color-surface);
+            padding: var(--space-6);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--color-border);
         }
-
         .form-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 1.5rem;
+            gap: var(--space-5);
         }
-
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: var(--space-4);
         }
-
         .form-full {
             grid-column: span 2;
         }
-
         .form-label {
             display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-main);
-            font-size: 0.9rem;
-            font-weight: 500;
+            margin-bottom: var(--space-2);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
         }
-
         .form-input, .form-textarea, .form-select {
             width: 100%;
-            padding: 1rem;
-            background: #121212;
-            border: 1px solid #333;
-            border-radius: 6px;
-            color: #fff;
-            font-family: var(--font-main);
-            font-size: 0.95rem;
-            transition: 0.3s;
+            padding: var(--space-4);
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            color: var(--color-text);
+            font-family: var(--font-body);
+            font-size: var(--text-body);
+            transition: border-color var(--duration-base) var(--ease-smooth);
         }
-
-            .form-input:focus, .form-textarea:focus, .form-select:focus {
-                outline: none;
-                border-color: var(--brand-green);
-                background: #000;
-            }
-
-        /* Grouping Styles for Select Dropdowns */
-        optgroup {
-            font-weight: 700;
-            color: var(--brand-cyan);
-            background: #222;
+        .form-input:focus, .form-textarea:focus, .form-select:focus {
+            outline: none;
+            border-color: var(--color-accent);
         }
-
-        option {
-            background: #121212;
-            color: #fff;
-            padding: 5px;
-        }
-
-        /* Contact Info Styling */
         .contact-box {
-            margin-bottom: 2.5rem;
+            margin-bottom: var(--space-6);
         }
-
         .contact-icon {
-            color: var(--brand-cyan);
-            font-size: 0.85rem;
+            font-family: var(--font-mono);
+            color: var(--color-accent-2);
+            font-size: var(--text-xs);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
+            letter-spacing: 0.1em;
+            margin-bottom: var(--space-2);
             display: block;
             font-weight: 700;
         }
-
         .contact-link {
-            font-size: 1.2rem;
-            color: #fff;
-            font-weight: 500;
+            font-size: var(--text-h4);
+            font-family: var(--font-display);
+            color: var(--color-text);
+            text-decoration: none;
+            transition: color var(--duration-fast) var(--ease-smooth);
         }
-
-            .contact-link:hover {
-                color: var(--brand-green);
-            }
-
+        .contact-link:hover {
+            color: var(--color-accent);
+        }
         @media(max-width: 768px) {
             .form-grid {
                 grid-template-columns: 1fr;
             }
-
             .form-full {
                 grid-column: span 1;
             }
-
             .form-wrapper {
-                padding: 1.5rem;
+                padding: var(--space-5);
             }
         }
     </style>
@@ -120,79 +145,86 @@
     <header class="site-header">
         <div class="container header-flex">
             <a href="index.html" class="brand-logo">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel" class="brand-logo-img">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="brand-logo-img">
             </a>
 
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
-                <a href="about.html">About</a> 
+                <a href="blog/index.html">Blog</a>
+                <a href="about.html">About</a>
                 <a href="contact.html" class="active-link">Contact</a>
 
                 <a href="contact.html" class="cta-button mobile-only-btn">Hire Me</a>
             </nav>
 
             <div class="desktop-cta-container">
-                <button id="theme-toggle" class="theme-toggle-btn">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <a href="contact.html" class="cta-button desktop-only-btn">Hire Me</a>
             </div>
 
-            <div class="mobile-toggle">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <div class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 40vh;">
-            <div class="container">
-                <p class="hero-subtitle">CONTACT</p>
-                <h1>Let's Build Something Great.</h1>
-                <p class="hero-desc">Fill out the form below or reach out directly. I usually respond within 12 hours.</p>
+        <!-- Hero Section -->
+        <section class="section hero" style="min-height: 40vh;">
+            <div class="container" data-reveal="scale">
+                <p class="hero-subtitle">INQUIRY</p>
+                <h1>Start A Project</h1>
+                <p class="hero-desc">Submit your operational details below. Technical inquiries are reviewed and addressed within 12 hours.</p>
             </div>
         </section>
 
-        <section class="section-light">
+        <!-- Form and Channels Section -->
+        <section class="section section-light">
             <div class="container">
-                <div class="grid-2" style="align-items: flex-start;">
+                <div class="grid-2" style="align-items: flex-start;" data-reveal-group>
 
-                    <div>
-                        <h2 style="margin-bottom: 2rem;">Direct Channels</h2>
+                    <!-- Contact Channels -->
+                    <div data-reveal="left">
+                        <h2 style="margin-bottom: var(--space-6);">Communication Channels</h2>
 
                         <div class="contact-box">
-                            <span class="contact-icon">Email</span>
+                            <span class="contact-icon">Electronic Mail</span>
                             <a href="mailto:emmanuelajagbe6@gmail.com" class="contact-link">emmanuelajagbe6@gmail.com</a>
                         </div>
 
                         <div class="contact-box">
-                            <span class="contact-icon">Phone / WhatsApp</span>
-                            <a href="https://wa.me/2347036316514" target="_blank" class="contact-link">+234 703 631 6514</a>
+                            <span class="contact-icon">Direct / WhatsApp</span>
+                            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="contact-link">+234 703 631 6514</a>
                         </div>
 
                         <div class="contact-box">
-                            <span class="contact-icon">Connect</span>
-                            <div style="display: flex; gap: 1.5rem; margin-top: 0.5rem;">
-                                <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" class="text-link" style="margin:0;">LinkedIn Profile</a>
-                                <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" class="text-link" style="margin:0;">Facebook</a>
+                            <span class="contact-icon">Social Channels</span>
+                            <div style="display: flex; gap: var(--space-4); margin-top: var(--space-2);">
+                                <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" class="btn-ghost">LinkedIn Profile</a>
+                                <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" class="btn-ghost">Facebook</a>
                             </div>
                         </div>
 
-                        <div class="card" style="margin-top: 3rem; border-color: var(--brand-green);">
-                            <h4 style="color: var(--brand-green); margin-bottom: 0.5rem;">Client Onboarding</h4>
-                            <p style="font-size: 0.9rem;">To ensure I can deliver premium quality, I only take on 3 new clients per month. Please provide as much detail as possible in the form.</p>
+                        <div class="card" style="margin-top: var(--space-8); border-left: 4px solid var(--color-accent);">
+                            <div class="card__body">
+                                <h4 style="color: var(--color-accent); margin-bottom: var(--space-2); font-family: var(--font-display);">Operational Schedule</h4>
+                                <p style="font-size: var(--text-sm); line-height: 1.7; color: var(--color-muted);">I manage up to 3 custom client platforms concurrently. This ensures focused implementation quality and predictable technical delivery dates.</p>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="form-wrapper">
+                    <!-- Project Form -->
+                    <div class="form-wrapper" data-reveal="right">
                         <form action="https://formspree.io/f/xbdddqwv" method="POST">
-
                             <div class="form-grid">
                                 <div class="form-group">
-                                    <label class="form-label">Name</label>
+                                    <label class="form-label">Full Name</label>
                                     <input type="text" name="name" class="form-input" placeholder="Your Name" required>
                                 </div>
 
@@ -202,35 +234,29 @@
                                 </div>
 
                                 <div class="form-group form-full">
-                                    <label class="form-label">Service Required</label>
+                                    <label class="form-label">Service Stack</label>
                                     <select name="service" class="form-select" required>
-                                        <option value="" disabled selected>Select an option...</option>
-                                        <option value="Custom Web/SaaS">Custom Web / SaaS Development</option>
-                                        <option value="WordPress">WordPress Development</option>
-                                        <option value="Copywriting">Conversion Copywriting</option>
-                                        <option value="Academic">Academic Research</option>
-                                        <option value="Data Analysis">Data Analysis (Excel/PowerBI/Python)</option>
-                                        <option value="Coaching">Tech Coaching</option>
+                                        <option value="" disabled selected>Select service required...</option>
+                                        <option value="Custom Laravel Web/SaaS">Custom Web / SaaS Development</option>
+                                        <option value="WordPress Theme Development">WordPress Development</option>
+                                        <option value="Conversion Copywriting">Conversion Copywriting</option>
+                                        <option value="Academic Support">Academic Research</option>
+                                        <option value="Data Analytics (Excel/Python)">Data Analysis (Excel/PowerBI/Python)</option>
+                                        <option value="Technical Coding Coaching">Tech Coaching</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="form-label">Estimated Budget</label>
+                                    <label class="form-label">Project Budget</label>
                                     <select name="budget" class="form-select" required>
                                         <option value="" disabled selected>Select Budget Type...</option>
-
-                                        <optgroup label="Fixed Project Budget">
-                                            <option value="Fixed: Under $500">Micro Project (< $500)</option>
-                                            <option value="Fixed: $500 - $1,500">Small Project ($500 - $1.5k)</option>
-                                            <option value="Fixed: $1,500 - $5,000">Medium Project ($1.5k - $5k)</option>
-                                            <option value="Fixed: $5,000+">Enterprise ($5k+)</option>
-                                        </optgroup>
-
-                                        <optgroup label="Hourly Rate">
-                                            <option value="Hourly: $15 - $50/hr">Standard ($15 - $50/hr)</option>
-                                            <option value="Hourly: $50 - $100/hr">Expert ($50 - $100/hr)</option>
-                                            <option value="Hourly: $100+/hr">Consultant ($100+/hr)</option>
-                                        </optgroup>
+                                        <option value="Fixed: Under $500">Micro Project (&lt; $500)</option>
+                                        <option value="Fixed: $500 - $1,500">Small Project ($500 - $1.5k)</option>
+                                        <option value="Fixed: $1,500 - $5,000">Medium Project ($1.5k - $5k)</option>
+                                        <option value="Fixed: $5,000+">Enterprise ($5k+)</option>
+                                        <option value="Hourly: $15 - $50/hr">Standard Hourly ($15 - $50/hr)</option>
+                                        <option value="Hourly: $50 - $100/hr">Expert Hourly ($50 - $100/hr)</option>
+                                        <option value="Hourly: $100+/hr">Consultant Hourly ($100+/hr)</option>
                                     </select>
                                 </div>
 
@@ -245,12 +271,12 @@
                                 </div>
 
                                 <div class="form-group form-full">
-                                    <label class="form-label">Project Details</label>
-                                    <textarea name="message" class="form-textarea" rows="5" placeholder="Tell me about the problem you are trying to solve..." required></textarea>
+                                    <label class="form-label">Technical Scope Details</label>
+                                    <textarea name="message" class="form-textarea" rows="5" placeholder="Define the operational challenge you require resolved..." required></textarea>
                                 </div>
                             </div>
 
-                            <button type="submit" class="cta-button" style="width: 100%; text-align: center; margin-top: 1rem;">Send Project Inquiry</button>
+                            <button type="submit" class="btn-primary" style="width: 100%; text-align: center; margin-top: var(--space-4); height: 52px; display: inline-flex; justify-content: center; align-items: center;">Send Project Inquiry</button>
                         </form>
                     </div>
 
@@ -259,43 +285,80 @@
         </section>
     </main>
 
+    <!-- Sitewide Grounded Topographic Footer -->
     <footer class="site-footer">
+        <!-- Organic Topographic Wavy SVG Divider -->
+        <div class="site-footer-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Logo" class="footer-logo">
-                <p><strong>Ajagbe Emmanuel Oluwatobi</strong><br>Strategic Web Design & Development.</p>
+            <!-- Footer Identity Column -->
+            <div class="footer-brand" data-reveal="fade">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="footer-logo" loading="lazy">
+                <p><strong>Ajagbe Emmanuel Oluwatobi</strong></p>
+                <p class="footer-tagline">Fullstack Engineer. Technical Copywriter. System Architect.</p>
+                <p class="footer-location">Jos, Nigeria. Available for remote work.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
+                    <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">Facebook</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
+
+            <!-- Footer Pages Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 80ms;">
+                <h4>Pages</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#bio">About Me</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
+
+            <!-- Footer Services Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 160ms;">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services.html">Custom Development</a></li>
-                    <li><a href="services.html">Strategic Copywriting</a></li>
-                    <li><a href="services.html">Academic Writing</a></li>
-                    <li><a href="services.html">Data Analysis</a></li>
+                    <li><a href="services.html#wordpress">WordPress Development</a></li>
+                    <li><a href="services.html#laravel">Laravel Development</a></li>
+                    <li><a href="services.html#woocommerce">WooCommerce Stores</a></li>
+                    <li><a href="services.html#seo">SEO Content Writing</a></li>
+                    <li><a href="services.html#management">Website Management</a></li>
+                    <li><a href="services.html#data">Data Analysis</a></li>
                 </ul>
             </div>
-            <div class="footer-socials">
-                <h4>Connect</h4>
-                <div class="social-icons" style="display: flex; gap: 1rem;">
-                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi">LinkedIn</a>
-                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi">Facebook</a>
-                    <a href="https://github.com/Lifeuntold1/">GitHub</a>
-                </div>
+
+            <!-- Footer Contact Column -->
+            <div class="footer-contact" data-reveal="fade" style="transition-delay: 240ms;">
+                <h4>Get in Touch</h4>
+                <p class="footer-contact-item">
+                    <a href="mailto:emmanuelajagbe6@gmail.com" class="footer-contact-link">
+                        emmanuelajagbe6@gmail.com
+                    </a>
+                </p>
+                <p class="footer-contact-item">
+                    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                        +234 703 631 6514
+                    </a>
+                </p>
+                <a href="contact.html" class="btn-primary footer-cta">Start a Project</a>
             </div>
         </div>
-        <div class="copyright container">
-            &copy; 2026 Life Untold. All Rights Reserved.
+
+        <div class="footer-bottom container">
+            <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+            <p class="footer-bottom-links">
+                <a href="index.html">eoajagbe.name.ng</a>
+            </p>
         </div>
     </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>

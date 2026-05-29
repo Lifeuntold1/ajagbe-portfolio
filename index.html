@@ -1,213 +1,349 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Ajagbe Emmanuel | Strategic Web Designer & Conversion Copywriter</title>
-    <meta name="description" content="Portfolio of Ajagbe Emmanuel. I provide top-tier custom web design, strategic copywriting, and academic research solutions for global brands. Remote-ready expert based in Nigeria.">
-    <meta name="keywords" content="Ajagbe Emmanuel, Remote Web Designer, Conversion Copywriter, Academic Writing, NGO Web Design, Tech Startups, Custom Development, Nigeria Creative">
+    <!-- FOUC Blocking Theme Switcher -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 
+    <title>Ajagbe Emmanuel | Fullstack Engineer & Technical Copywriter Nigeria</title>
+    <meta name="description" content="Hire Ajagbe Emmanuel, a fullstack web engineer and technical copywriter in Jos, Nigeria. Custom Laravel applications, WordPress systems, React frontends, and conversion copy.">
+    <meta name="keywords" content="fullstack engineer Nigeria, web developer Nigeria, PHP Laravel developer Jos, technical copywriter Nigeria, React developer Nigeria, web engineer remote Nigeria">
+    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://eoajagbe.name.ng/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ajagbe Emmanuel | Fullstack Engineer & Copywriter Nigeria">
+    <meta property="og:description" content="Building performant web systems using PHP, Laravel, React.js, and WordPress. 7+ years experience. Remote-ready.">
+    <meta property="og:url" content="https://eoajagbe.name.ng/">
+    <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+    <meta property="og:site_name" content="Ajagbe Emmanuel - Fullstack Engineer">
+    <meta property="og:locale" content="en_NG">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ajagbe Emmanuel | Fullstack Engineer & Copywriter Nigeria">
+    <meta name="twitter:description" content="Building performant web systems using PHP, Laravel, React.js, and WordPress.">
+    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ajagbe Emmanuel Oluwatobi",
+      "url": "https://eoajagbe.name.ng",
+      "image": "https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg",
+      "jobTitle": "Fullstack Web Engineer & Technical Copywriter",
+      "description": "PHP, Laravel, React.js and WordPress engineer based in Jos, Nigeria. Available for remote work.",
+      "email": "emmanuelajagbe6@gmail.com",
+      "telephone": "+2347036316514",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jos",
+        "addressRegion": "Plateau State",
+        "addressCountry": "NG"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/ajagbeemmanueloluwatobi",
+        "https://github.com/Lifeuntold1",
+        "https://www.facebook.com/ajagbeemmanuel.oluwatobi"
+      ],
+      "knowsAbout": ["PHP", "Laravel", "WordPress", "WooCommerce", "React.js", "MySQL", "SEO", "Web Development"]
+    }
+    </script>
+
+    <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
     <header class="site-header">
         <div class="container header-flex">
             <a href="index.html" class="brand-logo">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel" class="brand-logo-img">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="brand-logo-img">
             </a>
 
             <nav class="nav-links">
                 <a href="index.html" class="active-link">Home</a>
                 <a href="services.html">Services</a>
                 <a href="projects.html">Projects</a>
-                <a href="about.html">About</a> 
+                <a href="blog/index.html">Blog</a>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
 
                 <a href="contact.html" class="cta-button mobile-only-btn">Hire Me</a>
             </nav>
 
             <div class="desktop-cta-container">
-                <button id="theme-toggle" class="theme-toggle-btn">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <a href="contact.html" class="cta-button desktop-only-btn">Hire Me</a>
             </div>
 
-            <div class="mobile-toggle">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <div class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-bg-glow"></div>
-            <div class="container hero-content">
+        <!-- Hero Section -->
+        <section class="section hero">
+            <div class="container hero-content" data-reveal="scale">
                 <p class="hero-subtitle">AJAGBE EMMANUEL OLUWATOBI</p>
-                <h1>Strategic Web Design.<br>Clear Copywriting.<br><span style="color: var(--brand-green);">Real Results.</span></h1>
+                <h1>Fullstack Engineer &amp; Technical Copywriter</h1>
                 <p class="hero-desc">
-                    I help businesses, students, and organizations simplify the complex. Whether you need a <strong>custom website</strong>, <strong>academic research</strong>, or <strong>data insights</strong>, I deliver clarity without the confusion.
+                    I engineer performant web applications and write conversion-ready copy. Laravel, React, PHP, WordPress, and MySQL are my primary tools. 7+ years shipping production systems. Direct results, zero bloat.
                 </p>
-                <div class="hero-buttons">
-                    <a href="projects.html" class="cta-button">View Projects</a>
-                    <a href="services.html" class="secondary-button">Explore Services</a>
+                <div class="hero-actions">
+                    <a href="projects.html" class="btn-primary">Selected Work</a>
+                    <a href="services.html" class="btn-secondary">Explore Services</a>
                 </div>
             </div>
         </section>
 
-        <section class="section-light" style="padding: 3rem 0;">
+        <!-- Floating Tech Stack Strip -->
+        <section class="section section-light" style="padding-block: var(--space-6);">
             <div class="container">
-                <div style="text-align: center; margin-bottom: 2rem;">
-                    <p style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">Powered By Modern Tech</p>
+                <div style="text-align: center; margin-bottom: var(--space-4);">
+                    <p style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.1em;">Standard Engineering Stack</p>
                 </div>
-                <div class="toolbox-grid">
-                    <div class="tool-item"><div class="tool-name">Laravel</div></div>
-                    <div class="tool-item"><div class="tool-name">HTML5 / CSS3</div></div>
-                    <div class="tool-item"><div class="tool-name">Python</div></div>
-                    <div class="tool-item"><div class="tool-name">WordPress</div></div>
-                    <div class="tool-item"><div class="tool-name">SEO</div></div>
-                    <div class="tool-item"><div class="tool-name">Data Analytics</div></div>
+            </div>
+            <div class="floating-stack">
+                <div class="float-track">
+                    <div class="float-icon"><i class="fa-brands fa-html5"></i><span class="float-label">HTML5</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-css3-alt"></i><span class="float-label">CSS3</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-js"></i><span class="float-label">JavaScript</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-php"></i><span class="float-label">PHP</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-laravel"></i><span class="float-label">Laravel</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-wordpress"></i><span class="float-label">WordPress</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-react"></i><span class="float-label">React.js</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-node-js"></i><span class="float-label">Node.js</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-python"></i><span class="float-label">Python</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-database"></i><span class="float-label">MySQL</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-bootstrap"></i><span class="float-label">Bootstrap</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-git-alt"></i><span class="float-label">Git</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-figma"></i><span class="float-label">Figma</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-docker"></i><span class="float-label">Docker</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-plug"></i><span class="float-label">REST APIs</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-magnifying-glass"></i><span class="float-label">SEO</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-chart-line"></i><span class="float-label">Analytics</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-server"></i><span class="float-label">Hosting</span></div>
+                    <!-- Duplicate set for seamless infinite loop -->
+                    <div class="float-icon"><i class="fa-brands fa-html5"></i><span class="float-label">HTML5</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-css3-alt"></i><span class="float-label">CSS3</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-js"></i><span class="float-label">JavaScript</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-php"></i><span class="float-label">PHP</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-laravel"></i><span class="float-label">Laravel</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-wordpress"></i><span class="float-label">WordPress</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-react"></i><span class="float-label">React.js</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-node-js"></i><span class="float-label">Node.js</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-python"></i><span class="float-label">Python</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-database"></i><span class="float-label">MySQL</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-bootstrap"></i><span class="float-label">Bootstrap</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-git-alt"></i><span class="float-label">Git</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-figma"></i><span class="float-label">Figma</span></div>
+                    <div class="float-icon"><i class="fa-brands fa-docker"></i><span class="float-label">Docker</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-plug"></i><span class="float-label">REST APIs</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-magnifying-glass"></i><span class="float-label">SEO</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-chart-line"></i><span class="float-label">Analytics</span></div>
+                    <div class="float-icon"><i class="fa-solid fa-server"></i><span class="float-label">Hosting</span></div>
                 </div>
             </div>
         </section>
 
-        <section id="why-me" class="section-dark">
+        <!-- Value Pillar Section -->
+        <section id="why-me" class="section section-dark">
             <div class="container">
-                <div class="section-header">
-                    <h2>More Than Just Code</h2>
-                    <p>I bring a physicist's precision to creative problems.</p>
+                <div class="section-header" data-reveal>
+                    <p>ENGINEERING VALUES</p>
+                    <h2>System Architecture Built For Results</h2>
+                    <p class="section-desc">Applying scientific precision to optimize database integrity, speed, and conversion structures.</p>
                 </div>
-                <div class="grid-3">
+                <div class="grid-3" data-reveal-group>
                     <div class="card">
-                        <span class="card-icon">01.</span>
-                        <h3>Absolute Clarity</h3>
-                        <p>I don't use jargon. I organize your scattered ideas into a coherent digital presence that your audience understands instantly.</p>
+                        <div class="card__body">
+                            <span class="card__eyebrow">Clarity</span>
+                            <h3 class="card__title">Absolute Clarity</h3>
+                            <p class="card__text">I eliminate technical confusion. I organize complex requirements into a streamlined web platform that your users navigate with ease.</p>
+                            <a href="services.html#laravel" class="card__cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                     <div class="card">
-                        <span class="card-icon">02.</span>
-                        <h3>Strategic Copywriting</h3>
-                        <p>A pretty website is useless if it doesn't sell. I write words that connect with human emotions and drive action.</p>
+                        <div class="card__body">
+                            <span class="card__eyebrow">Copywriting</span>
+                            <h3 class="card__title">Strategic Messaging</h3>
+                            <p class="card__text">A beautiful site fails if it does not convert. I write direct, active-voice copy that communicates value and drives action.</p>
+                            <a href="services.html#copywriting" class="card__cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                     <div class="card">
-                        <span class="card-icon">03.</span>
-                        <h3>Custom Engineering</h3>
-                        <p>No generic templates. I build custom tools tailored to your specific niche—be it Logistics, Church management, or eCommerce.</p>
+                        <div class="card__body">
+                            <span class="card__eyebrow">Engineering</span>
+                            <h3 class="card__title">Custom Databases</h3>
+                            <p class="card__text">I do not use generic page builder templates. I engineer highly custom database solutions tailored specifically to your operational goals.</p>
+                            <a href="services.html#laravel" class="card__cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                     <div class="card">
-                        <span class="card-icon">04.</span>
-                        <h3>SEO-First Architecture</h3>
-                        <p>I don't patch SEO later. I build it into the foundation so Google loves your site from day one.</p>
+                        <div class="card__body">
+                            <span class="card__eyebrow">Visibility</span>
+                            <h3 class="card__title">SEO-First Integrity</h3>
+                            <p class="card__text">Search engine optimization is not an afterthought. I construct semantic, highly structured pages from the start to ensure search engine indexation.</p>
+                            <a href="services.html#seo" class="card__cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                     <div class="card">
-                        <span class="card-icon">05.</span>
-                        <h3>Mobile Obsession</h3>
-                        <p>80% of your traffic is mobile. I design for the phone first, ensuring your site looks perfect in your client's hand.</p>
+                        <div class="card__body">
+                            <span class="card__eyebrow">Responsiveness</span>
+                            <h3 class="card__title">Mobile First Focus</h3>
+                            <p class="card__text">Most of your web traffic happens on phone viewports. I design and test mobile-first layouts so the user experience is fast on all mobile devices.</p>
+                            <a href="services.html#wordpress" class="card__cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                     <div class="card">
-                        <span class="card-icon">06.</span>
-                        <h3>Data-Driven Strategy</h3>
-                        <p>I use data, not guesswork. Every design decision is backed by analytics to ensure maximum performance.</p>
+                        <div class="card__body">
+                            <span class="card__eyebrow">Analytics</span>
+                            <h3 class="card__title">Data-Driven Strategy</h3>
+                            <p class="card__text">Decisions are backed by objective logic and performance metrics. Every project is optimized using speed audits and structural analytics.</p>
+                            <a href="services.html#data" class="card__cta">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-light">
+        <!-- Process Section -->
+        <section class="section section-light">
             <div class="container">
-                <div class="section-header">
-                    <h2>The Process</h2>
-                    <p>Transparent. Predictable. Professional.</p>
+                <div class="section-header" data-reveal>
+                    <p>WORKFLOW</p>
+                    <h2>The Production Process</h2>
+                    <p class="section-desc">Highly predictable milestone steps to ensure precision, transparency, and timely delivery.</p>
                 </div>
-                <div class="grid-2">
-                    <div class="card">
-                        <h3 style="color: var(--brand-green);">01. Discovery</h3>
-                        <p>We define the goal. I audit your current setup. We agree on the target audience and success metrics.</p>
+                <div class="grid-4" data-process-reveal="horizontal">
+                    <div class="process-card">
+                        <div class="card__body" style="padding: 0;">
+                            <span class="step-num">01</span>
+                            <span class="card__eyebrow">Phase 01</span>
+                            <h3 class="card__title" style="margin-top: var(--space-4);">Discovery</h3>
+                            <p class="card__text">We establish exact objectives, audit existing assets, map your audience, and align success parameters.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3 style="color: var(--brand-green);">02. Build & Write</h3>
-                        <p>I design the structure and write the persuasive copy simultaneously. I code the solution to be fast and secure.</p>
+                    <div class="process-card">
+                        <div class="card__body" style="padding: 0;">
+                            <span class="step-num">02</span>
+                            <span class="card__eyebrow">Phase 02</span>
+                            <h3 class="card__title" style="margin-top: var(--space-4);">Build &amp; Write</h3>
+                            <p class="card__text">I structure the visual hierarchy, compose direct copy, and write clean backend database systems concurrently.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3 style="color: var(--brand-green);">03. Review</h3>
-                        <p>You see the work. We refine details. We test rigorously on mobile devices and different browsers.</p>
+                    <div class="process-card">
+                        <div class="card__body" style="padding: 0;">
+                            <span class="step-num">03</span>
+                            <span class="card__eyebrow">Phase 03</span>
+                            <h3 class="card__title" style="margin-top: var(--space-4);">Review</h3>
+                            <p class="card__text">We test features on multiple screen resolutions and refine visual layouts to guarantee production stability.</p>
+                        </div>
                     </div>
-                    <div class="card">
-                        <h3 style="color: var(--brand-green);">04. Launch</h3>
-                        <p>We go live. I provide a training video so you can manage your assets. You own everything 100%.</p>
+                    <div class="process-card">
+                        <div class="card__body" style="padding: 0;">
+                            <span class="step-num">04</span>
+                            <span class="card__eyebrow">Phase 04</span>
+                            <h3 class="card__title" style="margin-top: var(--space-4);">Launch</h3>
+                            <p class="card__text">Deploy your site. I provide a concise video system tutorial so you can easily manage and update your new asset.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="bio" class="section-dark">
-            <div class="container bio-container">
-                <div class="bio-image" style="border-radius: 12px; overflow: hidden;">
-                    <img src="assets/images/ajagbe-emmanuel.jpg" alt="Ajagbe Emmanuel Oluwatobi" style="width: 100%; height: auto; object-fit: cover;">
-                </div>
-                <div class="bio-text">
-                    <p style="color: var(--brand-green); font-weight: 600; margin-bottom: 0.5rem;">MEET AJAGBE EMMANUEL</p>
-                    <h3>Bridging the gap between Complex Tech and Human Connection.</h3>
-                    <p>Hi, I'm Ajagbe. I'm not just a developer; I'm a problem solver with a background in Physics. This means I look at your project differently. I see the logic, the flow, and the required result.</p>
-                    <p>My goal is simple: To position you as a top-tier brand. Whether you are an NGO needing a voice, a student needing research guidance, or a company needing a custom platform, I am your creative partner.</p>
-                    <a href="contact.html" class="cta-button" style="margin-top: 1rem;">Let's Chat</a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section-light">
+        <!-- Biography / Meet Section -->
+        <section id="bio" class="section section-dark">
             <div class="container">
-                <div class="section-header">
-                    <h2>Featured Work</h2>
-                    <p>A glimpse into what I build.</p>
+                <div class="grid-asymmetric-7-5" style="align-items: center;">
+                    <div class="story-text" data-reveal="left">
+                        <p style="font-family: var(--font-mono); color: var(--color-accent); font-weight: 600; margin-bottom: var(--space-2); text-transform: uppercase;">MEET THE ENGINEER</p>
+                        <h2>Translating Complex Web Systems into Real Brand Growth</h2>
+                        <p>I am Ajagbe Emmanuel. Having a background in Physics, I approach website construction with a strong analytical focus. I view every project as a balance between technical architecture and clear user pathways.</p>
+                        <p>My goal is to position your digital platform as an industry leader. Whether you are an academic requiring data insights, a startup deploying a custom web service, or an organization scaling WordPress database workflows, I design systems that work.</p>
+                        <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Start A Conversation</a>
+                    </div>
+                    <div class="story-img" data-reveal="right">
+                        <img src="assets/images/ajagbe-emmanuel.jpg" alt="Ajagbe Emmanuel Oluwatobi - Fullstack Web Developer Jos Nigeria" loading="lazy">
+                    </div>
                 </div>
-                <div class="grid-2">
+            </div>
+        </section>
+
+        <!-- Featured Work Section -->
+        <section class="section section-light">
+            <div class="container">
+                <div class="section-header" data-reveal>
+                    <p>PORTFOLIO</p>
+                    <h2>Selected Work</h2>
+                    <p class="section-desc">A focus on database performance, high-ticket visual systems, and semantic structures.</p>
+                </div>
+                <div class="grid-2" data-reveal-group>
                     <div class="project-card-preview">
                         <div class="project-tag">eCommerce</div>
                         <h3>Nexus Market</h3>
-                        <p>A robust Laravel-based multi-vendor marketplace designed for speed and high transaction volume.</p>
-                        <a href="projects.html" class="text-link">View Case Study →</a>
+                        <p>A fast Laravel-based multi-vendor marketplace designed for volume transactions, customized filters, and smooth database operations.</p>
+                        <a href="projects.html#nexus" class="btn-ghost">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                     <div class="project-card-preview">
                         <div class="project-tag">Real Estate</div>
                         <h3>Jaoos Luxury Estates</h3>
-                        <p>A high-ticket property showcase platform featuring virtual tours and mortgage calculators.</p>
-                        <a href="projects.html" class="text-link">View Case Study →</a>
+                        <p>A high-ticket property directory featuring interactive structural filters and localized search systems.</p>
+                        <a href="projects.html#jaoos" class="btn-ghost">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 3rem;">
-                    <a href="projects.html" class="secondary-button">View Projects</a>
+                <div style="text-align: center; margin-top: var(--space-8);" data-reveal>
+                    <a href="projects.html" class="btn-secondary">Explore All Projects</a>
                 </div>
             </div>
         </section>
 
-        <section id="industries" class="section-dark">
+        <!-- Industry Focus Grid -->
+        <section id="industries" class="section section-dark">
             <div class="container">
-                <div class="section-header">
-                    <h2>Industries I Serve</h2>
-                    <p>Adaptable expertise for every sector.</p>
+                <div class="section-header" data-reveal>
+                    <p>VERSATILITY</p>
+                    <h2>Sectors Served</h2>
+                    <p class="section-desc">Providing stable custom solutions across diverse niches and business ecosystems.</p>
                 </div>
-                <div class="industry-grid">
-                    <div class="pill">eCommerce & Retail</div>
+                <div class="industry-grid" data-reveal-group>
+                    <div class="pill">eCommerce &amp; Retail</div>
                     <div class="pill">Academic Research</div>
-                    <div class="pill">Logistics & Supply Chain</div>
-                    <div class="pill">NGOs & Non-Profits</div>
-                    <div class="pill">HealthTech & Medical</div>
+                    <div class="pill">Logistics &amp; Supply Chain</div>
+                    <div class="pill">NGOs &amp; Non-Profits</div>
+                    <div class="pill">HealthTech &amp; Medical</div>
                     <div class="pill">Tech Startups (SaaS)</div>
                     <div class="pill">Agriculture (AgriTech)</div>
-                    <div class="pill">Churches & Ministry</div>
-                    <div class="pill">Real Estate & Housing</div>
-                    <div class="pill">Recruitment & HR</div>
+                    <div class="pill">Churches &amp; Ministry</div>
+                    <div class="pill">Real Estate &amp; Housing</div>
+                    <div class="pill">Recruitment &amp; HR</div>
                     <div class="pill">Legal Services</div>
-                    <div class="pill">Finance & Fintech</div>
+                    <div class="pill">Finance &amp; Fintech</div>
                     <div class="pill">Manufacturing</div>
                     <div class="pill">Event Management</div>
                     <div class="pill">Personal Brands</div>
@@ -215,115 +351,164 @@
             </div>
         </section>
 
-        <section class="section-light">
+        <!-- Testimonials -->
+        <section class="section section-light">
             <div class="container">
-                <div class="section-header">
-                    <h2>What Clients Say</h2>
-                    <p>Trust is earned.</p>
+                <div class="section-header" data-reveal>
+                    <p>TESTIMONIALS</p>
+                    <h2>Client Stories</h2>
+                    <p class="section-desc">Delivering measurable software quality and clear client outcomes.</p>
                 </div>
-                <div class="grid-3">
+                <div class="grid-3" data-reveal-group>
                     <div class="card" style="font-style: italic;">
-                        <p>"Ajagbe brought clarity to our chaotic project. The copy was sharp, and the design was exactly what we needed."</p>
-                        <p style="margin-top: 1rem; color: var(--brand-green); font-style: normal;">- Ayobami, SMM</p>
+                        <div class="card__body">
+                            <p class="card__text">"Ajagbe resolved our project bottlenecks. The copywriting was sharp, and the custom site architecture was exactly what our team required."</p>
+                            <p style="margin-top: var(--space-4); color: var(--color-accent); font-style: normal; font-weight: 700;">- Ayobami, SMM</p>
+                        </div>
                     </div>
                     <div class="card" style="font-style: italic;">
-                        <p>"The academic guidance was top-notch. My research paper was structured perfectly."</p>
-                        <p style="margin-top: 1rem; color: var(--brand-green); font-style: normal;">- Solomon, Final Year</p>
+                        <div class="card__body">
+                            <p class="card__text">"The structured technical insights were helpful. The research systems and logic were organized flawlessly."</p>
+                            <p style="margin-top: var(--space-4); color: var(--color-accent); font-style: normal; font-weight: 700;">- Solomon, Academic Lead</p>
+                        </div>
                     </div>
                     <div class="card" style="font-style: italic;">
-                        <p>"Fast, reliable, and actually cares about the result. Highly recommended for remote work."</p>
-                        <p style="margin-top: 1rem; color: var(--brand-green); font-style: normal;">- CEO, Parcelify Logistics</p>
+                        <div class="card__body">
+                            <p class="card__text">"Consistent, highly skilled, and focused on stable delivery. Highly recommended for remote contracts."</p>
+                            <p style="margin-top: var(--space-4); color: var(--color-accent); font-style: normal; font-weight: 700;">- CEO, Parcelify Logistics</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-dark">
+        <!-- FAQs Accordion -->
+        <section class="section section-dark">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" data-reveal>
+                    <p>FAQ</p>
                     <h2>Common Questions</h2>
-                    <p>Everything you need to know before we start.</p>
+                    <p class="section-desc">Answers to typical database, workflow, and engagement inquiries.</p>
                 </div>
-                <div class="faq-grid" style="display: block; max-width: 800px; margin: 0 auto;">
-
-                    <div class="faq-item" style="border-bottom: 1px solid #333; padding: 1.5rem 0;">
+                <div class="faq-grid" data-reveal-group>
+                    <div class="faq-item">
                         <details>
-                            <summary style="cursor: pointer; font-weight: 600; list-style: none; font-size: 1.1rem;">Do you work with clients outside Nigeria?</summary>
-                            <p style="margin-top: 1rem; color: var(--text-muted);">Yes. I work remotely with clients globally. I use tools like Zoom and Slack to ensure seamless communication.</p>
+                            <summary>Do you work with clients outside Nigeria?</summary>
+                            <p>Yes. I operate remotely with clients internationally. I utilize async communication systems like email, GitHub, and Slack to ensure clear, documentable progress reporting.</p>
                         </details>
                     </div>
-
-                    <div class="faq-item" style="border-bottom: 1px solid #333; padding: 1.5rem 0;">
+                    <div class="faq-item">
                         <details>
-                            <summary style="cursor: pointer; font-weight: 600; list-style: none; font-size: 1.1rem;">Do you offer payment plans?</summary>
-                            <p style="margin-top: 1rem; color: var(--text-muted);">Yes. I offer milestone-based payments (e.g., 40% upfront, 30% mid-project, 30% on launch) to keep things safe for both of us.</p>
+                            <summary>Do you offer milestone-based payment plans?</summary>
+                            <p>Yes. Projects are structured around clear deliverables. Typically, we use a 40% discovery phase payment, 30% development milestone payment, and 30% deployment payment structure.</p>
                         </details>
                     </div>
-
-                    <div class="faq-item" style="border-bottom: 1px solid #333; padding: 1.5rem 0;">
+                    <div class="faq-item">
                         <details>
-                            <summary style="cursor: pointer; font-weight: 600; list-style: none; font-size: 1.1rem;">Will I be able to edit the website myself?</summary>
-                            <p style="margin-top: 1rem; color: var(--text-muted);">Absolutely. I build systems that you can manage. I also provide a training video upon handover.</p>
+                            <summary>Will I be able to edit the website content myself?</summary>
+                            <p>Yes. I integrate highly intuitive fields and content types. I also provide a direct video walk-through explaining how to update your text, services, and images in under 10 minutes.</p>
                         </details>
                     </div>
-
-                    <div class="faq-item" style="border-bottom: 1px solid #333; padding: 1.5rem 0;">
+                    <div class="faq-item">
                         <details>
-                            <summary style="cursor: pointer; font-weight: 600; list-style: none; font-size: 1.1rem;">How long does a project take?</summary>
-                            <p style="margin-top: 1rem; color: var(--text-muted);">A standard custom website takes 2-4 weeks. Copywriting projects take 3-7 days depending on scope.</p>
+                            <summary>How long does a standard custom website take?</summary>
+                            <p>A custom fullstack database or web application takes 2 to 4 weeks. Specialized copywriting and copywriting updates take 3 to 7 business days.</p>
                         </details>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section" style="text-align: center; padding: 8rem 0;">
-            <div class="container centered-content" style="max-width: 700px; margin: 0 auto;">
-                <h2>Ready to elevate your brand?</h2>
-                <p style="color: var(--text-muted); margin-bottom: 3rem; font-size: 1.2rem;">Let's build something that makes your competitors nervous.</p>
-                <a href="contact.html" class="cta-button large-btn" style="padding: 1rem 3rem; font-size: 1.1rem;">Start Your Project</a>
+        <!-- Geographic Signal Strip -->
+        <section class="section section-light" style="padding-block: var(--space-8); text-align: center;">
+            <div class="container" data-reveal="fade">
+                <p style="font-size: var(--text-body-lg); color: var(--color-muted); max-width: 820px; margin-inline: auto; line-height: 1.8;">
+                    Operating from Jos, Plateau State, Nigeria. Remote ready for assignments with clients across Africa, Europe, and North America. Delivering structured solutions using clear milestone timelines.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sitewide Grand CTA Banner -->
+        <section class="section section-dark" style="text-align: center; padding-block: var(--space-12);">
+            <div class="container" data-reveal="scale" style="max-width: 800px;">
+                <h2>Elevate Your Digital System Today</h2>
+                <p style="color: var(--color-muted); margin-bottom: var(--space-6); font-size: var(--text-body-lg);">Let us build a performant, stable solution that scales with your operational growth.</p>
+                <a href="contact.html" class="btn-primary" style="padding-inline: var(--space-8);">Start Your Project Inquiry</a>
             </div>
         </section>
     </main>
 
+    <!-- Sitewide Grounded Topographic Footer -->
     <footer class="site-footer">
+        <!-- Organic Topographic Wavy SVG Divider -->
+        <div class="site-footer-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Logo" class="footer-logo">
-                <p><strong>Ajagbe Emmanuel Oluwatobi</strong><br>Strategic Web Design & Development.</p>
+            <!-- Footer Identity Column -->
+            <div class="footer-brand" data-reveal="fade">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="footer-logo" loading="lazy">
+                <p><strong>Ajagbe Emmanuel Oluwatobi</strong></p>
+                <p class="footer-tagline">Fullstack Engineer. Technical Copywriter. System Architect.</p>
+                <p class="footer-location">Jos, Nigeria. Available for remote work.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
+                    <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">Facebook</a>
+                </div>
             </div>
 
-            <div class="footer-links">
-                <h4>Quick Links</h4>
+            <!-- Footer Pages Column (With Blog Page Included!) -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 80ms;">
+                <h4>Pages</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#bio">About Me</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
 
-            <div class="footer-links">
+            <!-- Footer Services Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 160ms;">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services.html">Custom Development</a></li>
-                    <li><a href="services.html">Strategic Copywriting</a></li>
-                    <li><a href="services.html">Academic Writing</a></li>
-                    <li><a href="services.html">Data Analysis</a></li>
+                    <li><a href="services.html#wordpress">WordPress Development</a></li>
+                    <li><a href="services.html#laravel">Laravel Development</a></li>
+                    <li><a href="services.html#woocommerce">WooCommerce Stores</a></li>
+                    <li><a href="services.html#seo">SEO Content Writing</a></li>
+                    <li><a href="services.html#management">Website Management</a></li>
+                    <li><a href="services.html#data">Data Analysis</a></li>
                 </ul>
             </div>
 
-            <div class="footer-socials">
-                <h4>Connect</h4>
-                <div class="social-icons" style="display: flex; gap: 1rem;">
-                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi">LinkedIn</a>
-                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi">Facebook</a>
-                    <a href="https://github.com/Lifeuntold1/">GitHub</a>
-                </div>
+            <!-- Footer Contact Column -->
+            <div class="footer-contact" data-reveal="fade" style="transition-delay: 240ms;">
+                <h4>Get in Touch</h4>
+                <p class="footer-contact-item">
+                    <a href="mailto:emmanuelajagbe6@gmail.com" class="footer-contact-link">
+                        emmanuelajagbe6@gmail.com
+                    </a>
+                </p>
+                <p class="footer-contact-item">
+                    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                        +234 703 631 6514
+                    </a>
+                </p>
+                <a href="contact.html" class="btn-primary footer-cta">Start a Project</a>
             </div>
         </div>
-        <div class="copyright container">
-            &copy; 2026 Life Untold. All Rights Reserved.
+
+        <div class="footer-bottom container">
+            <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+            <p class="footer-bottom-links">
+                <a href="index.html">eoajagbe.name.ng</a>
+            </p>
         </div>
     </footer>
 

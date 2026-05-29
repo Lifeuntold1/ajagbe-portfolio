@@ -1,283 +1,427 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Services | Ajagbe Emmanuel</title>
-    <meta name="description" content="Premium digital services: SaaS Development, WordPress, Copywriting, Academic Writing, and Data Analysis with PowerBI/Python.">
+    <!-- FOUC Blocking Theme Switcher -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
 
+    <title>Fullstack Web Engineering & Copywriting Services | Ajagbe Emmanuel Nigeria</title>
+    <meta name="description" content="Explore custom Laravel fullstack systems, WordPress development, conversion copywriting, SEO audits, and website management services by Ajagbe Emmanuel.">
+    <meta name="keywords" content="fullstack web engineering services Nigeria, Laravel web development, WordPress development Nigeria, conversion copywriting Nigeria, website management Nigeria, PHP developer for hire">
+    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="https://eoajagbe.name.ng/services.html">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Web Engineering Services | Ajagbe Emmanuel Nigeria">
+    <meta property="og:description" content="Laravel fullstack, WordPress, conversion copywriting, SEO, and website management services. Remote-ready from Nigeria.">
+    <meta property="og:url" content="https://eoajagbe.name.ng/services.html">
+    <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+    <meta property="og:site_name" content="Ajagbe Emmanuel - Fullstack Engineer">
+    <meta property="og:locale" content="en_NG">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Web Engineering Services | Ajagbe Emmanuel Nigeria">
+    <meta name="twitter:description" content="Laravel fullstack, WordPress, conversion copywriting, SEO, and website management. Available for remote contracts.">
+    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "WordPress Development",
+        "provider": { "@type": "Person", "name": "Ajagbe Emmanuel Oluwatobi" },
+        "description": "Custom WordPress theme development, WooCommerce setup, speed optimization, and security hardening.",
+        "areaServed": "Worldwide",
+        "serviceType": "Web Development"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Fullstack Web Development (PHP / Laravel)",
+        "provider": { "@type": "Person", "name": "Ajagbe Emmanuel Oluwatobi" },
+        "description": "Custom web apps, REST APIs, logistics platforms, and multi-tenant systems using PHP and Laravel.",
+        "areaServed": "Worldwide",
+        "serviceType": "Software Development"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "SEO Content Writing",
+        "provider": { "@type": "Person", "name": "Ajagbe Emmanuel Oluwatobi" },
+        "description": "SEO-optimized content strategy and writing for tech, real estate, and publishing brands.",
+        "areaServed": "Worldwide",
+        "serviceType": "Content Marketing"
+      }
+    ]
+    </script>
+
+    <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
     <header class="site-header">
         <div class="container header-flex">
             <a href="index.html" class="brand-logo">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel" class="brand-logo-img">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="brand-logo-img">
             </a>
 
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="services.html" class="active-link">Services</a>
                 <a href="projects.html">Projects</a>
-                <a href="about.html">About</a> 
+                <a href="blog/index.html">Blog</a>
+                <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
 
                 <a href="contact.html" class="cta-button mobile-only-btn">Hire Me</a>
             </nav>
 
             <div class="desktop-cta-container">
-                <button id="theme-toggle" class="theme-toggle-btn">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
                     <i class="fa-solid fa-moon"></i>
                 </button>
-
                 <a href="contact.html" class="cta-button desktop-only-btn">Hire Me</a>
             </div>
 
-            <div class="mobile-toggle">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            <div class="mobile-toggle" aria-label="Toggle Navigation Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="hero" style="min-height: 50vh;">
-            <div class="container">
-                <p class="hero-subtitle">EXPERTISE</p>
-                <h1>Precision. Speed. Scale.</h1>
-                <p class="hero-desc">Digital solutions engineered for growth. From complex cloud software to high-converting copy.</p>
+        <!-- Hero Section -->
+        <section class="section hero" style="min-height: 50vh;">
+            <div class="container" data-reveal="scale">
+                <p class="hero-subtitle">SERVICES</p>
+                <h1>Precision. Speed. Scalability.</h1>
+                <p class="hero-desc">Digital software solutions engineered for direct conversions. From scalable databases to technical messaging.</p>
             </div>
         </section>
 
-        <section class="section-light">
+        <!-- Service 1: Custom Laravel SaaS -->
+        <section class="section section-light" id="laravel">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <span class="pill" style="margin-bottom: 1rem; display: inline-block;">Flagship Service</span>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">Custom Web & SaaS Solutions</h2>
-                        <p style="margin-bottom: 1.5rem;">I build scalable software ecosystems, not just websites. Whether you are in <strong>EdTech, Healthcare, Agriculture, or FinTech</strong>, I architect secure, cloud-based platforms that automate your operations and handle complex user data.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ Full-Stack SaaS Architecture (Laravel/PHP)</li>
-                            <li>✓ Secure Payment & Banking Integrations</li>
-                            <li>✓ Student/Patient Portals & Dashboards</li>
-                            <li>✓ Scalable Database Design</li>
+                <div class="grid-asymmetric-7-5" style="align-items: center;">
+                    <div data-reveal="left">
+                        <span class="pill" style="margin-bottom: var(--space-3); display: inline-block;">Flagship Capability</span>
+                        <h2>Custom Laravel &amp; SaaS Architectures</h2>
+                        <p>I construct robust web database structures rather than basic layout templates. Whether your system operates in education, logistics, publishing, or eCommerce, I engineer secure, cloud-based applications that automate routine data workflows.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Fullstack Database Architecture (PHP / Laravel Stack)</li>
+                            <li>Secure Operational Portals &amp; User Dashboards</li>
+                            <li>Custom RESTful API Pipelines &amp; Integrations</li>
+                            <li>Highly Optimized Database Indexing</li>
                         </ul>
+                        <a href="projects.html#nexus" class="btn-ghost">Explore Nexus Case Study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="card" style="text-align: center; border-color: var(--brand-green);">
-                        <h3 style="font-size: 3rem; color: var(--brand-green); margin-bottom: 0;">01</h3>
-                        <p>SaaS & Custom Code</p>
+                    <div class="card" data-reveal="right">
+                        <div class="card__body">
+                            <span class="card__eyebrow">Custom PHP</span>
+                            <h3 class="card__title">SaaS Databases</h3>
+                            <p class="card__text">Enterprise ready backend portals, database optimization, and high performance custom controllers.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-dark">
+        <!-- Service 2: WordPress Development -->
+        <section class="section section-dark" id="wordpress">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 3rem; color: var(--text-main); margin-bottom: 0;">02</h3>
-                        <p>WordPress</p>
+                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
+                    <div class="card" data-reveal="left" style="order: 2;">
+                        <div class="card__body">
+                            <span class="card__eyebrow">CMS Engine</span>
+                            <h3 class="card__title">WordPress &amp; WooCommerce</h3>
+                            <p class="card__text">Performant custom blocks, optimized shop structures, secure backend management, and page speed compliance.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
-                    <div>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">WordPress Development</h2>
-                        <p style="margin-bottom: 1.5rem;">I engineer lightweight, high-performance WordPress sites. I strip away the bloat and build custom themes that fit your brand. You get a professional frontend with an easy-to-manage backend.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ Custom Theme Development</li>
-                            <li>✓ Advanced WooCommerce (eCommerce)</li>
-                            <li>✓ Speed Optimization (90+ Scores)</li>
-                            <li>✓ Security Hardening</li>
+                    <div data-reveal="right" style="order: 1;">
+                        <h2>WordPress &amp; WooCommerce Architecture</h2>
+                        <p>I build fast, block-based WordPress installations. I remove unnecessary plugins to guarantee quick loading times. You get a visually striking frontend interface integrated with an easy-to-use content management board.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Gutenberg Block Customization</li>
+                            <li>Performant WooCommerce Customization &amp; Filters</li>
+                            <li>Speed Optimization (Targeting 90+ Mobile Insights Score)</li>
+                            <li>System Hardening &amp; Security Audits</li>
                         </ul>
+                        <a href="projects.html#nexus" class="btn-ghost">View WooCommerce Project <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-light">
+        <!-- Service 3: Copywriting -->
+        <section class="section section-light" id="copywriting">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">Conversion Copywriting</h2>
-                        <p style="margin-bottom: 1.5rem;">Design attracts attention; words make the sale. I write Spartan, psychological copy that addresses customer pain points and drives them to action. No academic jargon. Just persuasion that converts.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ High-Converting Landing Pages</li>
-                            <li>✓ Email Marketing Funnels</li>
-                            <li>✓ Product Descriptions</li>
-                            <li>✓ Brand Voice Strategy</li>
+                <div class="grid-asymmetric-7-5" style="align-items: center;">
+                    <div data-reveal="left">
+                        <h2>Conversion Copywriting</h2>
+                        <p>Visual style guides draw initial attention, but direct copywriting drives actual business actions. I write structured copy that addresses exactly what your clients need. No fluff, no jargon—just persuasive, active-voice messaging.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Conversion-Ready Landing Pages</li>
+                            <li>Structured Brand Value Positioning</li>
+                            <li>Clear B2B Service Overviews</li>
+                            <li>High Conversion CTA Sequences</li>
                         </ul>
+                        <a href="projects.html#taskflow" class="btn-ghost">See TaskFlow Copywriting <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 3rem; color: var(--text-main); margin-bottom: 0;">03</h3>
-                        <p>Copywriting</p>
+                    <div class="card" data-reveal="right">
+                        <div class="card__body">
+                            <span class="card__eyebrow">Psychological messaging</span>
+                            <h3 class="card__title">Direct Sales Copy</h3>
+                            <p class="card__text">Active voice page copywriting, precise landing page messages, and clear product positioning templates.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-dark">
+        <!-- Service 4: SEO Setup -->
+        <section class="section section-dark" id="seo">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 3rem; color: var(--text-main); margin-bottom: 0;">04</h3>
-                        <p>SEO</p>
+                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
+                    <div class="card" data-reveal="left" style="order: 2;">
+                        <div class="card__body">
+                            <span class="card__eyebrow">Search Indexing</span>
+                            <h3 class="card__title">SEO Structural Audits</h3>
+                            <p class="card__text">On-page markup reviews, exact semantic keyword targets, clean canonical structures, and search console mapping.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
-                    <div>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">SEO Analysis & Setup</h2>
-                        <p style="margin-bottom: 1.5rem;">I build ranking power into the code. I structure your website so Google understands your authority. From technical sitemaps to keyword-rich content strategies, I position you to be found.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ Technical SEO Audits</li>
-                            <li>✓ Keyword Strategy & Implementation</li>
-                            <li>✓ On-Page Optimization</li>
-                            <li>✓ Google Search Console Configuration</li>
+                    <div data-reveal="right" style="order: 1;">
+                        <h2>SEO Audits &amp; Search Preparation</h2>
+                        <p>Search indexation begins during the initial wireframing. I build semantic HTML layouts so search engines parse your content and index your brand authority correctly from day one.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Technical SEO Audits &amp; Schema Setup</li>
+                            <li>Target Keyword Optimization mapping</li>
+                            <li>Semantic Header &amp; Alt Tag Optimization</li>
+                            <li>Google Search Console Profiling</li>
                         </ul>
+                        <a href="projects.html#jaoos" class="btn-ghost">See SEO case study <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-light">
+        <!-- Service 5: Website Management -->
+        <section class="section section-light" id="management">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">Website Management</h2>
-                        <p style="margin-bottom: 1.5rem;">Your digital asset needs protection. I handle the technical updates, security patches, and backups so you can focus on your business. I ensure zero downtime and peak performance.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ Monthly Security Updates</li>
-                            <li>✓ 24/7 Uptime Monitoring</li>
-                            <li>✓ Content Updates & Edits</li>
-                            <li>✓ Emergency Bug Fixes</li>
+                <div class="grid-asymmetric-7-5" style="align-items: center;">
+                    <div data-reveal="left">
+                        <h2>Website Management</h2>
+                        <p>Your web application is an operational asset that requires maintenance. I handle technical updates, security scanning, and automated cloud backups so your platform maintains peak performance continuously.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Security Monitoring &amp; Updates</li>
+                            <li>Uptime Scans &amp; Database Backups</li>
+                            <li>Operational Layout Adjustments</li>
+                            <li>Fast Bug Tracing &amp; Resolutions</li>
                         </ul>
+                        <a href="projects.html" class="btn-ghost">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 3rem; color: var(--text-main); margin-bottom: 0;">05</h3>
-                        <p>Maintenance</p>
+                    <div class="card" data-reveal="right">
+                        <div class="card__body">
+                            <span class="card__eyebrow">Operations</span>
+                            <h3 class="card__title">Site Management</h3>
+                            <p class="card__text">Automated database synchronization, active malware scans, core updates, and structural audits.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-dark">
+        <!-- Service 6: Academic Research -->
+        <section class="section section-dark" id="academic">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 3rem; color: var(--text-main); margin-bottom: 0;">06</h3>
-                        <p>Academic</p>
+                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
+                    <div class="card" data-reveal="left" style="order: 2;">
+                        <div class="card__body">
+                            <span class="card__eyebrow">Rigor</span>
+                            <h3 class="card__title">Academic Research</h3>
+                            <p class="card__text">Methodology reviews, statistical modeling parameters, LaTeX formatting, and index referencing guides.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
-                    <div>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">Academic Writing & Research</h2>
-                        <p style="margin-bottom: 1.5rem;">End-to-end support for scholars. From the initial research proposal to the final proofread. I bring physics-level precision to your thesis, ensuring logical flow, accurate data interpretation, and perfect citation.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ Full Thesis Writing (Start to Finish)</li>
-                            <li>✓ Research Methodology Design</li>
-                            <li>✓ Statistical Data Interpretation</li>
-                            <li>✓ Citation Management (APA/MLA/IEEE)</li>
+                    <div data-reveal="right" style="order: 1;">
+                        <h2>Academic Research &amp; Structure</h2>
+                        <p>I bring analytical methodology to academic documentation. I help design robust literature frameworks and model data logic to ensure clear, academic clarity.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Research Methodology Layouts</li>
+                            <li>Empirical Data Interpretation support</li>
+                            <li>LaTeX Document Styling &amp; Typography</li>
+                            <li>Citation System Audits (APA / IEEE / MLA)</li>
                         </ul>
+                        <a href="projects.html" class="btn-ghost">See Projects <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-light">
+        <!-- Service 7: Data Analysis -->
+        <section class="section section-light" id="data">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">Data Analysis & Intelligence</h2>
-                        <p style="margin-bottom: 1.5rem;">Raw data is noise; I turn it into signal. Using advanced tools, I clean complex datasets and build interactive dashboards that reveal hidden business trends and actionable insights.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ Python (Pandas/Matplotlib) Scripting</li>
-                            <li>✓ PowerBI Interactive Dashboards</li>
-                            <li>✓ Advanced Excel & VBA Automation</li>
-                            <li>✓ Business Intelligence Reporting</li>
+                <div class="grid-asymmetric-7-5" style="align-items: center;">
+                    <div data-reveal="left">
+                        <h2>Data Analysis &amp; Business Intelligence</h2>
+                        <p>I clean and translate complex, unstructured data into actionable operational signal. I build automated parsing pipelines using Python and deploy custom tracking dashboards.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Python Data Analysis &amp; Data Cleaning Scripts</li>
+                            <li>Interactive Dashboard Operations (Power BI / Excel)</li>
+                            <li>Automated Formatting &amp; Macro Scripting</li>
+                            <li>Clear B2B Insight Reporting</li>
                         </ul>
+                        <a href="projects.html#physlab" class="btn-ghost">View PhysLab Panel <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 3rem; color: var(--text-main); margin-bottom: 0;">07</h3>
-                        <p>Data Science</p>
+                    <div class="card" data-reveal="right">
+                        <div class="card__body">
+                            <span class="card__eyebrow">Computation</span>
+                            <h3 class="card__title">Computational Analytics</h3>
+                            <p class="card__text">Automated data cleaning, Pandas sorting scripts, visual metrics, and structured reports.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="section-dark">
+        <!-- Service 8: Tech Coaching -->
+        <section class="section section-dark" id="coaching">
             <div class="container">
-                <div class="grid-2" style="align-items: center;">
-                    <div class="card" style="text-align: center;">
-                        <h3 style="font-size: 3rem; color: var(--text-main); margin-bottom: 0;">08</h3>
-                        <p>Coaching</p>
+                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
+                    <div class="card" data-reveal="left" style="order: 2;">
+                        <div class="card__body">
+                            <span class="card__eyebrow">Mentorship</span>
+                            <h3 class="card__title">Python &amp; Code Coaching</h3>
+                            <p class="card__text">Tailored coding curriculums, detailed stack evaluations, algorithm training, and workflow guidance.</p>
+                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
+                        </div>
                     </div>
-                    <div>
-                        <h2 style="margin-bottom: 1rem; color: var(--text-main);">Tech Coaching</h2>
-                        <p style="margin-bottom: 1.5rem;">I bridge the gap between "Zero" and "Builder." I provide structured, one-on-one coaching in Python and Web Development, helping you bypass the confusion and master the tools of the trade.</p>
-
-                        <ul style="color: var(--text-muted); line-height: 2;">
-                            <li>✓ Python for Beginners</li>
-                            <li>✓ Web Development Roadmaps</li>
-                            <li>✓ Career Counseling</li>
-                            <li>✓ Code Review & Mentorship</li>
+                    <div data-reveal="right" style="order: 1;">
+                        <h2>One-on-One Technical Coaching</h2>
+                        <p>I map out direct pathways from zero coding experience to practical software development. I specialize in teaching Python scripting, database management, and semantic HTML layout rules to junior developers.</p>
+                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
+                            <li>Python &amp; Database Basics for Beginners</li>
+                            <li>Operational Web Development Pipelines</li>
+                            <li>Direct Code Reviews &amp; Workflow Audits</li>
+                            <li>Tailored Learning Milestone Maps</li>
                         </ul>
+                        <a href="projects.html#p4p" class="btn-ghost">View Simulation curriculum <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="cta-section" style="text-align: center; padding: 6rem 0;">
-            <div class="container centered-content">
-                <h2>Ready to move forward?</h2>
-                <p style="color: var(--text-muted); margin-bottom: 2rem;">Select a service and let's get to work.</p>
-                <a href="contact.html" class="cta-button large-btn">Start a Project</a>
+        <!-- Sitewide CTA Banner -->
+        <section class="section section-light" style="text-align: center; padding-block: var(--space-12);">
+            <div class="container" data-reveal="scale" style="max-width: 800px;">
+                <h2>Let us build a system that achieves your business objectives</h2>
+                <p style="color: var(--color-muted); margin-bottom: var(--space-6); font-size: var(--text-body-lg);">Select your operational stack and initialize onboarding today.</p>
+                <a href="contact.html" class="btn-primary">Initiate Project Inquiry</a>
             </div>
         </section>
     </main>
 
+    <!-- Sitewide Grounded Topographic Footer -->
     <footer class="site-footer">
+        <!-- Organic Topographic Wavy SVG Divider -->
+        <div class="site-footer-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+
         <div class="container footer-grid">
-            <div class="footer-brand">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Logo" class="footer-logo">
-                <p><strong>Ajagbe Emmanuel Oluwatobi</strong><br>Strategic Web Design & Development.</p>
+            <!-- Footer Identity Column -->
+            <div class="footer-brand" data-reveal="fade">
+                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="footer-logo" loading="lazy">
+                <p><strong>Ajagbe Emmanuel Oluwatobi</strong></p>
+                <p class="footer-tagline">Fullstack Engineer. Technical Copywriter. System Architect.</p>
+                <p class="footer-location">Jos, Nigeria. Available for remote work.</p>
+                <div class="footer-social-links">
+                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
+                    <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
+                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">Facebook</a>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Quick Links</h4>
+
+            <!-- Footer Pages Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 80ms;">
+                <h4>Pages</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#bio">About Me</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
                     <li><a href="projects.html">Projects</a></li>
+                    <li><a href="blog/index.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="footer-links">
+
+            <!-- Footer Services Column -->
+            <div class="footer-links" data-reveal="fade" style="transition-delay: 160ms;">
                 <h4>Services</h4>
                 <ul>
-                    <li><a href="services.html">Custom Development</a></li>
-                    <li><a href="services.html">Strategic Copywriting</a></li>
-                    <li><a href="services.html">Academic Writing</a></li>
-                    <li><a href="services.html">Data Analysis</a></li>
+                    <li><a href="services.html#wordpress">WordPress Development</a></li>
+                    <li><a href="services.html#laravel">Laravel Development</a></li>
+                    <li><a href="services.html#woocommerce">WooCommerce Stores</a></li>
+                    <li><a href="services.html#seo">SEO Content Writing</a></li>
+                    <li><a href="services.html#management">Website Management</a></li>
+                    <li><a href="services.html#data">Data Analysis</a></li>
                 </ul>
             </div>
-            <div class="footer-socials">
-                <h4>Connect</h4>
-                <div class="social-icons" style="display: flex; gap: 1rem;">
-                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi">LinkedIn</a>
-                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi">Facebook</a>
-                    <a href="https://github.com/Lifeuntold1/">GitHub</a>
-                </div>
+
+            <!-- Footer Contact Column -->
+            <div class="footer-contact" data-reveal="fade" style="transition-delay: 240ms;">
+                <h4>Get in Touch</h4>
+                <p class="footer-contact-item">
+                    <a href="mailto:emmanuelajagbe6@gmail.com" class="footer-contact-link">
+                        emmanuelajagbe6@gmail.com
+                    </a>
+                </p>
+                <p class="footer-contact-item">
+                    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
+                        +234 703 631 6514
+                    </a>
+                </p>
+                <a href="contact.html" class="btn-primary footer-cta">Start a Project</a>
             </div>
         </div>
-        <div class="copyright container">
-            &copy; 2026 Life Untold. All Rights Reserved.
+
+        <div class="footer-bottom container">
+            <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+            <p class="footer-bottom-links">
+                <a href="index.html">eoajagbe.name.ng</a>
+            </p>
         </div>
     </footer>
+
     <script src="assets/js/main.js"></script>
 </body>
 </html>
