@@ -44,40 +44,49 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Service",
-          "name": "WordPress Development & Custom Themes",
-          "provider": { 
-            "@type": "Person", 
-            "name": "Ajagbe Emmanuel Oluwatobi",
-            "alternateName": "Ajagbe Emmanuel"
+          "@type": "ProfessionalService",
+          "@id": "https://eoajagbe.name.ng/services.html#service",
+          "name": "Ajagbe Emmanuel Oluwatobi",
+          "image": "https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg",
+          "url": "https://eoajagbe.name.ng/services.html",
+          "telephone": "+2347036316514",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jos",
+            "addressRegion": "Plateau State",
+            "addressCountry": "NG"
           },
-          "description": "Premium WordPress theme design, custom plugin development, WooCommerce setup, performance tuning, and secure element builders.",
-          "areaServed": "Worldwide",
-          "serviceType": "WordPress Design & Development"
-        },
-        {
-          "@type": "Service",
-          "name": "Fullstack Laravel Software Engineering",
-          "provider": { 
-            "@type": "Person", 
-            "name": "Ajagbe Emmanuel Oluwatobi",
-            "alternateName": "Ajagbe Emmanuel"
-          },
-          "description": "High-performance SaaS databases, customized REST API pipelines, admin control panels, and multi-tenant applications using PHP & Laravel.",
-          "areaServed": "Worldwide",
-          "serviceType": "Fullstack Software Engineering"
-        },
-        {
-          "@type": "Service",
-          "name": "Premium Web Design & React Frontends",
-          "provider": { 
-            "@type": "Person", 
-            "name": "Ajagbe Emmanuel Oluwatobi",
-            "alternateName": "Ajagbe Emmanuel"
-          },
-          "description": "State-of-the-art visual design, seamless animations, glassmorphic layouts, and lightning-fast React / static interfaces built for peak conversion.",
-          "areaServed": "Worldwide",
-          "serviceType": "Web Design & Frontend Development"
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Web Engineering Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "WordPress Development & Custom Themes",
+                  "description": "Premium WordPress theme design, custom plugin development, WooCommerce setup, performance tuning, and secure element builders."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Fullstack Laravel Software Engineering",
+                  "description": "High-performance SaaS databases, customized REST API pipelines, admin control panels, and multi-tenant applications using PHP & Laravel."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Premium Web Design & React Frontends",
+                  "description": "State-of-the-art visual design, seamless animations, glassmorphic layouts, and lightning-fast React / static interfaces built for peak conversion."
+                }
+              }
+            ]
+          }
         }
       ]
     }
