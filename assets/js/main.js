@@ -131,6 +131,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     const el = entry.target;
                     revealObserver.unobserve(el);
 
+                    // Handle process reveal containers
+                    if (el.hasAttribute('data-process-reveal')) {
+                        el.classList.add('is-visible');
+                        return;
+                    }
+
                     // Physics reveal cascade
                     const springY = new Spring(140, 16, 1.2);
                     const springOpacity = new Spring(120, 15, 1);
@@ -199,6 +205,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             element.style.opacity = '0';
             element.style.visibility = 'hidden';
+            revealObserver.observe(element);
+        });
+
+        // Observe process grid stagger cards
+        document.querySelectorAll('[data-process-reveal]').forEach(element => {
             revealObserver.observe(element);
         });
     };
@@ -273,7 +284,7 @@ document.addEventListener('DOMContentLoaded', () => {
        6. 3D SPRING PHYSICS TILT & TACTILE HOVER ACTIONS
        ========================================================================== */
     const initSpringCardPhysics = () => {
-        const targets = document.querySelectorAll('.process-card, .card, .project-media, .bento-card, .project-card-preview');
+        const targets = document.querySelectorAll('.project-media, .bento-card, .project-card-preview');
         
         targets.forEach(el => {
             const springX = new Spring(220, 18, 1);
@@ -291,7 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 const y = springY.update(dt);
                 const s = springScale.update(dt);
                 
-                el.style.transform = `perspective(1000px) scale(${s}) rotateX(${y}deg) rotateY(${x}deg)`;
+                // Add a smooth premium lift offset that transitions flawlessly via spring physics
+                const lift = (s - 1) * -300; 
+                el.style.transform = `perspective(1000px) translate3d(0, ${lift}px, 0) scale(${s}) rotateX(${y}deg) rotateY(${x}deg)`;
                 
                 const deltaX = Math.abs(springX.current - springX.target);
                 const deltaY = Math.abs(springY.current - springY.target);
@@ -301,7 +314,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     requestAnimationFrame(tick);
                 } else {
                     animating = false;
-                    el.style.transform = `perspective(1000px) scale(${springScale.target}) rotateX(${springY.target}deg) rotateY(${springX.target}deg)`;
+                    const settleLift = (springScale.target - 1) * -300;
+                    el.style.transform = `perspective(1000px) translate3d(0, ${settleLift}px, 0) scale(${springScale.target}) rotateX(${springY.target}deg) rotateY(${springX.target}deg)`;
                 }
             };
 
@@ -353,6 +367,171 @@ document.addEventListener('DOMContentLoaded', () => {
                 springScale.target = 1.02;
                 triggerTick();
             });
+        });
+    };
+
+    /* ==========================================================================
+       6b. HIGH-PERFORMANCE INTERACTIVE ROADMAP CONTROLLER
+       ========================================================================== */
+    const initRoadmapComponent = () => {
+        const roadmaps = document.querySelectorAll('.roadmap-wrapper');
+        if (roadmaps.length === 0) return;
+
+        roadmaps.forEach(wrapper => {
+            const steps = wrapper.querySelectorAll('.roadmap-step');
+            const svgElement = wrapper.querySelector('.roadmap-svg');
+            const bgPath = wrapper.querySelector('.roadmap-path-bg');
+            const activePath = wrapper.querySelector('.roadmap-path-active');
+            if (steps.length === 0 || !svgElement || !bgPath || !activePath) return;
+
+            let points = [];
+            let animating = false;
+            let lastTime = performance.now();
+
+            // Set up a custom Spring solver matching the app's Spring configurations
+            const progressSpring = new Spring(180, 15, 1);
+            
+            // Find current active step index (default is 0)
+            let activeIdx = 0;
+            steps.forEach((step, idx) => {
+                if (step.classList.contains('is-active')) {
+                    activeIdx = idx;
+                }
+            });
+
+            progressSpring.current = activeIdx;
+            progressSpring.target = activeIdx;
+
+            const calculatePoints = () => {
+                const svgRect = svgElement.getBoundingClientRect();
+                points = [];
+                steps.forEach(step => {
+                    const dotContainer = step.querySelector('.roadmap-dot-container');
+                    if (dotContainer) {
+                        const dotRect = dotContainer.getBoundingClientRect();
+                        const x = dotRect.left - svgRect.left + dotRect.width / 2;
+                        const y = dotRect.top - svgRect.top + dotRect.height / 2;
+                        points.push({ x, y });
+                    }
+                });
+            };
+
+            const getPathD = (pointsList, progress) => {
+                if (pointsList.length === 0) return '';
+                let d = `M ${pointsList[0].x} ${pointsList[0].y}`;
+                if (progress <= 0) return d;
+                
+                const maxProgress = pointsList.length - 1;
+                const targetProgress = Math.min(progress, maxProgress);
+                const integerPart = Math.floor(targetProgress);
+                const fractionalPart = targetProgress - integerPart;
+                
+                for (let i = 1; i <= integerPart; i++) {
+                    d += ` L ${pointsList[i].x} ${pointsList[i].y}`;
+                }
+                
+                if (fractionalPart > 0 && integerPart < maxProgress) {
+                    const currentPoint = pointsList[integerPart];
+                    const nextPoint = pointsList[integerPart + 1];
+                    const nextX = currentPoint.x + fractionalPart * (nextPoint.x - currentPoint.x);
+                    const nextY = currentPoint.y + fractionalPart * (nextPoint.y - currentPoint.y);
+                    d += ` L ${nextX} ${nextY}`;
+                }
+                return d;
+            };
+
+            const drawPaths = () => {
+                if (points.length === 0) return;
+                
+                // Draw background path (complete track)
+                let dBg = `M ${points[0].x} ${points[0].y}`;
+                for (let i = 1; i < points.length; i++) {
+                    dBg += ` L ${points[i].x} ${points[i].y}`;
+                }
+                bgPath.setAttribute('d', dBg);
+
+                // Draw active path based on current spring solver progress
+                activePath.setAttribute('d', getPathD(points, progressSpring.current));
+            };
+
+            const tick = (now) => {
+                const dt = Math.min((now - lastTime) / 1000, 0.1);
+                lastTime = now;
+
+                const currentProgress = progressSpring.update(dt);
+                
+                // Apply value to active path attribute
+                activePath.setAttribute('d', getPathD(points, currentProgress));
+
+                // Settle condition
+                const isSettled = Math.abs(progressSpring.velocity) < 0.0001 && Math.abs(progressSpring.current - progressSpring.target) < 0.0001;
+                if (!isSettled) {
+                    requestAnimationFrame(tick);
+                } else {
+                    progressSpring.current = progressSpring.target;
+                    activePath.setAttribute('d', getPathD(points, progressSpring.target));
+                    animating = false;
+                }
+            };
+
+            const triggerProgressTransition = (newTarget) => {
+                progressSpring.target = newTarget;
+                if (!animating) {
+                    animating = true;
+                    lastTime = performance.now();
+                    requestAnimationFrame(tick);
+                }
+            };
+
+            // Bind interactive buttons
+            steps.forEach((step, idx) => {
+                const nextBtn = step.querySelector('.roadmap-next-btn');
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        
+                        // Transition current step to completed
+                        step.classList.remove('is-active');
+                        step.classList.add('is-completed');
+                        
+                        // Hide completed step's button to optimize microcopy hierarchy
+                        nextBtn.style.display = 'none';
+
+                        // Transition next step to active
+                        const nextStep = steps[idx + 1];
+                        if (nextStep) {
+                            nextStep.classList.remove('is-locked');
+                            nextStep.classList.add('is-active');
+                            
+                            // Animate SVG path to the next dot
+                            triggerProgressTransition(idx + 1);
+
+                            // If the next step is the final one, show the completed badge
+                            const badge = nextStep.querySelector('.roadmap-completed-badge');
+                            if (badge) {
+                                badge.style.display = 'inline-flex';
+                            }
+                            
+                            // Dispatch organic conversion events
+                            const title = nextStep.querySelector('.card__title') ? nextStep.querySelector('.card__title').textContent.trim() : `Step ${idx + 2}`;
+                            dispatchOrganicConversionEvent('Roadmap', 'Milestone Completed', `Unlocked: ${title}`);
+                        }
+                    });
+                }
+            });
+
+            // Initial calculation & render after slight delay to ensure browser layout settles
+            setTimeout(() => {
+                calculatePoints();
+                drawPaths();
+            }, 100);
+
+            // Re-calculate coordinate sets on wrapper resize observer trigger
+            const resizeObserver = new ResizeObserver(() => {
+                calculatePoints();
+                drawPaths();
+            });
+            resizeObserver.observe(wrapper);
         });
     };
 
@@ -459,6 +638,67 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    /* ==========================================================================
+       6c. MAGICAL CURSOR SPOTLIGHT, SIBLING FOCUS & QUANTUM RESONANCE
+       ========================================================================== */
+    const initMagicalCards = () => {
+        const cardGroups = document.querySelectorAll('[data-reveal-group], .grid-3, .grid-2, .grid-4, .process-grid');
+        
+        cardGroups.forEach(group => {
+            const cards = Array.from(group.querySelectorAll('.card, .process-card'));
+            if (cards.length === 0) return;
+            
+            cards.forEach(card => {
+                // Dynamically inject spotlight overlay if not already present
+                if (!card.querySelector('.card-spotlight')) {
+                    const spotlight = document.createElement('div');
+                    spotlight.className = 'card-spotlight';
+                    card.appendChild(spotlight);
+                }
+                
+                // Mouse Enter Focus Shift
+                card.addEventListener('mouseenter', () => {
+                    cards.forEach(c => {
+                        if (c === card) {
+                            c.classList.add('card--focused');
+                            c.classList.remove('card--unfocused');
+                        } else {
+                            c.classList.add('card--unfocused');
+                            c.classList.remove('card--focused');
+                        }
+                    });
+                    
+                    // Quantum Symmetrical Pair Resonance for Even Card Counts
+                    if (cards.length % 2 === 0) {
+                        const idx = cards.indexOf(card);
+                        const partnerIdx = cards.length - 1 - idx;
+                        if (partnerIdx !== idx) {
+                            const partner = cards[partnerIdx];
+                            partner.classList.add('card--entangled');
+                            partner.classList.remove('card--unfocused');
+                        }
+                    }
+                });
+                
+                // Mouse Move Coordinates Tracking
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
+                });
+                
+                // Mouse Leave Focus Reset
+                card.addEventListener('mouseleave', () => {
+                    cards.forEach(c => {
+                        c.classList.remove('card--focused', 'card--unfocused', 'card--entangled');
+                    });
+                });
+            });
+        });
+    };
+
     const reinitializeSiteScripts = () => {
         initThemeSwitcher();
         initMobileMenu();
@@ -466,8 +706,10 @@ document.addEventListener('DOMContentLoaded', () => {
         initScrollReveals();
         initGridStaggers();
         initConversionAnalytics();
+        initRoadmapComponent();
         
         if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            initMagicalCards();
             initSpringCardPhysics();
         }
         
