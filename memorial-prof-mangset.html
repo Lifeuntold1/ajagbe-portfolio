@@ -20,6 +20,23 @@
     <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
     <meta name="robots" content="index, follow">
 
+    <!-- Open Graph / Facebook / WhatsApp Preview Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="In Memoriam: Prof. Emmanuel Williams Mangset | HOD Physics, UniJos">
+    <meta property="og:description" content="Procession Hymns and Memorial Page dedicated to the late Head of Department of Physics, University of Jos, Prof. Emmanuel Williams Mangset (September 1965 – May 30th, 2026).">
+    <meta property="og:image" content="https://eoajagbe.name.ng/assets/prof/prof%20banner.jpeg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://eoajagbe.name.ng/memorial-prof-mangset">
+    <meta property="og:site_name" content="Ajagbe Emmanuel Oluwatobi Portfolio">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="In Memoriam: Prof. Emmanuel Williams Mangset | HOD Physics, UniJos">
+    <meta name="twitter:description" content="Procession Hymns and Memorial Page dedicated to the late Head of Department of Physics, University of Jos, Prof. Emmanuel Williams Mangset (September 1965 – May 30th, 2026).">
+    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/prof/prof%20banner.jpeg">
+
     <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
     
     <!-- Google Fonts Pairing B: Playfair Display + DM Sans -->
@@ -659,32 +676,32 @@
         }
 
         @keyframes cloudDrift {
-            0% { left: -30%; }
-            100% { left: 110%; }
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(140vw, 0, 0); }
         }
 
         @keyframes doveFlight1 {
-            0% { left: -10%; top: 25%; transform: scale(0.8) rotate(5deg); }
-            50% { top: 20%; }
-            100% { left: 110%; top: 30%; transform: scale(0.8) rotate(5deg); }
+            0% { transform: translate3d(0, 0, 0) scale(0.8) rotate(5deg); }
+            50% { transform: translate3d(60vw, -5vh, 0) scale(0.8) rotate(5deg); }
+            100% { transform: translate3d(120vw, 5vh, 0) scale(0.8) rotate(5deg); }
         }
 
         @keyframes doveFlight2 {
-            0% { left: -10%; top: 60%; transform: scale(0.6) rotate(-5deg); }
-            50% { top: 65%; }
-            100% { left: 110%; top: 55%; transform: scale(0.6) rotate(-5deg); }
+            0% { transform: translate3d(0, 0, 0) scale(0.6) rotate(-5deg); }
+            50% { transform: translate3d(60vw, 5vh, 0) scale(0.6) rotate(-5deg); }
+            100% { transform: translate3d(120vw, -5vh, 0) scale(0.6) rotate(-5deg); }
         }
 
         @keyframes doveFlight3 {
-            0% { left: -10%; top: 40%; transform: scale(0.5) rotate(8deg); }
-            50% { top: 48%; }
-            100% { left: 110%; top: 35%; transform: scale(0.5) rotate(8deg); }
+            0% { transform: translate3d(0, 0, 0) scale(0.5) rotate(8deg); }
+            50% { transform: translate3d(60vw, 8vh, 0) scale(0.5) rotate(8deg); }
+            100% { transform: translate3d(120vw, -5vh, 0) scale(0.5) rotate(8deg); }
         }
 
         @keyframes doveFlight4 {
-            0% { left: -10%; top: 75%; transform: scale(0.7) rotate(-3deg); }
-            50% { top: 70%; }
-            100% { left: 110%; top: 78%; transform: scale(0.7) rotate(-3deg); }
+            0% { transform: translate3d(0, 0, 0) scale(0.7) rotate(-3deg); }
+            50% { transform: translate3d(60vw, -5vh, 0) scale(0.7) rotate(-3deg); }
+            100% { transform: translate3d(120vw, 3vh, 0) scale(0.7) rotate(-3deg); }
         }
 
         @keyframes doveSway {
@@ -945,6 +962,42 @@
         .sig-inst {
             font-size: var(--text-sm);
             color: var(--color-muted);
+        }
+
+        /* Commemorative Portrait Section */
+        .portrait-section {
+            padding-block: var(--space-8) var(--space-12);
+            display: flex;
+            justify-content: center;
+        }
+
+        .portrait-container {
+            position: relative;
+            max-width: 480px;
+            width: 100%;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+            background: var(--color-surface);
+            box-shadow: var(--shadow-lg);
+            transition: all var(--duration-base) var(--ease-smooth);
+        }
+
+        .portrait-container:hover {
+            border-color: rgba(155, 107, 195, 0.25);
+            box-shadow: 0 0 30px var(--color-dept-purple-glow);
+        }
+
+        .commemorative-portrait {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            transition: transform var(--duration-slow) var(--ease-out-expo);
+        }
+
+        .portrait-container:hover .commemorative-portrait {
+            transform: scale(1.03);
         }
 
         /* Rising Embers Background Layer */
@@ -2540,6 +2593,13 @@
                 </div>
             </div>
         </section>
+
+        <!-- Special Commemorative Portrait -->
+        <section class="container portrait-section" data-reveal>
+            <div class="portrait-container">
+                <img src="assets/images/prof/PROF.png" alt="Professor Emmanuel Williams Mangset" class="commemorative-portrait" loading="lazy">
+            </div>
+        </section>
     </main>
 
     <!-- Memorial Footer -->
@@ -2667,13 +2727,20 @@
                     closeWidget();
                     targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     
+                    // Clear existing highlight timeout to avoid collisions
+                    if (targetCard.dataset.highlightTimeout) {
+                        clearTimeout(parseInt(targetCard.dataset.highlightTimeout, 10));
+                    }
+                    
                     targetCard.classList.remove('highlight-flash');
                     void targetCard.offsetWidth; // Force layout recalculation
                     targetCard.classList.add('highlight-flash');
                     
-                    setTimeout(() => {
+                    const timeoutId = setTimeout(() => {
                         targetCard.classList.remove('highlight-flash');
+                        delete targetCard.dataset.highlightTimeout;
                     }, 2000);
+                    targetCard.dataset.highlightTimeout = timeoutId;
                 }
             }
 
@@ -2693,21 +2760,29 @@
 
                     if (!query) return;
 
-                    // Match exact number
-                    const queryAsNum = parseInt(query);
-                    if (!isNaN(queryAsNum) && queryAsNum >= 1 && queryAsNum <= 13) {
-                        const match = hymnsData.find(h => h.num === queryAsNum);
-                        if (match) {
-                            createSearchResultItem(match, `Hymn ${match.num}`);
+                    let matches = [];
+
+                    // Extract hymn number from query string (e.g., "hymn 2", "no. 2", "2")
+                    const digitMatch = query.match(/(?:hymn|no\.?|number)?\s*(\d+)/i);
+                    let numMatch = null;
+                    if (digitMatch) {
+                        const parsedNum = parseInt(digitMatch[1], 10);
+                        if (parsedNum >= 1 && parsedNum <= 13) {
+                            numMatch = hymnsData.find(h => h.num === parsedNum);
                         }
-                        return;
                     }
 
-                    // Match title/text
-                    const matches = hymnsData.filter(h => 
-                        h.title.toLowerCase().includes(query) || 
-                        h.text.includes(query)
+                    if (numMatch) {
+                        matches.push(numMatch);
+                    }
+
+                    // Retrieve matches in titles or lyrics text (avoiding duplicate number match)
+                    const textMatches = hymnsData.filter(h => 
+                        (h.title.toLowerCase().includes(query) || h.text.includes(query)) &&
+                        (!numMatch || h.num !== numMatch.num)
                     );
+
+                    matches = matches.concat(textMatches);
 
                     if (matches.length > 0) {
                         matches.forEach(match => {
@@ -2720,7 +2795,10 @@
                             } else {
                                 snippet = match.title;
                             }
-                            createSearchResultItem(match, snippet);
+                            
+                            // Highlight index matches explicitly if matching numbers
+                            const label = numMatch && match.num === numMatch.num ? `Hymn ${match.num} (Direct Match)` : `Hymn ${match.num}`;
+                            createSearchResultItem(match, snippet, label);
                         });
                     } else {
                         const noResult = document.createElement('div');
@@ -2734,11 +2812,12 @@
                     }
                 });
 
-                function createSearchResultItem(hymn, snippet) {
+                function createSearchResultItem(hymn, snippet, customLabel) {
                     const item = document.createElement('div');
                     item.className = 'search-result-item';
+                    const displayLabel = customLabel || `Hymn ${hymn.num}: ${hymn.title}`;
                     item.innerHTML = `
-                        <span class="result-item-title">Hymn ${hymn.num}: ${hymn.title}</span>
+                        <span class="result-item-title">${displayLabel}</span>
                         <span class="result-item-snippet">${snippet}</span>
                     `;
                     item.addEventListener('click', () => {
@@ -2807,10 +2886,15 @@
                 }
                 player.appendChild(source);
                 
-                // Add play event listener to handle load failures gracefully
-                player.addEventListener('error', (e) => {
-                    console.log(`Audio error on Hymn ${hymnIndex}, trying next source...`);
-                });
+                // Programmatic fallback to streaming organ URL on error
+                player.addEventListener('error', function(e) {
+                    if (player.dataset.triedFallback === 'true') return;
+                    console.warn(`Local audio source failed for Hymn ${hymnIndex}. Swapping to streaming fallback URL...`);
+                    player.dataset.triedFallback = 'true';
+                    player.src = fallbacks[hymnIndex];
+                    player.load();
+                    player.play().catch(err => console.log('Playback recovery pending user interaction.'));
+                }, true);
 
                 // Prevent multiple audio tracks from playing simultaneously
                 player.addEventListener('play', () => {
@@ -2851,21 +2935,30 @@
             }
 
             // 4. Scroll Reveal with IntersectionObserver
-            const revealObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        revealObserver.unobserve(entry.target);
-                    }
-                });
-            }, {
-                threshold: 0.05,
-                rootMargin: '0px 0px -20px 0px'
-            });
+            const revealElements = document.querySelectorAll('[data-reveal]');
+            let unrevealedCount = revealElements.length;
 
-            document.querySelectorAll('[data-reveal]').forEach(el => {
-                revealObserver.observe(el);
-            });
+            if (unrevealedCount > 0) {
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            revealObserver.unobserve(entry.target);
+                            unrevealedCount--;
+                            if (unrevealedCount === 0) {
+                                revealObserver.disconnect();
+                            }
+                        }
+                    });
+                }, {
+                    threshold: 0.05,
+                    rootMargin: '0px 0px -20px 0px'
+                });
+
+                revealElements.forEach(el => {
+                    revealObserver.observe(el);
+                });
+            }
 
             // 5. Interactive Virtual Candle lighting
             const lightCandleBtn = document.getElementById('light-candle-btn');
@@ -2877,15 +2970,22 @@
             if (candleCountEl) {
                 const apiBase = 'https://api.counterapi.dev/v1/ajagbe-portfolio/prof-mangset-candle';
                 
-                let serverBaseCount = 0;
+                // Initialize from last known backup or start at 0
+                const savedBackup = localStorage.getItem('candle_count_backup');
+                let serverBaseCount = savedBackup ? parseInt(savedBackup, 10) : 0;
+                if (isNaN(serverBaseCount)) serverBaseCount = 0;
+                
                 let userSessionClicks = 0;
                 
-                // Ensure count starts strictly from 0
-                candleCountEl.textContent = 0;
-
                 const updateDisplay = () => {
-                    candleCountEl.textContent = serverBaseCount + userSessionClicks;
+                    const totalVal = serverBaseCount + userSessionClicks;
+                    candleCountEl.textContent = totalVal;
+                    // Immediately back up the updated count to localStorage
+                    localStorage.setItem('candle_count_backup', totalVal);
                 };
+
+                // Sync initial display value right away before API resolves
+                updateDisplay();
 
                 // Sync initial lit status from localStorage
                 if (localStorage.getItem('candle_lit') === 'true' && candleFlame) {
