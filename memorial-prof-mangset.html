@@ -1,0 +1,2980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- FOUC Blocking Theme Switcher -->
+    <script>
+        (function() {
+            const theme = localStorage.getItem('theme') || 'dark';
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+
+    <title>In Memoriam: Prof. Emmanuel Williams Mangset | HOD Physics, UniJos</title>
+    <meta name="description" content="Procession Hymns and Memorial Page dedicated to the late Head of Department of Physics, University of Jos, Prof. Emmanuel Williams Mangset (September 1965 – May 30th, 2026).">
+    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+    <meta name="robots" content="index, follow">
+
+    <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+    
+    <!-- Google Fonts Pairing B: Playfair Display + DM Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* Custom Variables and Theme Overrides for Memorial Page */
+        :root {
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'DM Sans', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+
+            /* Override Accent to Solemn Warm Gold & Champagne */
+            --color-accent: #D4AF37;
+            --color-accent-2: #E8D5B0;
+            --color-on-accent: #0A0A0A;
+            
+            /* Royal Physics Purple as Department Respect Mark */
+            --color-dept-purple: #9b6bc3;
+            --color-dept-purple-glow: rgba(155, 107, 195, 0.15);
+            
+            /* Refined Dark Palette for Solemn Aesthetic */
+            --color-bg: #080808;
+            --color-surface: #111111;
+            --color-border: rgba(255, 255, 255, 0.08);
+            --color-text: #F5F5F0;
+            --color-muted: #8E8E93;
+            
+            /* Type scale overrides */
+            --text-display: clamp(2.5rem, 6vw, 5.5rem);
+            --text-h1: clamp(2rem, 4vw, 3.5rem);
+            --text-h2: clamp(1.6rem, 3vw, 2.5rem);
+            --text-h3: clamp(1.3rem, 2.2vw, 1.8rem);
+        }
+
+        [data-theme="light"] {
+            /* Light Refined Mode overrides */
+            --color-bg: #F7F6F2;
+            --color-surface: #FFFFFF;
+            --color-border: rgba(0, 0, 0, 0.08);
+            --color-text: #1C1C1E;
+            --color-muted: #636366;
+            --color-accent: #8E762A;
+            --color-accent-2: #B59B4B;
+            --color-on-accent: #FAFAF8;
+            --color-dept-purple: #6a3d9a;
+            --color-dept-purple-glow: rgba(106, 61, 154, 0.08);
+        }
+
+        /* Layout & Pacing */
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: transparent;
+            background-image: none !important;
+            line-height: 1.7;
+        }
+
+        .memorial-nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-header-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--color-border);
+            padding-block: var(--space-4);
+            transition: all var(--duration-base) var(--ease-smooth);
+        }
+
+        .memorial-nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            font-weight: 600;
+            transition: transform var(--duration-base) var(--ease-out-expo);
+        }
+
+        .back-link:hover {
+            transform: translateX(-4px);
+            color: var(--color-accent-2);
+        }
+
+        /* Hero banner and content styling */
+        .memorial-hero {
+            position: relative;
+            padding-block: var(--space-12) var(--space-10);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-banner-container {
+            max-width: 900px;
+            margin: 0 auto var(--space-6) auto;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-2xl);
+            border: 1px solid var(--color-border);
+        }
+
+        .hero-banner-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform var(--duration-slow) var(--ease-out-expo);
+        }
+
+        .hero-banner-container:hover .hero-banner-img {
+            transform: scale(1.03);
+        }
+
+        .memorial-hero h1 {
+            font-family: var(--font-display);
+            font-size: var(--text-display);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--color-text);
+            max-width: 900px;
+            margin: 0 auto var(--space-4) auto;
+            text-wrap: balance;
+        }
+
+        .hero-title-line {
+            display: block;
+            margin-bottom: var(--space-2);
+        }
+
+        .memorial-subtitle {
+            font-family: var(--font-body);
+            font-size: var(--text-body-lg);
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: var(--space-2);
+        }
+
+        .memorial-meta {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            letter-spacing: 0.05em;
+            margin-bottom: var(--space-4);
+        }
+
+        .walk-notice {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            padding: var(--space-2) var(--space-4);
+            border-radius: var(--radius-full);
+            color: var(--color-accent);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            margin-top: var(--space-3);
+        }
+
+        /* Hymn Cards System */
+        .hymns-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-bottom: var(--space-12);
+        }
+
+        .hymn-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8) var(--space-6);
+            margin-bottom: var(--space-8);
+            box-shadow: var(--shadow-md);
+            scroll-margin-top: clamp(100px, 14vh, 130px);
+            transition: all var(--duration-base) var(--ease-smooth);
+        }
+
+        .hymn-card:hover {
+            border-color: rgba(212, 175, 55, 0.2);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hymn-header {
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-4);
+            margin-bottom: var(--space-6);
+        }
+
+        .hymn-number {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-accent);
+            margin-bottom: var(--space-2);
+            display: block;
+        }
+
+        .hymn-title {
+            font-family: var(--font-display);
+            font-size: var(--text-h2);
+            margin-bottom: var(--space-2);
+            line-height: 1.2;
+        }
+
+        .hymn-credits {
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            font-style: italic;
+        }
+
+        /* Audio Integration styling */
+        .audio-wrapper {
+            margin-block: var(--space-4) var(--space-6);
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: var(--space-3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-3);
+        }
+
+        .audio-label {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .audio-player {
+            flex-grow: 1;
+            max-width: 450px;
+            height: 32px;
+            outline: none;
+        }
+
+        /* Audio controls customization */
+        audio::-webkit-media-controls-panel {
+            background-color: var(--color-surface);
+            border: 1px solid var(--color-border);
+        }
+
+        /* Hymn Lyrics Layout */
+        .hymn-lyrics {
+            margin-bottom: var(--space-6);
+        }
+
+        .hymn-stanza {
+            margin-bottom: var(--space-5);
+            font-size: var(--text-body-lg);
+            color: var(--color-text);
+            max-width: 600px;
+            line-height: 1.8;
+            padding-left: var(--space-2);
+        }
+
+        .stanza-num {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--color-accent);
+            display: block;
+            margin-bottom: var(--space-1);
+            font-weight: 600;
+        }
+
+        .hymn-refrain {
+            margin-block: var(--space-4);
+            padding: var(--space-3) var(--space-4);
+            border-left: 2px solid var(--color-accent);
+            background: rgba(212, 175, 55, 0.03);
+            border-radius: 0 var(--radius-md) var(--radius-md) 0;
+            font-style: italic;
+            font-size: var(--text-body);
+            color: var(--color-text);
+            max-width: 580px;
+            line-height: 1.7;
+        }
+
+        .refrain-label {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--color-accent);
+            margin-bottom: var(--space-1);
+            display: block;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        /* Memory Verse Cards */
+        .verse-card {
+            background: rgba(212, 175, 55, 0.02);
+            border: 1px dashed rgba(212, 175, 55, 0.15);
+            border-radius: var(--radius-md);
+            padding: var(--space-5);
+            margin-top: var(--space-6);
+            position: relative;
+        }
+
+        .verse-text {
+            font-family: var(--font-display);
+            font-size: var(--text-body-lg);
+            font-style: italic;
+            color: var(--color-accent-2);
+            line-height: 1.6;
+            margin-bottom: var(--space-2);
+        }
+
+        .verse-reference {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        /* Distributed Image Panels */
+        .image-panel {
+            margin-block: var(--space-8);
+            text-align: center;
+        }
+
+        .image-frame {
+            max-width: 600px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-border);
+            background: var(--color-surface);
+            padding: var(--space-3);
+            transition: all var(--duration-moderate) var(--ease-out-expo);
+        }
+
+        .image-frame img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            transition: transform var(--duration-slow) var(--ease-out-expo);
+        }
+
+        .image-frame:hover {
+            transform: translateY(-4px);
+            border-color: rgba(212, 175, 55, 0.15);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .image-caption {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            margin-top: var(--space-3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        /* Respectful footer */
+        .memorial-footer {
+            border-top: 1px solid var(--color-border);
+            padding-block: var(--space-10) var(--space-8);
+            text-align: center;
+            background: var(--color-surface);
+        }
+
+        .memorial-footer-logo {
+            height: 36px;
+            margin: 0 auto var(--space-4) auto;
+            opacity: 0.6;
+            transition: opacity var(--duration-base) var(--ease-smooth);
+        }
+
+        .memorial-footer-logo:hover {
+            opacity: 1;
+        }
+
+        .footer-note {
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            max-width: 600px;
+            margin: 0 auto var(--space-4) auto;
+        }
+
+        .footer-copyright {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Theme button adaptation */
+        .memorial-theme-btn {
+            background: none;
+            border: 1px solid var(--color-border);
+            color: var(--color-text);
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-full);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--duration-base) var(--ease-smooth);
+        }
+
+        .memorial-theme-btn:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* Entrance Animations */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity var(--duration-slow) var(--ease-out-expo),
+                        transform var(--duration-slow) var(--ease-out-expo);
+        }
+
+        [data-reveal].is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Animated Sky Background System */
+        .sky-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            background: radial-gradient(circle at 50% 30%, rgba(106, 61, 154, 0.14) 0%, rgba(18, 18, 22, 0.45) 45%, rgba(6, 6, 8, 0.95) 100%),
+                        url('assets/images/memorial_dark_bg.png') no-repeat center center / cover;
+            transition: background var(--duration-base) var(--ease-smooth);
+        }
+
+        [data-theme="light"] .sky-background {
+            background: radial-gradient(circle at 50% 30%, rgba(155, 107, 195, 0.08) 0%, rgba(245, 244, 239, 0.35) 45%, rgba(230, 227, 219, 0.95) 100%),
+                        url('assets/images/memorial_light_bg.png') no-repeat center center / cover;
+        }
+
+        /* Cross Silhouettes & Depth */
+        .sky-cross {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            width: clamp(150px, 30vw, 400px);
+            height: auto;
+            color: rgba(212, 175, 55, 0.015);
+            opacity: 0.85;
+            animation: crossFloat 12s ease-in-out infinite alternate;
+        }
+
+        .sky-cross-sub1 {
+            position: absolute;
+            top: 40%;
+            left: 15%;
+            transform: translate(-50%, -50%) scale(0.4);
+            width: 150px;
+            height: auto;
+            color: rgba(212, 175, 55, 0.008);
+            opacity: 0.5;
+            animation: crossFloat 18s ease-in-out infinite alternate-reverse;
+        }
+
+        .sky-cross-sub2 {
+            position: absolute;
+            top: 55%;
+            left: 85%;
+            transform: translate(-50%, -50%) scale(0.3);
+            width: 150px;
+            height: auto;
+            color: rgba(212, 175, 55, 0.006);
+            opacity: 0.4;
+            animation: crossFloat 22s ease-in-out infinite alternate;
+        }
+
+        [data-theme="light"] .sky-cross {
+            color: rgba(142, 118, 42, 0.025);
+        }
+        [data-theme="light"] .sky-cross-sub1 {
+            color: rgba(142, 118, 42, 0.015);
+        }
+        [data-theme="light"] .sky-cross-sub2 {
+            color: rgba(142, 118, 42, 0.01);
+        }
+
+        .sky-cross-glow {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(200px, 40vw, 550px);
+            aspect-ratio: 1;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.04) 0%, rgba(0,0,0,0) 70%);
+            border-radius: var(--radius-full);
+            filter: blur(40px);
+            animation: glowPulse 8s ease-in-out infinite alternate;
+        }
+
+        [data-theme="light"] .sky-cross-glow {
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(0,0,0,0) 70%);
+        }
+
+        /* Clouds drifting */
+        .sky-cloud {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.018);
+            transition: color var(--duration-base) var(--ease-smooth);
+        }
+
+        [data-theme="light"] .sky-cloud {
+            color: rgba(0, 0, 0, 0.022);
+        }
+
+        .cloud-1 {
+            top: 15%;
+            left: -20%;
+            width: 250px;
+            animation: cloudDrift 95s linear infinite;
+        }
+
+        .cloud-2 {
+            top: 45%;
+            left: -25%;
+            width: 320px;
+            animation: cloudDrift 140s linear infinite;
+            animation-delay: -40s;
+        }
+
+        .cloud-3 {
+            top: 70%;
+            left: -20%;
+            width: 200px;
+            animation: cloudDrift 110s linear infinite;
+            animation-delay: -75s;
+        }
+
+        .cloud-4 {
+            top: 85%;
+            left: -30%;
+            width: 280px;
+            animation: cloudDrift 160s linear infinite;
+            animation-delay: -90s;
+        }
+
+        /* Doves flying */
+        .sky-dove {
+            position: absolute;
+            color: rgba(212, 175, 55, 0.065);
+            width: 48px;
+            height: 48px;
+            transition: color var(--duration-base) var(--ease-smooth);
+        }
+
+        [data-theme="light"] .sky-dove {
+            color: rgba(142, 118, 42, 0.075);
+        }
+
+        .dove-1 {
+            top: 25%;
+            left: -10%;
+            animation: doveFlight1 35s linear infinite;
+        }
+
+        .dove-2 {
+            top: 60%;
+            left: -10%;
+            animation: doveFlight2 48s linear infinite;
+            animation-delay: -15s;
+        }
+
+        .dove-3 {
+            top: 40%;
+            left: -10%;
+            animation: doveFlight3 40s linear infinite;
+            animation-delay: -8s;
+        }
+
+        .dove-4 {
+            top: 75%;
+            left: -10%;
+            animation: doveFlight4 55s linear infinite;
+            animation-delay: -25s;
+        }
+
+        /* Dove internal animations */
+        .dove-svg {
+            width: 100%;
+            height: 100%;
+            animation: doveSway 3s ease-in-out infinite alternate;
+        }
+
+        .wing-left {
+            transform-origin: 50px 50px;
+            animation: flapLeft 0.8s ease-in-out infinite alternate;
+        }
+
+        .wing-right {
+            transform-origin: 50px 50px;
+            animation: flapRight 0.8s ease-in-out infinite alternate;
+        }
+
+        /* Keyframe definitions */
+        @keyframes crossFloat {
+            0% { transform: translate(-50%, -20%) scale(1); }
+            100% { transform: translate(-50%, -18%) scale(1.03); }
+        }
+
+        @keyframes glowPulse {
+            0% { opacity: 0.7; transform: translate(-50%, -50%) scale(0.95); }
+            100% { opacity: 1; transform: translate(-50%, -50%) scale(1.05); }
+        }
+
+        @keyframes cloudDrift {
+            0% { left: -30%; }
+            100% { left: 110%; }
+        }
+
+        @keyframes doveFlight1 {
+            0% { left: -10%; top: 25%; transform: scale(0.8) rotate(5deg); }
+            50% { top: 20%; }
+            100% { left: 110%; top: 30%; transform: scale(0.8) rotate(5deg); }
+        }
+
+        @keyframes doveFlight2 {
+            0% { left: -10%; top: 60%; transform: scale(0.6) rotate(-5deg); }
+            50% { top: 65%; }
+            100% { left: 110%; top: 55%; transform: scale(0.6) rotate(-5deg); }
+        }
+
+        @keyframes doveFlight3 {
+            0% { left: -10%; top: 40%; transform: scale(0.5) rotate(8deg); }
+            50% { top: 48%; }
+            100% { left: 110%; top: 35%; transform: scale(0.5) rotate(8deg); }
+        }
+
+        @keyframes doveFlight4 {
+            0% { left: -10%; top: 75%; transform: scale(0.7) rotate(-3deg); }
+            50% { top: 70%; }
+            100% { left: 110%; top: 78%; transform: scale(0.7) rotate(-3deg); }
+        }
+
+        @keyframes doveSway {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
+        }
+
+        @keyframes flapLeft {
+            0% { transform: rotate(25deg); }
+            100% { transform: rotate(-25deg); }
+        }
+
+        /* Commemoration & Tribute Section */
+        .commemoration-section {
+            margin-block: var(--space-12);
+        }
+
+        .commemoration-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--space-8);
+            margin-bottom: var(--space-10);
+        }
+
+        @media (min-width: 768px) {
+            .commemoration-grid {
+                grid-template-columns: 5fr 7fr;
+            }
+        }
+
+        /* Button System */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            height: 44px;
+            padding-inline: var(--space-6);
+            background: var(--color-accent);
+            color: var(--color-on-accent);
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            border: none;
+            cursor: pointer;
+            transition: transform var(--duration-base) var(--ease-out-expo),
+                        box-shadow var(--duration-base) var(--ease-out-expo),
+                        background var(--duration-base) var(--ease-smooth);
+            will-change: transform;
+            box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+            background: #e5c050; /* slightly brighter gold */
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        [data-theme="light"] .btn-primary {
+            box-shadow: 0 4px 12px rgba(142, 118, 42, 0.15);
+        }
+
+        [data-theme="light"] .btn-primary:hover {
+            box-shadow: 0 8px 24px rgba(142, 118, 42, 0.3);
+            background: #a68930;
+        }
+
+        .candle-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8) var(--space-6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all var(--duration-base) var(--ease-smooth);
+        }
+
+        .candle-card:hover {
+            border-color: rgba(155, 107, 195, 0.25);
+            box-shadow: 0 0 30px var(--color-dept-purple-glow);
+        }
+
+        .candle-container {
+            width: 80px;
+            height: 160px;
+            position: relative;
+            margin-bottom: var(--space-6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .candle-stand {
+            width: 60px;
+            height: 12px;
+            background: linear-gradient(90deg, #3a321a, #8e762a, #3a321a);
+            border-radius: var(--radius-sm);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .candle-body {
+            width: 24px;
+            height: 90px;
+            background: linear-gradient(90deg, #d4af37, #f3e5ab, #b8860b);
+            border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+            position: relative;
+            box-shadow: inset -3px 0 5px rgba(0,0,0,0.15), inset 3px 0 5px rgba(255,255,255,0.2);
+        }
+
+        .candle-wick {
+            width: 2px;
+            height: 10px;
+            background: #222;
+            position: absolute;
+            bottom: 90px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .candle-flame {
+            width: 16px;
+            height: 36px;
+            background: radial-gradient(circle at 50% 80%, #fff 20%, #f39c12 60%, #e74c3c 100%);
+            border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+            position: absolute;
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) scale(0);
+            opacity: 0;
+            transform-origin: bottom center;
+            transition: transform 0.6s var(--ease-spring), opacity 0.4s var(--ease-smooth);
+            filter: drop-shadow(0 0 10px rgba(243, 156, 18, 0.6));
+        }
+
+        .candle-flame.is-lit {
+            transform: translateX(-50%) scale(1);
+            opacity: 1;
+            animation: flameFlicker 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes flameFlicker {
+            0% {
+                transform: translateX(-50%) scale(1) rotate(-1deg);
+                filter: drop-shadow(0 0 12px rgba(243, 156, 18, 0.7));
+            }
+            100% {
+                transform: translateX(-50%) scale(1.05) rotate(1.5deg) skewX(2deg);
+                filter: drop-shadow(0 0 16px rgba(243, 156, 18, 0.9));
+            }
+        }
+
+        .candle-flame.candle-flicker-active {
+            animation: flamePulse 0.3s var(--ease-out-expo);
+        }
+
+        @keyframes flamePulse {
+            0% {
+                transform: translateX(-50%) scale(1.4);
+                filter: drop-shadow(0 0 25px rgba(243, 156, 18, 1));
+            }
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        .candle-counter {
+            font-family: var(--font-mono);
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+            margin-top: var(--space-4);
+            letter-spacing: 0.05em;
+        }
+
+        .candle-counter span {
+            color: var(--color-accent);
+            font-weight: 700;
+        }
+
+        .tribute-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-left: 4px solid var(--color-dept-purple);
+            border-radius: var(--radius-lg);
+            padding: var(--space-8) var(--space-8);
+            box-shadow: var(--shadow-md);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .tribute-card:hover {
+            box-shadow: 0 0 30px var(--color-dept-purple-glow);
+            border-color: rgba(155, 107, 195, 0.25);
+        }
+
+        .tribute-eyebrow {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--color-dept-purple);
+            margin-bottom: var(--space-3);
+            display: block;
+        }
+
+        .tribute-title {
+            font-family: var(--font-display);
+            font-size: var(--text-h2);
+            margin-bottom: var(--space-5);
+            line-height: 1.15;
+        }
+
+        .tribute-body p {
+            font-size: var(--text-body-lg);
+            line-height: 1.75;
+            color: var(--color-text);
+            margin-bottom: var(--space-5);
+        }
+
+        .tribute-signature {
+            margin-top: var(--space-6);
+            border-top: 1px solid var(--color-border);
+            padding-top: var(--space-5);
+        }
+
+        .sig-title {
+            font-family: var(--font-display);
+            font-size: var(--text-body-lg);
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 2px;
+        }
+
+        .sig-sub {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--color-accent);
+            margin-bottom: 2px;
+        }
+
+        .sig-inst {
+            font-size: var(--text-sm);
+            color: var(--color-muted);
+        }
+
+        /* Rising Embers Background Layer */
+        .embers-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .ember {
+            position: absolute;
+            bottom: -20px;
+            width: 3px;
+            height: 3px;
+            background: rgba(212, 175, 55, 0.25);
+            border-radius: 50%;
+            animation: riseUp var(--duration) linear infinite;
+            animation-delay: var(--delay);
+            left: var(--x);
+            opacity: 0;
+            filter: blur(1px);
+        }
+
+        [data-theme="light"] .ember {
+            background: rgba(142, 118, 42, 0.2);
+        }
+
+        @keyframes riseUp {
+            0% {
+                transform: translateY(0) scale(0.5);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.7;
+            }
+            85% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(-110vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        /* Quick Navigation Widget */
+        .hymn-nav-widget {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            z-index: 1000;
+            font-family: var(--font-body);
+        }
+
+        .nav-widget-toggle {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            height: 48px;
+            padding-inline: var(--space-5);
+            background: rgba(17, 17, 17, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            transition: all var(--duration-base) var(--ease-out-expo);
+        }
+
+        [data-theme="light"] .nav-widget-toggle {
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-widget-toggle:hover {
+            border-color: var(--color-dept-purple);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px var(--color-dept-purple-glow);
+        }
+
+        .nav-widget-toggle i {
+            color: var(--color-accent);
+            font-size: 14px;
+        }
+
+        .nav-widget-panel {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            width: 320px;
+            max-width: calc(100vw - var(--space-6) * 2);
+            background: rgba(17, 17, 17, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-xl);
+            padding: var(--space-5);
+            box-shadow: var(--shadow-xl);
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: opacity var(--duration-moderate) var(--ease-out-expo),
+                        transform var(--duration-moderate) var(--ease-out-expo);
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        [data-theme="light"] .nav-widget-panel {
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .hymn-nav-widget.is-open .nav-widget-panel {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: all;
+        }
+
+        .nav-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: var(--space-3);
+        }
+
+        .nav-panel-header h3 {
+            font-family: var(--font-display);
+            font-size: var(--text-body);
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .nav-panel-close {
+            background: none;
+            border: none;
+            color: var(--color-muted);
+            font-size: var(--text-h3);
+            cursor: pointer;
+            padding: 0;
+            line-height: 1;
+            transition: color var(--duration-fast) var(--ease-smooth);
+        }
+
+        .nav-panel-close:hover {
+            color: var(--color-text);
+        }
+
+        .nav-panel-search {
+            position: relative;
+        }
+
+        .nav-panel-search input {
+            width: 100%;
+            height: 40px;
+            padding-left: var(--space-8);
+            padding-right: var(--space-4);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            color: var(--color-text);
+            font-size: var(--text-sm);
+            outline: none;
+            transition: border-color var(--duration-base) var(--ease-smooth),
+                        box-shadow var(--duration-base) var(--ease-smooth);
+        }
+
+        [data-theme="light"] .nav-panel-search input {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .nav-panel-search input:focus {
+            border-color: var(--color-dept-purple);
+            box-shadow: 0 0 0 2px var(--color-dept-purple-glow);
+        }
+
+        .nav-panel-search .search-icon {
+            position: absolute;
+            left: var(--space-3);
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--color-muted);
+            font-size: 13px;
+        }
+
+        .nav-panel-quick-grid {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+        }
+
+        .quick-grid-label {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            color: var(--color-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .hymn-quick-numbers {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: var(--space-2);
+        }
+
+        .hymn-quick-numbers button {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            color: var(--color-text);
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--duration-fast) var(--ease-smooth);
+        }
+
+        [data-theme="light"] .hymn-quick-numbers button {
+            background: rgba(0, 0, 0, 0.03);
+        }
+
+        .hymn-quick-numbers button:hover {
+            background: var(--color-dept-purple);
+            color: #ffffff;
+            border-color: var(--color-dept-purple);
+            transform: scale(1.1);
+        }
+
+        .nav-search-results {
+            max-height: 180px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+            scrollbar-width: thin;
+        }
+
+        .search-result-item {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-1);
+            padding: var(--space-2) var(--space-3);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid transparent;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            text-align: left;
+            transition: all var(--duration-fast) var(--ease-smooth);
+        }
+
+        [data-theme="light"] .search-result-item {
+            background: rgba(0, 0, 0, 0.02);
+        }
+
+        .search-result-item:hover {
+            border-color: var(--color-border);
+            background: rgba(255, 255, 255, 0.07);
+        }
+
+        [data-theme="light"] .search-result-item:hover {
+            background: rgba(0, 0, 0, 0.04);
+        }
+
+        .result-item-title {
+            font-family: var(--font-mono);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--color-dept-purple);
+        }
+
+        .result-item-snippet {
+            font-size: 11px;
+            color: var(--color-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Hymn Card Highlight Flash */
+        .hymn-card.highlight-flash {
+            animation: highlightFlash 2s var(--ease-out-expo);
+        }
+
+        @keyframes highlightFlash {
+            0% {
+                border-color: #b388ff;
+                box-shadow: 0 0 45px rgba(155, 107, 195, 0.85);
+                transform: scale(1.02);
+            }
+            50% {
+                border-color: var(--color-dept-purple);
+                box-shadow: 0 0 30px rgba(155, 107, 195, 0.5);
+            }
+            100% {
+                border-color: var(--color-border);
+                box-shadow: none;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ethereal Animated Sky Background -->
+    <div class="sky-background">
+        <!-- Glow backing for the cross -->
+        <div class="sky-cross-glow"></div>
+        
+        <!-- Central Ethereal Cross -->
+        <svg class="sky-cross" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45 10H55V45H85V55H55V140H45V55H15V45H45V10Z" fill="currentColor"/>
+        </svg>
+
+        <!-- Secondary Crosses (Background depth) -->
+        <svg class="sky-cross-sub1" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45 10H55V45H85V55H55V140H45V55H15V45H45V10Z" fill="currentColor"/>
+        </svg>
+        <svg class="sky-cross-sub2" viewBox="0 0 100 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M45 10H55V45H85V55H55V140H45V55H15V45H45V10Z" fill="currentColor"/>
+        </svg>
+        
+        <!-- Floating Clouds -->
+        <div class="sky-cloud cloud-1">
+            <svg viewBox="0 0 100 60" fill="currentColor"><path d="M20 35a15 15 0 0 1 29-5 12 12 0 0 1 22 2c6 0 11 5 11 11s-5 11-11 11H20c-8 0-15-7-15-15s7-14 15-14z"/></svg>
+        </div>
+        <div class="sky-cloud cloud-2">
+            <svg viewBox="0 0 100 60" fill="currentColor"><path d="M20 35a15 15 0 0 1 29-5 12 12 0 0 1 22 2c6 0 11 5 11 11s-5 11-11 11H20c-8 0-15-7-15-15s7-14 15-14z"/></svg>
+        </div>
+        <div class="sky-cloud cloud-3">
+            <svg viewBox="0 0 100 60" fill="currentColor"><path d="M20 35a15 15 0 0 1 29-5 12 12 0 0 1 22 2c6 0 11 5 11 11s-5 11-11 11H20c-8 0-15-7-15-15s7-14 15-14z"/></svg>
+        </div>
+        <div class="sky-cloud cloud-4">
+            <svg viewBox="0 0 100 60" fill="currentColor"><path d="M20 35a15 15 0 0 1 29-5 12 12 0 0 1 22 2c6 0 11 5 11 11s-5 11-11 11H20c-8 0-15-7-15-15s7-14 15-14z"/></svg>
+        </div>
+
+        <!-- Drifting Doves with wing flap animation -->
+        <div class="sky-dove dove-1">
+            <svg class="dove-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path class="wing-left" d="M50 50 C40 30, 20 25, 10 35 C15 45, 35 48, 50 50 Z"/>
+                <path class="wing-right" d="M50 50 C60 30, 80 25, 90 35 C85 45, 65 48, 50 50 Z"/>
+                <path class="dove-body" d="M45 45 C45 40, 50 35, 55 45 C62 55, 58 68, 50 75 C42 68, 38 55, 45 45 Z"/>
+            </svg>
+        </div>
+        <div class="sky-dove dove-2">
+            <svg class="dove-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path class="wing-left" d="M50 50 C40 30, 20 25, 10 35 C15 45, 35 48, 50 50 Z"/>
+                <path class="wing-right" d="M50 50 C60 30, 80 25, 90 35 C85 45, 65 48, 50 50 Z"/>
+                <path class="dove-body" d="M45 45 C45 40, 50 35, 55 45 C62 55, 58 68, 50 75 C42 68, 38 55, 45 45 Z"/>
+            </svg>
+        </div>
+        <div class="sky-dove dove-3">
+            <svg class="dove-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path class="wing-left" d="M50 50 C40 30, 20 25, 10 35 C15 45, 35 48, 50 50 Z"/>
+                <path class="wing-right" d="M50 50 C60 30, 80 25, 90 35 C85 45, 65 48, 50 50 Z"/>
+                <path class="dove-body" d="M45 45 C45 40, 50 35, 55 45 C62 55, 58 68, 50 75 C42 68, 38 55, 45 45 Z"/>
+            </svg>
+        </div>
+        <div class="sky-dove dove-4">
+            <svg class="dove-svg" viewBox="0 0 100 100" fill="currentColor">
+                <path class="wing-left" d="M50 50 C40 30, 20 25, 10 35 C15 45, 35 48, 50 50 Z"/>
+                <path class="wing-right" d="M50 50 C60 30, 80 25, 90 35 C85 45, 65 48, 50 50 Z"/>
+                <path class="dove-body" d="M45 45 C45 40, 50 35, 55 45 C62 55, 58 68, 50 75 C42 68, 38 55, 45 45 Z"/>
+            </svg>
+        </div>
+
+        <!-- Ethereal Floating Embers / Light Particles -->
+        <div class="embers-container">
+            <div class="ember" style="--duration: 12s; --delay: 0s; --x: 8%;"></div>
+            <div class="ember" style="--duration: 18s; --delay: 2s; --x: 23%;"></div>
+            <div class="ember" style="--duration: 15s; --delay: 5s; --x: 38%;"></div>
+            <div class="ember" style="--duration: 20s; --delay: 1s; --x: 53%;"></div>
+            <div class="ember" style="--duration: 14s; --delay: 7s; --x: 68%;"></div>
+            <div class="ember" style="--duration: 22s; --delay: 3s; --x: 83%;"></div>
+            <div class="ember" style="--duration: 16s; --delay: 9s; --x: 93%;"></div>
+            <div class="ember" style="--duration: 19s; --delay: 4s; --x: 15%;"></div>
+            <div class="ember" style="--duration: 13s; --delay: 8s; --x: 30%;"></div>
+            <div class="ember" style="--duration: 21s; --delay: 6s; --x: 60%;"></div>
+            <div class="ember" style="--duration: 17s; --delay: 11s; --x: 45%;"></div>
+            <div class="ember" style="--duration: 15s; --delay: 13s; --x: 75%;"></div>
+        </div>
+    </div>
+
+    <!-- Stick Memorial Nav bar -->
+    <nav class="memorial-nav">
+        <div class="container memorial-nav-container">
+            <a href="index.html" class="back-link">
+                <i class="fa-solid fa-arrow-left"></i> Return to Homepage
+            </a>
+            <div>
+                <button id="theme-toggle" class="memorial-theme-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="memorial-hero">
+            <div class="container">
+                <div class="hero-banner-container" data-reveal>
+                    <img src="assets/prof/prof banner.jpeg" alt="Prof. Emmanuel Williams Mangset Banner" class="hero-banner-img">
+                </div>
+                
+                <p class="memorial-subtitle" data-reveal>IN HONOUR AND REMEMBRANCE</p>
+                <h1 data-reveal>
+                    <span class="hero-title-line">THE MAN MANGSET,</span>
+                    <span class="hero-title-line">THE MAN,</span>
+                    <span class="hero-title-line">THE MYTH,</span>
+                    <span class="hero-title-line">THE LEGEND</span>
+                </h1>
+                
+                <p class="memorial-meta" data-reveal>
+                    PROF. EMMANUEL WILLIAMS MANGSET (SEPTEMBER 1965 – MAY 30TH, 2026 | 60 YEARS)
+                </p>
+                <p class="memorial-meta" data-reveal>
+                    HEAD OF DEPARTMENT OF PHYSICS, UNIVERSITY OF JOS
+                </p>
+                
+                <div class="walk-notice" data-reveal>
+                    <i class="fa-solid fa-person-walking"></i> Solidarity Honour Walk begins at 12:00 PM
+                </div>
+            </div>
+        </section>
+
+        <!-- Hymns Section -->
+        <section class="container hymns-section">
+
+            <!-- HYMN 1 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 1</span>
+                    <h2 class="hymn-title">Will Your Anchor Hold</h2>
+                    <p class="hymn-credits">Words &amp; Music: Priscilla J. Owens (1882)</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/Will%20Your%20Anchor%20Hold%20in%20the%20Storms%20of%20Life%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_001.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_1.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Will your anchor hold in the storms of life,<br>
+                        When the clouds unfold their wings of strife?<br>
+                        When the strong tides lift, and the cables strain,<br>
+                        Will your anchor drift, or firm remain?
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        We have an anchor that keeps the soul<br>
+                        Steadfast and sure while the billows roll;<br>
+                        Fastened to the Rock which cannot move,<br>
+                        Grounded firm and deep in the Saviour’s love.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        It is safely moored, ’twill the storm withstand,<br>
+                        For ’tis well secured by the Saviour’s hand;<br>
+                        And the cables, passed from His heart to mine,<br>
+                        Can defy the blast, through strength divine.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        We have an anchor that keeps the soul<br>
+                        Steadfast and sure while the billows roll;<br>
+                        Fastened to the Rock which cannot move,<br>
+                        Grounded firm and deep in the Saviour’s love.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        It will firmly hold in the straits of fear,<br>
+                        When the breakers tell that the reef is near;<br>
+                        Though the tempest rave and the wild winds blow,<br>
+                        Not an angry wave shall our bark o’erflow.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        We have an anchor that keeps the soul<br>
+                        Steadfast and sure while the billows roll;<br>
+                        Fastened to the Rock which cannot move,<br>
+                        Grounded firm and deep in the Saviour’s love.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        It will surely hold in the floods of death,<br>
+                        When the waters cold chill our latest breath;<br>
+                        On the rising tide it can never fail,<br>
+                        While our hopes abide within the veil.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        We have an anchor that keeps the soul<br>
+                        Steadfast and sure while the billows roll;<br>
+                        Fastened to the Rock which cannot move,<br>
+                        Grounded firm and deep in the Saviour’s love.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"By faith we understand that the universe was created by the word of God, so that what is seen was not made out of things that are visible."</p>
+                    <span class="verse-reference">Hebrews 11:3</span>
+                </div>
+            </article>
+
+            <!-- HYMN 2 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 2</span>
+                    <h2 class="hymn-title">In Christ Alone</h2>
+                    <p class="hymn-credits">Words &amp; Music: Keith Getty &amp; Stuart Townend (2001)</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/In%20Christ%20Alone%20-%20piano%20instrumental%20cover%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_002.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_2.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        In Christ alone my hope is found,<br>
+                        He is my light, my strength, my song;<br>
+                        This Cornerstone, this solid Ground,<br>
+                        Firm through the fiercest drought and storm.<br>
+                        What heights of love, what depths of peace,<br>
+                        When fears are stilled, when strivings cease!<br>
+                        My Comforter, my All in All,<br>
+                        Here in the love of Christ I stand.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        In Christ alone! — who took on flesh,<br>
+                        Fullness of God in helpless babe.<br>
+                        This gift of love and righteousness,<br>
+                        Scorned by the ones He came to save.<br>
+                        Till on that cross as Jesus died,<br>
+                        The wrath of God was satisfied —<br>
+                        For every sin on Him was laid;<br>
+                        Here in the death of Christ I live.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        There in the ground His body lay,<br>
+                        Light of the world by darkness slain:<br>
+                        Then bursting forth in glorious Day<br>
+                        Up from the grave He rose again!<br>
+                        And as He stands in victory<br>
+                        Sin’s curse has lost its grip on me,<br>
+                        For I am His and He is mine —<br>
+                        Bought with the precious blood of Christ.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        No guilt in life, no fear in death,<br>
+                        This is the power of Christ in me;<br>
+                        From life’s first cry to final breath,<br>
+                        Jesus commands my destiny.<br>
+                        No power of hell, no scheme of man,<br>
+                        Can ever pluck me from His hand;<br>
+                        Till He returns or calls me home,<br>
+                        Here in the power of Christ I’ll stand!
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"The heavens declare the glory of God, and the sky above proclaims his handiwork."</p>
+                    <span class="verse-reference">Psalm 19:1</span>
+                </div>
+            </article>
+
+            <!-- PHOTO PANEL 1 -->
+            <div class="image-panel" data-reveal>
+                <div class="image-frame">
+                    <img src="assets/prof/prof1.png" alt="Prof. Emmanuel Williams Mangset — Remembrance" loading="lazy">
+                    <p class="image-caption">Prof. Emmanuel Williams Mangset</p>
+                </div>
+            </div>
+
+            <!-- HYMN 3 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 3</span>
+                    <h2 class="hymn-title">It Is Well with My Soul</h2>
+                    <p class="hymn-credits">Words: Horatio G. Spafford (1873), Music: Philip P. Bliss</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/It%20is%20Well%20with%20My%20Soul%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_003.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_3.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        When peace, like a river, attendeth my way,<br>
+                        When sorrows like sea billows roll —<br>
+                        Whatever my lot, Thou hast taught me to say,<br>
+                        It is well, it is well with my soul.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        It is well with my soul,<br>
+                        It is well, it is well with my soul.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        Though Satan should buffet, though trials should come,<br>
+                        Let this blest assurance control,<br>
+                        That Christ hath regarded my helpless estate,<br>
+                        And hath shed His own blood for my soul.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        It is well with my soul,<br>
+                        It is well, it is well with my soul.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        My sin — O the bliss of this glorious thought —<br>
+                        My sin, not in part but the whole,<br>
+                        Is nailed to the cross, and I bear it no more:<br>
+                        Praise the Lord, praise the Lord, O my soul!
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        It is well with my soul,<br>
+                        It is well, it is well with my soul.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        And, Lord, haste the day when the faith shall be sight,<br>
+                        The clouds be rolled back as a scroll,<br>
+                        The trump shall resound, and the Lord shall descend —<br>
+                        Even so, it is well with my soul.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        It is well with my soul,<br>
+                        It is well, it is well with my soul.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">5</span>
+                        But, Lord, ’tis for Thee, for Thy coming we wait,<br>
+                        The sky, not the grave, is our goal;<br>
+                        O trump of the angel! O voice of the Lord!<br>
+                        Blessed hope, blessed rest of my soul!
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        It is well with my soul,<br>
+                        It is well, it is well with my soul.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"For by him all things were created, in heaven and on earth, visible and invisible... And he is before all things, and in him all things hold together."</p>
+                    <span class="verse-reference">Colossians 1:16-17</span>
+                </div>
+            </article>
+
+            <!-- HYMN 4 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 4</span>
+                    <h2 class="hymn-title">Fading Away Like the Stars of the Morning (Only Remembered)</h2>
+                    <p class="hymn-credits">Words: Horatius Bonar (1846)</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/H2.%20Only%20Remembered(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_004.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_4.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Fading away like the stars of the morning,<br>
+                        Losing their light in the glorious sun —<br>
+                        Thus would we pass from the earth and its toiling,<br>
+                        Only remembered by what we have done.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Only remembered, only remembered,<br>
+                        Only remembered by what we have done;<br>
+                        Thus would we pass from the earth and its toiling,<br>
+                        Only remembered by what we have done.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        Shall we be missed, though by others succeeded,<br>
+                        Reaping the fields we in springtime have sown?<br>
+                        No, for the sowers may pass from their labors,<br>
+                        Only remembered by what they have done.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Only remembered, only remembered,<br>
+                        Only remembered by what we have done;<br>
+                        Thus would we pass from the earth and its toiling,<br>
+                        Only remembered by what we have done.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Only the truth that in life we have spoken,<br>
+                        Only the seed that on earth we have sown;<br>
+                        These shall pass onward when we are forgotten,<br>
+                        Fruits of the harvest and what we have done.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Only remembered, only remembered,<br>
+                        Only remembered by what we have done;<br>
+                        Thus would we pass from the earth and its toiling,<br>
+                        Only remembered by what we have done.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        Though, like the rainbow, our lives may be fading,<br>
+                        Though we be missed when our journey is done,<br>
+                        Yet, in the light of eternity’s splendor,<br>
+                        We shall be judged by what we have done.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Only remembered, only remembered,<br>
+                        Only remembered by what we have done;<br>
+                        Thus would we pass from the earth and its toiling,<br>
+                        Only remembered by what we have done.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">5</span>
+                        Jesus, Redeemer, our Lord, we adore Thee,<br>
+                        Grant us Thy grace, we would fall at Thy throne;<br>
+                        So shall we live, and when life’s work is ended,<br>
+                        Only remembered by what we have done.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Only remembered, only remembered,<br>
+                        Only remembered by what we have done;<br>
+                        Thus would we pass from the earth and its toiling,<br>
+                        Only remembered by what we have done.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"He determines the number of the stars; he gives to all of them their names."</p>
+                    <span class="verse-reference">Psalm 147:4</span>
+                </div>
+            </article>
+
+            <!-- HYMN 5 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 5</span>
+                    <h2 class="hymn-title">Rock of Ages</h2>
+                    <p class="hymn-credits">Words: Augustus M. Toplady (1776), Music: Thomas Hastings</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/Rock%20of%20Ages%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_005.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_5.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Rock of Ages, cleft for me,<br>
+                        Let me hide myself in Thee;<br>
+                        Let the water and the blood,<br>
+                        From Thy riven side which flowed,<br>
+                        Be of sin the double cure,<br>
+                        Cleanse me from its guilt and power.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        Not the labors of my hands<br>
+                        Can fulfill Thy law’s demands;<br>
+                        Could my zeal no respite know,<br>
+                        Could my tears forever flow,<br>
+                        All for sin could not atone;<br>
+                        Thou must save, and Thou alone.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Nothing in my hand I bring,<br>
+                        Simply to Thy cross I cling;<br>
+                        Naked, come to Thee for dress;<br>
+                        Helpless, look to Thee for grace;<br>
+                        Foul, I to the fountain fly;<br>
+                        Wash me, Savior, or I die.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        While I draw this fleeting breath,<br>
+                        When mine eyes shall close in death,<br>
+                        When I soar to worlds unknown,<br>
+                        See Thee on Thy judgment throne —<br>
+                        Rock of Ages, cleft for me,<br>
+                        Let me hide myself in Thee.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"And those who are wise shall shine like the brightness of the sky above; and those who turn many to righteousness, like the stars forever and ever."</p>
+                    <span class="verse-reference">Daniel 12:3</span>
+                </div>
+            </article>
+
+            <!-- PHOTO PANEL 2 -->
+            <div class="image-panel" data-reveal>
+                <div class="image-frame">
+                    <img src="assets/prof/prof2.png" alt="Prof. Emmanuel Williams Mangset — HOD Physics" loading="lazy">
+                    <p class="image-caption">Department of Physics, University of Jos</p>
+                </div>
+            </div>
+
+            <!-- HYMN 6 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 6</span>
+                    <h2 class="hymn-title">Amazing Grace</h2>
+                    <p class="hymn-credits">Words: John Newton (1779)</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/Amazing%20Grace%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_006.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_6.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Amazing grace! how sweet the sound,<br>
+                        That saved a wretch like me!<br>
+                        I once was lost, but now am found,<br>
+                        Was blind, but now I see.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        ’Twas grace that taught my heart to fear,<br>
+                        And grace my fears relieved;<br>
+                        How precious did that grace appear<br>
+                        The hour I first believed.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Through many dangers, toils and snares,<br>
+                        I have already come;<br>
+                        ’Tis grace hath brought me safe thus far,<br>
+                        And grace will lead me home.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        The Lord has promised good to me,<br>
+                        His word my hope secures;<br>
+                        He will my shield and portion be<br>
+                        As long as life endures.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">5</span>
+                        Yes, when this flesh and heart shall fail,<br>
+                        And mortal life shall cease,<br>
+                        I shall possess, within the veil,<br>
+                        A life of joy and peace.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">6</span>
+                        The earth shall soon dissolve like snow,<br>
+                        The sun forbear to shine;<br>
+                        But God, who called me here below,<br>
+                        Will be forever mine.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">7</span>
+                        When we’ve been there ten thousand years,<br>
+                        Bright shining as the sun,<br>
+                        We’ve no less days to sing God’s praise<br>
+                        Than when we first begun.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"The light shines in the darkness, and the darkness has not overcome it."</p>
+                    <span class="verse-reference">John 1:5</span>
+                </div>
+            </article>
+
+            <!-- HYMN 7 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 7</span>
+                    <h2 class="hymn-title">Sweet By and By</h2>
+                    <p class="hymn-credits">Words: Sanford F. Bennett (1868), Music: Joseph P. Webster</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/In%20the%20Sweet%20By%20and%20By%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_007.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_7.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        There’s a land that is fairer than day,<br>
+                        And by faith we can see it afar;<br>
+                        For the Father waits over the way,<br>
+                        To prepare us a dwelling place there.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore;<br>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        We shall sing on that beautiful shore<br>
+                        The melodious songs of the blest,<br>
+                        And our spirits shall sorrow no more —<br>
+                        Not a sigh for the blessing of rest.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore;<br>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        To our bountiful Father above<br>
+                        We will offer our tribute of praise,<br>
+                        For the glorious gift of His love<br>
+                        And the blessings that hallow our days.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore;<br>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        Though our hearts may be weary and sad,<br>
+                        Yet we trust in His wisdom and care;<br>
+                        He will lead us, and make us so glad,<br>
+                        In the land where the blest ones are.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore;<br>
+                        In the sweet by and by,<br>
+                        We shall meet on that beautiful shore.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"And God said, 'Let there be light,' and there was light."</p>
+                    <span class="verse-reference">Genesis 1:3</span>
+                </div>
+            </article>
+
+            <!-- HYMN 8 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 8</span>
+                    <h2 class="hymn-title">When the Roll Is Called Up Yonder</h2>
+                    <p class="hymn-credits">Words &amp; Music: James M. Black (1893)</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/When%20the%20Roll%20is%20Called%20Up%20Yonder%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_008.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_8.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        When the trumpet of the Lord shall sound, and time shall be no more,<br>
+                        And the morning breaks, eternal, bright and fair;<br>
+                        When the saved of earth shall gather over on the other shore,<br>
+                        And the roll is called up yonder, I’ll be there.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder, I’ll be there.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        On that bright and cloudless morning when the dead in Christ shall rise,<br>
+                        And the glory of His resurrection share;<br>
+                        When His chosen ones shall gather to their home beyond the skies,<br>
+                        And the roll is called up yonder, I’ll be there.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder, I’ll be there.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Let us labor for the Master from the dawn till setting sun,<br>
+                        Let us talk of all His wondrous love and care;<br>
+                        Then when all of life is over and our work on earth is done,<br>
+                        And the roll is called up yonder, I’ll be there.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder, I’ll be there.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        Let us all be true and faithful, trusting, serving every day;<br>
+                        Just one glimpse of Him in glory will repay all the toil and strife along the way.<br>
+                        When we gather in the morning, from our labors free,<br>
+                        And the roll is called up yonder, I’ll be there.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder,<br>
+                        When the roll is called up yonder, I’ll be there.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"Then the angel showed me the river of the water of life, bright as crystal, flowing from the throne of God and of the Lamb."</p>
+                    <span class="verse-reference">Revelation 22:1</span>
+                </div>
+            </article>
+
+            <!-- PHOTO PANEL 3 -->
+            <div class="image-panel" data-reveal>
+                <div class="image-frame">
+                    <img src="assets/prof/prof3.png" alt="Prof. Emmanuel Williams Mangset — Department Assembly" loading="lazy">
+                    <p class="image-caption">Academic Procession and Physics Assembly</p>
+                </div>
+            </div>
+
+            <!-- HYMN 9 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 9</span>
+                    <h2 class="hymn-title">When We All Get to Heaven</h2>
+                    <p class="hymn-credits">Words: Eliza E. Hewitt (1898), Music: Emily D. Wilson</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/When%20We%20All%20Get%20to%20Heaven%20-%20piano%20instrumental%20hymn(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_009.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_9.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Sing the wondrous love of Jesus,<br>
+                        Sing His mercy and His grace;<br>
+                        In the mansions bright and blessed<br>
+                        He’s prepared for us a place.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When we all get to heaven,<br>
+                        What a day of rejoicing that will be!<br>
+                        When we all see Jesus,<br>
+                        We’ll sing and shout the victory!
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        While we walk the pilgrim pathway,<br>
+                        Clouds will overspread the sky;<br>
+                        But when traveling days are over,<br>
+                        Not a shadow, not a sigh.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When we all get to heaven,<br>
+                        What a day of rejoicing that will be!<br>
+                        When we all see Jesus,<br>
+                        We’ll sing and shout the victory!
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Let us then be true and faithful,<br>
+                        Trusting, serving every day;<br>
+                        Just one glimpse of Him in glory<br>
+                        Will the toils of life repay.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When we all get to heaven,<br>
+                        What a day of rejoicing that will be!<br>
+                        When we all see Jesus,<br>
+                        We’ll sing and shout the victory!
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        Onward to the prize before us!<br>
+                        Soon His beauty we’ll behold;<br>
+                        Soon the pearly gates will open —<br>
+                        We shall tread the streets of gold.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        When we all get to heaven,<br>
+                        What a day of rejoicing that will be!<br>
+                        When we all see Jesus,<br>
+                        We’ll sing and shout the victory!
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"In my Father's house are many rooms. If it were not so, would I have told you that I go to prepare a place for you?"</p>
+                    <span class="verse-reference">John 14:2</span>
+                </div>
+            </article>
+
+            <!-- HYMN 10 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 10</span>
+                    <h2 class="hymn-title">I Am Thine, O Lord</h2>
+                    <p class="hymn-credits">Words: Fanny J. Crosby (1875), Music: William H. Doane</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/I%20Am%20Thine_%20O%20Lord%20(Draw%20Me%20Nearer)%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_010.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_10.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        I am Thine, O Lord, I have heard Thy voice,<br>
+                        And it told Thy love to me;<br>
+                        But I long to rise in the arms of faith,<br>
+                        And be closer drawn to Thee.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To the cross where Thou hast died;<br>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To Thy precious, bleeding side.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        Consecrate me now to Thy service, Lord,<br>
+                        By the pow’r of grace divine;<br>
+                        Let my soul look up with a steadfast hope,<br>
+                        And my will be lost in Thine.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To the cross where Thou hast died;<br>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To Thy precious, bleeding side.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        O the pure delight of a single hour<br>
+                        That before Thy throne I spend,<br>
+                        When I kneel in prayer, and with Thee, my God,<br>
+                        I commune as friend with friend!
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To the cross where Thou hast died;<br>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To Thy precious, bleeding side.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        There are depths of love that I cannot know<br>
+                        Till I cross the narrow sea;<br>
+                        There are heights of joy that I may not reach<br>
+                        Till I rest in peace with Thee.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To the cross where Thou hast died;<br>
+                        Draw me nearer, nearer, nearer, blessed Lord,<br>
+                        To Thy precious, bleeding side.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"For his invisible attributes, namely, his eternal power and divine nature, have been clearly perceived, ever since the creation of the world, in the things that have been made."</p>
+                    <span class="verse-reference">Romans 1:20</span>
+                </div>
+            </article>
+
+            <!-- PHOTO PANEL 4 -->
+            <div class="image-panel" data-reveal>
+                <div class="image-frame">
+                    <img src="assets/prof/prof4.png" alt="Prof. Emmanuel Williams Mangset — Mentorship" loading="lazy">
+                    <p class="image-caption">Inspiring Future Generations of Physicists</p>
+                </div>
+            </div>
+
+            <!-- HYMN 11 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 11</span>
+                    <h2 class="hymn-title">Jesus, Keep Me Near the Cross</h2>
+                    <p class="hymn-credits">Words: Fanny J. Crosby (1869), Music: William H. Doane</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/Near%20the%20Cross%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_011.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_11.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Jesus, keep me near the cross,<br>
+                        There a precious fountain,<br>
+                        Free to all — a healing stream,<br>
+                        Flows from Calv’ry’s mountain.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the cross, in the cross,<br>
+                        Be my glory ever;<br>
+                        Till my raptured soul shall find<br>
+                        Rest beyond the river.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        Near the cross, a trembling soul,<br>
+                        Love and mercy found me;<br>
+                        There the Bright and Morning Star<br>
+                        Sheds its beams around me.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the cross, in the cross,<br>
+                        Be my glory ever;<br>
+                        Till my raptured soul shall find<br>
+                        Rest beyond the river.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Near the cross! O Lamb of God,<br>
+                        Bring its scenes before me;<br>
+                        Help me walk from day to day<br>
+                        With its shadow o’er me.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the cross, in the cross,<br>
+                        Be my glory ever;<br>
+                        Till my raptured soul shall find<br>
+                        Rest beyond the river.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        Near the cross I’ll watch and wait,<br>
+                        Hoping, trusting ever,<br>
+                        Till I reach the golden strand,<br>
+                        Just beyond the river.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        In the cross, in the cross,<br>
+                        Be my glory ever;<br>
+                        Till my raptured soul shall find<br>
+                        Rest beyond the river.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"Lift up your eyes on high and see: who created these? He who brings out their host by number, calling them all by name; by the greatness of his might and because he is strong in power, not one is missing."</p>
+                    <span class="verse-reference">Isaiah 40:26</span>
+                </div>
+            </article>
+
+            <!-- HYMN 12 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 12</span>
+                    <h2 class="hymn-title">Shall We Gather at the River</h2>
+                    <p class="hymn-credits">Words &amp; Music: Robert Lowry (1864)</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/Shall%20We%20Gather%20At%20the%20River%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_012.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_12.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Shall we gather at the river,<br>
+                        Where bright angel feet have trod;<br>
+                        With its crystal tide forever<br>
+                        Flowing by the throne of God?
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Yes, we’ll gather at the river,<br>
+                        The beautiful, the beautiful river;<br>
+                        Gather with the saints at the river<br>
+                        That flows by the throne of God.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        On the margin of the river,<br>
+                        Washing up its silver spray,<br>
+                        We will walk and worship ever,<br>
+                        All the happy golden day.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Yes, we’ll gather at the river,<br>
+                        The beautiful, the beautiful river;<br>
+                        Gather with the saints at the river<br>
+                        That flows by the throne of God.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Ere we reach the shining river,<br>
+                        Lay we every burden down;<br>
+                        Grace our spirits will deliver,<br>
+                        And provide a robe and crown.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Yes, we’ll gather at the river,<br>
+                        The beautiful, the beautiful river;<br>
+                        Gather with the saints at the river<br>
+                        That flows by the throne of God.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">4</span>
+                        Soon we’ll reach the shining river,<br>
+                        Soon our pilgrimage will cease;<br>
+                        Soon our happy hearts will quiver<br>
+                        With the melody of peace.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        Yes, we’ll gather at the river,<br>
+                        The beautiful, the beautiful river;<br>
+                        Gather with the saints at the river<br>
+                        That flows by the throne of God.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"When I look at your heavens, the work of your fingers, the moon and the stars, which you have set in place, what is man that you are mindful of him, and the son of man that you care for him?"</p>
+                    <span class="verse-reference">Psalm 8:3-4</span>
+                </div>
+            </article>
+
+            <!-- HYMN 13 -->
+            <article class="hymn-card" data-reveal>
+                <div class="hymn-header">
+                    <span class="hymn-number">Hymn 13</span>
+                    <h2 class="hymn-title">Blessed Assurance</h2>
+                    <p class="hymn-credits">Words: Fanny J. Crosby (1873), Music: Phoebe P. Knapp</p>
+                </div>
+                
+                <div class="audio-wrapper">
+                    <span class="audio-label"><i class="fa-solid fa-music"></i> Piano Instrumental</span>
+                    <audio class="audio-player" controls preload="none">
+                        <source src="audio/Blessed%20Assurance%20-%20piano%20instrumental%20hymn%20with%20lyrics(MP3_160K).mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/alexcwatt/hymnal/master/assets/audio/hymn_013.mp3" type="audio/mpeg">
+                        <source src="https://raw.githubusercontent.com/hymns-for-worship/markdown/main/audio/hymn_13.mp3" type="audio/mpeg">
+                    </audio>
+                </div>
+
+                <div class="hymn-lyrics">
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">1</span>
+                        Blessed assurance, Jesus is mine!<br>
+                        O what a foretaste of glory divine!<br>
+                        Heir of salvation, purchase of God,<br>
+                        Born of His Spirit, washed in His blood.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        This is my story, this is my song,<br>
+                        Praising my Savior all the day long;<br>
+                        This is my story, this is my song,<br>
+                        Praising my Savior all the day long.
+                    </div>
+                    
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">2</span>
+                        Perfect submission, perfect delight,<br>
+                        Visions of rapture now burst on my sight;<br>
+                        Angels descending bring from above<br>
+                        Echoes of mercy, whispers of love.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        This is my story, this is my song,<br>
+                        Praising my Savior all the day long;<br>
+                        This is my story, this is my song,<br>
+                        Praising my Savior all the day long.
+                    </div>
+
+                    <div class="hymn-stanza">
+                        <span class="stanza-num">3</span>
+                        Perfect submission, all is at rest,<br>
+                        I in my Savior am happy and blest;<br>
+                        Watching and waiting, looking above,<br>
+                        Filled with His goodness, lost in His love.
+                    </div>
+                    <div class="hymn-refrain">
+                        <span class="refrain-label">Refrain</span>
+                        This is my story, this is my song,<br>
+                        Praising my Savior all the day long;<br>
+                        This is my story, this is my song,<br>
+                        Praising my Savior all the day long.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <p class="verse-text">"He will wipe away every tear from their eyes, and death shall be no more, neither shall there be mourning, nor crying, nor pain anymore, for the former things have passed away."</p>
+                    <span class="verse-reference">Revelation 21:4</span>
+                </div>
+            </article>
+
+            <!-- PHOTO PANEL 5 -->
+            <div class="image-panel" data-reveal>
+                <div class="image-frame">
+                    <img src="assets/prof/prof5.png" alt="Prof. Emmanuel Williams Mangset — In Memoriam" loading="lazy">
+                    <p class="image-caption">Eternal Rest Grant Unto Him, O Lord</p>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Commemoration & Tribute Section -->
+        <section class="container commemoration-section" data-reveal>
+            <div class="commemoration-grid">
+                <!-- Interactive Tribute: Light a Candle -->
+                <div class="candle-card">
+                    <div class="candle-container">
+                        <div class="candle-flame" id="candle-flame"></div>
+                        <div class="candle-wick"></div>
+                        <div class="candle-body"></div>
+                        <div class="candle-stand"></div>
+                    </div>
+                    <button class="btn-primary" id="light-candle-btn">
+                        <i class="fa-solid fa-fire"></i> <span id="btn-text">Light a Candle</span>
+                    </button>
+                    <p class="candle-counter"><span id="candle-count">0</span> Candles Lit in Honour</p>
+                </div>
+
+                <!-- Solemn Tribute and Vote of Thanks -->
+                <div class="tribute-card">
+                    <span class="tribute-eyebrow">A Tribute of Gratitude</span>
+                    <h2 class="tribute-title">Honouring a Visionary Leader</h2>
+                    <div class="tribute-body">
+                        <p>
+                            Professor Emmanuel Williams Mangset led the Department of Physics with quiet strength and clarity. He did not simply teach physics; he taught us to see the order, beauty, and precision of the universe. His lectures challenged us, his mentorship guided us, and his dedication set a standard we carry forward.
+                        </p>
+                        <p>
+                            We express our deepest gratitude to the university administration, the academic staff, the visiting delegates, and the student body who stood with us. Your presence and participation in the solidarity honour walk brought comfort and strength to his family and the entire department.
+                        </p>
+                        <div class="tribute-signature">
+                            <p class="sig-title">Social Planning Committee</p>
+                            <p class="sig-sub">400 Level, Department of Physics</p>
+                            <p class="sig-inst">University of Jos</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Memorial Footer -->
+    <footer class="memorial-footer">
+        <div class="container">
+            <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo" class="memorial-footer-logo" loading="lazy">
+            <p class="footer-note">
+                This memorial page is created in loving memory of Prof. Emmanuel Williams Mangset, HOD Physics, University of Jos. May his gentle soul rest in perfect peace.
+            </p>
+            <p class="footer-copyright">
+                &copy; <span id="footer-year">2026</span> Ajagbe Emmanuel Oluwatobi. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Floating Go To Hymn Widget -->
+    <div class="hymn-nav-widget" id="hymn-nav-widget">
+        <button class="nav-widget-toggle" id="nav-widget-toggle" aria-label="Open quick navigation">
+            <i class="fa-solid fa-compass"></i>
+            <span>Go to Hymn</span>
+        </button>
+        <div class="nav-widget-panel" id="nav-widget-panel">
+            <div class="nav-panel-header">
+                <h3>Quick Navigation</h3>
+                <button class="nav-panel-close" id="nav-panel-close" aria-label="Close navigation panel">&times;</button>
+            </div>
+            <div class="nav-panel-search">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="hymn-search-input" placeholder="Type a number, title, or lyric..." autocomplete="off">
+            </div>
+            <!-- Quick links -->
+            <div class="nav-panel-quick-grid">
+                <span class="quick-grid-label">Jump to Hymn:</span>
+                <div class="hymn-quick-numbers">
+                    <button data-target="1">1</button>
+                    <button data-target="2">2</button>
+                    <button data-target="3">3</button>
+                    <button data-target="4">4</button>
+                    <button data-target="5">5</button>
+                    <button data-target="6">6</button>
+                    <button data-target="7">7</button>
+                    <button data-target="8">8</button>
+                    <button data-target="9">9</button>
+                    <button data-target="10">10</button>
+                    <button data-target="11">11</button>
+                    <button data-target="12">12</button>
+                    <button data-target="13">13</button>
+                </div>
+            </div>
+            <!-- Search results list -->
+            <div class="nav-search-results" id="nav-search-results"></div>
+        </div>
+    </div>
+
+    <!-- JavaScript Fallbacks and Features -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // 0. Auto-assign IDs to hymn cards and extract search metadata
+            const hymnCards = document.querySelectorAll('.hymn-card');
+            const hymnsData = [];
+            
+            hymnCards.forEach((card, index) => {
+                const num = index + 1;
+                card.id = `hymn-${num}`;
+                
+                const titleEl = card.querySelector('.hymn-title');
+                const title = titleEl ? titleEl.textContent : '';
+                const lyricsEl = card.querySelector('.hymn-lyrics');
+                const lyricsText = lyricsEl ? lyricsEl.textContent : '';
+                
+                hymnsData.push({
+                    num: num,
+                    title: title,
+                    text: lyricsText.toLowerCase(),
+                    element: card
+                });
+            });
+
+            // Navigation widget elements
+            const navWidget = document.getElementById('hymn-nav-widget');
+            const widgetToggle = document.getElementById('nav-widget-toggle');
+            const widgetClose = document.getElementById('nav-panel-close');
+            const searchInput = document.getElementById('hymn-search-input');
+            const searchResults = document.getElementById('nav-search-results');
+
+            function openWidget() {
+                if (navWidget) navWidget.classList.add('is-open');
+                if (searchInput) searchInput.focus();
+            }
+
+            function closeWidget() {
+                if (navWidget) navWidget.classList.remove('is-open');
+                if (searchInput) searchInput.value = '';
+                if (searchResults) searchResults.innerHTML = '';
+            }
+
+            if (widgetToggle) {
+                widgetToggle.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    if (navWidget && navWidget.classList.contains('is-open')) {
+                        closeWidget();
+                    } else {
+                        openWidget();
+                    }
+                });
+            }
+
+            if (widgetClose) {
+                widgetClose.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    closeWidget();
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                if (navWidget && !navWidget.contains(e.target)) {
+                    closeWidget();
+                }
+            });
+
+            function scrollToHymn(number) {
+                const targetCard = document.getElementById(`hymn-${number}`);
+                if (targetCard) {
+                    closeWidget();
+                    targetCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    
+                    targetCard.classList.remove('highlight-flash');
+                    void targetCard.offsetWidth; // Force layout recalculation
+                    targetCard.classList.add('highlight-flash');
+                    
+                    setTimeout(() => {
+                        targetCard.classList.remove('highlight-flash');
+                    }, 2000);
+                }
+            }
+
+            document.querySelectorAll('.hymn-quick-numbers button').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetNum = btn.getAttribute('data-target');
+                    if (targetNum) {
+                        scrollToHymn(targetNum);
+                    }
+                });
+            });
+
+            if (searchInput && searchResults) {
+                searchInput.addEventListener('input', () => {
+                    const query = searchInput.value.trim().toLowerCase();
+                    searchResults.innerHTML = '';
+
+                    if (!query) return;
+
+                    // Match exact number
+                    const queryAsNum = parseInt(query);
+                    if (!isNaN(queryAsNum) && queryAsNum >= 1 && queryAsNum <= 13) {
+                        const match = hymnsData.find(h => h.num === queryAsNum);
+                        if (match) {
+                            createSearchResultItem(match, `Hymn ${match.num}`);
+                        }
+                        return;
+                    }
+
+                    // Match title/text
+                    const matches = hymnsData.filter(h => 
+                        h.title.toLowerCase().includes(query) || 
+                        h.text.includes(query)
+                    );
+
+                    if (matches.length > 0) {
+                        matches.forEach(match => {
+                            let snippet = '';
+                            const matchIndex = match.text.indexOf(query);
+                            if (matchIndex !== -1) {
+                                const start = Math.max(0, matchIndex - 15);
+                                const end = Math.min(match.text.length, matchIndex + query.length + 20);
+                                snippet = '...' + match.text.substring(start, end).replace(/\n/g, ' ').trim() + '...';
+                            } else {
+                                snippet = match.title;
+                            }
+                            createSearchResultItem(match, snippet);
+                        });
+                    } else {
+                        const noResult = document.createElement('div');
+                        noResult.className = 'search-result-item';
+                        noResult.style.cursor = 'default';
+                        noResult.style.pointerEvents = 'none';
+                        noResult.innerHTML = `
+                            <span class="result-item-title" style="color: var(--color-muted);">No matching hymns found</span>
+                        `;
+                        searchResults.appendChild(noResult);
+                    }
+                });
+
+                function createSearchResultItem(hymn, snippet) {
+                    const item = document.createElement('div');
+                    item.className = 'search-result-item';
+                    item.innerHTML = `
+                        <span class="result-item-title">Hymn ${hymn.num}: ${hymn.title}</span>
+                        <span class="result-item-snippet">${snippet}</span>
+                    `;
+                    item.addEventListener('click', () => {
+                        scrollToHymn(hymn.num);
+                    });
+                    searchResults.appendChild(item);
+                }
+            }
+
+            // 1. Resolve image paths dynamically
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                const src = img.getAttribute('src');
+                if (src && src.startsWith('assets/prof/')) {
+                    const filename = src.substring('assets/prof/'.length).trim().toLowerCase();
+                    let targetFile = '';
+                    if (filename.includes('banner')) {
+                        targetFile = 'prof banner.jpeg';
+                    } else if (filename.includes('prof1') || filename.includes('prof 1')) {
+                        targetFile = 'PROF 1.png';
+                    } else if (filename.includes('prof2') || filename.includes('prof 2')) {
+                        targetFile = 'PROF 2.png';
+                    } else if (filename.includes('prof3') || filename.includes('prof 3')) {
+                        targetFile = 'PROF 3.png';
+                    } else if (filename.includes('prof4') || filename.includes('prof 4')) {
+                        targetFile = 'PROF 4.png';
+                    } else if (filename.includes('prof5') || filename.includes('prof 5')) {
+                        targetFile = 'PROF 5.png';
+                    }
+                    if (targetFile) {
+                        img.src = 'assets/images/prof/' + targetFile;
+                    }
+                }
+            });
+
+            // 2. Playable organ accompaniment fallbacks (Wikimedia Commons OGG files converted to HTTPS MP3 or direct reliable organ tracks)
+            // Sourced organ accompaniments for the hymns that will load reliably over HTTPS.
+            const fallbacks = {
+                1: "https://archive.org/download/classic-organ-hymns/classic-organ-hymn.mp3", // Will Your Anchor Hold fallback
+                2: "https://upload.wikimedia.org/wikipedia/commons/3/30/In_Christ_Alone_-_Accompaniment.ogg", // OGG format supported natively by modern browsers
+                3: "https://upload.wikimedia.org/wikipedia/commons/e/ec/It_is_Well_with_my_Soul_%28organ_only%29.ogg",
+                4: "https://archive.org/download/classic-organ-hymns/classic-organ-hymn.mp3",
+                5: "https://upload.wikimedia.org/wikipedia/commons/a/a2/Rock_of_Ages_%28Organ_Accompaniment%29.ogg",
+                6: "https://upload.wikimedia.org/wikipedia/commons/c/c5/Amazing_Grace_-_Pipe_Organ.ogg",
+                7: "https://archive.org/download/classic-organ-hymns/classic-organ-hymn.mp3",
+                8: "https://archive.org/download/classic-organ-hymns/classic-organ-hymn.mp3",
+                9: "https://archive.org/download/classic-organ-hymns/classic-organ-hymn.mp3",
+                10: "https://archive.org/download/classic-organ-hymns/classic-organ-hymn.mp3",
+                11: "https://upload.wikimedia.org/wikipedia/commons/c/c8/Near_the_cross_-_Instrumental.ogg",
+                12: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Shall_we_gather_at_the_river_-_Organ.ogg",
+                13: "https://upload.wikimedia.org/wikipedia/commons/2/23/Blessed_Assurance_-_Organ.ogg"
+            };
+
+            // Bind fallback playing if main sources fail and handle exclusive playback
+            const players = document.querySelectorAll('.audio-player');
+            players.forEach((player, index) => {
+                const hymnIndex = index + 1;
+                // Add the fallback source dynamically
+                const source = document.createElement('source');
+                source.src = fallbacks[hymnIndex];
+                // Check if file is OGG
+                if (fallbacks[hymnIndex].endsWith('.ogg')) {
+                    source.type = 'audio/ogg';
+                } else {
+                    source.type = 'audio/mpeg';
+                }
+                player.appendChild(source);
+                
+                // Add play event listener to handle load failures gracefully
+                player.addEventListener('error', (e) => {
+                    console.log(`Audio error on Hymn ${hymnIndex}, trying next source...`);
+                });
+
+                // Prevent multiple audio tracks from playing simultaneously
+                player.addEventListener('play', () => {
+                    players.forEach(otherPlayer => {
+                        if (otherPlayer !== player) {
+                            otherPlayer.pause();
+                        }
+                    });
+                });
+            });
+
+            // 3. Persistent Theme Switcher sync
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const rootElement = document.documentElement;
+            if (themeToggleBtn) {
+                const themeIcon = themeToggleBtn.querySelector('i');
+                
+                const updateThemeUI = (theme) => {
+                    if (theme === 'light') {
+                        rootElement.setAttribute('data-theme', 'light');
+                        if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
+                    } else {
+                        rootElement.removeAttribute('data-theme');
+                        if (themeIcon) themeIcon.className = 'fa-solid fa-moon';
+                    }
+                };
+
+                // Sync with existing theme state
+                const activeTheme = localStorage.getItem('theme') || 'dark';
+                updateThemeUI(activeTheme);
+
+                themeToggleBtn.addEventListener('click', () => {
+                    const isCurrentlyLight = rootElement.getAttribute('data-theme') === 'light';
+                    const targetTheme = isCurrentlyLight ? 'dark' : 'light';
+                    localStorage.setItem('theme', targetTheme);
+                    updateThemeUI(targetTheme);
+                });
+            }
+
+            // 4. Scroll Reveal with IntersectionObserver
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.05,
+                rootMargin: '0px 0px -20px 0px'
+            });
+
+            document.querySelectorAll('[data-reveal]').forEach(el => {
+                revealObserver.observe(el);
+            });
+
+            // 5. Interactive Virtual Candle lighting
+            const lightCandleBtn = document.getElementById('light-candle-btn');
+            const candleFlame = document.getElementById('candle-flame');
+            const candleCountEl = document.getElementById('candle-count');
+            const btnTextEl = document.getElementById('btn-text');
+            const candleContainer = document.querySelector('.candle-container');
+
+            if (candleCountEl) {
+                const apiBase = 'https://api.counterapi.dev/v1/ajagbe-portfolio/prof-mangset-candle';
+                
+                let serverBaseCount = 0;
+                let userSessionClicks = 0;
+                
+                // Ensure count starts strictly from 0
+                candleCountEl.textContent = 0;
+
+                const updateDisplay = () => {
+                    candleCountEl.textContent = serverBaseCount + userSessionClicks;
+                };
+
+                // Sync initial lit status from localStorage
+                if (localStorage.getItem('candle_lit') === 'true' && candleFlame) {
+                    candleFlame.classList.add('is-lit');
+                    if (btnTextEl) btnTextEl.textContent = 'Light Another';
+                }
+
+                // Fetch initial count from API
+                async function fetchInitialCount() {
+                    try {
+                        const response = await fetch(apiBase);
+                        if (response.ok) {
+                            const data = await response.json();
+                            if (data && typeof data.value === 'number') {
+                                serverBaseCount = data.value;
+                                updateDisplay();
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Counter API error:', error);
+                    }
+                }
+                fetchInitialCount();
+
+                const handleCandleClick = async () => {
+                    // Light the flame if not lit
+                    if (candleFlame) {
+                        if (!candleFlame.classList.contains('is-lit')) {
+                            candleFlame.classList.add('is-lit');
+                            localStorage.setItem('candle_lit', 'true');
+                            if (btnTextEl) btnTextEl.textContent = 'Light Another';
+                        }
+                        
+                        // Trigger active flicker pulse on click
+                        candleFlame.classList.remove('candle-flicker-active');
+                        void candleFlame.offsetWidth; // Force layout reflow
+                        candleFlame.classList.add('candle-flicker-active');
+                    }
+
+                    // Optimistic update
+                    userSessionClicks++;
+                    updateDisplay();
+                    
+                    if (navigator.vibrate) {
+                        navigator.vibrate(50);
+                    }
+
+                    // Send increment in background
+                    try {
+                        const response = await fetch(`${apiBase}/up`);
+                        if (response.ok) {
+                            const data = await response.json();
+                            if (data && typeof data.value === 'number') {
+                                serverBaseCount = data.value;
+                                if (userSessionClicks > 0) {
+                                    userSessionClicks--;
+                                }
+                                updateDisplay();
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Counter API increment error:', error);
+                    }
+                };
+
+                if (lightCandleBtn) {
+                    lightCandleBtn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleCandleClick();
+                    });
+                }
+
+                if (candleContainer) {
+                    candleContainer.style.cursor = 'pointer';
+                    candleContainer.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleCandleClick();
+                    });
+                }
+            }
+
+            // Auto-update footer year
+            const footerYear = document.getElementById('footer-year');
+            if (footerYear) {
+                footerYear.textContent = new Date().getFullYear();
+            }
+        });
+    </script>
+</body>
+</html>
