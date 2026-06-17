@@ -40,7 +40,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             {Array.from({ length: 4 }).map((_, i) => (
               <div key={`cover-bg-${i}`} className="w-full h-full rounded-2xl overflow-hidden grayscale-[50%]">
                 <img 
-                  src={`/images/bukky (${(pageNumber + i * 13) % 55 + 1}).jpeg`} 
+                  src={`${import.meta.env.BASE_URL}images/bukky (${(pageNumber + i * 13) % 55 + 1}).jpeg`} 
                   className="w-full h-full object-cover"
                   alt=""
                   loading="lazy"

@@ -11,7 +11,7 @@ export const GlobalBackground: React.FC<{ children: React.ReactNode }> = ({ chil
             {Array.from({ length: 40 }).map((_, i) => (
               <div key={`global-bg-${i}`} className="w-full aspect-square bg-slate-800">
                 <img 
-                  src={`/images/bukky (${((i * 2) % 55) + 1}).jpeg`} 
+                  src={`${import.meta.env.BASE_URL}images/bukky (${((i * 2) % 55) + 1}).jpeg`} 
                   className="w-full h-full object-cover filter brightness-75"
                   alt=""
                   loading="lazy"
