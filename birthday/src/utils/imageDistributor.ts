@@ -25,7 +25,7 @@ export function getImagesForPage(pageNumber: number): string[] {
       // Assuming images are in public/images/ or src/assets/images/
       // User says: "The local assets folder contains exactly 55 images named `bukky (1).jpeg` through `bukky (55).jpeg`."
       // In Vite, images in `public/images` can be referenced as `/images/bukky (X).jpeg`
-      images.push(`/images/bukky (${imageIndex}).jpeg`);
+      images.push(`${import.meta.env.BASE_URL}images/bukky (${imageIndex}).jpeg`);
     }
   }
 
