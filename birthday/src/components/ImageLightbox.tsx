@@ -15,14 +15,18 @@ export const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, onClose }) =>
       onClick={onClose}
     >
       <button 
-        className="absolute top-6 right-6 md:top-8 md:right-8 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-md z-50"
+        className="absolute p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-md z-[250] cursor-pointer"
+        style={{ 
+          top: 'max(1.5rem, env(safe-area-inset-top))', 
+          right: 'max(1.5rem, env(safe-area-inset-right))' 
+        }}
         onClick={(e) => {
           e.stopPropagation();
           onClose();
         }}
         aria-label="Close lightbox"
       >
-        <X size={24} />
+        <X size={28} />
       </button>
       
       <div 
