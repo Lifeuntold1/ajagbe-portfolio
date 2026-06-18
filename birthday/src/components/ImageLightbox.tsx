@@ -11,17 +11,22 @@ export const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, onClose }) =>
 
   return (
     <div 
-      className="fixed inset-0 z-[200] bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 transition-opacity duration-300"
+      className="fixed inset-0 z-[200] bg-slate-900/95 backdrop-blur-md flex items-center justify-center p-4 md:p-8 transition-opacity duration-300 cursor-pointer"
       onClick={onClose}
     >
       <button 
-        className="absolute p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-md z-[250] cursor-pointer"
+        className="absolute top-6 right-6 md:top-8 md:right-8 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-md z-[250]"
         style={{ 
-          top: 'max(1.5rem, env(safe-area-inset-top))', 
-          right: 'max(1.5rem, env(safe-area-inset-right))' 
+          marginTop: 'env(safe-area-inset-top, 0px)',
+          marginRight: 'env(safe-area-inset-right, 0px)'
         }}
         onClick={(e) => {
           e.stopPropagation();
+          onClose();
+        }}
+        onTouchEnd={(e) => {
+          e.stopPropagation();
+          e.preventDefault();
           onClose();
         }}
         aria-label="Close lightbox"
@@ -29,10 +34,7 @@ export const ImageLightbox: React.FC<ImageLightboxProps> = ({ src, onClose }) =>
         <X size={28} />
       </button>
       
-      <div 
-        className="relative max-w-5xl max-h-[90vh] w-full h-full flex justify-center items-center"
-        onClick={(e) => e.stopPropagation()}
-      >
+      <div className="relative max-w-5xl max-h-[90vh] w-full h-full flex justify-center items-center">
         <img 
           src={src} 
           alt="Enlarged memory" 
