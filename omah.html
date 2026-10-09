@@ -4,278 +4,700 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Happy Birthday Omah</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Caveat:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap');
-
-        :root {
-            --chocolate: #1C1210;
-            --gold: #D4AF37;
-            --beige: #F9F6F0;
-        }
-
-        body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            font-family: 'DM Sans', sans-serif;
-            overflow: hidden; /* Prevent native scrolling */
-            touch-action: pan-y;
-        }
-
-        /* ----- Password Screen ----- */
-        #gate-screen {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: #0A0706;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            z-index: 100;
-            transition: opacity 1.2s ease, visibility 1.2s;
-        }
-
-        #gate-screen.unlocked {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .gate-content {
-            text-align: center;
-            padding: 50px 40px;
-            background: rgba(28, 18, 16, 0.4);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            border-radius: 16px;
-            backdrop-filter: blur(15px);
-            max-width: 90%;
-            width: 320px;
-        }
-
-        h1 {
-            font-family: 'Cormorant Garamond', serif;
-            color: var(--gold);
-            font-weight: 400;
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
-
-        p.subtitle {
-            color: var(--beige);
-            font-size: 0.8rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 40px;
-            opacity: 0.6;
-        }
-
-        input[type="password"] {
-            width: 100%;
-            padding: 15px;
-            background: transparent;
-            border: 0;
-            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-            color: var(--gold);
-            font-size: 1.5rem;
-            text-align: center;
-            letter-spacing: 10px;
-            outline: none;
-            box-sizing: border-box;
-            transition: border-color 0.4s;
-            font-family: 'DM Sans', sans-serif;
-        }
-
-        input[type="password"]:focus {
-            border-bottom-color: var(--gold);
-        }
-
-        button.unlock-btn {
-            margin-top: 40px;
-            background: transparent;
-            color: var(--gold);
-            border: 1px solid var(--gold);
-            padding: 15px 40px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: all 0.4s;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            width: 100%;
-        }
-
-        button.unlock-btn:active {
-            transform: scale(0.98);
-        }
-
-        .error-msg {
-            color: #ff6b6b;
-            font-size: 0.8rem;
-            margin-top: 15px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            height: 15px;
-        }
-
-        /* ----- Flipbook / Slider ----- */
-        #magazine-container {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 1s ease 0.8s; /* Fade in smoothly */
-        }
-
-        #magazine-container.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .slider-track {
-            display: flex;
-            height: 100%;
-            width: 100%;
-            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-            will-change: transform;
-        }
-
-        .slide {
-            min-width: 100vw;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-sizing: border-box;
-            background: #000;
-        }
-
-        /* Make portrait pages look perfect on phones */
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        /* ----- Navigation ----- */
-        .nav-hint {
-            position: absolute;
-            bottom: 40px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: rgba(249, 246, 240, 0.4);
-            font-size: 0.75rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            pointer-events: none;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            z-index: 10;
-        }
-
-        .nav-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: transparent;
-            color: rgba(212, 175, 55, 0.5);
-            border: none;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 20;
-            transition: color 0.3s, opacity 0.3s;
-        }
-
-        .nav-btn:hover {
-            color: rgba(212, 175, 55, 1);
-        }
+        :root { --gold: #D4AF37; --text-light: #F9F6F0; --overlay-dark: rgba(12, 7, 5, 0.7); }
         
-        .nav-btn:disabled {
-            opacity: 0;
-            cursor: not-allowed;
-        }
+        body, html { margin: 0; padding: 0; width: 100%; height: 100%; background-color: #000; overflow: hidden; touch-action: pan-y; color: var(--text-light); font-family: 'DM Sans', sans-serif; }
 
-        .nav-prev { left: 10px; }
-        .nav-next { right: 10px; }
+        .title, .word-title, .huge-letter, .subtitle { font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+        .gold { color: var(--gold); }
+        .glow { text-shadow: 0 0 20px rgba(212,175,55,0.5); }
+        
+        h1.title { font-size: clamp(3rem, 10vw, 5rem); margin: 0; line-height: 1.1; font-weight: 700; }
+        h2.subtitle { font-size: clamp(1rem, 3vw, 1.3rem); letter-spacing: 5px; text-transform: uppercase; margin: 10px 0; font-weight: 700; }
+        
+        .body-text { font-family: 'Caveat', cursive; font-size: clamp(1.4rem, 5vw, 2.2rem); line-height: 1.3; font-weight: 500; text-align: center; letter-spacing: 1px; margin: 0; }
+        .word-title { font-size: clamp(1.8rem, 6vw, 2.5rem); letter-spacing: 3px; text-transform: uppercase; margin: 5px 0; font-weight: 700; }
+        .huge-letter { font-size: clamp(3rem, 8vw, 5rem); margin: 0; line-height: 1; text-align: center; font-style: italic; font-weight: 700; }
+        .divider { width: clamp(50px, 15vw, 80px); height: 2px; background: var(--gold); margin: 15px auto; }
 
-        .nav-btn svg {
-            width: 32px;
-            height: 32px;
-            fill: currentColor;
-        }
+        #collage-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(4, 1fr); z-index: 0; pointer-events: none; opacity: 0.55; }
+        #collage-bg img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(50%) blur(1px) sepia(10%); }
+        #master-overlay { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: linear-gradient(135deg, rgba(20,10,8,0.7) 0%, rgba(30,15,10,0.6) 100%); z-index: 1; pointer-events: none; }
 
-        @media (max-width: 768px) {
-            .nav-btn { display: none; } /* On portrait phone, use swipe only */
-        }
+        #gate-screen { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg, #1A0F0C 0%, #3D231B 100%); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 1000; transition: opacity 1s ease, visibility 1s; }
+        #gate-screen.unlocked { opacity: 0; visibility: hidden; pointer-events: none; }
+        
+        .gate-content { text-align: center; padding: clamp(30px, 8vw, 50px) clamp(20px, 5vw, 40px); background: rgba(28, 18, 16, 0.6); border: 2px solid var(--gold); border-radius: 20px; backdrop-filter: blur(15px); box-shadow: 0 20px 50px rgba(212, 175, 55, 0.2); width: clamp(280px, 85vw, 320px); z-index: 10; }
+        .gate-content h1 { font-family: 'Cormorant Garamond', serif; color: var(--gold); font-size: clamp(2.5rem, 8vw, 3.5rem); margin-bottom: 5px; font-weight: 700; }
+        .gate-content p { font-family: 'Cormorant Garamond', serif; color: var(--text-light); letter-spacing: 3px; margin-bottom: 10px; text-transform: uppercase; font-size: clamp(0.7rem, 2vw, 0.9rem); font-weight: 700; }
+        .clue-text { font-family: 'DM Sans', sans-serif; color: var(--gold); font-size: 0.75rem; letter-spacing: 2px; margin-bottom: 25px; text-transform: uppercase; font-weight: 700; opacity: 0.8; }
+        
+        input[type="password"] { width: 100%; padding: 15px; background: transparent; border: 0; border-bottom: 2px solid rgba(212, 175, 55, 0.5); color: var(--gold); font-size: 1.8rem; text-align: center; letter-spacing: 15px; outline: none; transition: border-color 0.3s; font-family: 'DM Sans', sans-serif; font-weight: 700; }
+        input[type="password"]:focus { border-bottom-color: var(--gold); }
+        
+        button.unlock-btn { margin-top: 30px; background: var(--gold); color: #110A08; border: none; padding: 15px 40px; font-size: 1rem; font-weight: 700; border-radius: 30px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; width: 100%; text-transform: uppercase; letter-spacing: 3px; font-family: 'DM Sans', sans-serif; }
+        button.unlock-btn:active { transform: scale(0.95); }
+        
+        .error-msg { color: #ff6b6b; font-size: 0.9rem; font-weight: 700; margin-top: 15px; opacity: 0; height: 15px; transition: opacity 0.3s; font-family: 'DM Sans', sans-serif; }
+        
+        .bg-floating-emoji { position: absolute; font-size: 2.5rem; opacity: 0.4; animation: floatSlow 6s infinite ease-in-out alternate; }
+        @keyframes floatSlow { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-30px) rotate(10deg); } }
+
+        #magazine-container { position: absolute; top: 0; left: 0; right: 0; bottom: 0; opacity: 0; visibility: hidden; transition: opacity 1.5s ease; z-index: 10; }
+        #magazine-container.active { opacity: 1; visibility: visible; }
+
+        #slider-container { width: 100%; height: 100%; display: flex; transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); will-change: transform; }
+        .page { min-width: 100vw; height: 100vh; position: relative; overflow: hidden; display: flex; flex-direction: column; box-sizing: border-box; }
+        .content { position: relative; z-index: 10; padding: clamp(10px, 3vw, 20px); height: 100%; display: flex; flex-direction: column; box-sizing: border-box; justify-content: center; }
+        .center-content { justify-content: center; align-items: center; text-align: center; }
+
+        .bg-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+        .blur-bg { filter: blur(5px); transform: scale(1.05); }
+        .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; background: rgba(17, 10, 8, 0.6); }
+
+        .image-container { width: 100%; height: clamp(35vh, 45vh, 50vh); margin: 5px 0; display: flex; justify-content: center; align-items: center; }
+        .image-container img { max-width: 100%; max-height: 100%; object-fit: contain; border-radius: 8px; box-shadow: 0 15px 40px rgba(0,0,0,0.5); }
+        
+        .split-page .text-container { margin-top: 5px; padding: clamp(10px, 4vw, 20px); background: rgba(0,0,0,0.6); border-radius: 12px; border: 1px solid rgba(212,175,55,0.4); backdrop-filter: blur(12px); box-shadow: 0 10px 40px rgba(0,0,0,0.6); overflow-y: auto; max-height: 48vh; }
+        .split-page .text-container::-webkit-scrollbar { display: none; }
+        .split-page .text-container { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        .burst-text { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.5); font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 10vw, 5rem); color: #fff; font-weight: 700; text-shadow: 0 0 30px var(--gold), 0 0 10px #fff; opacity: 0; pointer-events: none; z-index: 9999; text-align: center; white-space: nowrap; }
+        .burst-anim { animation: popOut 2.5s cubic-bezier(0.1, 0.8, 0.3, 1) forwards; }
+        @keyframes popOut { 0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; } 20% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; } 80% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; } 100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; } }
+        
+        .floating-emoji { position: absolute; font-size: 3.5rem; pointer-events: none; z-index: 50; animation: floatUp 4s ease-in forwards; opacity: 0; }
+        @keyframes floatUp { 0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 1; } 100% { transform: translateY(-20vh) rotate(360deg) scale(1.2); opacity: 0; } }
+
+        .nav-hint { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); font-size: clamp(0.7rem, 2vw, 0.8rem); letter-spacing: 3px; color: rgba(255,255,255,0.7); z-index: 100; pointer-events: none; text-transform: uppercase; font-weight: 700; }
+        .page-counter { position: absolute; top: 15px; right: 15px; font-size: clamp(0.9rem, 3vw, 1.1rem); color: var(--gold); letter-spacing: 2px; z-index: 100; font-family: 'Cormorant Garamond', serif; font-weight: 700; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
     </style>
 </head>
 <body>
 
-    <!-- Password Screen -->
+    <!-- Fine Collage Background -->
+    <div id="collage-bg">
+        <img src="assets/omah/omah (25).jpeg">
+        <img src="assets/omah/omah (84).jpeg">
+        <img src="assets/omah/omah (30).jpeg">
+        <img src="assets/omah/omah (60).jpeg">
+        <img src="assets/omah/omah (35).jpeg">
+        <img src="assets/omah/omah (2).jpeg">
+        <img src="assets/omah/omah (37).jpeg">
+        <img src="assets/omah/omah (12).jpeg">
+        <img src="assets/omah/omah (45).jpeg">
+        <img src="assets/omah/omah (54).jpeg">
+        <img src="assets/omah/omah (55).jpeg">
+        <img src="assets/omah/omah (3).jpeg">
+        <img src="assets/omah/omah (52).jpeg">
+        <img src="assets/omah/omah (107).jpeg">
+        <img src="assets/omah/omah (72).jpeg">
+        <img src="assets/omah/omah (93).jpeg">
+        <img src="assets/omah/omah (44).jpeg">
+        <img src="assets/omah/omah (80).jpeg">
+        <img src="assets/omah/omah (21).jpeg">
+        <img src="assets/omah/omah (111).jpeg">
+    </div>
+    <div id="master-overlay"></div>
+
+    <!-- Fun Password Screen -->
     <div id="gate-screen">
+        <div class="bg-floating-emoji" style="top: 10%; left: 10%; animation-delay: 0s;">👑</div>
+        <div class="bg-floating-emoji" style="top: 20%; right: 15%; animation-delay: 1s;">✨</div>
+        <div class="bg-floating-emoji" style="bottom: 15%; left: 20%; animation-delay: 2s;">🎂</div>
+        <div class="bg-floating-emoji" style="bottom: 25%; right: 10%; animation-delay: 3s;">💖</div>
+        <div class="bg-floating-emoji" style="top: 40%; left: 80%; animation-delay: 1.5s;">🎉</div>
+        <div class="bg-floating-emoji" style="bottom: 50%; right: 80%; animation-delay: 2.5s;">🎈</div>
+        
         <div class="gate-content">
-            <h1>For Omah</h1>
-            <p class="subtitle">A Celebration of Grace</p>
-            <input type="password" id="passcode" placeholder="Passcode" maxlength="10">
+            <h1 class="title">For Omah</h1>
+            <p>A Celebration of Grace</p>
+            <p class="clue-text">(Clue: SPECIAL CODE)</p>
+            <input type="password" id="passcode" placeholder="****" maxlength="10">
             <div class="error-msg" id="error-msg">Incorrect Passcode</div>
-            <button class="unlock-btn" id="unlock-btn">Unlock</button>
+            <button class="unlock-btn" id="unlock-btn">Unlock Magic</button>
         </div>
     </div>
 
-    <!-- Flipbook Screen -->
+    <!-- Flipbook -->
     <div id="magazine-container">
-        
-        <button class="nav-btn nav-prev" id="prev-btn" disabled>
-            <svg viewBox="0 0 24 24"><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"/></svg>
-        </button>
-        <button class="nav-btn nav-next" id="next-btn">
-            <svg viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-        </button>
+        <div id="slider-container">
 
-        <div class="slider-track" id="slider-track">
-            <!-- Images generated sequentially (0 to 43) -->
-        </div>
+            <div class="page cover-page">
+                <img src="assets/omah/Omah frame.png" class="bg-img">
+                <div class="overlay" style="background: rgba(17,10,8,0.3);"></div>
+                <div class="content center-content">
+                    <h1 class="title gold glow">OMAH</h1>
+                    <h2 class="subtitle gold">A Celebration of Grace</h2>
+                    <div class="divider"></div>
+                    <p style="font-size: 1rem; letter-spacing: 3px; font-weight: 700; font-family: 'Cormorant Garamond', serif;">OCTOBER 10TH EDITION</p>
+                </div>
+            </div>
 
-        <div class="nav-hint" id="nav-hint">
-            <span>&larr;</span> Swipe <span>&rarr;</span>
+            <div class="page text-page">
+                <div class="content center-content">
+                    <h1 class="title gold glow">The Prologue</h1>
+                    <div class="divider"></div>
+                    <div class="text-container" style="background:none; border:none; box-shadow:none;">
+                        <p class="body-text">This entire volume is dedicated to the massive celebration of a singular, beautiful life. October 10th marks significantly more than just the passing of another standard calendar year; it marks the continuous, undeniable rise of a woman defined by quiet strength, profound intelligence, and boundless grace. This is a curated collection of deep thoughts, sincere prayers, and beautiful reflections honoring the exact, wonderful person you are.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (107).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">Q</h1>
+                        <h2 class="word-title title">Quality</h2>
+                        <p class="body-text">Everything you touch receives a standard of excellence that is truly rare to find. You do not settle for mediocrity in your work, your faith, or your daily interactions. You carry a regal disposition that naturally elevates the standards of everyone fortunate enough to be around you. People look at the way you operate and immediately recognize that you are cut from a different cloth entirely. You handle details with precision, ensuring that nothing is ever left half-finished or poorly executed. You are, without a doubt, a woman of profound and undeniable quality.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (25).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">U</h1>
+                        <h2 class="word-title title">Unshakable</h2>
+                        <p class="body-text">In moments of intense pressure, your spirit remains completely solid and deeply grounded. When storms arise, you draw strength from a deep well of faith, allowing you to stand firm when the environment shifts. Your emotional maturity provides a safe anchor for yourself and for all your loved ones. You do not panic when things do not go exactly according to plan; instead, you adapt with grace. People marvel at your ability to remain calm while everything else is in motion. You have built a foundation that is entirely unshakable.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (35).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">E</h1>
+                        <h2 class="word-title title">Elegance</h2>
+                        <p class="body-text">Elegance is entirely woven into your mannerisms, your speech, and your breathtaking style. You do not follow fleeting trends; rather, you embody a timeless and classic sophistication. Your elegance is completely natural, completely unforced, and entirely captivating to anyone who meets you. Whether you are dressed up for a grand occasion or relaxing at home, you carry a specific poise. It shines through the gentle way you speak and the graceful way you move. You redefine what it means to be a truly elegant woman in the modern world.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (43).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">E</h1>
+                        <h2 class="word-title title">Empathy</h2>
+                        <p class="body-text">Behind your strong, composed exterior lies a heart of pure, unadulterated gold. You possess the very rare ability to understand the silent struggles of the people around you. You offer deep support without an ounce of judgment, providing care with absolute sincerity. When someone is hurting, your presence alone is often enough to bring them profound comfort. You never make people feel small for their mistakes, but rather lift them up with kindness. Your deep empathy leaves a permanent, beautiful mark on every life you touch.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (34).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">N</h1>
+                        <h2 class="word-title title">Noble</h2>
+                        <p class="body-text">Your entire character is built on uncompromised values and deeply held convictions. You move with immense integrity, ensuring your actions consistently align with your profound beliefs. You carry a noble spirit that absolutely refuses to engage in anything beneath your high standard of honor. Even when no one is watching, you choose to do the right thing every single time. People trust you implicitly because your moral compass never wavers or bends to pressure. You are royalty in every sense of the word, living a highly noble life.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (67).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">E</h1>
+                        <h2 class="word-title title">Exceptional</h2>
+                        <p class="body-text">The word average is simply not in your vocabulary or your mindset. You approach your culinary dreams, your academic pursuits, and your personal goals with absolute brilliance. Your mindset is entirely focused on reaching the absolute peak of whatever you set out to achieve. When others stop because it gets difficult, you push harder and unlock new levels of success. Your talent in the kitchen and your intellect in the classroom are completely unmatched. You are exceptional in your thoughts, your plans, and your flawless execution.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (112).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">T</h1>
+                        <h2 class="word-title title">Tenacity</h2>
+                        <p class="body-text">When you set your mind to a specific target, your focus becomes dangerously absolute. You push through invisible barriers with a quiet, relentless, and beautiful energy. You absolutely do not surrender to temporary setbacks or momentary failures. Instead, you analyze the situation, adapt your strategy, and conquer the obstacle in your path. Your resilience is deeply inspiring to everyone who has the privilege of watching your journey. With your unmatched tenacity, there is no dream too large for you to accomplish.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (33).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">H</h1>
+                        <h2 class="word-title title">Haven</h2>
+                        <p class="body-text">You represent a profound place of peace in a world that is often loud and chaotic. When people are around you, they feel an immediate sense of calm and safety. You intentionally create environments where people feel secure, deeply valued, and entirely at rest. Your home, your words, and your energy are a sanctuary for those who are weary. You listen without rushing, and you speak life into places that feel empty. You are a human haven, providing warmth and shelter to everyone you love.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (44).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">C</h1>
+                        <h2 class="word-title title">Compassion</h2>
+                        <p class="body-text">Your namesake is not just a title; it is your active, beautiful lifestyle. You give freely of your time, your immense wisdom, and your personal resources. You look at the world through a lens of deep grace, always finding new ways to add value. When you see a need, your immediate instinct is to help rather than turn away. You carry the burdens of others with a light heart, never complaining about the weight. Your compassion is a radiant light that illuminates the darkest of spaces.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (71).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">H</h1>
+                        <h2 class="word-title title">Humility</h2>
+                        <p class="body-text">Despite your massive talents, your striking beauty, and your vast intellect, you remain entirely grounded. You do not announce your victories loudly; you simply let your incredible results speak for themselves. This quiet confidence makes your success even more attractive and profoundly inspiring. You celebrate the wins of others just as loudly as you celebrate your own achievements. You never look down on anyone, treating the CEO and the janitor with the exact same respect. Your humility is the crown jewel of your already perfect character.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (101).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">A</h1>
+                        <h2 class="word-title title">Ambition</h2>
+                        <p class="body-text">You carry incredibly grand visions for your future, and you have the discipline to back them up. The culinary empire you visualize is not just a distant dream; it is a blueprint you are actively building. Your ambition is sharply focused, highly practical, and entirely unstoppable by any outside force. You set goals that intimidate others, yet you approach them with calm, methodical steps. You refuse to settle for a mediocre life when you know you are destined for greatness. Your drive will undeniably take you to the very top of your industry.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (111).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">R</h1>
+                        <h2 class="word-title title">Radiance</h2>
+                        <p class="body-text">You light up rooms absolutely effortlessly the moment you walk through the door. There is a distinct glow about you that comes from deep internal peace and a clear conscience. Your stunning smile shifts atmospheres and brings immediate, comforting warmth to cold spaces. People are naturally drawn to your energy because it is so pure and wonderfully contagious. Even on your difficult days, your inner light cannot be dimmed or hidden away. You carry a profound radiance that makes the world a much more beautiful place.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (116).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">I</h1>
+                        <h2 class="word-title title">Intelligence</h2>
+                        <p class="body-text">You possess a razor-sharp, highly analytical mind that is perfectly balanced with emotional depth. You read complex situations accurately and respond with profound, unmatched wisdom. Your intellect is truly one of your most beautiful and captivating traits. You grasp difficult concepts effortlessly and apply them to real-world scenarios with absolute ease. People constantly seek your counsel because your perspective is always brilliant and incredibly insightful. Your mind is a powerful engine that will drive you to unimaginable heights.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (72).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">T</h1>
+                        <h2 class="word-title title">Trustworthy</h2>
+                        <p class="body-text">Your word is an absolute, unbreakable bond in a world full of empty promises. When you make a commitment, it is fulfilled completely and without any excuses. You are a locked vault for the deep secrets of your friends and a dependable rock in times of crisis. People know that if they fall, you will be there to catch them without hesitation. You never betray a confidence, and you guard the hearts of your loved ones fiercely. Being able to trust you completely is one of the greatest gifts you offer.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (19).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">Y</h1>
+                        <h2 class="word-title title">Youthful</h2>
+                        <p class="body-text">While you possess the deep wisdom of someone much older, you retain a beautiful, youthful joy. You know exactly how to laugh freely, enjoy simple moments, and keep your spirit entirely vibrant. You do not let the heavy burdens of life steal your sense of wonder and excitement. You love fiercely, dance wildly, and celebrate life with a contagious, beautiful enthusiasm. Your energy is a breath of fresh air to everyone who has the privilege of experiencing it. You perfectly balance deep maturity with a gorgeously young heart.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (10).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">O</h1>
+                        <h2 class="word-title title">Originality</h2>
+                        <p class="body-text">You absolutely do not copy the paths, styles, or ideas of others. You are actively forging a completely unique identity that is entirely your masterpiece. Your style, your culinary ideas, and your approach to life cannot be replicated by anyone else. You are a true trendsetter, effortlessly creating magic while others are busy following the crowd. People look to you for fresh inspiration because your mind works in wonderfully original ways. You are a one-of-a-kind masterpiece, fearlessly walking to the beat of your own beautiful drum.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (95).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">M</h1>
+                        <h2 class="word-title title">Magnificence</h2>
+                        <p class="body-text">There is a grand, royal quality to the specific way you choose to live your life. You deeply appreciate fine things, cultivate a beautiful environment, and carry yourself with a magnificent posture. You easily elevate the ordinary, mundane moments of life into something truly special and memorable. Whether you are plating a dish or designing a space, your touch adds instant luxury. You have a taste for the exquisite, and it reflects in every single choice you make. You are the absolute definition of a magnificent woman.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (84).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">A</h1>
+                        <h2 class="word-title title">Authenticity</h2>
+                        <p class="body-text">You are unapologetically, beautifully, and fiercely yourself in every single room you enter. You do not wear masks or shrink yourself to fit into spaces that do not serve you. Your raw authenticity is deeply refreshing and gives everyone else the permission to be genuine. You speak your truth with grace, never compromising your identity for the sake of fitting in. People love you intensely because there is nothing fake or manufactured about your spirit. You are as real as they come, and that is your greatest superpower.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (11).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">H</h1>
+                        <h2 class="word-title title">Harmony</h2>
+                        <p class="body-text">You bring incredible balance and deep peace to otherwise chaotic and stressful situations. You have a profound gift for reconciling differences and creating synergy among the people you love. You move through life with a deeply harmonized spirit that attracts absolute goodness. You do not entertain unnecessary drama; instead, you cultivate environments of pure tranquility. Your energy is like a beautiful, calming melody that soothes everyone who hears it. You are the human embodiment of perfect, beautiful harmony.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (105).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">O</h1>
+                        <h2 class="word-title title">Optimism</h2>
+                        <p class="body-text">Your bright outlook on life is constantly fueled by a powerful, enduring, and beautiful hope. Even in your most difficult seasons, you maintain a profound belief that better days are ahead. Your fierce optimism is deeply contagious, lifting the spirits of everyone fortunate enough to be around you. You choose to see the silver lining and focus on solutions rather than getting stuck in the problem. Your faith gives you the eyes to see massive victory even when surrounded by temporary challenges. Your hopeful spirit is an absolute inspiration.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (119).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">J</h1>
+                        <h2 class="word-title title">Joyful</h2>
+                        <p class="body-text">Your joy is absolutely not dependent on your circumstances; it is a deep internal wellspring. You carry a light, beautiful, and infectious energy that makes life significantly better for everyone. Your laughter is a highly effective medicine that heals the hearts of your friends and family. You find absolute delight in the small things, from a perfect recipe to a quiet morning. You do not let the world harden you; instead, you fight back with radical, unapologetic joy. You are a brilliant ray of sunshine on the darkest of days.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (46).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">O</h1>
+                        <h2 class="word-title title">Outstanding</h2>
+                        <p class="body-text">In every single room you enter, you naturally and effortlessly stand out from the crowd. You do not have to fight for attention; your excellence and grace naturally command the spotlight. Your achievements, your character, and your beauty are simply leagues above the rest. People cannot help but notice the absolute brilliance that radiates from everything you do. You consistently exceed expectations and shatter the limits that others try to place on you. You are, in every measurable way, a truly outstanding human being.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (36).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">N</h1>
+                        <h2 class="word-title title">Nurturing</h2>
+                        <p class="body-text">You possess a deeply maternal, beautiful instinct to care for, protect, and grow the people around you. You feed people—both physically through your unmatched culinary skills and spiritually through your deep wisdom. You create a safe space for people to heal, to learn, and to become the best versions of themselves. Your hands bring life to everything they touch, from incredible meals to deep, lasting relationships. You check on your loved ones, making sure they are fed, loved, and absolutely okay. Your nurturing heart is a rare and beautiful treasure.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(35vh, 45vh, 50vh);"><img src="assets/omah/omah (79).jpeg"></div>
+                    <div class="text-container">
+                        <h1 class="huge-letter gold">E</h1>
+                        <h2 class="word-title title">Empowered</h2>
+                        <p class="body-text">You are stepping right into a massive season of undeniable authority and profound success. You are fully equipped, fully capable, and entirely empowered to execute every dream God has given you. You no longer need to ask for permission; you are boldly claiming exactly what belongs to you. You carry the power to change your industry, uplift your family, and build a lasting legacy. The confidence you exude is breathtaking, born from years of quiet preparation and deep faith. You are an empowered queen, completely ready to conquer the world.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (60).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">A Beautiful Journey</h2>
+                        <p class="body-text">Every step you have taken has led you to this exact moment of profound perfection. Your history is woven with moments of incredible resilience, deep laughter, and quiet victories. You have grown into a woman of such immense substance that looking back only proves your strength. The chapters of your past are merely the beautiful prologue to the massive success story you are currently writing. Every challenge you faced only polished your character and refined your spirit into pure gold. Your journey is a breathtaking testament to God's grace upon your life.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (20).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Unforgettable Moments</h2>
+                        <p class="body-text">Life is made entirely of small, beautiful moments, and you know exactly how to capture them. You bring a specific magic to everyday situations, turning ordinary days into lifelong memories. Whether it is a shared meal, a deep conversation, or a spontaneous adventure, your presence elevates it. People will never forget how you made them feel in their most vulnerable or celebratory times. Your laugh echoes in the minds of your loved ones, serving as a constant reminder of joy. You are deeply unforgettable in the best possible way.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (86).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Grace in Motion</h2>
+                        <p class="body-text">Watching you navigate life is like observing a beautifully choreographed, flawless dance. You handle unexpected curveballs with a level of grace that completely bewilders those around you. You do not stumble when the ground shakes; you simply adjust your posture and keep moving forward. There is an elegance to your hustle, a quiet dignity in the way you pursue your massive goals. You never look disheveled by pressure, maintaining your composure with absolute perfection. You are the true definition of grace in perpetual, beautiful motion.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (51).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">A Heart of Gold</h2>
+                        <p class="body-text">If your heart could be measured, its value would easily bankrupt the entire world. You possess a capacity for love that is incredibly rare, pure, and absolutely unconditional. You give the best parts of yourself to the people you care about, never holding back your affection. Your kindness is not a performance; it is the very core of your beautiful DNA. You forgive easily, love deeply, and protect fiercely without asking for anything in return. To be loved by you is to experience one of life's greatest blessings.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (61).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Pure Elegance</h2>
+                        <p class="body-text">You do not need designer labels to exude luxury; your elegance comes from deep within your soul. The way you speak, the way you carry yourself, and the way you treat others is high-class. You possess a refined taste that turns everything you touch into an absolute masterpiece. Your beauty is not just physical; it radiates from a deeply cultivated, stunningly elegant spirit. You command respect simply by walking into a room with your head held high and your shoulders back. You are a portrait of pure, unadulterated elegance.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (56).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Captivating Smile</h2>
+                        <p class="body-text">Your smile has the undeniable power to completely change the atmosphere of any given room. It is radiant, deeply genuine, and entirely contagious to everyone who happens to see it. When you smile, all of your warmth and inner beauty are instantly broadcast to the world. It provides comfort to your friends and completely disarms anyone who meets you for the first time. Your joy is visibly written across your face, serving as a beacon of beautiful light. Never underestimate the profound impact of your stunning, captivating smile.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (73).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Defining Excellence</h2>
+                        <p class="body-text">You do not just aim for good; you meticulously design and execute absolute excellence. Everything attached to your name carries a strict signature of high quality and profound care. You put your entire heart into your work, refusing to produce anything that is half-hearted. This level of dedication sets you entirely apart from the crowd and guarantees your massive success. You are setting a standard that others will spend their entire lives trying to quietly emulate. Excellence is not just what you do; it is exactly who you are.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (14).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Radiating Joy</h2>
+                        <p class="body-text">There is a specific frequency of joy that you naturally emit everywhere you go. It is a deep, unbothered happiness that stems from a beautifully cultivated and peaceful spirit. You do not allow the negativity of the world to penetrate your heart or steal your light. Instead, you push back against the darkness with infectious laughter and a beautiful, positive spirit. People naturally gravitate toward you because your energy is a safe, wonderfully happy space. You are a radiant force of beautiful, pure, and unstoppable joy.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (2).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">A Masterpiece</h2>
+                        <p class="body-text">You are the stunning result of divine artistry and careful, intentional, beautiful design. There is absolutely no one else on this earth who possesses your specific blend of magic. Your mind, your beauty, and your incredible talents make you a true, breathtaking masterpiece. You are continually evolving, adding new, beautiful colors to the canvas of your already stunning life. People look at you and see the absolute perfection of a life lived with immense grace. You are a work of art that belongs in the grandest of galleries.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (90).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Unstoppable Force</h2>
+                        <p class="body-text">Once you set your sights on a specific goal, absolutely nothing can stand in your way. You are a quiet, beautiful powerhouse, breaking down barriers with incredible ease and grace. Your determination is terrifying to your obstacles and deeply inspiring to your loved ones. You do not take 'no' for an answer when it comes to the dreams God placed in you. You simply find another route, build a new door, and confidently walk right through it. You are a beautiful, brilliant, and completely unstoppable force of nature.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (54).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Crowned in Glory</h2>
+                        <p class="body-text">You carry a royal anointing that is entirely visible to anyone who pays attention. There is a magnificent crown upon your head, forged in fire and polished with deep grace. You do not have to demand to be treated like a queen; your posture automatically requires it. You walk in profound divine favor, with goodness and mercy tracking you down every single day. Your future is incredibly bright, paved with gold and lined with absolute, undeniable success. You are, and will always be, a woman beautifully crowned in glory.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (26).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">A Light to the World</h2>
+                        <p class="body-text">In a world that can often feel dark, you are a brilliant, undeniable beacon of light. You bring hope, laughter, and deep comfort to everyone fortunate enough to be in your orbit. You do not hoard your brilliance; you generously share it to help others find their way. Your life is a beautiful testament to the power of living with an open, loving heart. You elevate the people around you, ensuring that no one is left behind in the dark. Your beautiful light will only continue to shine brighter with every passing year.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (118).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Cherished Memories</h2>
+                        <p class="body-text">The moments spent with you are the ones people quietly hold closest to their hearts. You have an incredible gift for making people feel deeply seen, deeply heard, and profoundly loved. You create safe spaces where your friends and family can completely and unapologetically be themselves. The memories you have built so far are a beautiful foundation for the incredible life ahead. You will continue to write beautiful chapters filled with massive celebrations and deep love. You are deeply cherished by everyone who truly knows your beautiful heart.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (108).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Building an Empire</h2>
+                        <p class="body-text">You are not just working a job; you are meticulously building a massive, generational empire. The culinary dreams in your heart are the blueprints for a highly successful and deeply influential future. You have the exact business acumen, the creative flair, and the deep passion required to dominate. You will create spaces where people gather to experience your incredible art and beautiful hospitality. Your name will be synonymous with luxury, excellence, and absolute culinary perfection. The empire you are building will stand tall, proud, and completely unshakeable.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (63).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Simply Omah</h2>
+                        <p class="body-text">At the end of the day, all the beautiful titles and grand adjectives simply point back to you. You are Omah—a brilliant, gorgeous, deeply loving, and incredibly powerful force of nature. You do not have to perform or pretend; your existence alone is worth a massive celebration. You are deeply loved for exactly who you are, without any alterations or requested changes. Your heart, your mind, and your beautiful spirit are completely perfect in every single way. To sum it all up perfectly: you are wonderful, you are loved, and you are simply Omah.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (49).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">Endless Possibilities</h2>
+                        <p class="body-text">There is absolutely no limit to what you are fully capable of achieving in this beautiful lifetime. The boundaries that hold others back completely disintegrate the moment you step up to the plate. You possess a brilliant mind that is constantly generating fresh, innovative, and highly profitable ideas. Your future is a wide-open landscape of massive opportunities just waiting for your magical touch. Do not ever shrink your dreams, because your capacity for incredible greatness is truly endless. The world is yours for the taking, and you are more than ready for it.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(32vh, 42vh, 48vh);"><img src="assets/omah/omah (66).jpeg" style="border: 2px solid var(--gold); border-radius: 12px; padding: 5px;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold glow title" style="margin-top:0;">The Queen's Era</h2>
+                        <p class="body-text">This is officially your era of unapologetic success, massive growth, and absolute, undeniable dominion. You have put in the hard work, the quiet tears, and the unseen hours of deep preparation. Now, it is time to publicly reap the incredible rewards of your profound and beautiful dedication. You are stepping onto a grand stage where your talents will be celebrated by absolute multitudes. Take your rightful throne, hold your head high, and gracefully rule your beautiful kingdom. Welcome to the greatest, most vibrant, and most successful era of your entire life.</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(30vh, 38vh, 42vh);"><img src="assets/omah/omah (65).jpeg" style="border-radius: 50%; border: 4px solid var(--gold); aspect-ratio: 1; object-fit: cover;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold title" style="margin-top:0;">Declaration I</h2>
+                        <p class="body-text">"I declare that your beautiful culinary dreams will not experience a single moment of delay. The exact resources, the powerful connections, and the perfect platforms required to build your food empire will locate you effortlessly. You will not struggle to find your footing; you will step directly into a season of massive, uncontainable success. People from all over will seek out your creations, recognizing the unique blessing upon your hands. Your brand will become synonymous with absolute luxury, incredible taste, and profound excellence. This is the year your culinary visions become a highly profitable, highly celebrated reality."</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(30vh, 38vh, 42vh);"><img src="assets/omah/omah (48).jpeg" style="border-radius: 50%; border: 4px solid var(--gold); aspect-ratio: 1; object-fit: cover;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold title" style="margin-top:0;">Declaration II</h2>
+                        <p class="body-text">"I declare that as you step out of the academic environment, you step into immediate, uncommon favor. Doors that typically require years of experience will open for you simply because of the heavy grace you carry. You will sit at tables with industry giants and realize that you absolutely belong there. Your degree is merely the key; your brilliant mind and pure spirit are what will keep you in the room. You will bypass the struggles of your peers and accelerate directly into your appointed destiny. Prepare for opportunities that will literally take your breath away."</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(30vh, 38vh, 42vh);"><img src="assets/omah/omah (62).jpeg" style="border-radius: 50%; border: 4px solid var(--gold); aspect-ratio: 1; object-fit: cover;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold title" style="margin-top:0;">Declaration III</h2>
+                        <p class="body-text">"I declare absolute, impenetrable protection over your beautiful mind and your vibrant spirit. No weapon formed against your peace, your joy, or your massive destiny will ever be allowed to prosper. You will sleep soundly every night, knowing that your future is completely secure and divinely protected. Anxiety and fear will have absolutely no place in your heart as you step into this new chapter. You will be surrounded by a shield of favor that deflects every negative word or intention. You are completely safe to dream as big as you possibly can."</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(30vh, 38vh, 42vh);"><img src="assets/omah/omah (58).jpeg" style="border-radius: 50%; border: 4px solid var(--gold); aspect-ratio: 1; object-fit: cover;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold title" style="margin-top:0;">Declaration IV</h2>
+                        <p class="body-text">"I declare that your hands will continually and effortlessly produce massive, generational wealth. You will not spend your life building empires for others to inherit; you will build establishments that bear your own signature. The investments you make this year will yield returns that completely shock your logical mind. You will have more than enough resources to fund every single dream God has placed in your heart. Poverty and lack are permanently erased from your bloodline starting right now, with you. You are a financial powerhouse in the making."</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page split-page">
+                <div class="content">
+                    <div class="image-container" style="height: clamp(30vh, 38vh, 42vh);"><img src="assets/omah/omah (12).jpeg" style="border-radius: 50%; border: 4px solid var(--gold); aspect-ratio: 1; object-fit: cover;"></div>
+                    <div class="text-container">
+                        <h2 class="word-title gold title" style="margin-top:0;">Declaration V</h2>
+                        <p class="body-text">"I declare that the immense joy you bring to others will be returned to you multiplied a hundredfold. You will not lack genuine love, fiercely loyal friendships, or absolute support in your times of need. The people around you will recognize your true value and treat you with the utmost respect and care. You will attract relationships that feed your soul and completely eliminate connections that drain your energy. Your heart will be continually overflowing with the love you have so freely given away. You are entering a season of beautiful, rich, and deeply fulfilling relationships."</p>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="page cover-page">
+                <img src="assets/omah/omah (53).jpeg" class="bg-img blur-bg">
+                <div class="overlay" style="background: rgba(17,10,8,0.7);"></div>
+                <div class="content center-content">
+                    <h1 class="title gold glow">Happy Birthday</h1>
+                    <div class="divider"></div>
+                    <div class="text-container" style="background:none; border:none; box-shadow:none;">
+                        <p class="body-text">To Charity Omah Sule Ojone.<br><br>Here is to the absolute perfection of your past, the beautiful reality of your present, and the massive, uncontainable success of your future. You are a true masterpiece in brilliant, beautiful motion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="page cover-page">
+                <img src="assets/omah/omah (87).jpeg" class="bg-img">
+                <div class="overlay" style="background: rgba(17,10,8,0.6);"></div>
+                <div class="content center-content" style="justify-content: flex-end; padding-bottom: 80px;">
+                    <h2 class="subtitle gold">CHARITY OMAH SULE OJONE</h2>
+                    <div class="divider"></div>
+                    <h3 style="font-size: clamp(0.8rem, 2vw, 1rem); letter-spacing: 3px; font-weight: 700; font-family: 'Cormorant Garamond', serif;">VOLUME I • THE DIGITAL EDITION</h3>
+                </div>
+            </div>
+
+            <div class="page text-page">
+                <div class="content center-content">
+                    <h1 class="title gold glow">A New Chapter</h1>
+                    <div class="divider"></div>
+                    <div class="text-container" style="background:none; border:none; box-shadow:none; overflow-y:auto; max-height: 75vh;">
+                        <p class="body-text" style="font-size: clamp(1.2rem, 3.5vw, 1.8rem); text-align: left; margin-bottom: 15px;">
+                            Heavenly Father, I lift up Omah to you as she crosses into this beautiful new year. I pray that this chapter brings her an overflow of peace that surpasses all human understanding. May she walk in divine favor, surrounded by goodness and mercy in every single step she takes.<br><br>
+                            I declare that every culinary dream, every academic pursuit, and every quiet prayer in her heart receives sudden and massive acceleration. Let doors of opportunity swing wide open for her, and let her name be mentioned in rooms she hasn't even entered yet.<br><br>
+                            Lord, protect her brilliant mind and her beautiful spirit from the noise of the world. Give her the courage to stand firm in her convictions and the grace to remain gentle in her interactions. May she never lose her authentic, stunning glow.<br><br>
+                            I pray for her health, her strength, and her vitality. Let her body be completely free from sickness and her heart completely free from anxiety. Grant her the energy she needs to execute her massive goals and build the empire she is destined for.<br><br>
+                            Bless the works of her hands, Lord. Let everything she touches prosper beyond human logic. Provide her with resources that never run dry, and surround her with genuine people who will hold her up when she is weary.<br><br>
+                            I pray that you continue to mold her into the profound woman of substance she is already becoming. Let her wisdom deepen, let her joy multiply, and let her capacity to love expand in beautiful new ways.<br><br>
+                            May this year be totally free from unnecessary struggles. Where there is confusion, bring absolute clarity. Where there is delay, bring divine speed. Where there is lack, bring absolute, uncontainable abundance.<br><br>
+                            Finally, Lord, I pray that Omah always knows exactly how deeply and unconditionally she is loved. Let her daily life be a constant reminder of Your grace, and let her light shine brighter than it ever has before. Happy Birthday, Queen Omah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </div>
+        <div class="nav-hint"><span>&larr;</span> Swipe <span>&rarr;</span></div>
+        <div class="page-counter" id="counter"></div>
+        <div id="burst-layer"></div>
     </div>
 
     <script>
-        // CONFIGURATION
-        const CORRECT_PASSCODE = "1507"; 
-        const TOTAL_SPREADS = 44; 
-        
-        // --- 1. Passcode Logic ---
+        const CORRECT_PASSCODE = "1507";
         const gateScreen = document.getElementById('gate-screen');
         const magContainer = document.getElementById('magazine-container');
         const passInput = document.getElementById('passcode');
         const unlockBtn = document.getElementById('unlock-btn');
         const errorMsg = document.getElementById('error-msg');
-        const navHint = document.getElementById('nav-hint');
+        
+        const funnyErrors = ["Haba!! 😂", "Chai!! 🤦🏾‍♂️", "Oh chim!! 🙆🏾‍♀️", "Try again jor! 👀", "Na wa o! 🤣", "Who goes there?! 🛑"];
 
         function checkPasscode() {
             if (passInput.value === CORRECT_PASSCODE) {
                 gateScreen.classList.add('unlocked');
                 magContainer.classList.add('active');
-                loadImages();
-                
-                // Hide swipe hint after 5 seconds
-                setTimeout(() => {
-                    navHint.style.opacity = '0';
-                    navHint.style.transition = 'opacity 1s ease';
-                }, 5000);
+                confetti({ particleCount: 200, spread: 100, origin: { y: 0.6 }, colors: ['#D4AF37', '#ffffff'] });
+                setTimeout(() => triggerEffects(0), 1000);
             } else {
+                const randomError = funnyErrors[Math.floor(Math.random() * funnyErrors.length)];
+                errorMsg.innerText = randomError;
                 errorMsg.style.opacity = '1';
                 passInput.value = '';
                 setTimeout(() => errorMsg.style.opacity = '0', 2000);
@@ -283,101 +705,109 @@
         }
 
         unlockBtn.addEventListener('click', checkPasscode);
-        passInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') checkPasscode();
-        });
+        passInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') checkPasscode(); });
 
-        // --- 2. Slider Logic ---
-        const track = document.getElementById('slider-track');
+        const track = document.getElementById('slider-container');
+        const counter = document.getElementById('counter');
+        const burstLayer = document.getElementById('burst-layer');
+        const slides = document.querySelectorAll('.page');
+        const totalSlides = slides.length;
         let currentIndex = 0;
-        let imagesLoaded = false;
 
-        function loadImages() {
-            if (imagesLoaded) return;
-            for (let i = 0; i < TOTAL_SPREADS; i++) {
-                const slide = document.createElement('div');
-                slide.className = 'slide';
-                const img = document.createElement('img');
-                img.src = `assets/omah/digi_spread_${i}.jpg`;
-                slide.appendChild(img);
-                track.appendChild(slide);
+        const allPhrases = [
+            "Hey Omah! ✨", "Hey Queen Omah! 👑", "Wonderful! 💖", "Masterpiece! 🎉", 
+            "Absolute Perfection! 🌹", "Happy Birthday! 🎂", "Flawless! 😍", "Gorgeous! 💫", 
+            "Breathtaking! 🌟", "Brilliant! 🥂", "Stunning! 👑", "Royalty! ✨", 
+            "So Beautiful! 🌸", "Incredible! 💖", "Unstoppable! 🚀", "Phenomenal! 🌟", 
+            "A True Gem! 💎", "Exceptional! 🥇", "Magnificent! 👑", "Radiant! ☀️", 
+            "Pure Gold! 🏆", "Limitless! 🌠", "A Queen! 👑", "Spectacular! 🎉", 
+            "Fabulous! 💃", "One of a Kind! 🦋", "Graceful! 🦢", "Exquisite! ✨", 
+            "Dazzling! 💫", "Captivating! 🌹", "Unforgettable! 💖", "Inspiring! 🌟", 
+            "Iconic! 👑", "Simply The Best! 🏆", "So Elegant! 🥂", "Divine! ✨", 
+            "A Blessing! 🙏", "Extraordinary! 🌠", "A Work of Art! 🎨", "Glorious! ☀️", 
+            "Fierce! 🦁", "Lovely! 🌸", "A Star! ⭐", "Magic! 🪄", "Perfection! 💯", 
+            "A True Masterpiece! 🖼️", "We Love You! ❤️", "Cheers to You! 🥂", 
+            "Shine Bright! ✨", "Happy Birthday Queen! 🎂"
+        ];
+        
+        let availablePhrases = [...allPhrases];
+        const emojis = ["🎂", "🎈", "✨", "🎉", "💖", "🍰", "👑", "🍾"];
+
+        function triggerEffects(index) {
+            if (index > 0 && (index % 4 === 0 || index === totalSlides - 2)) {
+                confetti({ particleCount: 150, spread: 80, origin: { y: 0.6 }, colors: ['#D4AF37', '#ffffff', '#ff6b6b'] });
             }
-            imagesLoaded = true;
-            updateSlider();
-        }
+            
+            if (index > 0) {
+                if (availablePhrases.length === 0) {
+                    availablePhrases = [...allPhrases]; 
+                }
+                
+                const randomIndex = Math.floor(Math.random() * availablePhrases.length);
+                const phrase = availablePhrases.splice(randomIndex, 1)[0];
+                
+                const burst = document.createElement('div');
+                burst.className = 'burst-text burst-anim';
+                burst.innerText = phrase;
+                burstLayer.appendChild(burst);
+                setTimeout(() => burst.remove(), 2500);
+            }
 
-        const prevBtn = document.getElementById('prev-btn');
-        const nextBtn = document.getElementById('next-btn');
+            if (index > 0) {
+                for(let i=0; i<4; i++) {
+                    setTimeout(() => {
+                        const floatEl = document.createElement('div');
+                        floatEl.className = 'floating-emoji';
+                        floatEl.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                        floatEl.style.left = Math.random() * 80 + 10 + 'vw';
+                        floatEl.style.animationDuration = (3 + Math.random() * 3) + 's';
+                        burstLayer.appendChild(floatEl);
+                        setTimeout(() => floatEl.remove(), 5000);
+                    }, i * 400);
+                }
+            }
+        }
 
         function updateSlider() {
             track.style.transform = `translateX(-${currentIndex * 100}vw)`;
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex === TOTAL_SPREADS - 1;
+            counter.innerText = `${currentIndex + 1} / ${totalSlides}`;
+            triggerEffects(currentIndex);
         }
+        
+        counter.innerText = `1 / ${totalSlides}`;
 
-        prevBtn.addEventListener('click', () => {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSlider();
-            }
-        });
-
-        nextBtn.addEventListener('click', () => {
-            if (currentIndex < TOTAL_SPREADS - 1) {
-                currentIndex++;
-                updateSlider();
-            }
-        });
-
-        // --- 3. Swipe Support (Touch) ---
         let startX = 0;
         let isDragging = false;
 
         track.addEventListener('touchstart', (e) => {
             startX = e.touches[0].clientX;
             isDragging = true;
-            track.style.transition = 'none'; 
+            track.style.transition = 'none';
         }, {passive: true});
 
         track.addEventListener('touchmove', (e) => {
             if (!isDragging) return;
-            const currentX = e.touches[0].clientX;
-            const diffX = currentX - startX;
+            const diffX = e.touches[0].clientX - startX;
             let dragPx = diffX;
-            if (currentIndex === 0 && diffX > 0) dragPx = diffX * 0.2;
-            if (currentIndex === TOTAL_SPREADS - 1 && diffX < 0) dragPx = diffX * 0.2;
-            
-            const baseTranslate = -currentIndex * window.innerWidth;
-            track.style.transform = `translateX(${baseTranslate + dragPx}px)`;
+            if (currentIndex === 0 && diffX > 0) dragPx *= 0.2;
+            if (currentIndex === totalSlides - 1 && diffX < 0) dragPx *= 0.2;
+            track.style.transform = `translateX(${ -currentIndex * window.innerWidth + dragPx }px)`;
         }, {passive: true});
 
         track.addEventListener('touchend', (e) => {
             if (!isDragging) return;
             isDragging = false;
             track.style.transition = 'transform 0.5s cubic-bezier(0.25, 1, 0.5, 1)';
-            
-            const endX = e.changedTouches[0].clientX;
-            const diffX = endX - startX;
-            
-            if (diffX < -40 && currentIndex < TOTAL_SPREADS - 1) {
-                currentIndex++;
-            } else if (diffX > 40 && currentIndex > 0) {
-                currentIndex--;
-            }
+            const diffX = e.changedTouches[0].clientX - startX;
+            if (diffX < -40 && currentIndex < totalSlides - 1) currentIndex++;
+            else if (diffX > 40 && currentIndex > 0) currentIndex--;
             updateSlider();
         });
-        
-        // Keyboard support
+
         window.addEventListener('keydown', (e) => {
-            if (gateScreen.classList.contains('unlocked')) {
-                if (e.key === 'ArrowRight' && currentIndex < TOTAL_SPREADS - 1) {
-                    currentIndex++;
-                    updateSlider();
-                } else if (e.key === 'ArrowLeft' && currentIndex > 0) {
-                    currentIndex--;
-                    updateSlider();
-                }
-            }
+            if (!gateScreen.classList.contains('unlocked')) return;
+            if (e.key === 'ArrowRight' && currentIndex < totalSlides - 1) { currentIndex++; updateSlider(); }
+            else if (e.key === 'ArrowLeft' && currentIndex > 0) { currentIndex--; updateSlider(); }
         });
     </script>
 </body>
