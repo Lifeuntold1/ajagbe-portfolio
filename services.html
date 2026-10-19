@@ -1,546 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- FOUC Blocking Theme Switcher -->
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || 'dark';
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        })();
-    </script>
+  <!-- FOUC Blocking Theme Switcher -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
 
-    <title>Premium Web Development & WordPress Design Services | Ajagbe Emmanuel</title>
-    <meta name="description" content="Clunky websites, broken layouts, and slow software killing your digital conversion rates? Elevate your brand. Ajagbe Emmanuel Oluwatobi delivers expert WordPress development, custom Laravel architectures, and premium web design optimized to convert.">
-    <meta name="keywords" content="web developer, web designer, wordpress developer, ajagbe emmanuel oluwatobi, ajagbe emmanuel, fullstack engineer Nigeria, web developer Nigeria, PHP Laravel developer Jos, technical copywriter Nigeria, React developer Nigeria, web engineer remote Nigeria, premium web design Jos, international web developer, remote fullstack developer, custom wordpress themes">
-    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
-    <meta name="robots" content="index, follow">
+  <title>Services | Ajagbe Emmanuel - Web Systems &amp; Technical Copy</title>
+  <meta name="description" content="Eight ways I help businesses and research teams: Laravel SaaS, WordPress, WooCommerce, Conversion Copywriting, Data Analysis, and SEO.">
+  <meta name="keywords" content="web developer services, Laravel development, WordPress themes, WooCommerce, copywriting, data analysis, SEO, Jos Nigeria">
+  <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+  <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://eoajagbe.name.ng/services.html">
+  <link rel="canonical" href="https://eoajagbe.name.ng/services.html">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Premium Web Development & WordPress Design Services | Ajagbe Emmanuel">
-    <meta property="og:description" content="Clunky websites, broken layouts, and slow software killing your digital conversion rates? Elevate your brand. Ajagbe Emmanuel Oluwatobi delivers expert WordPress development, custom Laravel architectures, and premium web design optimized to convert.">
-    <meta property="og:url" content="https://eoajagbe.name.ng/services.html">
-    <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
-    <meta property="og:site_name" content="Ajagbe Emmanuel - Premium Web Developer & Fullstack Engineer">
-    <meta property="og:locale" content="en_US">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Services | Ajagbe Emmanuel - Web Systems &amp; Technical Copy">
+  <meta property="og:description" content="Eight ways I help businesses and research teams: Laravel SaaS, WordPress, WooCommerce, Conversion Copywriting, Data Analysis, and SEO.">
+  <meta property="og:url" content="https://eoajagbe.name.ng/services.html">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Premium Web Development & WordPress Design Services | Ajagbe Emmanuel">
-    <meta name="twitter:description" content="Clunky websites, broken layouts, and slow software killing your digital conversion rates? Elevate your brand. Ajagbe Emmanuel Oluwatobi delivers expert WordPress development, custom Laravel architectures, and premium web design optimized to convert.">
-    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Services | Ajagbe Emmanuel - Web Systems &amp; Technical Copy">
+  <meta name="twitter:description" content="Eight ways I help businesses and research teams: Laravel SaaS, WordPress, WooCommerce, Conversion Copywriting, Data Analysis, and SEO.">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://eoajagbe.name.ng/services.html#service",
-          "name": "Ajagbe Emmanuel Oluwatobi",
-          "image": "https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg",
-          "url": "https://eoajagbe.name.ng/services.html",
-          "telephone": "+2347036316514",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jos",
-            "addressRegion": "Plateau State",
-            "addressCountry": "NG"
-          },
-          "hasOfferCatalog": {
-            "@type": "OfferCatalog",
-            "name": "Web Engineering Services",
-            "itemListElement": [
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "WordPress Development & Custom Themes",
-                  "description": "Premium WordPress theme design, custom plugin development, WooCommerce setup, performance tuning, and secure element builders."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Fullstack Laravel Software Engineering",
-                  "description": "High-performance SaaS databases, customized REST API pipelines, admin control panels, and multi-tenant applications using PHP & Laravel."
-                }
-              },
-              {
-                "@type": "Offer",
-                "itemOffered": {
-                  "@type": "Service",
-                  "name": "Premium Web Design & React Frontends",
-                  "description": "State-of-the-art visual design, seamless animations, glassmorphic layouts, and lightning-fast React / static interfaces built for peak conversion."
-                }
-              }
-            ]
-          }
-        }
-      ]
-    }
-    </script>
-
-    <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/main.js" defer></script>
+  <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container header-flex">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="brand-logo-img">
-            </a>
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Ajagbe Emmanuel Home">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo">
+      </a>
 
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="services.html" class="active-link">Services</a>
-                <a href="projects.html">Projects</a>
-                <a href="blog/index.html">Blog</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-                <a href="contact.html" class="cta-button mobile-only-btn">Hire Me</a>
-            </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle visual theme">
+          <span id="theme-icon">☾</span>
+        </button>
+        <a href="contact.html" class="btn btn-outline-nav desktop-only">Hire Me</a>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-            <div class="desktop-cta-container">
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <a href="contact.html" class="cta-button desktop-only-btn">Hire Me</a>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-overlay-link">Home</a>
+    <a href="about.html" class="mobile-overlay-link">About</a>
+    <a href="services.html" class="mobile-overlay-link active">Services</a>
+    <a href="projects.html" class="mobile-overlay-link">Projects</a>
+    <a href="contact.html" class="mobile-overlay-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section section-primary" style="padding-bottom: var(--space-8);">
+      <div class="container reveal-item">
+        <span class="section-label">Capabilities</span>
+        <h1>Eight ways I can help your business.</h1>
+        <p class="lead-text" style="max-width: 680px; margin-top: var(--space-4);">
+          Digital software solutions engineered for direct conversions. From scalable databases to technical messaging.
+        </p>
+      </div>
+    </section>
+
+    <!-- 01: Laravel / SaaS -->
+    <section class="section section-primary service-section-wrap" id="laravel">
+      <span class="service-watermark" aria-hidden="true">01</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">Fullstack</span>
+        <h2>Custom Laravel &amp; SaaS Architectures</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          I construct database structures rather than basic layout templates. Whether your system operates in education, logistics, publishing, or eCommerce, I engineer secure applications that automate routine data workflows.
+        </p>
+        <ul class="service-feature-list">
+          <li>Fullstack Database Architecture (PHP / Laravel Stack)</li>
+          <li>Secure Operational Portals &amp; User Dashboards</li>
+          <li>Custom RESTful API Pipelines &amp; Integrations</li>
+          <li>Optimized MySQL Relational Schemas &amp; Indexing</li>
+        </ul>
+        <p><a href="projects.html#nexus" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- 02: WordPress Themes -->
+    <section class="section section-secondary service-section-wrap" id="wordpress">
+      <span class="service-watermark" aria-hidden="true">02</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">WordPress</span>
+        <h2>Custom WordPress Themes &amp; Blocks</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          I build custom WordPress solutions from the ground up without using heavy page-builder plugins. Your administrative team receives a lightweight, secure content environment that loads fast on every device.
+        </p>
+        <ul class="service-feature-list">
+          <li>Semantic Gutenberg Block Construction</li>
+          <li>Lean Theme Logic Free of Unnecessary Plugins</li>
+          <li>PageSpeed Optimization Targeting 90+ Mobile Scores</li>
+          <li>Structured Content Schemas for Long-Term Maintenance</li>
+        </ul>
+        <p><a href="projects.html#jaoos" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- 03: WooCommerce -->
+    <section class="section section-primary service-section-wrap" id="woocommerce">
+      <span class="service-watermark" aria-hidden="true">03</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">eCommerce</span>
+        <h2>WooCommerce Stores &amp; Systems</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          Turn casual visitors into repeat buyers with checkout funnels optimized for speed. I configure custom product catalogs, integrate regional payment gateways, and automate customer order notifications.
+        </p>
+        <ul class="service-feature-list">
+          <li>Custom Checkout Optimization to Reduce Cart Drop-Off</li>
+          <li>Payment Gateway API Integrations (Paystack, Flutterwave, Stripe)</li>
+          <li>Inventory Synchronization &amp; Order Management Logic</li>
+          <li>Wholesale &amp; Affiliate Pricing Customizations</li>
+        </ul>
+        <p><a href="projects.html#nexus" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- 04: Copywriting -->
+    <section class="section section-secondary service-section-wrap" id="copywriting">
+      <span class="service-watermark" aria-hidden="true">04</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">Messaging</span>
+        <h2>Conversion &amp; Technical Copywriting</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          Software requires clear words to sell. I write direct, active copy that explains complex products simply, eliminates confusion, and leads potential clients to take immediate action.
+        </p>
+        <ul class="service-feature-list">
+          <li>High-Converting SaaS &amp; Service Landing Page Copy</li>
+          <li>Technical Documentation &amp; User Manuals</li>
+          <li>Email Welcome Sequences &amp; Product Launch Campaigns</li>
+          <li>Brand Positioning Strategy &amp; Core Value Messaging</li>
+        </ul>
+        <p><a href="projects.html#taskflow" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- 05: Academic Research -->
+    <section class="section section-primary service-section-wrap" id="academic">
+      <span class="service-watermark" aria-hidden="true">05</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">Science</span>
+        <h2>Academic Research &amp; Computational Physics</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          Leveraging an academic Physics foundation to format research papers, analyze mathematical simulations, and structure technical reports according to strict scientific standards.
+        </p>
+        <ul class="service-feature-list">
+          <li>LaTeX Document Preparation &amp; Mathematical Typesetting</li>
+          <li>Numerical Simulations &amp; Computational Physics Modeling</li>
+          <li>Literature Reviews &amp; Systematic Data Compilation</li>
+          <li>Clear Diagramming of Experimental Methodologies</li>
+        </ul>
+        <p><a href="projects.html#physlab" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- 06: Data Analysis -->
+    <section class="section section-secondary service-section-wrap" id="data">
+      <span class="service-watermark" aria-hidden="true">06</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">Analytics</span>
+        <h2>Data Analysis &amp; Visualization</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          I turn unstructured datasets into clear visual summaries. Using Python and specialized data tools, I uncover key trends and build reporting views that support informed business decisions.
+        </p>
+        <ul class="service-feature-list">
+          <li>Data Cleaning &amp; Normalization (Python, Pandas, NumPy)</li>
+          <li>Interactive Visualizations &amp; Trend Dashboards (Power BI, Excel)</li>
+          <li>Automated Web Scraping &amp; Data Pipeline Extraction</li>
+          <li>Statistical Correlation &amp; Performance Reporting</li>
+        </ul>
+        <p><a href="projects.html#trendanalyzer" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- 07: Technical Coaching -->
+    <section class="section section-primary service-section-wrap" id="coaching">
+      <span class="service-watermark" aria-hidden="true">07</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">Education</span>
+        <h2>Technical Coding Coaching</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          Structured mentorship for developers and students looking to master core programming fundamentals, computational thinking, and production deployment workflows.
+        </p>
+        <ul class="service-feature-list">
+          <li>One-on-One Practical Web Development Tutoring (HTML, CSS, JS, PHP)</li>
+          <li>Python for Science &amp; Data Analysis Fundamentals</li>
+          <li>Code Review, Architectural Audits, and Best Practices</li>
+          <li>Guidance on Real-World Freelance &amp; Engineering Workflows</li>
+        </ul>
+        <p><a href="projects.html#p4p" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- 08: SEO -->
+    <section class="section section-secondary service-section-wrap" id="seo">
+      <span class="service-watermark" aria-hidden="true">08</span>
+      <div class="container service-content-wrap reveal-item">
+        <span class="tag" style="margin-bottom: var(--space-2);">Visibility</span>
+        <h2>Search Engine Optimization (SEO)</h2>
+        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
+          Build long-term organic traffic with technical SEO built directly into your website's source code. I align schema markup, metadata, and site hierarchy to search engine standards.
+        </p>
+        <ul class="service-feature-list">
+          <li>Technical Architecture &amp; Core Web Vitals Auditing</li>
+          <li>Structured Schema Markup Integration (JSON-LD)</li>
+          <li>Keyword Research &amp; Content Silo Mapping</li>
+          <li>On-Page Optimization of Semantic HTML Elements</li>
+        </ul>
+        <p><a href="projects.html#taskflow" class="text-link">See example →</a></p>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="closing-cta" aria-label="Start a Project">
+      <div class="container">
+        <div class="closing-cta-grid">
+          <div class="closing-cta-left">
+            <h2>Let's build something that works.</h2>
+            <p>I take on a small number of new projects each month. If you have a system to build or copy to fix, reach out.</p>
+          </div>
+          <div class="closing-cta-right">
+            <div class="closing-contact-info">
+              <span class="closing-contact-item">emmanuelajagbe6@gmail.com</span>
+              <span class="closing-contact-item">+234 703 631 6514 (WhatsApp)</span>
+              <span class="closing-contact-item">eoajagbe.name.ng</span>
             </div>
-
-            <div class="mobile-toggle" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
+            <a href="contact.html" class="btn btn-cta-submit">Send a Project Brief</a>
+          </div>
         </div>
-    </header>
+      </div>
+    </section>
+  </main>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="section hero" style="min-height: 50vh;">
-            <div class="container" data-reveal="scale">
-                <p class="hero-subtitle">SERVICES</p>
-                <h1>Premium WordPress Development &amp; Web Design</h1>
-                <p class="hero-desc">Digital software solutions engineered for direct conversions. From scalable databases to technical messaging.</p>
-            </div>
-        </section>
-
-        <!-- Service 1: Custom Laravel SaaS -->
-        <section class="section section-light" id="laravel">
-            <div class="container">
-                <div class="grid-asymmetric-7-5" style="align-items: center;">
-                    <div data-reveal="left">
-                        <span class="pill" style="margin-bottom: var(--space-3); display: inline-block;">Flagship Capability</span>
-                        <h2>Custom Laravel &amp; SaaS Architectures</h2>
-                        <p>I construct robust web database structures rather than basic layout templates. Whether your system operates in education, logistics, publishing, or eCommerce, I engineer secure, cloud-based applications that automate routine data workflows.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Fullstack Database Architecture (PHP / Laravel Stack)</li>
-                            <li>Secure Operational Portals &amp; User Dashboards</li>
-                            <li>Custom RESTful API Pipelines &amp; Integrations</li>
-                            <li>Highly Optimized Database Indexing</li>
-                        </ul>
-                        <a href="projects.html#nexus" class="btn-ghost">Explore Nexus Case Study <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card" data-reveal="right">
-                        <div class="card__body">
-                            <span class="card__eyebrow">Custom PHP</span>
-                            <h3 class="card__title">SaaS Databases</h3>
-                            <p class="card__text">Enterprise ready backend portals, database optimization, and high performance custom controllers.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service 2: WordPress Development -->
-        <section class="section section-dark" id="wordpress">
-            <div class="container">
-                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
-                    <div class="card" data-reveal="left" style="order: 2;">
-                        <div class="card__body">
-                            <span class="card__eyebrow">CMS Engine</span>
-                            <h3 class="card__title">WordPress &amp; WooCommerce</h3>
-                            <p class="card__text">Performant custom blocks, optimized shop structures, secure backend management, and page speed compliance.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                    <div data-reveal="right" style="order: 1;">
-                        <h2>WordPress &amp; WooCommerce Architecture</h2>
-                        <p>I build fast, block-based WordPress installations. I remove unnecessary plugins to guarantee quick loading times. You get a visually striking frontend interface integrated with an easy-to-use content management board.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Gutenberg Block Customization</li>
-                            <li>Performant WooCommerce Customization &amp; Filters</li>
-                            <li>Speed Optimization (Targeting 90+ Mobile Insights Score)</li>
-                            <li>System Hardening &amp; Security Audits</li>
-                        </ul>
-                        <a href="projects.html#nexus" class="btn-ghost">View WooCommerce Project <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service 3: Copywriting -->
-        <section class="section section-light" id="copywriting">
-            <div class="container">
-                <div class="grid-asymmetric-7-5" style="align-items: center;">
-                    <div data-reveal="left">
-                        <h2>Conversion Copywriting</h2>
-                        <p>Visual style guides draw initial attention, but direct copywriting drives actual business actions. I write structured copy that addresses exactly what your clients need. No fluff, no jargon—just persuasive, active-voice messaging.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Conversion-Ready Landing Pages</li>
-                            <li>Structured Brand Value Positioning</li>
-                            <li>Clear B2B Service Overviews</li>
-                            <li>High Conversion CTA Sequences</li>
-                        </ul>
-                        <a href="projects.html#taskflow" class="btn-ghost">See TaskFlow Copywriting <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card" data-reveal="right">
-                        <div class="card__body">
-                            <span class="card__eyebrow">Psychological messaging</span>
-                            <h3 class="card__title">Direct Sales Copy</h3>
-                            <p class="card__text">Active voice page copywriting, precise landing page messages, and clear product positioning templates.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service 4: SEO Setup -->
-        <section class="section section-dark" id="seo">
-            <div class="container">
-                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
-                    <div class="card" data-reveal="left" style="order: 2;">
-                        <div class="card__body">
-                            <span class="card__eyebrow">Search Indexing</span>
-                            <h3 class="card__title">SEO Structural Audits</h3>
-                            <p class="card__text">On-page markup reviews, exact semantic keyword targets, clean canonical structures, and search console mapping.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                    <div data-reveal="right" style="order: 1;">
-                        <h2>SEO Audits &amp; Search Preparation</h2>
-                        <p>Search indexation begins during the initial wireframing. I build semantic HTML layouts so search engines parse your content and index your brand authority correctly from day one.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Technical SEO Audits &amp; Schema Setup</li>
-                            <li>Target Keyword Optimization mapping</li>
-                            <li>Semantic Header &amp; Alt Tag Optimization</li>
-                            <li>Google Search Console Profiling</li>
-                        </ul>
-                        <a href="projects.html#jaoos" class="btn-ghost">See SEO case study <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service 5: Website Management -->
-        <section class="section section-light" id="management">
-            <div class="container">
-                <div class="grid-asymmetric-7-5" style="align-items: center;">
-                    <div data-reveal="left">
-                        <h2>Website Management</h2>
-                        <p>Your web application is an operational asset that requires maintenance. I handle technical updates, security scanning, and automated cloud backups so your platform maintains peak performance continuously.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Security Monitoring &amp; Updates</li>
-                            <li>Uptime Scans &amp; Database Backups</li>
-                            <li>Operational Layout Adjustments</li>
-                            <li>Fast Bug Tracing &amp; Resolutions</li>
-                        </ul>
-                        <a href="projects.html" class="btn-ghost">Explore Projects <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card" data-reveal="right">
-                        <div class="card__body">
-                            <span class="card__eyebrow">Operations</span>
-                            <h3 class="card__title">Site Management</h3>
-                            <p class="card__text">Automated database synchronization, active malware scans, core updates, and structural audits.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service 6: Academic Research -->
-        <section class="section section-dark" id="academic">
-            <div class="container">
-                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
-                    <div class="card" data-reveal="left" style="order: 2;">
-                        <div class="card__body">
-                            <span class="card__eyebrow">Rigor</span>
-                            <h3 class="card__title">Academic Research</h3>
-                            <p class="card__text">Methodology reviews, statistical modeling parameters, LaTeX formatting, and index referencing guides.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                    <div data-reveal="right" style="order: 1;">
-                        <h2>Academic Research &amp; Structure</h2>
-                        <p>I bring analytical methodology to academic documentation. I help design robust literature frameworks and model data logic to ensure clear, academic clarity.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Research Methodology Layouts</li>
-                            <li>Empirical Data Interpretation support</li>
-                            <li>LaTeX Document Styling &amp; Typography</li>
-                            <li>Citation System Audits (APA / IEEE / MLA)</li>
-                        </ul>
-                        <a href="projects.html" class="btn-ghost">See Projects <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service 7: Data Analysis -->
-        <section class="section section-light" id="data">
-            <div class="container">
-                <div class="grid-asymmetric-7-5" style="align-items: center;">
-                    <div data-reveal="left">
-                        <h2>Data Analysis &amp; Business Intelligence</h2>
-                        <p>I clean and translate complex, unstructured data into actionable operational signal. I build automated parsing pipelines using Python and deploy custom tracking dashboards.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Python Data Analysis &amp; Data Cleaning Scripts</li>
-                            <li>Interactive Dashboard Operations (Power BI / Excel)</li>
-                            <li>Automated Formatting &amp; Macro Scripting</li>
-                            <li>Clear B2B Insight Reporting</li>
-                        </ul>
-                        <a href="projects.html#physlab" class="btn-ghost">View PhysLab Panel <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                    <div class="card" data-reveal="right">
-                        <div class="card__body">
-                            <span class="card__eyebrow">Computation</span>
-                            <h3 class="card__title">Computational Analytics</h3>
-                            <p class="card__text">Automated data cleaning, Pandas sorting scripts, visual metrics, and structured reports.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Service 8: Tech Coaching -->
-        <section class="section section-dark" id="coaching">
-            <div class="container">
-                <div class="grid-asymmetric-5-7" style="display: grid; grid-template-columns: 1fr; gap: var(--space-6); align-items: center;">
-                    <div class="card" data-reveal="left" style="order: 2;">
-                        <div class="card__body">
-                            <span class="card__eyebrow">Mentorship</span>
-                            <h3 class="card__title">Python &amp; Code Coaching</h3>
-                            <p class="card__text">Tailored coding curriculums, detailed stack evaluations, algorithm training, and workflow guidance.</p>
-                            <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Request Consultation</a>
-                        </div>
-                    </div>
-                    <div data-reveal="right" style="order: 1;">
-                        <h2>One-on-One Technical Coaching</h2>
-                        <p>I map out direct pathways from zero coding experience to practical software development. I specialize in teaching Python scripting, database management, and semantic HTML layout rules to junior developers.</p>
-                        <ul style="color: var(--color-muted); line-height: 2; margin-bottom: var(--space-4); margin-left: var(--space-4); list-style: square;">
-                            <li>Python &amp; Database Basics for Beginners</li>
-                            <li>Operational Web Development Pipelines</li>
-                            <li>Direct Code Reviews &amp; Workflow Audits</li>
-                            <li>Tailored Learning Milestone Maps</li>
-                        </ul>
-                        <a href="projects.html#p4p" class="btn-ghost">View Simulation curriculum <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process/Roadmap Section -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="section-header" data-reveal>
-                    <p>METHODOLOGY</p>
-                    <h2>The Service Lifecycle</h2>
-                    <p class="section-desc">From initial strategic audit to post-launch technical scaling.</p>
-                </div>
-
-                <div class="roadmap-wrapper" data-reveal>
-                    <!-- Dynamic SVG Connector Line -->
-                    <div class="roadmap-track-container">
-                        <svg class="roadmap-svg" width="100%" height="100%" preserveAspectRatio="none">
-                            <path class="roadmap-path-bg" d=""></path>
-                            <path class="roadmap-path-active" d=""></path>
-                        </svg>
-                    </div>
-
-                    <div class="roadmap-steps" id="services-roadmap">
-                        <!-- Step 1 -->
-                        <div class="roadmap-step is-active" data-step="1">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">01</span>
-                                    <span class="card__eyebrow">Phase 01 — Analysis</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Audit &amp; Scope</h3>
-                                    <p class="card__text">We analyze your platform performance gaps, audit competitor SEO strategies, and define exact milestones.</p>
-                                    <button class="btn-primary roadmap-next-btn" style="height: 40px; margin-top: var(--space-3); font-size: var(--text-xs); padding-inline: var(--space-4);">Complete Phase</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="roadmap-step is-locked" data-step="2">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">02</span>
-                                    <span class="card__eyebrow">Phase 02 — Blueprint</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Design &amp; Copy</h3>
-                                    <p class="card__text">I design premium wireframes in Figma and write persuasive copy focused strictly on direct conversions.</p>
-                                    <button class="btn-primary roadmap-next-btn" style="height: 40px; margin-top: var(--space-3); font-size: var(--text-xs); padding-inline: var(--space-4);">Complete Phase</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="roadmap-step is-locked" data-step="3">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">03</span>
-                                    <span class="card__eyebrow">Phase 03 — Production</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Engineering &amp; Speed</h3>
-                                    <p class="card__text">I build out secure database architectures and optimize file compression for maximum mobile loading speeds.</p>
-                                    <button class="btn-primary roadmap-next-btn" style="height: 40px; margin-top: var(--space-3); font-size: var(--text-xs); padding-inline: var(--space-4);">Complete Phase</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 4 -->
-                        <div class="roadmap-step is-locked" data-step="4">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">04</span>
-                                    <span class="card__eyebrow">Phase 04 — Operation</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Launch &amp; Support</h3>
-                                    <p class="card__text">Deploy. I provide 30 days of active server monitoring, security verification, and complete training documentation.</p>
-                                    <span class="roadmap-completed-badge" style="display: none; color: var(--color-accent); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; margin-top: var(--space-4); align-items: center; gap: var(--space-2);"><i class="fa-solid fa-circle-check"></i> System Operational</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sitewide CTA Banner -->
-        <section class="section section-light" style="text-align: center; padding-block: var(--space-12);">
-            <div class="container" data-reveal="scale" style="max-width: 800px;">
-                <h2>Let us build a system that achieves your business objectives</h2>
-                <p style="color: var(--color-muted); margin-bottom: var(--space-6); font-size: var(--text-body-lg);">Select your operational stack and initialize onboarding today.</p>
-                <a href="contact.html" class="btn-primary">Initiate Project Inquiry</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Sitewide Grounded Topographic Footer -->
-    <footer class="site-footer">
-        <!-- Organic Topographic Wavy SVG Divider -->
-        <div class="site-footer-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
-            </svg>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-col-identity">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Logo" class="footer-logo">
+        <p class="footer-bio">
+          Ajagbe Emmanuel Oluwatobi<br>
+          Fullstack Engineer. Technical Copywriter.<br>
+          Jos, Nigeria.
+        </p>
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
+      </div>
 
-        <div class="container footer-grid">
-            <!-- Footer Identity Column -->
-            <div class="footer-brand" data-reveal="fade">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="footer-logo" loading="lazy">
-                <p><strong>Ajagbe Emmanuel Oluwatobi</strong></p>
-                <p class="footer-tagline">Fullstack Engineer. Technical Copywriter. System Architect.</p>
-                <p class="footer-location">Jos, Nigeria. Available for remote work.</p>
-                <div class="footer-social-links">
-                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
-                    <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
-                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">Facebook</a>
-                </div>
-            </div>
+      <div class="footer-col">
+        <h3>Pages</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
 
-            <!-- Footer Pages Column -->
-            <div class="footer-links" data-reveal="fade" style="transition-delay: 80ms;">
-                <h4>Pages</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="services.html#wordpress">WordPress Development</a></li>
+          <li><a href="services.html#laravel">Laravel / PHP</a></li>
+          <li><a href="services.html#woocommerce">WooCommerce</a></li>
+          <li><a href="services.html#seo">SEO Writing</a></li>
+          <li><a href="services.html#management">Management</a></li>
+          <li><a href="services.html#data">Data Analysis</a></li>
+        </ul>
+      </div>
 
-            <!-- Footer Services Column -->
-            <div class="footer-links" data-reveal="fade" style="transition-delay: 160ms;">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="services.html#wordpress">WordPress Development</a></li>
-                    <li><a href="services.html#laravel">Laravel Development</a></li>
-                    <li><a href="services.html#woocommerce">WooCommerce Stores</a></li>
-                    <li><a href="services.html#seo">SEO Content Writing</a></li>
-                    <li><a href="services.html#management">Website Management</a></li>
-                    <li><a href="services.html#data">Data Analysis</a></li>
-                </ul>
-            </div>
-
-            <!-- Footer Contact Column -->
-            <div class="footer-contact" data-reveal="fade" style="transition-delay: 240ms;">
-                <h4>Get in Touch</h4>
-                <p class="footer-contact-item">
-                    <a href="mailto:emmanuelajagbe6@gmail.com" class="footer-contact-link">
-                        emmanuelajagbe6@gmail.com
-                    </a>
-                </p>
-                <p class="footer-contact-item">
-                    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
-                        +234 703 631 6514
-                    </a>
-                </p>
-                <a href="contact.html" class="btn-primary footer-cta">Start a Project</a>
-            </div>
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <div class="footer-contact-details">
+          <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
+          <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
         </div>
+        <a href="contact.html" class="btn btn-outline-nav">Start a Project</a>
+      </div>
+    </div>
 
-        <div class="footer-bottom container">
-            <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
-            <p class="footer-bottom-links">
-                <a href="index.html">eoajagbe.name.ng</a>
-            </p>
-        </div>
-    </footer>
+    <div class="container footer-bottom-bar">
+      <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+      <a href="index.html">eoajagbe.name.ng</a>
+    </div>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

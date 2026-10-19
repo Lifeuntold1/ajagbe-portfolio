@@ -1,694 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- FOUC Blocking Theme Switcher -->
-    <script>
-        (function() {
-            const theme = localStorage.getItem('theme') || 'dark';
-            if (theme === 'light') {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        })();
-    </script>
+  <!-- FOUC Blocking Theme Switcher -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 
-    <title>Ajagbe Emmanuel | Premium Web Developer, Designer & Fullstack Engineer</title>
-    <meta name="description" content="Is slow, clunky, or hard-to-maintain software stalling your business growth? Stop losing valuable users. Ajagbe Emmanuel Oluwatobi engineers blazing-fast React frontends, robust WordPress systems, and custom Laravel backends designed to convert.">
-    <meta name="keywords" content="web developer, web designer, wordpress developer, ajagbe emmanuel oluwatobi, ajagbe emmanuel, fullstack engineer Nigeria, web developer Nigeria, PHP Laravel developer Jos, technical copywriter Nigeria, React developer Nigeria, web engineer remote Nigeria, premium web design Jos, international web developer, remote fullstack developer">
-    <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
-    <meta name="robots" content="index, follow">
+  <title>Ajagbe Emmanuel | Web Systems &amp; Technical Copy</title>
+  <meta name="description" content="I build web systems using Laravel, React, and WordPress, and write the copy that fills them. Precision engineering from first principles.">
+  <meta name="keywords" content="web developer, Laravel developer, WordPress developer, technical copywriter, Nigeria, Jos, fullstack engineer">
+  <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+  <meta name="robots" content="index, follow">
 
-    <link rel="canonical" href="https://eoajagbe.name.ng/">
+  <link rel="canonical" href="https://eoajagbe.name.ng/">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Ajagbe Emmanuel | Premium Web Developer, Designer & Fullstack Engineer">
-    <meta property="og:description" content="Struggling with clunky websites or slow software? Stop losing users. Ajagbe Emmanuel Oluwatobi builds ultra-fast React websites, custom Laravel backends, and premium WordPress architectures worldwide.">
-    <meta property="og:url" content="https://eoajagbe.name.ng/">
-    <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
-    <meta property="og:site_name" content="Ajagbe Emmanuel - Premium Web Developer & Fullstack Engineer">
-    <meta property="og:locale" content="en_US">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ajagbe Emmanuel | Web Systems &amp; Technical Copy">
+  <meta property="og:description" content="I build web systems using Laravel, React, and WordPress, and write the copy that fills them. Precision engineering from first principles.">
+  <meta property="og:url" content="https://eoajagbe.name.ng/">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
 
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ajagbe Emmanuel | Premium Web Developer, Designer & Fullstack Engineer">
-    <meta name="twitter:description" content="Struggling with clunky websites or slow software? Stop losing users. Ajagbe Emmanuel Oluwatobi builds ultra-fast React websites, custom Laravel backends, and premium WordPress architectures.">
-    <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ajagbe Emmanuel | Web Systems &amp; Technical Copy">
+  <meta name="twitter:description" content="I build web systems using Laravel, React, and WordPress, and write the copy that fills them.">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "Person",
-          "@id": "https://eoajagbe.name.ng/#person",
-          "name": "Ajagbe Emmanuel Oluwatobi",
-          "alternateName": "Ajagbe Emmanuel",
-          "url": "https://eoajagbe.name.ng",
-          "image": "https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg",
-          "jobTitle": "Premium Web Developer, Designer & Fullstack Engineer",
-          "description": "AjagbeEmmanuel Oluwatobi is an international Web Developer, Designer, and Fullstack Laravel/React Engineer based in Jos, Nigeria, offering custom remote software worldwide.",
-          "email": "emmanuelajagbe6@gmail.com",
-          "telephone": "+2347036316514",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jos",
-            "addressRegion": "Plateau State",
-            "addressCountry": "NG"
-          },
-          "sameAs": [
-            "https://www.linkedin.com/in/ajagbeemmanueloluwatobi",
-            "https://github.com/Lifeuntold1",
-            "https://www.facebook.com/ajagbeemmanuel.oluwatobi"
-          ],
-          "knowsAbout": ["Web Development", "Web Design", "WordPress Development", "PHP", "Laravel", "React.js", "MySQL", "SEO", "User Experience (UX) Design"]
-        },
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://eoajagbe.name.ng/#service",
-          "name": "Ajagbe Emmanuel Oluwatobi",
-          "image": "https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg",
-          "url": "https://eoajagbe.name.ng",
-          "telephone": "+2347036316514",
-          "priceRange": "$$",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Jos",
-            "addressRegion": "Plateau State",
-            "addressCountry": "NG"
-          },
-          "founder": {
-            "@id": "https://eoajagbe.name.ng/#person"
-          }
-        },
-        {
-          "@type": "WebSite",
-          "@id": "https://eoajagbe.name.ng/#website",
-          "url": "https://eoajagbe.name.ng",
-          "name": "Ajagbe Emmanuel Portfolio",
-          "description": "Premium portfolio of Ajagbe Emmanuel Oluwatobi - Web Developer, Web Designer, and Fullstack Engineer.",
-          "publisher": {
-            "@id": "https://eoajagbe.name.ng/#person"
-          }
-        }
-      ]
-    }
-    </script>
-
-    <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Syne:wght@700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/main.js" defer></script>
+  <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container header-flex">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="brand-logo-img">
-            </a>
+  <!-- SECTION 1: Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Ajagbe Emmanuel Home">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo">
+      </a>
 
-            <nav class="nav-links">
-                <a href="index.html" class="active-link">Home</a>
-                <a href="services.html">Services</a>
-                <a href="projects.html">Projects</a>
-                <a href="blog/index.html">Blog</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
 
-                <a href="contact.html" class="cta-button mobile-only-btn">Hire Me</a>
-            </nav>
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle visual theme">
+          <span id="theme-icon">☾</span>
+        </button>
+        <a href="contact.html" class="btn btn-outline-nav desktop-only">Hire Me</a>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
 
-            <div class="desktop-cta-container">
-                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-                    <i class="fa-solid fa-moon"></i>
-                </button>
-                <a href="contact.html" class="cta-button desktop-only-btn">Hire Me</a>
-            </div>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-overlay-link active">Home</a>
+    <a href="about.html" class="mobile-overlay-link">About</a>
+    <a href="services.html" class="mobile-overlay-link">Services</a>
+    <a href="projects.html" class="mobile-overlay-link">Projects</a>
+    <a href="contact.html" class="mobile-overlay-link">Contact</a>
+  </div>
 
-            <div class="mobile-toggle" aria-label="Toggle Navigation Menu">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- Hero Section -->
-        <section class="section hero">
-            <div class="container hero-content" data-reveal="scale">
-                <p class="hero-subtitle">AJAGBE EMMANUEL OLUWATOBI</p>
-                <h1>Premium Web Developer, Designer &amp; Fullstack Engineer</h1>
-                <p class="hero-desc">
-                    I engineer performant web applications and write conversion-ready copy. Laravel, React, PHP, WordPress, and MySQL are my primary tools. 7+ years shipping production systems. Direct results, zero bloat.
-                </p>
-                <div class="hero-actions">
-                    <a href="projects.html" class="btn-primary">Selected Work</a>
-                    <a href="services.html" class="btn-secondary">Explore Services</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Floating Tech Stack Strip -->
-        <section class="section section-light" style="padding-block: var(--space-6);">
-            <div class="container">
-                <div style="text-align: center; margin-bottom: var(--space-4);">
-                    <p style="font-family: var(--font-mono); font-size: var(--text-xs); color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.1em;">Standard Engineering Stack</p>
-                </div>
-            </div>
-            <div class="floating-stack">
-                <div class="float-track">
-                    <div class="float-icon"><i class="fa-brands fa-html5"></i><span class="float-label">HTML5</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-css3-alt"></i><span class="float-label">CSS3</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-js"></i><span class="float-label">JavaScript</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-php"></i><span class="float-label">PHP</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-laravel"></i><span class="float-label">Laravel</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-wordpress"></i><span class="float-label">WordPress</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-react"></i><span class="float-label">React.js</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-node-js"></i><span class="float-label">Node.js</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-python"></i><span class="float-label">Python</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-database"></i><span class="float-label">MySQL</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-bootstrap"></i><span class="float-label">Bootstrap</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-git-alt"></i><span class="float-label">Git</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-figma"></i><span class="float-label">Figma</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-docker"></i><span class="float-label">Docker</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-plug"></i><span class="float-label">REST APIs</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-magnifying-glass"></i><span class="float-label">SEO</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-chart-line"></i><span class="float-label">Analytics</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-server"></i><span class="float-label">Hosting</span></div>
-                    <!-- Duplicate set for seamless infinite loop -->
-                    <div class="float-icon"><i class="fa-brands fa-html5"></i><span class="float-label">HTML5</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-css3-alt"></i><span class="float-label">CSS3</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-js"></i><span class="float-label">JavaScript</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-php"></i><span class="float-label">PHP</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-laravel"></i><span class="float-label">Laravel</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-wordpress"></i><span class="float-label">WordPress</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-react"></i><span class="float-label">React.js</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-node-js"></i><span class="float-label">Node.js</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-python"></i><span class="float-label">Python</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-database"></i><span class="float-label">MySQL</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-bootstrap"></i><span class="float-label">Bootstrap</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-git-alt"></i><span class="float-label">Git</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-figma"></i><span class="float-label">Figma</span></div>
-                    <div class="float-icon"><i class="fa-brands fa-docker"></i><span class="float-label">Docker</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-plug"></i><span class="float-label">REST APIs</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-magnifying-glass"></i><span class="float-label">SEO</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-chart-line"></i><span class="float-label">Analytics</span></div>
-                    <div class="float-icon"><i class="fa-solid fa-server"></i><span class="float-label">Hosting</span></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Value Pillar Section -->
-        <section id="why-me" class="section section-dark">
-            <div class="container">
-                <div class="section-header" data-reveal>
-                    <p>ENGINEERING VALUES</p>
-                    <h2>System Architecture Built For Results</h2>
-                    <p class="section-desc">Applying scientific precision to optimize database integrity, speed, and conversion structures.</p>
-                </div>
-                <div class="bento-grid" data-reveal-group>
-                    <!-- Card 1: Absolute Clarity (Spans 2 cols, row layout) -->
-                    <div class="bento-card bento-span-2 bento-card-row">
-                        <div class="bento-glow"></div>
-                        <div class="card__body">
-                            <span class="card__eyebrow">Clarity</span>
-                            <h3 class="card__title">Absolute Clarity</h3>
-                            <p class="card__text">I eliminate technical confusion. I organize complex requirements into a streamlined web platform that your users navigate with ease.</p>
-                        </div>
-                        <div class="card__visual">
-                            <div class="visual-clarity">
-                                <div class="clarity-sidebar">
-                                    <div class="clarity-sidebar-item"></div>
-                                    <div class="clarity-sidebar-item" style="width: 60%;"></div>
-                                    <div class="clarity-sidebar-item" style="width: 70%;"></div>
-                                </div>
-                                <div class="clarity-main">
-                                    <div class="clarity-header">
-                                        <div class="clarity-header-dot"></div>
-                                    </div>
-                                    <div class="clarity-content-grid">
-                                        <div class="clarity-block"></div>
-                                        <div class="clarity-block"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 2: Strategic Messaging (Spans 1 col) -->
-                    <div class="bento-card">
-                        <div class="bento-glow"></div>
-                        <div class="card__body">
-                            <span class="card__eyebrow">Copywriting</span>
-                            <h3 class="card__title">Strategic Messaging</h3>
-                            <p class="card__text">A beautiful site fails if it does not convert. I write direct, active-voice copy that communicates value and drives action.</p>
-                        </div>
-                        <div class="card__visual">
-                            <div class="visual-copywriting">
-                                <div class="copy-editor-header">
-                                    <div class="dot-red"></div>
-                                    <div class="dot-yellow"></div>
-                                    <div class="dot-green"></div>
-                                </div>
-                                <div class="copy-line-del">// Passive corporate statement</div>
-                                <div class="copy-line-del">"We leverage synergies..."</div>
-                                <div class="copy-line">// Direct conversion copy</div>
-                                <div class="copy-line-add">"Double your leads without complexity."</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 3: Custom Databases (Spans 1 col) -->
-                    <div class="bento-card">
-                        <div class="bento-glow"></div>
-                        <div class="card__body">
-                            <span class="card__eyebrow">Engineering</span>
-                            <h3 class="card__title">Custom Databases</h3>
-                            <p class="card__text">I do not use generic page builder templates. I engineer highly custom database solutions tailored specifically to your operational goals.</p>
-                        </div>
-                        <div class="card__visual">
-                            <div class="visual-database">
-                                <div class="db-row">
-                                    <span>id: 104</span>
-                                    <span>status: "active"</span>
-                                </div>
-                                <div class="db-row">
-                                    <span>latency: 18ms</span>
-                                    <span>optimized: true</span>
-                                </div>
-                                <div class="db-row">
-                                    <span>queries: 0.04s</span>
-                                    <span>status: "cached"</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 4: SEO-First Integrity (Spans 1 col) -->
-                    <div class="bento-card">
-                        <div class="bento-glow"></div>
-                        <div class="card__body">
-                            <span class="card__eyebrow">Visibility</span>
-                            <h3 class="card__title">SEO-First Integrity</h3>
-                            <p class="card__text">Search engine optimization is not an afterthought. I construct semantic, highly structured pages from the start to ensure search engine indexation.</p>
-                        </div>
-                        <div class="card__visual">
-                            <div class="visual-seo">
-                                <div class="seo-header">
-                                    <span>SEO Performance</span>
-                                    <span>100%</span>
-                                </div>
-                                <div class="seo-graph-container">
-                                    <div class="seo-bar" style="height: 30%;"></div>
-                                    <div class="seo-bar" style="height: 50%;"></div>
-                                    <div class="seo-bar" style="height: 65%;"></div>
-                                    <div class="seo-bar" style="height: 80%;"></div>
-                                    <div class="seo-bar" style="height: 98%;"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5: Mobile First Focus (Spans 2 cols, row layout) -->
-                    <div class="bento-card bento-span-2 bento-card-row">
-                        <div class="bento-glow"></div>
-                        <div class="card__body">
-                            <span class="card__eyebrow">Responsiveness</span>
-                            <h3 class="card__title">Mobile First Focus</h3>
-                            <p class="card__text">Most of your web traffic happens on phone viewports. I design and test mobile-first layouts so the user experience is fast on all mobile devices.</p>
-                        </div>
-                        <div class="card__visual">
-                            <div class="visual-mobile">
-                                <div class="mobile-notch"></div>
-                                <div class="mobile-screen">
-                                    <div class="mobile-element"></div>
-                                    <div class="mobile-element mobile-element-short"></div>
-                                    <div class="mobile-element" style="height: 40px; background: rgba(0, 230, 118, 0.05);"></div>
-                                    <div class="mobile-element"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 6: Data-Driven Strategy (Spans 1 col) -->
-                    <div class="bento-card">
-                        <div class="bento-glow"></div>
-                        <div class="card__body">
-                            <span class="card__eyebrow">Analytics</span>
-                            <h3 class="card__title">Data-Driven Strategy</h3>
-                            <p class="card__text">Decisions are backed by objective logic and performance metrics. Every project is optimized using speed audits and structural analytics.</p>
-                        </div>
-                        <div class="card__visual">
-                            <div class="visual-analytics">
-                                <div class="analytics-circle-bg"></div>
-                                <div class="analytics-circle-fill"></div>
-                                <div class="analytics-score">100</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="section-header" data-reveal>
-                    <p>WORKFLOW</p>
-                    <h2>The Production Process</h2>
-                    <p class="section-desc">Highly predictable milestone steps to ensure precision, transparency, and timely delivery.</p>
-                </div>
-                <div class="roadmap-wrapper" data-reveal>
-                    <!-- Dynamic SVG Connector Line -->
-                    <div class="roadmap-track-container">
-                        <svg class="roadmap-svg" width="100%" height="100%" preserveAspectRatio="none">
-                            <path class="roadmap-path-bg" d=""></path>
-                            <path class="roadmap-path-active" d=""></path>
-                        </svg>
-                    </div>
-
-                    <div class="roadmap-steps" id="index-roadmap">
-                        <!-- Step 1 (Active by default) -->
-                        <div class="roadmap-step is-active" data-step="1">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">01</span>
-                                    <span class="card__eyebrow">Phase 01 — Analysis</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Discovery</h3>
-                                    <p class="card__text">We establish exact objectives, audit existing assets, map your audience, and align success parameters.</p>
-                                    <button class="btn-primary roadmap-next-btn" style="height: 40px; margin-top: var(--space-3); font-size: var(--text-xs); padding-inline: var(--space-4);">Complete Phase</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 2 (Locked by default) -->
-                        <div class="roadmap-step is-locked" data-step="2">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">02</span>
-                                    <span class="card__eyebrow">Phase 02 — Construction</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Build &amp; Write</h3>
-                                    <p class="card__text">I structure the visual hierarchy, compose direct copy, and write clean backend database systems concurrently.</p>
-                                    <button class="btn-primary roadmap-next-btn" style="height: 40px; margin-top: var(--space-3); font-size: var(--text-xs); padding-inline: var(--space-4);">Complete Phase</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 3 (Locked by default) -->
-                        <div class="roadmap-step is-locked" data-step="3">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">03</span>
-                                    <span class="card__eyebrow">Phase 03 — Validation</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Review</h3>
-                                    <p class="card__text">We test features on multiple screen resolutions and refine visual layouts to guarantee production stability.</p>
-                                    <button class="btn-primary roadmap-next-btn" style="height: 40px; margin-top: var(--space-3); font-size: var(--text-xs); padding-inline: var(--space-4);">Complete Phase</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Step 4 (Locked by default) -->
-                        <div class="roadmap-step is-locked" data-step="4">
-                            <div class="roadmap-dot-container">
-                                <div class="roadmap-dot">
-                                    <span class="roadmap-dot-inner"></span>
-                                </div>
-                            </div>
-                            <div class="process-card">
-                                <div class="card__body" style="padding: 0;">
-                                    <span class="step-num">04</span>
-                                    <span class="card__eyebrow">Phase 04 — Deployment</span>
-                                    <h3 class="card__title" style="margin-top: var(--space-4);">Launch</h3>
-                                    <p class="card__text">Deploy your site. I provide a concise video system tutorial so you can easily manage and update your new asset.</p>
-                                    <span class="roadmap-completed-badge" style="display: none; color: var(--color-accent); font-family: var(--font-mono); font-size: var(--text-xs); font-weight: 600; text-transform: uppercase; margin-top: var(--space-4); align-items: center; gap: var(--space-2);"><i class="fa-solid fa-circle-check"></i> Project Ready</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Biography / Meet Section -->
-        <section id="bio" class="section section-dark">
-            <div class="container">
-                <div class="grid-asymmetric-7-5" style="align-items: center;">
-                    <div class="story-text" data-reveal="left">
-                        <p style="font-family: var(--font-mono); color: var(--color-accent); font-weight: 600; margin-bottom: var(--space-2); text-transform: uppercase;">MEET THE ENGINEER</p>
-                        <h2>Translating Complex Web Systems into Real Brand Growth</h2>
-                        <p>I am Ajagbe Emmanuel. Having a background in Physics, I approach website construction with a strong analytical focus. I view every project as a balance between technical architecture and clear user pathways.</p>
-                        <p>My goal is to position your digital platform as an industry leader. Whether you are an academic requiring data insights, a startup deploying a custom web service, or an organization scaling WordPress database workflows, I design systems that work.</p>
-                        <a href="contact.html" class="btn-primary" style="margin-top: var(--space-4);">Start A Conversation</a>
-                    </div>
-                    <div class="story-img" data-reveal="right">
-                        <img src="assets/images/ajagbe-emmanuel.jpg" alt="Ajagbe Emmanuel Oluwatobi - Fullstack Web Developer Jos Nigeria" loading="lazy">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Work Section -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="section-header" data-reveal>
-                    <p>PORTFOLIO</p>
-                    <h2>Selected Work</h2>
-                    <p class="section-desc">A focus on database performance, high-ticket visual systems, and semantic structures.</p>
-                </div>
-                <div class="grid-2" data-reveal-group>
-                    <div class="project-card-preview">
-                        <div class="project-tag">eCommerce</div>
-                        <h3>Nexus Market</h3>
-                        <p>A fast Laravel-based multi-vendor marketplace designed for volume transactions, customized filters, and smooth database operations.</p>
-                        <a href="projects.html#nexus" class="btn-ghost">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                    <div class="project-card-preview">
-                        <div class="project-tag">Real Estate</div>
-                        <h3>Jaoos Luxury Estates</h3>
-                        <p>A high-ticket property directory featuring interactive structural filters and localized search systems.</p>
-                        <a href="projects.html#jaoos" class="btn-ghost">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div style="text-align: center; margin-top: var(--space-8);" data-reveal>
-                    <a href="projects.html" class="btn-secondary">Explore All Projects</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Industry Focus Grid -->
-        <section id="industries" class="section section-dark">
-            <div class="container">
-                <div class="section-header" data-reveal>
-                    <p>VERSATILITY</p>
-                    <h2>Sectors Served</h2>
-                    <p class="section-desc">Providing stable custom solutions across diverse niches and business ecosystems.</p>
-                </div>
-                <div class="industry-grid" data-reveal-group>
-                    <div class="pill">eCommerce &amp; Retail</div>
-                    <div class="pill">Academic Research</div>
-                    <div class="pill">Logistics &amp; Supply Chain</div>
-                    <div class="pill">NGOs &amp; Non-Profits</div>
-                    <div class="pill">HealthTech &amp; Medical</div>
-                    <div class="pill">Tech Startups (SaaS)</div>
-                    <div class="pill">Agriculture (AgriTech)</div>
-                    <div class="pill">Churches &amp; Ministry</div>
-                    <div class="pill">Real Estate &amp; Housing</div>
-                    <div class="pill">Recruitment &amp; HR</div>
-                    <div class="pill">Legal Services</div>
-                    <div class="pill">Finance &amp; Fintech</div>
-                    <div class="pill">Manufacturing</div>
-                    <div class="pill">Event Management</div>
-                    <div class="pill">Personal Brands</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials -->
-        <section class="section section-light">
-            <div class="container">
-                <div class="section-header" data-reveal>
-                    <p>TESTIMONIALS</p>
-                    <h2>Client Stories</h2>
-                    <p class="section-desc">Delivering measurable software quality and clear client outcomes.</p>
-                </div>
-                <div class="grid-3" data-reveal-group>
-                    <div class="card" style="font-style: italic;">
-                        <div class="card__body">
-                            <p class="card__text">"Ajagbe resolved our project bottlenecks. The copywriting was sharp, and the custom site architecture was exactly what our team required."</p>
-                            <p style="margin-top: var(--space-4); color: var(--color-accent); font-style: normal; font-weight: 700;">- Ayobami, SMM</p>
-                        </div>
-                    </div>
-                    <div class="card" style="font-style: italic;">
-                        <div class="card__body">
-                            <p class="card__text">"The structured technical insights were helpful. The research systems and logic were organized flawlessly."</p>
-                            <p style="margin-top: var(--space-4); color: var(--color-accent); font-style: normal; font-weight: 700;">- Solomon, Academic Lead</p>
-                        </div>
-                    </div>
-                    <div class="card" style="font-style: italic;">
-                        <div class="card__body">
-                            <p class="card__text">"Consistent, highly skilled, and focused on stable delivery. Highly recommended for remote contracts."</p>
-                            <p style="margin-top: var(--space-4); color: var(--color-accent); font-style: normal; font-weight: 700;">- CEO, Parcelify Logistics</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQs Accordion -->
-        <section class="section section-dark">
-            <div class="container">
-                <div class="section-header" data-reveal>
-                    <p>FAQ</p>
-                    <h2>Common Questions</h2>
-                    <p class="section-desc">Answers to typical database, workflow, and engagement inquiries.</p>
-                </div>
-                <div class="faq-grid" data-reveal-group>
-                    <div class="faq-item">
-                        <details>
-                            <summary>Do you work with clients outside Nigeria?</summary>
-                            <p>Yes. I operate remotely with clients internationally. I utilize async communication systems like email, GitHub, and Slack to ensure clear, documentable progress reporting.</p>
-                        </details>
-                    </div>
-                    <div class="faq-item">
-                        <details>
-                            <summary>Do you offer milestone-based payment plans?</summary>
-                            <p>Yes. Projects are structured around clear deliverables. Typically, we use a 40% discovery phase payment, 30% development milestone payment, and 30% deployment payment structure.</p>
-                        </details>
-                    </div>
-                    <div class="faq-item">
-                        <details>
-                            <summary>Will I be able to edit the website content myself?</summary>
-                            <p>Yes. I integrate highly intuitive fields and content types. I also provide a direct video walk-through explaining how to update your text, services, and images in under 10 minutes.</p>
-                        </details>
-                    </div>
-                    <div class="faq-item">
-                        <details>
-                            <summary>How long does a standard custom website take?</summary>
-                            <p>A custom fullstack database or web application takes 2 to 4 weeks. Specialized copywriting and copywriting updates take 3 to 7 business days.</p>
-                        </details>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Geographic Signal Strip -->
-        <section class="section section-light" style="padding-block: var(--space-8); text-align: center;">
-            <div class="container" data-reveal="fade">
-                <p style="font-size: var(--text-body-lg); color: var(--color-muted); max-width: 820px; margin-inline: auto; line-height: 1.8;">
-                    Operating from Jos, Plateau State, Nigeria. Remote ready for assignments with clients across Africa, Europe, and North America. Delivering structured solutions using clear milestone timelines.
-                </p>
-            </div>
-        </section>
-
-        <!-- Sitewide Grand CTA Banner -->
-        <section class="section section-dark" style="text-align: center; padding-block: var(--space-12);">
-            <div class="container" data-reveal="scale" style="max-width: 800px;">
-                <h2>Elevate Your Digital System Today</h2>
-                <p style="color: var(--color-muted); margin-bottom: var(--space-6); font-size: var(--text-body-lg);">Let us build a performant, stable solution that scales with your operational growth.</p>
-                <a href="contact.html" class="btn-primary" style="padding-inline: var(--space-8);">Start Your Project Inquiry</a>
-            </div>
-        </section>
-    </main>
-
-    <!-- Sitewide Grounded Topographic Footer -->
-    <footer class="site-footer">
-        <!-- Organic Topographic Wavy SVG Divider -->
-        <div class="site-footer-divider">
-            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,42.4V0Z" class="shape-fill"></path>
-            </svg>
-        </div>
-
-        <div class="container footer-grid">
-            <!-- Footer Identity Column -->
-            <div class="footer-brand" data-reveal="fade">
-                <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi - Web Developer Logo" class="footer-logo" loading="lazy">
-                <p><strong>Ajagbe Emmanuel Oluwatobi</strong></p>
-                <p class="footer-tagline">Fullstack Engineer. Technical Copywriter. System Architect.</p>
-                <p class="footer-location">Jos, Nigeria. Available for remote work.</p>
-                <div class="footer-social-links">
-                    <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">LinkedIn</a>
-                    <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">GitHub</a>
-                    <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" aria-label="Facebook Profile">Facebook</a>
-                </div>
-            </div>
-
-            <!-- Footer Pages Column (With Blog Page Included!) -->
-            <div class="footer-links" data-reveal="fade" style="transition-delay: 80ms;">
-                <h4>Pages</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="blog/index.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <!-- Footer Services Column -->
-            <div class="footer-links" data-reveal="fade" style="transition-delay: 160ms;">
-                <h4>Services</h4>
-                <ul>
-                    <li><a href="services.html#wordpress">WordPress Development</a></li>
-                    <li><a href="services.html#laravel">Laravel Development</a></li>
-                    <li><a href="services.html#woocommerce">WooCommerce Stores</a></li>
-                    <li><a href="services.html#seo">SEO Content Writing</a></li>
-                    <li><a href="services.html#management">Website Management</a></li>
-                    <li><a href="services.html#data">Data Analysis</a></li>
-                </ul>
-            </div>
-
-            <!-- Footer Contact Column -->
-            <div class="footer-contact" data-reveal="fade" style="transition-delay: 240ms;">
-                <h4>Get in Touch</h4>
-                <p class="footer-contact-item">
-                    <a href="mailto:emmanuelajagbe6@gmail.com" class="footer-contact-link">
-                        emmanuelajagbe6@gmail.com
-                    </a>
-                </p>
-                <p class="footer-contact-item">
-                    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="footer-contact-link">
-                        +234 703 631 6514
-                    </a>
-                </p>
-                <a href="contact.html" class="btn-primary footer-cta">Start a Project</a>
-            </div>
-        </div>
-
-        <div class="footer-bottom container">
-            <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
-            <p class="footer-bottom-links">
-                <a href="index.html">eoajagbe.name.ng</a>
+  <main>
+    <!-- SECTION 2: Hero -->
+    <section class="hero-section">
+      <div class="hero-dot-grid" aria-hidden="true"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <p class="hero-location mono">eoajagbe.name.ng / Jos, Nigeria</p>
+            <h1 class="hero-title">
+              <span class="hero-line-1">The web, built</span>
+              <span class="hero-line-2">with precision.</span>
+            </h1>
+            <p class="hero-lead">
+              I build web systems using Laravel, React, and WordPress. I also write the copy that fills them. Physics trained me to see both as the same problem: find the variable that is failing, fix it, measure the result.
             </p>
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn btn-primary">See Selected Work</a>
+              <a href="services.html" class="btn btn-secondary">Explore Services</a>
+            </div>
+          </div>
+          <div class="hero-photo-wrapper">
+            <div class="hero-photo-frame">
+              <img src="assets/images/ajagbe-emmanuel.jpg" alt="Ajagbe Emmanuel Oluwatobi portrait" width="380" height="475">
+            </div>
+            <p class="hero-photo-caption mono">7+ yrs · Laravel · React · WordPress · SEO</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
+    <!-- SECTION 3: Numbers Strip -->
+    <section class="numbers-strip" aria-label="Key Career Metrics">
+      <div class="container">
+        <div class="numbers-grid">
+          <div class="number-item">
+            <div class="number-value">7+ Years</div>
+            <div class="number-label">Active Development</div>
+          </div>
+          <div class="number-item">
+            <div class="number-value">12 Systems Shipped</div>
+            <div class="number-label">Production Deployments</div>
+          </div>
+          <div class="number-item">
+            <div class="number-value">3 Active Platforms</div>
+            <div class="number-label">Maintained Systems</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: What I Do -->
+    <section class="section section-secondary" aria-label="Services Overview">
+      <div class="container">
+        <div class="services-summary-grid">
+          <div class="services-summary-left reveal-item">
+            <span class="section-label">The work</span>
+            <h2>Built to function. Written to convert.</h2>
+            <p>
+              Most developers hand over a website. I hand over a system — with the copy, the structure, and the performance all built toward the same outcome.
+            </p>
+          </div>
+          <div class="services-rows">
+            <div class="service-row">
+              <span class="service-row-num mono">01</span>
+              <div class="service-row-content">
+                <h3>Fullstack Engineering</h3>
+                <p>I build custom web applications using PHP (Laravel), React.js, and MySQL. From multi-vendor marketplaces to logistics platforms — production systems that handle real load.</p>
+                <span class="service-row-proof mono">nexusmkt.com.ng — Laravel, multi-vendor, MySQL</span>
+              </div>
+            </div>
+            <div class="service-row">
+              <span class="service-row-num mono">02</span>
+              <div class="service-row-content">
+                <h3>WordPress Development</h3>
+                <p>Custom themes, WooCommerce stores, and performance-hardened WordPress architectures. No page-builder templates. Built from the schema up.</p>
+                <span class="service-row-proof mono">90+ PageSpeed score · custom theme · zero plugin bloat</span>
+              </div>
+            </div>
+            <div class="service-row">
+              <span class="service-row-num mono">03</span>
+              <div class="service-row-content">
+                <h3>Conversion Copywriting</h3>
+                <p>I write the words that fill the systems I build. Landing pages, email sequences, product copy — direct, active, and written to move a reader to a specific action.</p>
+                <span class="service-row-proof mono">avg. +20% conversion lift across 8 client projects</span>
+              </div>
+            </div>
+            <div class="service-row">
+              <span class="service-row-num mono">04</span>
+              <div class="service-row-content">
+                <h3>SEO &amp; Content Systems</h3>
+                <p>Search engine optimisation built into the architecture from the first file, not bolted on after launch. Technical SEO, keyword strategy, and content pipelines.</p>
+                <span class="service-row-proof mono">+35% brand visibility YoY — Heroes Publishing House</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: The Statement Line -->
+    <section class="statement-section" aria-label="Guiding Philosophy">
+      <div class="container">
+        <blockquote class="statement-quote">
+          &ldquo;A physicist's habit: measure first, build second, test until it works.&rdquo;
+        </blockquote>
+        <p class="statement-footnote mono">
+          01 Discover &nbsp;·&nbsp; 02 Build &nbsp;·&nbsp; 03 Review &nbsp;·&nbsp; 04 Deploy
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 6: About Strip -->
+    <section class="section section-secondary" aria-label="About the Engineer">
+      <div class="container">
+        <div class="about-strip-grid">
+          <div class="about-strip-left reveal-item">
+            <span class="section-label">The engineer</span>
+            <h2>Analytical thinking applied to web systems.</h2>
+            <p class="about-strip-bio">
+              I studied Physics at the University of Jos because I wanted to understand how things actually work underneath what you can see. I bring that same approach to the web. When a site is slow or a page does not convert, there is a specific reason — a query that is not indexed, a headline that does not answer the reader's question, a layout that fights the user's eye. I find it and fix it. That is the work.
+            </p>
+            <div class="about-strip-divider"></div>
+            <div class="about-strip-stats">
+              <div class="about-stat-row">
+                <span>Currently</span>
+                <span>Final-year Physics Education, University of Jos</span>
+              </div>
+              <div class="about-stat-row">
+                <span>Based</span>
+                <span>Jos, Nigeria — remote-ready</span>
+              </div>
+              <div class="about-stat-row">
+                <span>Open to</span>
+                <span>Remote contracts · Retainers · Full-time roles</span>
+              </div>
+            </div>
+            <a href="about.html" class="text-link">Read the full background →</a>
+          </div>
+          <div class="about-strip-right">
+            <div class="hero-photo-frame">
+              <img src="assets/images/tobi-profile-1.jpg" alt="Ajagbe Emmanuel Oluwatobi reviewing system architecture" width="380" height="475" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Selected Work (Carousel) -->
+    <section class="projects-section" id="projects" aria-label="Selected Production Projects">
+      <div class="projects-sticky-viewport">
+        <div class="container projects-header">
+          <h2>Selected Work</h2>
+          <p>Production systems, live platforms, and real client outcomes.</p>
+        </div>
+        <div class="projects-scroll-container">
+          <div class="projects-track">
+            <!-- Card 1 -->
+            <article class="project-carousel-card">
+              <div class="project-card-header">
+                <span class="tag">Live Platform</span>
+                <h3 class="project-card-title">Nexus Market</h3>
+              </div>
+              <p class="project-card-desc">
+                A multi-vendor marketplace built in Laravel and MySQL. Vendors get their own dashboard, product management, and affiliate tracking. The system handles concurrent transactions across multiple seller accounts with sub-second query response.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">Laravel</span>
+                <span class="tag">PHP</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Bootstrap</span>
+              </div>
+              <div class="project-card-footer">
+                <span class="project-card-metric mono">nexusmkt.com.ng — live</span>
+                <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="text-link">View Platform</a>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="project-carousel-card">
+              <div class="project-card-header">
+                <span class="tag">Real Estate</span>
+                <h3 class="project-card-title">Jaoos Luxury Estates</h3>
+              </div>
+              <p class="project-card-desc">
+                A high-ticket property showcase platform with immersive tour integration, a dynamic mortgage calculator, and a lead-capture layout built for large-deal sales. Designed to communicate property value before a single conversation happens.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Figma</span>
+              </div>
+              <div class="project-card-footer">
+                <span class="project-card-metric mono">High-conversion real estate UI</span>
+                <a href="projects.html#jaoos" class="text-link">View Case Study</a>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="project-carousel-card">
+              <div class="project-card-header">
+                <span class="tag">Digital Platform</span>
+                <h3 class="project-card-title">Life Untold</h3>
+              </div>
+              <p class="project-card-desc">
+                A multi-channel digital brand platform — content pipeline, social strategy, whiteboard animation series, and community infrastructure. Built and managed since 2017. Currently operating The Healing Series as a 2026 video series.
+              </p>
+              <div class="project-card-tags">
+                <span class="tag">Content Strategy</span>
+                <span class="tag">Video Production</span>
+                <span class="tag">SEO</span>
+                <span class="tag">Brand Architecture</span>
+              </div>
+              <div class="project-card-footer">
+                <span class="project-card-metric mono">Active since 2017 — eoajagbe.name.ng</span>
+                <a href="about.html" class="text-link">View Case Study</a>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="container projects-view-all">
+          <a href="projects.html" class="text-link">See all projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Social Proof -->
+    <section class="section section-secondary" aria-label="Client Outcomes &amp; Testimonials">
+      <div class="container">
+        <div class="reveal-item">
+          <h2>Client Outcomes</h2>
+        </div>
+        <div class="social-proof-grid">
+          <!-- Testimonial 1 -->
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              &ldquo;The copywriting was sharp and the custom site architecture was exactly what we needed. No back-and-forth on unclear deliverables — he understands the brief the first time.&rdquo;
+            </p>
+            <div class="testimonial-divider"></div>
+            <div class="testimonial-author">Ayobami</div>
+            <div class="testimonial-role">Social Media Manager</div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              &ldquo;The research systems and data logic were organized precisely. He works at a level of analytical depth that most developers do not bring to academic projects.&rdquo;
+            </p>
+            <div class="testimonial-divider"></div>
+            <div class="testimonial-author">Solomon</div>
+            <div class="testimonial-role">Academic Lead</div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="testimonial-card">
+            <p class="testimonial-quote">
+              &ldquo;Consistent delivery, clean code, and focused on stable output. We hired him for a logistics platform and he handled the complexity of multiple client accounts without any downtime.&rdquo;
+            </p>
+            <div class="testimonial-divider"></div>
+            <div class="testimonial-author">CEO</div>
+            <div class="testimonial-role">Parcelify Logistics</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Closing CTA -->
+    <section class="closing-cta" aria-label="Start a Project">
+      <div class="container">
+        <div class="closing-cta-grid">
+          <div class="closing-cta-left">
+            <h2>Let's build something that works.</h2>
+            <p>I take on a small number of new projects each month. If you have a system to build or copy to fix, reach out.</p>
+          </div>
+          <div class="closing-cta-right">
+            <div class="closing-contact-info">
+              <span class="closing-contact-item">emmanuelajagbe6@gmail.com</span>
+              <span class="closing-contact-item">+234 703 631 6514 (WhatsApp)</span>
+              <span class="closing-contact-item">eoajagbe.name.ng</span>
+            </div>
+            <a href="contact.html" class="btn btn-cta-submit">Send a Project Brief</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 10: Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Col 1 -->
+      <div class="footer-col footer-col-identity">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Logo" class="footer-logo">
+        <p class="footer-bio">
+          Ajagbe Emmanuel Oluwatobi<br>
+          Fullstack Engineer. Technical Copywriter.<br>
+          Jos, Nigeria.
+        </p>
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+
+      <!-- Col 2 -->
+      <div class="footer-col">
+        <h3>Pages</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3 -->
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="services.html#wordpress">WordPress Development</a></li>
+          <li><a href="services.html#laravel">Laravel / PHP</a></li>
+          <li><a href="services.html#woocommerce">WooCommerce</a></li>
+          <li><a href="services.html#seo">SEO Writing</a></li>
+          <li><a href="services.html#management">Management</a></li>
+          <li><a href="services.html#data">Data Analysis</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4 -->
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <div class="footer-contact-details">
+          <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
+          <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
+        </div>
+        <a href="contact.html" class="btn btn-outline-nav">Start a Project</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom-bar">
+      <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+      <a href="index.html">eoajagbe.name.ng</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
