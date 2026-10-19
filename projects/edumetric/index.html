@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduMetric EIMS | Academic Grading &amp; GPA Analytics</title>
+  <title>EduMetric EIMS | Primary &amp; Secondary School Result Checker &amp; Report Card System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090B11;
-      --surface: #111522;
-      --surface-elevated: #181E30;
-      --border: rgba(255, 255, 255, 0.09);
-      --accent: #818CF8;
-      --accent-hover: #6366F1;
-      --accent-warm: #C8A840;
+      --bg: #0A110E;
+      --surface: #121F1B;
+      --surface-elevated: #172B25;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #10B981;
+      --accent-hover: #34D399;
+      --accent-gold: #F59E0B;
       --text: #F8FAFC;
-      --text-muted: #8E9DB2;
-      --success: #10B981;
+      --text-muted: #94A3B8;
       --font-display: "DM Serif Display", serif;
       --font-body: "Inter", sans-serif;
       --font-mono: "JetBrains Mono", monospace;
@@ -33,333 +32,436 @@
     }
     .top-bar {
       border-bottom: 1px solid var(--border);
-      background: rgba(9, 11, 17, 0.9);
+      background: rgba(10, 17, 14, 0.95);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 16px 24px;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .back-link {
-      color: var(--accent);
+      color: var(--accent-hover);
       text-decoration: none;
       font-family: var(--font-mono);
       font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       transition: color 0.2s;
     }
-    .back-link:hover { color: #A5B4FC; }
-    .badge-eims {
+    .back-link:hover { color: #6EE7B7; }
+    .badge {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--accent);
-      background: rgba(129, 140, 248, 0.1);
-      border: 1px solid rgba(129, 140, 248, 0.3);
       padding: 4px 10px;
       border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6EE7B7;
     }
     .container {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 24px 0;
+      padding: 36px 24px 0;
     }
-    .hero-header {
+    .hero {
       margin-bottom: 32px;
     }
-    .hero-header h1 {
+    .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      line-height: 1.15;
-      margin-bottom: 8px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
-    .hero-header p {
+    .hero p {
       color: var(--text-muted);
-      font-size: 1.05rem;
       max-width: 760px;
+      font-size: 1.05rem;
     }
-    .analytics-banner {
+    .grid-layout {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 28px;
+      grid-template-columns: 2.2fr 1fr;
+      gap: 28px;
     }
-    @media (max-width: 768px) {
-      .analytics-banner { grid-template-columns: repeat(2, 1fr); }
-    }
-    .stat-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
-    }
-    .stat-label {
-      font-family: var(--font-mono);
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .stat-val {
-      font-family: var(--font-display);
-      font-size: 1.7rem;
-      color: var(--accent);
+    @media (max-width: 960px) {
+      .grid-layout { grid-template-columns: 1fr; }
     }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 28px;
+      padding: 24px;
+      margin-bottom: 24px;
     }
-    .card h2 {
-      font-family: var(--font-display);
-      font-size: 1.45rem;
-      margin-bottom: 16px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .report-sheet {
+      background: #FFFFFF;
+      color: #0F172A;
+      border-radius: 8px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.92rem;
+    .school-header {
+      text-align: center;
+      border-bottom: 2px solid #0F172A;
+      padding-bottom: 14px;
       margin-bottom: 20px;
     }
-    th, td {
-      padding: 12px 14px;
+    .school-name {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: #064E3B;
+      font-weight: 700;
+    }
+    .school-sub {
+      font-size: 0.82rem;
+      color: #475569;
+    }
+    .student-meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+    }
+    .student-meta-item strong {
+      color: #0F172A;
+    }
+    .grade-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+    .grade-table th, .grade-table td {
+      border: 1px solid #CBD5E1;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .grade-table th {
+      background: #F1F5F9;
+      color: #0F172A;
+      font-weight: 600;
+    }
+    .grade-table td.subject-name {
       text-align: left;
-      border-bottom: 1px solid var(--border);
+      font-weight: 500;
     }
-    th {
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-    }
-    select, input {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-family: var(--font-mono);
-      padding: 6px 10px;
+    .grade-badge {
+      display: inline-block;
+      padding: 2px 8px;
       border-radius: 4px;
-      outline: none;
+      font-weight: bold;
+      font-size: 0.8rem;
     }
-    select:focus, input:focus { border-color: var(--accent); }
-    .btn-row {
+    .grade-A { background: #DCFCE7; color: #166534; }
+    .grade-B { background: #E0F2FE; color: #075985; }
+    .grade-C { background: #FEF9C3; color: #854D0E; }
+    .summary-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 6px;
+      padding: 14px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
       flex-wrap: wrap;
       gap: 12px;
+      font-size: 0.88rem;
+      font-weight: 600;
     }
     .btn {
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 10px 18px;
       border-radius: 6px;
-      border: 1px solid var(--border);
-      background: var(--surface-elevated);
-      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
       cursor: pointer;
+      border: none;
       transition: all 0.2s;
+      text-decoration: none;
+      font-family: var(--font-body);
     }
-    .btn:hover { border-color: var(--accent); color: var(--accent); }
-    .btn-primary { background: var(--accent); color: #090B11; border-color: var(--accent); font-weight: 600; }
-    .btn-primary:hover { background: #A5B4FC; }
+    .btn-emerald {
+      background: var(--accent);
+      color: #04251B;
+    }
+    .btn-emerald:hover {
+      background: var(--accent-hover);
+    }
+    .form-control {
+      width: 100%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-family: var(--font-mono);
+      margin-bottom: 12px;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-hover);
+    }
   </style>
 </head>
 <body>
+
   <header class="top-bar">
     <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
-    <span class="badge-eims">🎓 Faculty EIMS Platform</span>
+    <span class="badge">● EDUMETRIC SCHOOL EIMS DEMO</span>
   </header>
 
   <main class="container">
-    <div class="hero-header">
-      <h1>EduMetric EIMS Analytics</h1>
-      <p>Institutional grade weighting and cumulative performance assessment portal designed for tertiary academic registries and departmental examination officers.</p>
+    <div class="hero">
+      <span class="badge" style="margin-bottom: 8px;">Education · Primary &amp; Secondary School Management</span>
+      <h1>EduMetric EIMS Result Portal</h1>
+      <p>
+        An all-in-one Educational Institution Management System (EIMS) designed for primary schools, secondary colleges, and academies. Automates continuous assessment (CA), computes terminal position rankings, and generates verified digital report cards for parents.
+      </p>
     </div>
 
-    <!-- Metrics Banner -->
-    <div class="analytics-banner">
-      <div class="stat-card">
-        <div class="stat-label">Semester GPA</div>
-        <div class="stat-val" id="val-gpa">4.62 / 5.0</div>
+    <div class="grid-layout">
+      <!-- Left: Live Report Card Sheet -->
+      <div>
+        <div class="report-sheet" id="printable-card">
+          <div class="school-header">
+            <div class="school-name">BETHEL HILLS COLLEGE</div>
+            <div class="school-sub">Rayfield Road, Jos, Plateau State · Government Approved &amp; WAEC/NECO Accredited</div>
+            <div style="font-size: 0.85rem; font-weight: bold; margin-top: 6px; color: #047857;">
+              STUDENT TERMINAL PROGRESS REPORT CARD · 2025/2026 ACADEMIC SESSION
+            </div>
+          </div>
+
+          <div class="student-meta-grid">
+            <div class="student-meta-item">Name: <strong id="card-name">Samuel Adeyemi</strong></div>
+            <div class="student-meta-item">Admission No: <strong id="card-adm">BHC/2024/0142</strong></div>
+            <div class="student-meta-item">Class: <strong id="card-class">Senior Secondary 2 (Science)</strong></div>
+            <div class="student-meta-item">Term: <strong>Second Term</strong></div>
+            <div class="student-meta-item">Attendance: <strong>94/96 Days</strong></div>
+            <div class="student-meta-item">Class Population: <strong>48 Students</strong></div>
+          </div>
+
+          <table class="grade-table">
+            <thead>
+              <tr>
+                <th style="text-align: left;">Subject</th>
+                <th>CA 1 (20)</th>
+                <th>CA 2 (20)</th>
+                <th>Exam (60)</th>
+                <th>Total (100)</th>
+                <th>Grade</th>
+                <th>Position</th>
+                <th>Remarks</th>
+              </tr>
+            </thead>
+            <tbody id="grade-rows">
+              <tr>
+                <td class="subject-name">Physics</td>
+                <td>18</td>
+                <td>19</td>
+                <td>54</td>
+                <td><strong>91</strong></td>
+                <td><span class="grade-badge grade-A">A1</span></td>
+                <td>1st</td>
+                <td>Distinction. Analytical thinker.</td>
+              </tr>
+              <tr>
+                <td class="subject-name">Further Mathematics</td>
+                <td>17</td>
+                <td>18</td>
+                <td>51</td>
+                <td><strong>86</strong></td>
+                <td><span class="grade-badge grade-A">A1</span></td>
+                <td>2nd</td>
+                <td>Excellent mathematical mastery.</td>
+              </tr>
+              <tr>
+                <td class="subject-name">Chemistry</td>
+                <td>16</td>
+                <td>16</td>
+                <td>48</td>
+                <td><strong>80</strong></td>
+                <td><span class="grade-badge grade-A">A1</span></td>
+                <td>4th</td>
+                <td>Very good grasp of stoichiometry.</td>
+              </tr>
+              <tr>
+                <td class="subject-name">English Language</td>
+                <td>15</td>
+                <td>16</td>
+                <td>44</td>
+                <td><strong>75</strong></td>
+                <td><span class="grade-badge grade-B">B2</span></td>
+                <td>6th</td>
+                <td>Good essay structure and vocabulary.</td>
+              </tr>
+              <tr>
+                <td class="subject-name">Technical Drawing</td>
+                <td>18</td>
+                <td>17</td>
+                <td>52</td>
+                <td><strong>87</strong></td>
+                <td><span class="grade-badge grade-A">A1</span></td>
+                <td>1st</td>
+                <td>Outstanding isometric projections.</td>
+              </tr>
+              <tr>
+                <td class="subject-name">Civic Education</td>
+                <td>17</td>
+                <td>18</td>
+                <td>46</td>
+                <td><strong>81</strong></td>
+                <td><span class="grade-badge grade-A">A1</span></td>
+                <td>3rd</td>
+                <td>Commendable civic participation.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="summary-box">
+            <div>Overall Total: <span style="color: #064E3B;" id="card-total">500 / 600</span></div>
+            <div>Term Average: <span style="color: #064E3B;" id="card-avg">83.3%</span></div>
+            <div>Overall Class Rank: <span style="color: #047857;" id="card-rank">2nd out of 48</span></div>
+          </div>
+
+          <div style="margin-top: 18px; font-size: 0.82rem; color: #475569; border-top: 1px dashed #CBD5E1; padding-top: 12px;">
+            <div><strong>Form Teacher's Remark:</strong> An exceptional and diligent student with keen scientific curiosity.</div>
+            <div><strong>Principal's Endorsement:</strong> Promoted with Honours standing. Resumption for 3rd Term: April 27, 2026.</div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 16px;">
+          <button class="btn btn-emerald" onclick="window.print()">Print Official Report Card</button>
+          <button class="btn btn-outline" onclick="alert('Digital report card verified with Senate & Ministry cryptographic QR seal.')">
+            Verify Digital Signature
+          </button>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">Classification</div>
-        <div class="stat-val" style="color: #34D399;" id="val-class">First Class</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Total Earned Units</div>
-        <div class="stat-val" id="val-units" style="color: var(--accent-warm);">16 Units</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Quality Points</div>
-        <div class="stat-val" id="val-qp">74.0 QP</div>
-      </div>
+
+      <!-- Right: Parent & Student Switcher -->
+      <aside>
+        <div class="card">
+          <h3 style="font-size: 1.15rem; margin-bottom: 12px;">Parent Result Checker</h3>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 16px;">
+            Switch between students to test the grading matrix across primary and secondary levels:
+          </p>
+
+          <label style="display: block; font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted); margin-bottom: 4px;">Select Student Record</label>
+          <select id="student-select" class="form-control" onchange="switchStudent()">
+            <option value="samuel">Samuel Adeyemi (SS 2 Science - Rank: 2nd)</option>
+            <option value="grace">Grace Danladi (JSS 3 A - Rank: 1st)</option>
+            <option value="chinedu">Chinedu Okafor (Primary 5 - Rank: 5th)</option>
+          </select>
+
+          <div style="background: var(--surface-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-top: 16px;">
+            <div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--accent-hover);">
+              EIMS Feature Matrix
+            </div>
+            <ul style="font-size: 0.8rem; color: var(--text-muted); padding-left: 18px; line-height: 1.6;">
+              <li>Automatic Grade Point &amp; Class Rank Calculations</li>
+              <li>SMS/WhatsApp Result Delivery to Parents</li>
+              <li>Single-Tenant Database Isolation (Zero Leakage)</li>
+              <li>Custom Assessment Breakdown (20/20/60 or 30/70)</li>
+              <li>No-Code Custom Subject &amp; Remark Builder</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
     </div>
-
-    <!-- Course Scorecard Table -->
-    <section class="card">
-      <h2>
-        <span>Course Weighting Matrix</span>
-        <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-muted);">Standard 5.0 Scale</span>
-      </h2>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Course Code</th>
-            <th>Course Title</th>
-            <th>Credit Units</th>
-            <th>Grade</th>
-            <th>Grade Points</th>
-          </tr>
-        </thead>
-        <tbody id="course-rows">
-          <tr>
-            <td><strong style="color: var(--accent);">PHY 411</strong></td>
-            <td>Quantum Mechanics II</td>
-            <td>3 Units</td>
-            <td>
-              <select class="grade-sel" data-units="3">
-                <option value="5" selected>A (70-100%)</option>
-                <option value="4">B (60-69%)</option>
-                <option value="3">C (50-59%)</option>
-                <option value="2">D (45-49%)</option>
-                <option value="0">F (0-44%)</option>
-              </select>
-            </td>
-            <td class="row-qp" style="font-family: var(--font-mono);">15 QP</td>
-          </tr>
-          <tr>
-            <td><strong style="color: var(--accent);">PHY 413</strong></td>
-            <td>Electrodynamics &amp; Plasma</td>
-            <td>3 Units</td>
-            <td>
-              <select class="grade-sel" data-units="3">
-                <option value="5" selected>A (70-100%)</option>
-                <option value="4">B (60-69%)</option>
-                <option value="3">C (50-59%)</option>
-                <option value="2">D (45-49%)</option>
-                <option value="0">F (0-44%)</option>
-              </select>
-            </td>
-            <td class="row-qp" style="font-family: var(--font-mono);">15 QP</td>
-          </tr>
-          <tr>
-            <td><strong style="color: var(--accent);">CSC 401</strong></td>
-            <td>Relational Database Architecture</td>
-            <td>4 Units</td>
-            <td>
-              <select class="grade-sel" data-units="4">
-                <option value="5">A (70-100%)</option>
-                <option value="4" selected>B (60-69%)</option>
-                <option value="3">C (50-59%)</option>
-                <option value="2">D (45-49%)</option>
-                <option value="0">F (0-44%)</option>
-              </select>
-            </td>
-            <td class="row-qp" style="font-family: var(--font-mono);">16 QP</td>
-          </tr>
-          <tr>
-            <td><strong style="color: var(--accent);">MTH 421</strong></td>
-            <td>Mathematical Methods of Physics</td>
-            <td>3 Units</td>
-            <td>
-              <select class="grade-sel" data-units="3">
-                <option value="5" selected>A (70-100%)</option>
-                <option value="4">B (60-69%)</option>
-                <option value="3">C (50-59%)</option>
-                <option value="2">D (45-49%)</option>
-                <option value="0">F (0-44%)</option>
-              </select>
-            </td>
-            <td class="row-qp" style="font-family: var(--font-mono);">15 QP</td>
-          </tr>
-          <tr>
-            <td><strong style="color: var(--accent);">PHY 499</strong></td>
-            <td>Experimental Senior Project</td>
-            <td>3 Units</td>
-            <td>
-              <select class="grade-sel" data-units="3">
-                <option value="5">A (70-100%)</option>
-                <option value="4" selected>B (60-69%)</option>
-                <option value="3">C (50-59%)</option>
-                <option value="2">D (45-49%)</option>
-                <option value="0">F (0-44%)</option>
-              </select>
-            </td>
-            <td class="row-qp" style="font-family: var(--font-mono);">12 QP</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="btn-row">
-        <button class="btn btn-primary" id="btn-export">Export Certified Gazette Record</button>
-        <span id="export-msg" style="font-family: var(--font-mono); font-size: 0.8rem; color: #34D399; display: none;">✓ Gazette record validated by Academic Board schema</span>
-      </div>
-    </section>
   </main>
 
   <script>
-    const gradeSelects = document.querySelectorAll('.grade-sel');
-    const valGpa = document.getElementById('val-gpa');
-    const valClass = document.getElementById('val-class');
-    const valUnits = document.getElementById('val-units');
-    const valQp = document.getElementById('val-qp');
-    const btnExport = document.getElementById('btn-export');
-    const exportMsg = document.getElementById('export-msg');
-
-    function calculateGpa() {
-      let totalUnits = 0;
-      let totalQp = 0;
-
-      document.querySelectorAll('#course-rows tr').forEach(row => {
-        const sel = row.querySelector('.grade-sel');
-        const qpTd = row.querySelector('.row-qp');
-        const units = parseInt(sel.dataset.units, 10);
-        const gradePoint = parseInt(sel.value, 10);
-        const qp = units * gradePoint;
-
-        qpTd.textContent = qp + ' QP';
-        totalUnits += units;
-        totalQp += qp;
-      });
-
-      const gpa = (totalQp / totalUnits).toFixed(2);
-      valGpa.textContent = gpa + ' / 5.0';
-      valUnits.textContent = totalUnits + ' Units';
-      valQp.textContent = totalQp.toFixed(1) + ' QP';
-
-      if (gpa >= 4.5) {
-        valClass.textContent = 'First Class';
-        valClass.style.color = '#34D399';
-      } else if (gpa >= 3.5) {
-        valClass.textContent = 'Second Class Upper';
-        valClass.style.color = '#818CF8';
-      } else if (gpa >= 2.4) {
-        valClass.textContent = 'Second Class Lower';
-        valClass.style.color = '#F59E0B';
-      } else {
-        valClass.textContent = 'Third Class / Pass';
-        valClass.style.color = '#EF4444';
+    const studentData = {
+      samuel: {
+        name: 'Samuel Adeyemi',
+        adm: 'BHC/2024/0142',
+        class: 'Senior Secondary 2 (Science)',
+        total: '500 / 600',
+        avg: '83.3%',
+        rank: '2nd out of 48',
+        subjects: [
+          { name: 'Physics', ca1: 18, ca2: 19, exam: 54, tot: 91, grade: 'A1', pos: '1st', remark: 'Distinction. Analytical thinker.' },
+          { name: 'Further Mathematics', ca1: 17, ca2: 18, exam: 51, tot: 86, grade: 'A1', pos: '2nd', remark: 'Excellent mathematical mastery.' },
+          { name: 'Chemistry', ca1: 16, ca2: 16, exam: 48, tot: 80, grade: 'A1', pos: '4th', remark: 'Very good grasp of stoichiometry.' },
+          { name: 'English Language', ca1: 15, ca2: 16, exam: 44, tot: 75, grade: 'B2', pos: '6th', remark: 'Good essay structure.' },
+          { name: 'Technical Drawing', ca1: 18, ca2: 17, exam: 52, tot: 87, grade: 'A1', pos: '1st', remark: 'Outstanding projections.' },
+          { name: 'Civic Education', ca1: 17, ca2: 18, exam: 46, tot: 81, grade: 'A1', pos: '3rd', remark: 'Commendable participation.' }
+        ]
+      },
+      grace: {
+        name: 'Grace Danladi',
+        adm: 'BHC/2023/0089',
+        class: 'Junior Secondary 3 A',
+        total: '542 / 600',
+        avg: '90.3%',
+        rank: '1st out of 52',
+        subjects: [
+          { name: 'Basic Science', ca1: 19, ca2: 19, exam: 56, tot: 94, grade: 'A1', pos: '1st', remark: 'Brilliant conceptual grasp.' },
+          { name: 'Mathematics', ca1: 20, ca2: 19, exam: 55, tot: 94, grade: 'A1', pos: '1st', remark: 'Flawless problem solving.' },
+          { name: 'English Language', ca1: 18, ca2: 18, exam: 52, tot: 88, grade: 'A1', pos: '2nd', remark: 'Superb grammar and diction.' },
+          { name: 'Business Studies', ca1: 18, ca2: 17, exam: 50, tot: 85, grade: 'A1', pos: '3rd', remark: 'Very diligent and neat.' },
+          { name: 'Social Studies', ca1: 19, ca2: 18, exam: 54, tot: 91, grade: 'A1', pos: '1st', remark: 'Top class understanding.' },
+          { name: 'Computer Studies', ca1: 18, ca2: 18, exam: 54, tot: 90, grade: 'A1', pos: '1st', remark: 'Proficient in algorithms.' }
+        ]
+      },
+      chinedu: {
+        name: 'Chinedu Okafor',
+        adm: 'BHC/PRI/2025/031',
+        class: 'Primary 5 Gold',
+        total: '445 / 500',
+        avg: '89.0%',
+        rank: '5th out of 36',
+        subjects: [
+          { name: 'Mathematics', ca1: 18, ca2: 19, exam: 54, tot: 91, grade: 'A1', pos: '3rd', remark: 'Strong multiplication speed.' },
+          { name: 'English Studies', ca1: 17, ca2: 16, exam: 50, tot: 83, grade: 'A1', pos: '5th', remark: 'Consistent handwriting and reading.' },
+          { name: 'Basic Science & Tech', ca1: 18, ca2: 18, exam: 52, tot: 88, grade: 'A1', pos: '4th', remark: 'Great curiosity in nature study.' },
+          { name: 'Agricultural Science', ca1: 19, ca2: 18, exam: 55, tot: 92, grade: 'A1', pos: '2nd', remark: 'Excellent crop project work.' },
+          { name: 'Quantitative Reasoning', ca1: 18, ca2: 17, exam: 56, tot: 91, grade: 'A1', pos: '3rd', remark: 'Sharp analytical deduction.' }
+        ]
       }
+    };
+
+    function switchStudent() {
+      const key = document.getElementById('student-select').value;
+      const data = studentData[key];
+
+      document.getElementById('card-name').textContent = data.name;
+      document.getElementById('card-adm').textContent = data.adm;
+      document.getElementById('card-class').textContent = data.class;
+      document.getElementById('card-total').textContent = data.total;
+      document.getElementById('card-avg').textContent = data.avg;
+      document.getElementById('card-rank').textContent = data.rank;
+
+      const tbody = document.getElementById('grade-rows');
+      tbody.innerHTML = '';
+      data.subjects.forEach(s => {
+        const tr = document.createElement('tr');
+        const badgeClass = s.grade.startsWith('A') ? 'grade-A' : (s.grade.startsWith('B') ? 'grade-B' : 'grade-C');
+        tr.innerHTML = `
+          <td class="subject-name">${s.name}</td>
+          <td>${s.ca1}</td>
+          <td>${s.ca2}</td>
+          <td>${s.exam}</td>
+          <td><strong>${s.tot}</strong></td>
+          <td><span class="grade-badge ${badgeClass}">${s.grade}</span></td>
+          <td>${s.pos}</td>
+          <td>${s.remark}</td>
+        `;
+        tbody.appendChild(tr);
+      });
     }
-
-    gradeSelects.forEach(sel => sel.addEventListener('change', calculateGpa));
-    calculateGpa();
-
-    btnExport.addEventListener('click', () => {
-      exportMsg.style.display = 'inline';
-      setTimeout(() => { exportMsg.style.display = 'none'; }, 3500);
-    });
   </script>
 </body>
 </html>

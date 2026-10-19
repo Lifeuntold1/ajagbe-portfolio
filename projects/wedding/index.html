@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Union Celebration | Editorial Wedding Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0C0A09;
+      --surface: #141210;
+      --surface-elevated: #1C1916;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #E8D5B0;
+      --accent-hover: #F3E5C8;
+      --text: #F5F5F0;
+      --text-muted: #A8A29E;
+      --font-display: "Cormorant Garamond", serif;
+      --font-body: "DM Sans", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(12, 10, 9, 0.95);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent-hover); }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(232, 213, 176, 0.12);
+      border: 1px solid rgba(232, 213, 176, 0.35);
+      color: var(--accent);
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 48px 24px 0;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1.05rem;
+    }
+    .date-pill {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    .schedule-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      text-align: center;
+    }
+    .event-time {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .event-title {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    .event-venue {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .rsvp-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 40px;
+      max-width: 680px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .btn-gold {
+      background: var(--accent);
+      color: #0C0A09;
+    }
+    .btn-gold:hover {
+      background: var(--accent-hover);
+    }
+    .form-control {
+      width: 100%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 12px 14px;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
+    <span class="badge">● BESPOKE CELEBRATION PORTAL</span>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div class="date-pill">Saturday, October 24, 2026 · Rayfield, Jos</div>
+      <h1>Adebayo &amp; Cynthia</h1>
+      <p>
+        An editorial wedding and celebration portal built to streamline RSVP headcount verification, travel guides for out-of-town guests, and digital wishing well management.
+      </p>
+    </div>
+
+    <div class="schedule-grid">
+      <div class="schedule-card">
+        <div class="event-time">10:00 AM WAT</div>
+        <div class="event-title">Holy Matrimony</div>
+        <div class="event-venue">
+          St. Piran's Anglican Church<br>
+          No. 4 Zaria Road, Jos Plateau
+        </div>
+        <span class="badge">Formal Ceremony</span>
+      </div>
+
+      <div class="schedule-card">
+        <div class="event-time">01:30 PM WAT</div>
+        <div class="event-title">The Grand Reception</div>
+        <div class="event-venue">
+          Eliel Centre Banquet Hall<br>
+          Gold &amp; Base Road, Rayfield, Jos
+        </div>
+        <span class="badge">Banquet &amp; Toasts</span>
+      </div>
+
+      <div class="schedule-card">
+        <div class="event-time">06:00 PM WAT</div>
+        <div class="event-title">Evening Soirée</div>
+        <div class="event-venue">
+          The Highland Pavilion<br>
+          Rayfield Resort Waterfront
+        </div>
+        <span class="badge">Live Music &amp; Afterparty</span>
+      </div>
+    </div>
+
+    <div class="rsvp-section">
+      <h2 style="font-family: var(--font-display); font-size: 2rem; margin-bottom: 10px;">Confirm Your Attendance</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 24px;">
+        To assist the catering team with dietary preparations and guest seating cards, please verify your RSVP.
+      </p>
+
+      <form onsubmit="handleRsvp(event)">
+        <input type="text" id="guest-name" class="form-control" placeholder="Your Full Name" required>
+        <input type="email" id="guest-email" class="form-control" placeholder="Email Address for Access Pass" required>
+        <select id="guest-attending" class="form-control">
+          <option value="yes">Accept with Pleasure (Attending)</option>
+          <option value="decline">Regretfully Decline (Celebrating in Spirit)</option>
+        </select>
+        <button type="submit" class="btn btn-gold" style="width: 100%;">Submit RSVP Confirmation →</button>
+      </form>
+    </div>
+  </main>
+
+  <script>
+    function handleRsvp(e) {
+      e.preventDefault();
+      const name = document.getElementById('guest-name').value;
+      const status = document.getElementById('guest-attending').value;
+
+      if (status === 'yes') {
+        alert('Thank you, ' + name + '! Your seat has been reserved at the Rayfield Banquet Hall. A digital invitation QR pass has been logged.');
+      } else {
+        alert('Thank you, ' + name + '. Your warm wishes have been added to the couple’s wishing well registry.');
+      }
+    }
+  </script>
+</body>
+</html>

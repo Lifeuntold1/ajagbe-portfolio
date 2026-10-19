@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantum Plators | University of Jos Physics Class of 2024 Digital Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0E17;
+      --surface: #121727;
+      --surface-elevated: #1A2238;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #38BDF8;
+      --accent-hover: #7DD3FC;
+      --accent-gold: #F59E0B;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+      --font-display: "DM Serif Display", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(11, 14, 23, 0.95);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent-hover);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #BAE6FD; }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #7DD3FC;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+    .hero {
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      color: var(--text-muted);
+      max-width: 760px;
+      font-size: 1.05rem;
+    }
+    .controls-bar {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 240px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 14px;
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn.active, .filter-btn:hover {
+      background: var(--surface-elevated);
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .grid-students {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .student-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .student-card:hover {
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+    .student-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--surface-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      border: 1px solid var(--border);
+    }
+    .student-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .student-track {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .student-topic {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 12px;
+      border-left: 2px solid var(--border);
+      padding-left: 8px;
+    }
+    .student-quote {
+      font-size: 0.78rem;
+      color: #94A3B8;
+      font-style: italic;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0B0E17;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
+    <span class="badge">● UNIJOS CLASS OF 2024 DIGITAL PLATFORM</span>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <span class="badge" style="margin-bottom: 8px;">Institutional Alumni Platform · Astro + Netlify Proxy</span>
+      <h1>Quantum Plators Digital Registry</h1>
+      <p>
+        The official digital year-registry for the Department of Physics, University of Jos (Class of 2024). Eliminates physical yearbook printing delays with a live student directory, dissertation research titles, and awards voting.
+      </p>
+    </div>
+
+    <div class="controls-bar">
+      <input type="text" id="searchInput" class="search-input" placeholder="Search by student name or research keyword..." oninput="filterStudents()">
+      <button class="filter-btn active" onclick="setSpecialization('all', this)">All Specializations</button>
+      <button class="filter-btn" onclick="setSpecialization('theoretical', this)">Theoretical / Quantum</button>
+      <button class="filter-btn" onclick="setSpecialization('geophysics', this)">Geophysics</button>
+      <button class="filter-btn" onclick="setSpecialization('electronics', this)">Electronics &amp; Comm</button>
+    </div>
+
+    <div class="grid-students" id="studentsGrid">
+      <!-- Cards rendered via JS -->
+    </div>
+  </main>
+
+  <script>
+    const students = [
+      {
+        name: 'Ajagbe Emmanuel Oluwatobi',
+        track: 'theoretical',
+        trackLabel: 'Theoretical & Computational Physics',
+        topic: 'Numerical Simulation of 1D Time-Dependent Schrödinger Wave Packet Dispersion',
+        quote: '"Measure first, build second, test until it works."'
+      },
+      {
+        name: 'Gofwan Nathaniel Daniel',
+        track: 'geophysics',
+        trackLabel: 'Applied Geophysics & Exploration',
+        topic: 'Electrical Resistivity Tomography for Subsurface Aquifer Delineation in Jos East',
+        quote: '"Decoding the unseen layers beneath our feet."'
+      },
+      {
+        name: 'Dung Moses Pam',
+        track: 'electronics',
+        trackLabel: 'Electronics & Instrumentation',
+        topic: 'Microcontroller-Based Smart Weather Telemetry Station for Plateau Highlands',
+        quote: '"Hardware engineering built for African rural infrastructure."'
+      },
+      {
+        name: 'Bitrus Cynthia N.',
+        track: 'theoretical',
+        trackLabel: 'Theoretical Physics',
+        topic: 'Analysis of Graphene Electronic Band Gap Under Uniaxial Strain Perturbations',
+        quote: '"Precision in mathematics reveals clarity in physics."'
+      },
+      {
+        name: 'Ibrahim Sani Musa',
+        track: 'geophysics',
+        trackLabel: 'Applied Geophysics',
+        topic: 'Aeromagnetic Anomaly Modeling Across the Younger Granite Ring Complexes',
+        quote: '"Uncovering mineral mineralization patterns across the Jos Plateau."'
+      },
+      {
+        name: 'Danjuma Grace Ladi',
+        track: 'electronics',
+        trackLabel: 'Electronics & Telecommunications',
+        topic: 'LoRaWAN Long-Range Mesh Sensor Relay for Agricultural Moisture Monitoring',
+        quote: '"Connecting sensors where cellular networks fail."'
+      }
+    ];
+
+    let currentTrack = 'all';
+
+    function renderStudents(list) {
+      const grid = document.getElementById('studentsGrid');
+      grid.innerHTML = '';
+
+      if (list.length === 0) {
+        grid.innerHTML = '<p style="color: var(--text-muted); grid-column: span 3; text-align: center; padding: 40px;">No student records match the search filter.</p>';
+        return;
+      }
+
+      list.forEach(s => {
+        const initials = s.name.split(' ').map(n => n[0]).slice(0, 2).join('');
+        const card = document.createElement('article');
+        card.className = 'student-card';
+        card.innerHTML = `
+          <div class="student-avatar">${initials}</div>
+          <div class="student-name">${s.name}</div>
+          <div class="student-track">${s.trackLabel}</div>
+          <div class="student-topic">
+            <strong>B.Sc. Dissertation:</strong><br>${s.topic}
+          </div>
+          <div class="student-quote">${s.quote}</div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function setSpecialization(track, btn) {
+      currentTrack = track;
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      filterStudents();
+    }
+
+    function filterStudents() {
+      const q = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = students.filter(s => {
+        const matchesTrack = (currentTrack === 'all' || s.track === currentTrack);
+        const matchesQuery = s.name.toLowerCase().includes(q) || s.topic.toLowerCase().includes(q) || s.trackLabel.toLowerCase().includes(q);
+        return matchesTrack && matchesQuery;
+      });
+      renderStudents(filtered);
+    }
+
+    renderStudents(students);
+  </script>
+</body>
+</html>

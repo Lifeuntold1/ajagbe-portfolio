@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniJos Central Data Platform | AI Academic Research &amp; Thesis Data Analysis Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08110E;
+      --surface: #0E1C18;
+      --surface-elevated: #152923;
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #10B981;
+      --accent-hover: #34D399;
+      --accent-gold: #F59E0B;
+      --text: #F1F5F9;
+      --text-muted: #8E9DB2;
+      --font-display: "DM Serif Display", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 17, 14, 0.95);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent-hover);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #6EE7B7; }
+    .badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      color: #6EE7B7;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 36px 24px 0;
+    }
+    .hero {
+      margin-bottom: 32px;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      color: var(--text-muted);
+      max-width: 760px;
+      font-size: 1.05rem;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 28px;
+    }
+    @media (max-width: 960px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+    }
+    .form-control {
+      width: 100%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-family: var(--font-mono);
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-hover);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #08110E;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+    .analysis-output {
+      background: #FFFFFF;
+      color: #0F172A;
+      border-radius: 8px;
+      padding: 24px;
+      font-size: 0.88rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .output-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: #064E3B;
+      margin-bottom: 6px;
+    }
+    .table-stats {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-block: 16px;
+    }
+    .table-stats th, .table-stats td {
+      border: 1px solid #CBD5E1;
+      padding: 8px 10px;
+      text-align: center;
+    }
+    .table-stats th {
+      background: #F1F5F9;
+      color: #0F172A;
+      font-weight: 600;
+    }
+    .table-stats td.param-name {
+      text-align: left;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top-bar">
+    <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
+    <span class="badge">● UNIJOS ACADEMIC AI ANALYTICS DEMO</span>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <span class="badge" style="margin-bottom: 8px;">Academic EdTech · AI Research Data Platform</span>
+      <h1>UniJos Central Data Platform</h1>
+      <p>
+        An automated academic research analysis platform for university undergraduates and postgraduates. Students upload their survey questionnaires and raw field datasets (CSV/Excel), and the embedded AI analytical pipeline automatically generates descriptive statistics, ANOVA/regression tables, and thesis Chapter 4 interpretations.
+      </p>
+    </div>
+
+    <div class="grid-layout">
+      <!-- Left: Research Dataset Selection -->
+      <div>
+        <div class="card">
+          <div class="card-title">Upload / Select Research Dataset</div>
+
+          <div class="form-group">
+            <label for="research-topic">Select Pre-Loaded University Thesis Project</label>
+            <select id="research-topic" class="form-control" onchange="runAnalysis()">
+              <option value="physics">Dept. of Physics: Solar Radiation vs Photovoltaic Cell Efficiency</option>
+              <option value="economics">Dept. of Economics: Mobile Money Adoption Among Plateau MSMEs</option>
+              <option value="biochemistry">Dept. of Biochemistry: Antimicrobial Efficacy of Local Herbal Extracts</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Sample Size &amp; Respondents</label>
+            <input type="text" id="stat-sample" class="form-control" value="N = 240 Surveyed Respondents (98.3% Response Rate)" readonly>
+          </div>
+
+          <div class="form-group">
+            <label>Statistical Hypothesis Test Required</label>
+            <select id="stat-test" class="form-control" onchange="runAnalysis()">
+              <option value="pearson">Pearson Product-Moment Correlation (r)</option>
+              <option value="regression">Multiple Linear Regression Model</option>
+              <option value="chisquare">Chi-Square Test of Independence (χ²)</option>
+            </select>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="runAnalysis()">
+            Run AI Statistical Pipeline &amp; Format Chapter 4 →
+          </button>
+
+          <div style="background: var(--surface-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-top: 20px;">
+            <div style="font-size: 0.85rem; font-weight: 600; color: var(--accent-hover); margin-bottom: 6px;">
+              The Gap This Solves
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5;">
+              Eliminates the typical 6-week bottleneck where students pay third-party consultants up to ₦50,000 for buggy SPSS printouts. Provides immediate, university-compliant APA tables and verified statistical deductions.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: AI Generated Chapter 4 Analysis Output -->
+      <aside>
+        <div class="analysis-output" id="output-box">
+          <div style="font-size: 0.75rem; font-family: var(--font-mono); color: #047857; font-weight: bold;">
+            FACULTY OF NATURAL SCIENCES · DISSERTATION CHAPTER 4 DRAFT
+          </div>
+          <div class="output-title" id="output-heading">
+            Table 4.2: Correlation Analysis of Solar Irradiance and Output
+          </div>
+          <p style="font-size: 0.8rem; color: #475569; margin-bottom: 12px;">
+            Generated using Gemini AI &amp; NumPy Statistical Model. Formatted to APA 7th Edition Standards.
+          </p>
+
+          <table class="table-stats">
+            <thead>
+              <tr>
+                <th style="text-align: left;">Variable</th>
+                <th>Mean (M)</th>
+                <th>Std Dev (SD)</th>
+                <th>r-value</th>
+                <th>p-value</th>
+                <th>Decision</th>
+              </tr>
+            </thead>
+            <tbody id="stats-tbody">
+              <tr>
+                <td class="param-name">Daily Solar Insolation (kWh/m²)</td>
+                <td>5.84</td>
+                <td>0.72</td>
+                <td rowspan="2" style="font-weight: bold; color: #047857;">0.874**</td>
+                <td rowspan="2" style="color: #047857;">&lt; 0.001</td>
+                <td rowspan="2" style="font-weight: bold; background: #DCFCE7; color: #166534;">Reject H₀ (Sig.)</td>
+              </tr>
+              <tr>
+                <td class="param-name">Monocrystalline Power Output (Watts)</td>
+                <td>312.4</td>
+                <td>28.6</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div style="background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 6px; padding: 14px; font-size: 0.82rem; line-height: 1.6; color: #334155;">
+            <strong>Chapter 4 Discussion &amp; Academic Interpretation:</strong>
+            <p id="output-discussion" style="margin-top: 6px;">
+              The Pearson Product-Moment correlation analysis reveals a statistically significant, strong positive correlation between daily solar insolation and electrical power generation (r = 0.874, p &lt; 0.001). Because the calculated significance level is substantially less than the alpha threshold of 0.05, the null hypothesis is rejected. This demonstrates that regional solar intensity directly dictates panel efficiency on the Jos Plateau with minimal thermal degradation.
+            </p>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; border-top: 1px dashed #CBD5E1; padding-top: 12px;">
+            <span style="font-size: 0.75rem; color: #64748B;">Defense Ready · Verified against Senate Research Guidelines</span>
+            <button class="btn btn-primary" style="font-size: 0.8rem; padding: 6px 12px;" onclick="alert('Exported full Chapter 4 DOCX to your research downloads!')">
+              Export Word Doc (.docx)
+            </button>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    const topics = {
+      physics: {
+        title: 'Table 4.2: Correlation Analysis of Solar Irradiance and Output',
+        sample: 'N = 240 Surveyed Readings (Jos Plateau Solar Rig)',
+        rows: `
+          <tr>
+            <td class="param-name">Daily Solar Insolation (kWh/m²)</td>
+            <td>5.84</td>
+            <td>0.72</td>
+            <td rowspan="2" style="font-weight: bold; color: #047857;">0.874**</td>
+            <td rowspan="2" style="color: #047857;">&lt; 0.001</td>
+            <td rowspan="2" style="font-weight: bold; background: #DCFCE7; color: #166534;">Reject H₀ (Sig.)</td>
+          </tr>
+          <tr>
+            <td class="param-name">Monocrystalline Power Output (Watts)</td>
+            <td>312.4</td>
+            <td>28.6</td>
+          </tr>
+        `,
+        discussion: 'The Pearson correlation analysis reveals a statistically significant, strong positive correlation between daily solar insolation and electrical power generation (r = 0.874, p < 0.001). Because the significance level is less than the alpha threshold of 0.05, the null hypothesis is rejected. This indicates that seasonal sunshine duration in Jos directly dictates solar cell yield.'
+      },
+      economics: {
+        title: 'Table 4.4: Chi-Square Test of Mobile Money Adoption vs Merchant Sales Turnover',
+        sample: 'N = 180 Registered MSME Retailers in Jos Central Market',
+        rows: `
+          <tr>
+            <td class="param-name">Digital POS / Transfer Adoption</td>
+            <td>4.12</td>
+            <td>0.68</td>
+            <td rowspan="2" style="font-weight: bold; color: #047857;">χ² = 34.8</td>
+            <td rowspan="2" style="color: #047857;">p = 0.002</td>
+            <td rowspan="2" style="font-weight: bold; background: #DCFCE7; color: #166534;">Reject H₀ (Sig.)</td>
+          </tr>
+          <tr>
+            <td class="param-name">Monthly Revenue Growth (&gt;15%)</td>
+            <td>3.85</td>
+            <td>0.81</td>
+          </tr>
+        `,
+        discussion: 'The Chi-Square test of independence reveals a statistically significant association between merchant adoption of digital mobile payment channels and measurable monthly revenue expansion (χ² = 34.8, df = 4, p = 0.002). Merchants who deployed instant bank transfers experienced higher inventory turnover than cash-only competitors.'
+      },
+      biochemistry: {
+        title: 'Table 4.1: Multiple Regression Model on Antimicrobial Inhibition Zones',
+        sample: 'N = 45 Controlled In-Vitro Agar Well Diffusion Replicates',
+        rows: `
+          <tr>
+            <td class="param-name">Extract Concentration (mg/mL)</td>
+            <td>50.0</td>
+            <td>12.5</td>
+            <td rowspan="2" style="font-weight: bold; color: #047857;">R² = 0.792</td>
+            <td rowspan="2" style="color: #047857;">F = 42.1 (p &lt; 0.001)</td>
+            <td rowspan="2" style="font-weight: bold; background: #DCFCE7; color: #166534;">Model Valid</td>
+          </tr>
+          <tr>
+            <td class="param-name">Inhibition Zone Diameter (mm)</td>
+            <td>18.4</td>
+            <td>3.2</td>
+          </tr>
+        `,
+        discussion: 'The multiple linear regression model accounts for 79.2% of the variance observed in bacterial growth inhibition (R² = 0.792, F = 42.1, p < 0.001). The concentration of active phytochemical flavonoids emerged as the primary predictive factor for pathogen eradication.'
+      }
+    };
+
+    function runAnalysis() {
+      const topic = document.getElementById('research-topic').value;
+      const data = topics[topic];
+
+      document.getElementById('stat-sample').value = data.sample;
+      document.getElementById('output-heading').textContent = data.title;
+      document.getElementById('stats-tbody').innerHTML = data.rows;
+      document.getElementById('output-discussion').textContent = data.discussion;
+    }
+  </script>
+</body>
+</html>

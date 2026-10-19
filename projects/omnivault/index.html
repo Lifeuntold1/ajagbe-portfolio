@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OmniVault IP | Cryptographic Asset Escrow</title>
+  <title>The IP Vault | Law Firm Client Portal &amp; Intellectual Property Manager</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0A0A0C;
-      --surface: #121318;
-      --surface-elevated: #1A1C24;
+      --bg: #0B0E14;
+      --surface: #121722;
+      --surface-elevated: #182030;
       --border: rgba(255, 255, 255, 0.09);
-      --accent: #E2B93B;
-      --accent-hover: #F6D060;
-      --text: #F4F4F6;
-      --text-muted: #848794;
+      --accent: #C8A840;
+      --accent-hover: #E0C068;
+      --accent-blue: #38BDF8;
       --success: #10B981;
+      --text: #F1F5F9;
+      --text-muted: #8E9DB2;
       --font-display: "DM Serif Display", serif;
       --font-body: "Inter", sans-serif;
       --font-mono: "JetBrains Mono", monospace;
@@ -32,12 +33,12 @@
     }
     .top-bar {
       border-bottom: 1px solid var(--border);
-      background: rgba(10, 10, 12, 0.9);
+      background: rgba(11, 14, 20, 0.95);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 16px 24px;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -49,298 +50,375 @@
       font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       transition: color 0.2s;
     }
     .back-link:hover { color: var(--accent-hover); }
-    .badge-vault {
+    .badge {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--accent);
-      background: rgba(226, 185, 59, 0.1);
-      border: 1px solid rgba(226, 185, 59, 0.3);
       padding: 4px 10px;
       border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(200, 168, 64, 0.12);
+      border: 1px solid rgba(200, 168, 64, 0.35);
+      color: var(--accent);
     }
     .container {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 24px 0;
+      padding: 36px 24px 0;
     }
-    .hero-header {
-      margin-bottom: 36px;
+    .hero {
+      margin-bottom: 32px;
     }
-    .hero-header h1 {
+    .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      line-height: 1.15;
-      margin-bottom: 8px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
-    .hero-header p {
+    .hero p {
       color: var(--text-muted);
+      max-width: 760px;
       font-size: 1.05rem;
-      max-width: 720px;
     }
     .grid-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: 2fr 1.1fr;
+      gap: 28px;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 960px) {
       .grid-layout { grid-template-columns: 1fr; }
     }
     .card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 28px;
+      padding: 24px;
+      margin-bottom: 24px;
     }
-    .card h2 {
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      margin-bottom: 16px;
-    }
-    .form-group {
-      margin-bottom: 18px;
-    }
-    .form-group label {
-      display: block;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-    }
-    input, select, textarea {
-      width: 100%;
-      background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      padding: 12px 14px;
-      border-radius: 8px;
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    input:focus, select:focus, textarea:focus {
-      border-color: var(--accent);
-    }
-    .btn-mint {
-      width: 100%;
-      background: var(--accent);
-      color: #0A0A0C;
-      font-family: var(--font-mono);
+    .card-title {
+      font-size: 1.2rem;
       font-weight: 600;
-      font-size: 0.92rem;
-      padding: 14px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      margin-top: 8px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-mint:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-    .vault-certificate {
-      background: var(--surface-elevated);
-      border: 1px solid var(--accent);
-      border-radius: 8px;
-      padding: 20px;
-      font-family: var(--font-mono);
-      font-size: 0.82rem;
-      margin-top: 20px;
-      display: none;
-    }
-    .cert-row {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    .cert-label { color: var(--text-muted); }
-    .cert-val { color: var(--text); font-weight: 500; }
-    .cert-hash {
-      word-break: break-all;
-      color: var(--accent);
-      background: rgba(226, 185, 59, 0.08);
-      padding: 8px;
-      border-radius: 4px;
-      margin-top: 10px;
-      font-size: 0.75rem;
-    }
-    .registry-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-top: 16px;
-    }
-    .registry-item {
-      background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      padding: 14px;
-      border-radius: 8px;
+      margin-bottom: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .reg-title { font-weight: 600; font-size: 0.95rem; }
-    .reg-sub { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
-    .reg-badge {
+    .ip-item {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+    .ip-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .ip-name {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .timeline {
+      display: flex;
+      margin-top: 14px;
+      position: relative;
+      gap: 4px;
+    }
+    .timeline-step {
+      flex: 1;
+      text-align: center;
       font-family: var(--font-mono);
       font-size: 0.72rem;
-      padding: 4px 8px;
-      border-radius: 4px;
-      background: rgba(16, 185, 129, 0.1);
+      padding-top: 14px;
+      position: relative;
+      color: var(--text-muted);
+    }
+    .timeline-step::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 2px;
+    }
+    .timeline-step.completed {
       color: var(--success);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+    .timeline-step.completed::before {
+      background: var(--success);
+    }
+    .timeline-step.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .timeline-step.active::before {
+      background: var(--accent);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    .btn-gold {
+      background: var(--accent);
+      color: #0B0E14;
+    }
+    .btn-gold:hover {
+      background: var(--accent-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .upload-box {
+      border: 2px dashed rgba(200, 168, 64, 0.35);
+      border-radius: 8px;
+      padding: 24px;
+      text-align: center;
+      background: rgba(200, 168, 64, 0.03);
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+    .upload-box:hover {
+      border-color: var(--accent);
+    }
+    .doc-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+    .doc-table th, .doc-table td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-table th {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+    .doc-table td {
+      font-family: var(--font-mono);
     }
   </style>
 </head>
 <body>
+
   <header class="top-bar">
     <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
-    <span class="badge-vault">🔒 Ledger State: Immutable</span>
+    <span class="badge">● LAW FIRM CLIENT PORTAL DEMO</span>
   </header>
 
   <main class="container">
-    <div class="hero-header">
-      <h1>OmniVault IP Escrow</h1>
-      <p>Cryptographic intellectual property depository calculating SHA-256 asset provenance digests, milestone release criteria, and license verification records.</p>
+    <div class="hero">
+      <span class="badge" style="margin-bottom: 8px;">Legal Tech · Intellectual Property &amp; Client Vault</span>
+      <h1>The IP Vault Portal</h1>
+      <p>
+        A dedicated, encrypted client dashboard designed for intellectual property law firms. Provides corporate clients with 24/7 visibility into patent applications, trademark gazette publications, and zero-leak document exchange.
+      </p>
     </div>
 
     <div class="grid-layout">
-      <!-- Deposition Form -->
-      <section class="card">
-        <h2>Deposit Digital Asset</h2>
-        <div class="form-group">
-          <label for="asset-name">Asset Title / Identifier</label>
-          <input type="text" id="asset-name" value="Laravel Nexus Multi-Vendor Core Engine">
-        </div>
-        <div class="form-group">
-          <label for="asset-type">Asset Classification</label>
-          <select id="asset-type">
-            <option value="Software Source Code">Software Source Code (Proprietary Engine)</option>
-            <option value="Academic Publication Dataset">Academic Publication Dataset (Raw Experimental)</option>
-            <option value="Brand Identity & Trademark">Brand Identity &amp; Digital Trademark Master</option>
-            <option value="Video Media Master">Whiteboard Animation Video Masters</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="licensor-name">Assignee / Depositor Identity</label>
-          <input type="text" id="licensor-name" value="Ajagbe Emmanuel Oluwatobi">
-        </div>
-        <div class="form-group">
-          <label for="escrow-terms">Escrow Release Condition</label>
-          <input type="text" id="escrow-terms" value="Milestone 4 Client Signoff &amp; Full Final Settlement">
-        </div>
-
-        <button class="btn-mint" id="mint-btn">Generate Verifiable Provenance Certificate</button>
-
-        <div class="vault-certificate" id="cert-box">
-          <div class="cert-row">
-            <span class="cert-label">Status</span>
-            <span class="cert-val" style="color: var(--success);">✓ SECURED IN ESCROW</span>
+      <!-- Left: Active IP Filings -->
+      <div>
+        <div class="card">
+          <div class="card-title">
+            <span>Active Client Filings</span>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--accent);">Client: Nexora Technologies Ltd</span>
           </div>
-          <div class="cert-row">
-            <span class="cert-label">Asset Ref</span>
-            <span class="cert-val" id="cert-ref">VAULT-8921-X</span>
-          </div>
-          <div class="cert-row">
-            <span class="cert-label">Timestamp</span>
-            <span class="cert-val" id="cert-time">2026-10-19T10:45:00Z</span>
-          </div>
-          <div class="cert-label" style="margin-top: 10px;">SHA-256 Provenance Fingerprint:</div>
-          <div class="cert-hash" id="cert-hash">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</div>
-        </div>
-      </section>
 
-      <!-- Active Vault Ledgers -->
-      <section class="card">
-        <h2>Active Depository Assets</h2>
-        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
-          Verified intellectual property records anchored with immutable cryptographic milestones.
-        </p>
-
-        <div class="registry-list" id="reg-list">
-          <div class="registry-item">
-            <div>
-              <div class="reg-title">Nexus Market Multi-Vendor Source</div>
-              <div class="reg-sub">SHA-256: 7d4a98f...e109 | Licensor: Life Untold</div>
+          <!-- Filing 1: Trademark -->
+          <div class="ip-item">
+            <div class="ip-header">
+              <div>
+                <span class="ip-name">"NEXORA FLOW" (Word Mark &amp; Device)</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); display: block;">
+                  Class 9 &amp; 42 (Software &amp; Cloud Telemetry) · Filing No: NG/TM/2026/0842
+                </span>
+              </div>
+              <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border-color: rgba(16, 185, 129, 0.3);">
+                Publication Stage
+              </span>
             </div>
-            <span class="reg-badge">Escrow Active</span>
+            <div class="timeline">
+              <div class="timeline-step completed">1. Filed</div>
+              <div class="timeline-step completed">2. Examination</div>
+              <div class="timeline-step completed">3. Acceptance</div>
+              <div class="timeline-step active">4. Gazette Pub</div>
+              <div class="timeline-step">5. Certificate</div>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 14px;">
+              Published in Federal Trademark Journal Vol. 48. Opposition window ends in 42 days. Zero third-party notices logged.
+            </p>
           </div>
 
-          <div class="registry-item">
-            <div>
-              <div class="reg-title">Jaoos Estates 3D Architectural CADs</div>
-              <div class="reg-sub">SHA-256: 12f08bc...4a18 | Client: Jaoos Luxury</div>
+          <!-- Filing 2: Patent -->
+          <div class="ip-item">
+            <div class="ip-header">
+              <div>
+                <span class="ip-name">Decentralized Event Liquidity Routing Method</span>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); display: block;">
+                  Utility Patent Application · Ref: NG/PT/2025/1109
+                </span>
+              </div>
+              <span class="badge" style="background: rgba(56, 189, 248, 0.15); color: #7DD3FC; border-color: rgba(56, 189, 248, 0.3);">
+                Substantive Exam
+              </span>
             </div>
-            <span class="reg-badge">Escrow Active</span>
-          </div>
-
-          <div class="registry-item">
-            <div>
-              <div class="reg-title">PhysLab Experimental Dataset 2026</div>
-              <div class="reg-sub">SHA-256: 99a12cf...88e1 | Author: E. Ajagbe</div>
+            <div class="timeline">
+              <div class="timeline-step completed">1. Search</div>
+              <div class="timeline-step completed">2. Formal Filing</div>
+              <div class="timeline-step active">3. Prior Art Exam</div>
+              <div class="timeline-step">4. Allowance</div>
+              <div class="timeline-step">5. Grant</div>
             </div>
-            <span class="reg-badge">Verified</span>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 14px;">
+              Examiner Office Action 1 addressed. Amended claims submitted under Rule 14. Awaiting Allowance notice.
+            </p>
           </div>
         </div>
-      </section>
+
+        <!-- Secure Document Exchange Table -->
+        <div class="card">
+          <div class="card-title">
+            <span>Secure Vault Documents</span>
+            <button class="btn btn-outline" style="font-size: 0.78rem; padding: 6px 12px;" onclick="alert('Viewing attorney audit log: All downloads fingerprinted.')">
+              View Audit Log
+            </button>
+          </div>
+
+          <table class="doc-table">
+            <thead>
+              <tr>
+                <th>Document Name</th>
+                <th>Classification</th>
+                <th>Date Added</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="doc-list">
+              <tr>
+                <td style="color: var(--text);">Filing_Receipt_TM0842.pdf</td>
+                <td style="color: var(--accent);">Official Filing</td>
+                <td>Mar 14, 2026</td>
+                <td style="color: var(--success);">✓ Verified (Signed)</td>
+              </tr>
+              <tr>
+                <td style="color: var(--text);">Nexora_Patent_Claims_v4.docx</td>
+                <td style="color: var(--accent);">Legal Spec</td>
+                <td>Feb 28, 2026</td>
+                <td style="color: var(--success);">✓ Sanitized Clean</td>
+              </tr>
+              <tr>
+                <td style="color: var(--text);">Client_Power_of_Attorney.pdf</td>
+                <td style="color: var(--accent);">Executed Deed</td>
+                <td>Jan 19, 2026</td>
+                <td style="color: var(--success);">✓ Encrypted Vault</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Right: Document Sanitization & Upload -->
+      <aside>
+        <div class="card">
+          <div class="card-title">Upload IP Document</div>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin-bottom: 16px;">
+            Law firms require strict file sanitization. Uploaded drafts are stripped of malicious metadata and encrypted in memory.
+          </p>
+
+          <div class="upload-box" onclick="simulateUpload()">
+            <div style="font-size: 2rem; margin-bottom: 8px;">📁</div>
+            <div style="font-weight: 600; font-size: 0.95rem; color: var(--accent);">Click to Upload Legal Document</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 4px; font-family: var(--font-mono);">
+              PDF, DOCX, ZIP · Max 50MB (Deep Inspection)
+            </div>
+          </div>
+
+          <div id="upload-status" style="display: none; margin-top: 16px; background: var(--surface-elevated); padding: 14px; border-radius: 6px; border: 1px solid var(--border); font-family: var(--font-mono); font-size: 0.8rem;">
+            <div style="color: var(--accent); margin-bottom: 4px;" id="status-title">Scanning file...</div>
+            <div style="color: var(--text-muted);" id="status-desc">Deep inspection &amp; metadata removal in progress</div>
+          </div>
+
+          <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border);">
+            <div style="font-size: 0.85rem; font-weight: 600; margin-bottom: 8px;">Client Practice Lead</div>
+            <div style="font-size: 0.85rem; color: var(--text);">Barr. O. Adebayo (Managing Partner)</div>
+            <div style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Adebayo &amp; Partners Law Practice</div>
+            <button class="btn btn-gold" style="width: 100%; margin-top: 16px;" onclick="alert('Message sent to Case Attorney. Response time: Under 4 hours.')">
+              Send Secure Notice to Attorney →
+            </button>
+          </div>
+        </div>
+      </aside>
     </div>
   </main>
 
   <script>
-    const mintBtn = document.getElementById('mint-btn');
-    const certBox = document.getElementById('cert-box');
-    const assetName = document.getElementById('asset-name');
-    const assetType = document.getElementById('asset-type');
-    const licensorName = document.getElementById('licensor-name');
-    const certRef = document.getElementById('cert-ref');
-    const certTime = document.getElementById('cert-time');
-    const certHash = document.getElementById('cert-hash');
-    const regList = document.getElementById('reg-list');
+    function simulateUpload() {
+      const statusBox = document.getElementById('upload-status');
+      const title = document.getElementById('status-title');
+      const desc = document.getElementById('status-desc');
 
-    function pseudoSha256(str) {
-      let hash = 0;
-      for (let i = 0; i < str.length; i++) {
-        hash = ((hash << 5) - hash) + str.charCodeAt(i);
-        hash |= 0;
-      }
-      const hex = Math.abs(hash).toString(16).padStart(8, '0');
-      return hex + '89fc1c149afbf4c8' + hex + 'ae41e4649b934ca495991b' + hex;
-    }
+      statusBox.style.display = 'block';
+      title.textContent = '1. Ingesting & Sandboxing Document...';
+      desc.textContent = 'Allocating memory buffer & checking MIME headers.';
 
-    mintBtn.addEventListener('click', () => {
-      const name = assetName.value.trim() || 'Untitled Asset';
-      const ref = 'VAULT-' + Math.floor(Math.random() * 8999 + 1000) + '-NG';
-      const hash = pseudoSha256(name + Date.now());
-
-      certRef.textContent = ref;
-      certTime.textContent = new Date().toISOString();
-      certHash.textContent = hash;
-      certBox.style.display = 'block';
-
-      // Prepend to registry
-      const item = document.createElement('div');
-      item.className = 'registry-item';
-      item.innerHTML = `
-        <div>
-          <div class="reg-title">${name}</div>
-          <div class="reg-sub">SHA-256: ${hash.substring(0, 8)}... | Owner: ${licensorName.value}</div>
-        </div>
-        <span class="reg-badge">Escrow Active</span>
-      `;
-      regList.insertBefore(item, regList.firstChild);
-
-      mintBtn.textContent = '✓ Escrow Deposition Confirmed';
       setTimeout(() => {
-        mintBtn.textContent = 'Generate Verifiable Provenance Certificate';
-      }, 3000);
-    });
+        title.textContent = '2. Sanitizing Embedded Payloads...';
+        desc.textContent = 'Stripping macro signatures, EXIF data, and hidden XML streams.';
+      }, 900);
+
+      setTimeout(() => {
+        title.textContent = '3. Storing in Legal Vault...';
+        desc.textContent = 'Applying AES-256 at-rest encryption and notifying Case Attorney.';
+      }, 1800);
+
+      setTimeout(() => {
+        title.textContent = '✓ Document Upload Complete!';
+        title.style.color = '#10B981';
+        desc.textContent = 'Added to client case dossier with timestamp hash.';
+
+        const tbody = document.getElementById('doc-list');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+          <td style="color: var(--text);">Trademark_Specimen_v2.pdf</td>
+          <td style="color: var(--accent);">Brand Specimen</td>
+          <td>Today</td>
+          <td style="color: var(--success);">✓ Sanitized Clean</td>
+        `;
+        tbody.prepend(newRow);
+      }, 2700);
+    }
   </script>
 </body>
 </html>

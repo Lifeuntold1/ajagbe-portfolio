@@ -1,72 +1,70 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
   <defs>
     <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#081412"/>
-      <stop offset="100%" stop-color="#102522"/>
+      <stop offset="0%" stop-color="#081410"/>
+      <stop offset="100%" stop-color="#10251E"/>
     </linearGradient>
-    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#059669"/>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981"/>
       <stop offset="100%" stop-color="#34D399"/>
     </linearGradient>
   </defs>
   <rect width="800" height="500" fill="url(#bgGrad)"/>
   
-  <!-- Header Bar -->
-  <rect x="30" y="30" width="740" height="36" rx="6" fill="#15322C" stroke="rgba(255,255,255,0.08)"/>
+  <!-- Browser Header -->
+  <rect x="30" y="30" width="740" height="36" rx="6" fill="#153228" stroke="rgba(255,255,255,0.08)"/>
   <circle cx="55" cy="48" r="5" fill="#EF4444"/>
   <circle cx="72" cy="48" r="5" fill="#F59E0B"/>
   <circle cx="89" cy="48" r="5" fill="#10B981"/>
-  <text x="110" y="52" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">cdp.unijos.internal/research-federation</text>
-  <text x="640" y="52" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">● SPRINT 5/6 ACTIVE</text>
+  <text x="110" y="52" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">cdp.unijos.internal/research-ai/thesis-chapter4</text>
 
-  <!-- Left: Federation Topology -->
-  <rect x="40" y="90" width="450" height="370" rx="8" fill="#0C1F1B" stroke="rgba(255,255,255,0.1)"/>
-  <text x="65" y="125" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">INSTITUTIONAL RESEARCH REPOSITORY &amp; CREDENTIALS</text>
+  <!-- Left: AI Academic Data Analysis Workspace -->
+  <rect x="40" y="90" width="460" height="370" rx="8" fill="#0C1F19" stroke="rgba(255,255,255,0.1)"/>
+  <text x="65" y="125" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">AI-POWERED THESIS DATA ANALYSIS &amp; CHAPTER 4 GENERATOR</text>
 
-  <!-- Central Node -->
-  <rect x="180" y="150" width="170" height="60" rx="6" fill="#183D36" stroke="#34D399" stroke-width="2"/>
-  <text x="195" y="175" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="12" font-weight="bold">UNIJOS CORE CDP</text>
-  <text x="195" y="195" fill="#A7F3D0" font-family="'JetBrains Mono', monospace" font-size="10">PostgreSQL 16 Cluster</text>
+  <!-- Uploaded dataset info -->
+  <rect x="65" y="145" width="410" height="60" rx="6" fill="#143026" stroke="#10B981"/>
+  <text x="80" y="170" fill="#F8FAFC" font-family="'DM Sans', sans-serif" font-size="14" font-weight="bold">Dataset: Solar_Insolation_vs_PV_Output.csv</text>
+  <text x="80" y="190" fill="#A7F3D0" font-family="'JetBrains Mono', monospace" font-size="11">N = 240 Survey Observations · Dept. of Physics · Cleaned &amp; Validated</text>
 
-  <!-- Departmental Spokes -->
-  <rect x="65" y="250" width="115" height="45" rx="4" fill="#122A25" stroke="rgba(255,255,255,0.1)"/>
-  <text x="75" y="272" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Nat. Sciences</text>
-  <text x="75" y="287" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="9">DOI Engine</text>
+  <!-- Formatted APA Table Preview -->
+  <rect x="65" y="215" width="410" height="135" rx="6" fill="#18362B"/>
+  <text x="80" y="238" fill="#F8FAFC" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="bold">Table 4.2: Pearson Correlation Matrix (APA 7th Ed)</text>
+  
+  <!-- Mini table -->
+  <rect x="80" y="250" width="380" height="24" fill="#0E231C"/>
+  <text x="90" y="266" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="10">Variables</text>
+  <text x="260" y="266" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="10">Mean (SD)</text>
+  <text x="360" y="266" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="10">r (p-value)</text>
 
-  <rect x="205" y="250" width="120" height="45" rx="4" fill="#122A25" stroke="rgba(255,255,255,0.1)"/>
-  <text x="215" y="272" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Medical Sci.</text>
-  <text x="215" y="287" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="9">Clinical Data</text>
+  <rect x="80" y="276" width="380" height="24" fill="#143026"/>
+  <text x="90" y="292" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="10">1. Solar Insolation</text>
+  <text x="260" y="292" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="10">5.84 (0.72)</text>
+  <text x="360" y="292" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold">r = 0.874**</text>
 
-  <rect x="350" y="250" width="115" height="45" rx="4" fill="#122A25" stroke="rgba(255,255,255,0.1)"/>
-  <text x="360" y="272" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Engineering</text>
-  <text x="360" y="287" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="9">Grant Ledger</text>
+  <rect x="80" y="302" width="380" height="24" fill="#0E231C"/>
+  <text x="90" y="318" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="10">2. Power Output (W)</text>
+  <text x="260" y="318" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="10">312.4 (28.6)</text>
+  <text x="360" y="318" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold">p &lt; 0.001 (Sig)</text>
 
-  <line x1="220" y1="210" x2="125" y2="250" stroke="#34D399" stroke-width="1.5"/>
-  <line x1="265" y1="210" x2="265" y2="250" stroke="#34D399" stroke-width="1.5"/>
-  <line x1="310" y1="210" x2="400" y2="250" stroke="#34D399" stroke-width="1.5"/>
+  <!-- Generated narrative deduction -->
+  <rect x="65" y="360" width="410" height="70" rx="6" fill="#122820"/>
+  <text x="80" y="382" fill="#F8FAFC" font-family="'DM Sans', sans-serif" font-size="12" font-weight="bold">AI Thesis Interpretation:</text>
+  <text x="80" y="405" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="10">"Null hypothesis rejected. Statistical significance establishes strong linear dependence."</text>
 
-  <!-- Ingestion Pipeline -->
-  <rect x="65" y="325" width="400" height="110" rx="6" fill="#143029"/>
-  <text x="80" y="350" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">CROSS-CAMPUS DATA FEDERATION PIPELINE</text>
-  <text x="80" y="375" fill="#34D399" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600">Automated DataCite DOI Minting &amp; ORCID Sync</text>
-  <text x="80" y="400" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">Tenant Isolation: Faculty Row-Level Security (RLS)</text>
-  <text x="80" y="420" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="11">12 Faculties · 84 Academic Departments Configured</text>
+  <!-- Right: Academic Impact -->
+  <rect x="520" y="90" width="240" height="175" rx="8" fill="#0C1F19" stroke="#10B981"/>
+  <text x="540" y="120" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">THESIS ANALYSIS TIME</text>
+  <text x="540" y="170" fill="#34D399" font-family="'Playfair Display', serif" font-size="44" font-weight="bold">5min</text>
+  <text x="540" y="200" fill="#F1F5F9" font-family="'JetBrains Mono', monospace" font-size="11">Down from 2 Months</text>
+  <text x="540" y="225" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="11">● 0 Manual SPSS Errors</text>
+  <text x="540" y="245" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">Full APA Table Export</text>
 
-  <!-- Right: Status Panel -->
-  <rect x="510" y="90" width="250" height="175" rx="8" fill="#0C1F1B" stroke="#059669"/>
-  <text x="530" y="120" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">DEVELOPMENT PROGRESS</text>
-  <text x="530" y="165" fill="#34D399" font-family="'Playfair Display', serif" font-size="44" font-weight="bold">84%</text>
-  <!-- Progress Bar -->
-  <rect x="530" y="180" width="210" height="8" rx="4" fill="#143029"/>
-  <rect x="530" y="180" width="176" height="8" rx="4" fill="url(#emeraldGrad)"/>
-  <text x="530" y="215" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Multi-Tenant Federation Ready</text>
-  <text x="530" y="240" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="11">● Senate Compliance Verified</text>
-
-  <rect x="510" y="285" width="250" height="175" rx="8" fill="#0C1F1B" stroke="rgba(255,255,255,0.1)"/>
-  <text x="530" y="315" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">SECURITY MILESTONES</text>
-  <rect x="530" y="335" width="210" height="32" rx="4" fill="#15322C"/>
-  <text x="540" y="355" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="11">✓ Role-Based Tenant Isolation</text>
-  <rect x="530" y="375" width="210" height="32" rx="4" fill="#15322C"/>
-  <text x="540" y="395" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11">✓ OAI-PMH Harvesting Endpoint</text>
-  <text x="530" y="440" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Pilot Rollout: Bauchi Road Campus</text>
+  <rect x="520" y="285" width="240" height="175" rx="8" fill="#0C1F19" stroke="rgba(255,255,255,0.1)"/>
+  <text x="540" y="315" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">ACADEMIC TRUST</text>
+  <rect x="540" y="335" width="200" height="32" rx="4" fill="#153228"/>
+  <text x="550" y="355" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="11">✓ Defense-Ready Outputs</text>
+  <rect x="540" y="375" width="200" height="32" rx="4" fill="#153228"/>
+  <text x="550" y="395" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11">✓ Built on React + Gemini</text>
+  <text x="540" y="440" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="11">University of Jos Pilot</text>
 </svg>

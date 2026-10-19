@@ -3,22 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EventBroker Pro | Asynchronous Webhook Telemetry</title>
+  <title>EventInvest | Event Investment &amp; Ticket Revenue Platform</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #090B10;
-      --surface: #11141D;
-      --surface-elevated: #171C28;
+      --bg: #090D16;
+      --surface: #101726;
+      --surface-elevated: #172238;
       --border: rgba(255, 255, 255, 0.08);
-      --accent: #38BDF8;
-      --accent-hover: #0EA5E9;
-      --accent-warm: #C8A840;
-      --text: #F1F5F9;
-      --text-muted: #808EA0;
+      --accent: #2563EB;
+      --accent-hover: #3B82F6;
+      --accent-warm: #F59E0B;
       --success: #10B981;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
       --font-display: "DM Serif Display", serif;
       --font-body: "Inter", sans-serif;
       --font-mono: "JetBrains Mono", monospace;
@@ -33,383 +33,536 @@
     }
     .top-bar {
       border-bottom: 1px solid var(--border);
-      background: rgba(9, 11, 16, 0.9);
+      background: rgba(9, 13, 22, 0.95);
       backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
       z-index: 50;
-      padding: 16px 24px;
+      padding: 14px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .back-link {
-      color: var(--accent);
+      color: var(--accent-hover);
       text-decoration: none;
       font-family: var(--font-mono);
       font-size: 0.85rem;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       transition: color 0.2s;
     }
-    .back-link:hover { color: var(--accent-hover); }
-    .badge-status {
+    .back-link:hover { color: #60A5FA; }
+    .badge {
       font-family: var(--font-mono);
       font-size: 0.75rem;
-      color: var(--success);
-      background: rgba(16, 185, 129, 0.1);
-      border: 1px solid rgba(16, 185, 129, 0.3);
       padding: 4px 10px;
       border-radius: 999px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-    }
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--success);
-      box-shadow: 0 0 6px var(--success);
+      background: rgba(37, 99, 235, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #93C5FD;
     }
     .container {
-      max-width: 1180px;
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 40px 24px 0;
+      padding: 36px 24px 0;
     }
-    .hero-header {
+    .hero {
       margin-bottom: 32px;
     }
-    .hero-header h1 {
+    .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(2.2rem, 4vw, 3.5rem);
-      line-height: 1.15;
-      margin-bottom: 8px;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
-    .hero-header p {
+    .hero p {
       color: var(--text-muted);
+      max-width: 760px;
       font-size: 1.05rem;
-      max-width: 720px;
     }
-    .metrics-bar {
+    .stats-bar {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
-      margin-bottom: 28px;
+      margin-bottom: 36px;
     }
-    @media (max-width: 768px) {
-      .metrics-bar { grid-template-columns: repeat(2, 1fr); }
-    }
-    .metric-card {
+    .stat-card {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 16px;
+      border-radius: 10px;
+      padding: 20px;
     }
-    .metric-label {
+    .stat-label {
       font-family: var(--font-mono);
       font-size: 0.75rem;
       color: var(--text-muted);
       text-transform: uppercase;
-      margin-bottom: 4px;
+      letter-spacing: 0.05em;
     }
-    .metric-value {
-      font-family: var(--font-mono);
+    .stat-value {
       font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--accent);
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 4px;
     }
     .grid-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 2fr 1fr;
       gap: 28px;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 960px) {
       .grid-layout { grid-template-columns: 1fr; }
     }
-    .card {
+    .event-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 24px;
+      margin-bottom: 24px;
+      transition: border-color 0.2s;
     }
-    .card h2 {
-      font-size: 1.25rem;
-      font-weight: 600;
-      margin-bottom: 16px;
+    .event-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+    }
+    .event-header {
       display: flex;
       justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .event-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .event-meta {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .progress-wrap {
+      margin-block: 14px;
+    }
+    .progress-bar {
+      height: 8px;
+      background: var(--surface-elevated);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #2563EB, #38BDF8);
+      border-radius: 4px;
+    }
+    .event-metrics {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      margin-top: 6px;
+      color: var(--text-muted);
+    }
+    .event-metrics strong {
+      color: var(--text);
+    }
+    .btn {
+      display: inline-flex;
       align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-hover);
+      color: var(--accent-hover);
+    }
+    .calc-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      position: sticky;
+      top: 80px;
+    }
+    .calc-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
     }
     .form-group {
       margin-bottom: 16px;
     }
     .form-group label {
       display: block;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--text-muted);
       margin-bottom: 6px;
+      font-family: var(--font-mono);
     }
-    select, input, textarea {
+    .form-control {
       width: 100%;
       background: var(--surface-elevated);
       border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 10px 12px;
       color: var(--text);
+      font-size: 0.95rem;
       font-family: var(--font-mono);
-      font-size: 0.88rem;
-      padding: 10px 14px;
-      border-radius: 6px;
+    }
+    .form-control:focus {
       outline: none;
-      transition: border-color 0.2s;
+      border-color: var(--accent-hover);
     }
-    select:focus, input:focus, textarea:focus {
-      border-color: var(--accent);
-    }
-    textarea {
-      height: 180px;
-      resize: vertical;
-      line-height: 1.45;
-    }
-    .btn-dispatch {
-      width: 100%;
-      background: var(--accent);
-      color: #090B10;
-      font-family: var(--font-mono);
-      font-weight: 600;
-      font-size: 0.92rem;
-      padding: 12px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.2s, transform 0.15s;
-    }
-    .btn-dispatch:hover {
-      background: var(--accent-hover);
-      transform: translateY(-2px);
-    }
-    .btn-dispatch:active { transform: scale(0.98); }
-    .log-stream {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      height: 380px;
-      overflow-y: auto;
-      padding-right: 6px;
-    }
-    .log-entry {
+    .calc-result {
       background: var(--surface-elevated);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--success);
-      padding: 12px;
-      border-radius: 6px;
-      font-family: var(--font-mono);
-      font-size: 0.78rem;
-      animation: fadeIn 0.3s ease;
+      border-radius: 8px;
+      padding: 16px;
+      margin-top: 18px;
+      border: 1px solid rgba(37, 99, 235, 0.25);
     }
-    .log-header {
+    .calc-row {
       display: flex;
       justify-content: space-between;
-      color: var(--text-muted);
-      margin-bottom: 4px;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
     }
-    .log-topic {
-      color: var(--accent);
-      font-weight: 600;
+    .calc-row.total {
+      margin-top: 12px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--success);
     }
-    .log-meta {
-      color: #94A3B8;
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      z-index: 100;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(-4px); }
-      to { opacity: 1; transform: translateY(0); }
+    .modal-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      max-width: 480px;
+      width: 100%;
+      padding: 28px;
     }
   </style>
 </head>
 <body>
+
   <header class="top-bar">
     <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
-    <div class="badge-status">
-      <span class="status-dot"></span>
-      <span>Cluster Healthy · 0.00% Loss</span>
-    </div>
+    <span class="badge">● LIVE INTERACTIVE PROTOTYPE</span>
   </header>
 
   <main class="container">
-    <div class="hero-header">
-      <h1>EventBroker Pro</h1>
-      <p>Asynchronous event bus and high-throughput webhook telemetry debugger simulating message ingestion, idempotency hashing, and worker acknowledgement.</p>
+    <div class="hero">
+      <span class="badge" style="margin-bottom: 8px;">Fintech · Event Crowdfunding &amp; Liquidity</span>
+      <h1>EventInvest Platform</h1>
+      <p>
+        A white-label event investment portal where retail and institutional backers fund high-profile concerts, tech expos, and sports championships in exchange for contractual ticket revenue yields.
+      </p>
     </div>
 
-    <!-- Live Metrics Strip -->
-    <div class="metrics-bar">
-      <div class="metric-card">
-        <div class="metric-label">Ingested Events</div>
-        <div class="metric-value" id="count-events">1,429</div>
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-label">Total Capital Mobilized</div>
+        <div class="stat-value">₦142,500,000</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-label">Avg P99 Latency</div>
-        <div class="metric-value" id="val-latency">14.2 ms</div>
+      <div class="stat-card">
+        <div class="stat-label">Events Funded &amp; Executed</div>
+        <div class="stat-value">28 Completed</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-label">Ack Rate</div>
-        <div class="metric-value" style="color: var(--success);" id="val-ack">100.0%</div>
+      <div class="stat-card">
+        <div class="stat-label">Average Annualized Yield</div>
+        <div class="stat-value" style="color: var(--success);">22.4% ROI</div>
       </div>
-      <div class="metric-card">
-        <div class="metric-label">Active Consumers</div>
-        <div class="metric-value" style="color: var(--accent-warm);">8 Workers</div>
+      <div class="stat-card">
+        <div class="stat-label">Default / Dispute Rate</div>
+        <div class="stat-value" style="color: var(--accent-hover);">0.00% (Escrowed)</div>
       </div>
     </div>
 
     <div class="grid-layout">
-      <!-- Event Dispatcher Panel -->
-      <section class="card">
-        <h2>Emit Test Event</h2>
-        <div class="form-group">
-          <label for="topic-select">Routing Topic</label>
-          <select id="topic-select">
-            <option value="order.settled">order.settled — E-Commerce Settlement</option>
-            <option value="payment.authorized">payment.authorized — Gateway Webhook</option>
-            <option value="kyc.verification_passed">kyc.verification_passed — Identity System</option>
-            <option value="logistics.waypoint_reached">logistics.waypoint_reached — GPS Dispatch</option>
-          </select>
-        </div>
+      <!-- Events Column -->
+      <div>
+        <h2 style="font-size: 1.25rem; margin-bottom: 16px; color: var(--text);">Open Investment Positions</h2>
 
-        <div class="form-group">
-          <label for="endpoint-input">Target Endpoint URL</label>
-          <input type="text" id="endpoint-input" value="https://api.nexusmkt.com.ng/v1/webhooks/consumer">
-        </div>
+        <!-- Event 1 -->
+        <article class="event-card" id="event-1">
+          <div class="event-header">
+            <div>
+              <div class="event-title">Plateau Tech &amp; Innovation Summit 2026</div>
+              <div class="event-meta">Jos Wildlife Park Arena · Nov 14–16, 2026 · 4,500 Projected Attendees</div>
+            </div>
+            <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border-color: rgba(16, 185, 129, 0.3);">22% Est. Return</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">
+            Funding venue audio/visual production and international keynote hospitality. Backers earn priority liquidation preference from ticket tiers and corporate exhibition booths.
+          </p>
+          <div class="progress-wrap">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 78%;"></div>
+            </div>
+            <div class="event-metrics">
+              <span>Raised: <strong>₦15,600,000</strong></span>
+              <span>Target: <strong>₦20,000,000</strong></span>
+              <span>78% Funded</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">Min. Investment: ₦50,000</span>
+            <button class="btn btn-primary" onclick="selectEvent('Plateau Tech Summit 2026', 0.22, 50000)">Select for Calculator</button>
+          </div>
+        </article>
 
-        <div class="form-group">
-          <label for="payload-editor">JSON Event Payload</label>
-          <textarea id="payload-editor"></textarea>
-        </div>
+        <!-- Event 2 -->
+        <article class="event-card" id="event-2">
+          <div class="event-header">
+            <div>
+              <div class="event-title">Lagos Afro-Fusion Music Carnival</div>
+              <div class="event-meta">Eko Energy City, Victoria Island · Dec 20–22, 2026 · 12,000 Capacity</div>
+            </div>
+            <span class="badge" style="background: rgba(245, 158, 11, 0.15); color: #FCD34D; border-color: rgba(245, 158, 11, 0.3);">26% Est. Return</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">
+            High-velocity festival capital financing sound stage deployment, international livestream rights, and VIP table packages. Returns disbursed 14 days post-event audit.
+          </p>
+          <div class="progress-wrap">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 62%;"></div>
+            </div>
+            <div class="event-metrics">
+              <span>Raised: <strong>₦31,000,000</strong></span>
+              <span>Target: <strong>₦50,000,000</strong></span>
+              <span>62% Funded</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">Min. Investment: ₦100,000</span>
+            <button class="btn btn-primary" onclick="selectEvent('Lagos Afro-Fusion Carnival', 0.26, 100000)">Select for Calculator</button>
+          </div>
+        </article>
 
-        <button class="btn-dispatch" id="dispatch-btn">
-          <span>⚡ Emit Webhook Event</span>
-        </button>
-      </section>
+        <!-- Event 3 -->
+        <article class="event-card" id="event-3">
+          <div class="event-header">
+            <div>
+              <div class="event-title">Abuja National Real Estate &amp; PropTech Expo</div>
+              <div class="event-meta">International Conference Centre, Abuja · Oct 08–10, 2026 · B2B Delegates</div>
+            </div>
+            <span class="badge" style="background: rgba(16, 185, 129, 0.15); color: #6EE7B7; border-color: rgba(16, 185, 129, 0.3);">18% Est. Return</span>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 12px;">
+            Institutional real estate congress. Revenue backed by contracted exhibitor fees from 85 verified property developers across Nigeria and the United Kingdom.
+          </p>
+          <div class="progress-wrap">
+            <div class="progress-bar">
+              <div class="progress-fill" style="width: 91%;"></div>
+            </div>
+            <div class="event-metrics">
+              <span>Raised: <strong>₦18,200,000</strong></span>
+              <span>Target: <strong>₦20,000,000</strong></span>
+              <span>91% Funded</span>
+            </div>
+          </div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px;">
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">Min. Investment: ₦50,000</span>
+            <button class="btn btn-primary" onclick="selectEvent('Abuja PropTech Expo', 0.18, 50000)">Select for Calculator</button>
+          </div>
+        </article>
+      </div>
 
-      <!-- Live Stream Console -->
-      <section class="card">
-        <h2>
-          <span>Live Consumer Telemetry</span>
-          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Real-Time Stream</span>
-        </h2>
-        <div class="log-stream" id="log-stream">
-          <!-- Initial entries populated via JS -->
+      <!-- Right Column: Interactive Yield Calculator -->
+      <aside>
+        <div class="calc-card">
+          <div class="calc-title">Yield &amp; Return Calculator</div>
+
+          <div class="form-group">
+            <label for="event-select">Selected Event</label>
+            <select id="event-select" class="form-control" onchange="onDropdownChange()">
+              <option value="0.22" data-min="50000" data-name="Plateau Tech Summit 2026">Plateau Tech Summit (22% ROI)</option>
+              <option value="0.26" data-min="100000" data-name="Lagos Afro-Fusion Carnival">Lagos Afro-Fusion (26% ROI)</option>
+              <option value="0.18" data-min="50000" data-name="Abuja PropTech Expo">Abuja PropTech Expo (18% ROI)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="invest-amount">Investment Capital (₦)</label>
+            <input type="number" id="invest-amount" class="form-control" value="250000" step="10000" min="50000" oninput="calculateReturns()">
+          </div>
+
+          <div class="form-group">
+            <label for="invest-duration">Settlement Window</label>
+            <input type="text" id="invest-duration" class="form-control" value="90 Days (Post-Audit Disbursement)" readonly>
+          </div>
+
+          <div class="calc-result">
+            <div class="calc-row">
+              <span style="color: var(--text-muted);">Principal Deposit:</span>
+              <span id="res-principal" style="font-family: var(--font-mono);">₦250,000</span>
+            </div>
+            <div class="calc-row">
+              <span style="color: var(--text-muted);">Projected Yield:</span>
+              <span id="res-yield-pct" style="font-family: var(--font-mono); color: var(--accent-hover);">22.0%</span>
+            </div>
+            <div class="calc-row">
+              <span style="color: var(--text-muted);">Profit Share:</span>
+              <span id="res-profit" style="font-family: var(--font-mono); color: var(--success);">+₦55,000</span>
+            </div>
+            <div class="calc-row total">
+              <span>Total Payout:</span>
+              <span id="res-total">₦305,000</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; margin-top: 18px;" onclick="openInvestModal()">
+            Simulate Position Allocation →
+          </button>
+          <p style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted); text-align: center; margin-top: 10px;">
+            Backed by Escrowed Contract Terms · Zero Code Fluff
+          </p>
         </div>
-      </section>
+      </aside>
     </div>
   </main>
 
-  <script>
-    const samplePayloads = {
-      'order.settled': {
-        event_id: 'evt_983f41a8',
-        timestamp: new Date().toISOString(),
-        order_ref: 'NX-99412',
-        currency: 'NGN',
-        amount: 85400.00,
-        vendor_id: 'vnd_0821',
-        customer_email: 'buyer@example.com',
-        escrow_status: 'HELD'
-      },
-      'payment.authorized': {
-        event_id: 'evt_7721b02c',
-        timestamp: new Date().toISOString(),
-        transaction_id: 'tx_auth_44102',
-        gateway: 'Paystack_Dedicated_Node',
-        card_brand: 'Mastercard',
-        auth_code: 'AUTH_89104',
-        risk_score: 0.02
-      },
-      'kyc.verification_passed': {
-        event_id: 'evt_1204c89a',
-        timestamp: new Date().toISOString(),
-        account_id: 'usr_88291',
-        bvn_verified: true,
-        tier: 3,
-        compliance_check_duration_ms: 184
-      },
-      'logistics.waypoint_reached': {
-        event_id: 'evt_3391d10e',
-        timestamp: new Date().toISOString(),
-        consignment_id: 'CSG-8819',
-        carrier_code: 'PARCELIFY-EXPRESS',
-        coordinates: { lat: 9.8965, lng: 8.8583 },
-        status: 'OUT_FOR_FINAL_DELIVERY'
-      }
-    };
+  <!-- Simulation Modal -->
+  <div class="modal-overlay" id="investModal">
+    <div class="modal-box">
+      <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Position Confirmation</h3>
+      <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 16px;">
+        Simulating position allocation for <strong id="modal-event" style="color: var(--text);"></strong>.
+      </p>
 
-    const topicSelect = document.getElementById('topic-select');
-    const payloadEditor = document.getElementById('payload-editor');
-    const dispatchBtn = document.getElementById('dispatch-btn');
-    const logStream = document.getElementById('log-stream');
-    const countEvents = document.getElementById('count-events');
-    const valLatency = document.getElementById('val-latency');
-
-    let totalCount = 1429;
-
-    function updatePayload() {
-      const topic = topicSelect.value;
-      const data = Object.assign({}, samplePayloads[topic]);
-      data.event_id = 'evt_' + Math.random().toString(36).substring(2, 10);
-      data.timestamp = new Date().toISOString();
-      payloadEditor.value = JSON.stringify(data, null, 2);
-    }
-
-    topicSelect.addEventListener('change', updatePayload);
-    updatePayload();
-
-    function addLogEntry(topic, data, latency) {
-      const entry = document.createElement('div');
-      entry.className = 'log-entry';
-      entry.innerHTML = `
-        <div class="log-header">
-          <span class="log-topic">${topic}</span>
-          <span>HTTP 200 OK · ${latency}ms</span>
+      <div style="background: var(--surface-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 14px; margin-bottom: 18px; font-family: var(--font-mono); font-size: 0.85rem;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span>Principal:</span>
+          <span id="modal-principal" style="color: var(--text);">₦250,000</span>
         </div>
-        <div class="log-meta">ID: ${data.event_id || 'evt_gen'} | Node: worker-node-0${Math.floor(Math.random()*4)+1}</div>
-        <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Signature: sha256_hmac_${Math.random().toString(36).substring(2, 12)}</div>
-      `;
-      logStream.insertBefore(entry, logStream.firstChild);
-      if (logStream.children.length > 20) {
-        logStream.removeChild(logStream.lastChild);
+        <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
+          <span>Expected Return:</span>
+          <span id="modal-return" style="color: var(--success);">₦55,000</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-weight: bold; padding-top: 6px; border-top: 1px solid var(--border);">
+          <span>Settlement Account:</span>
+          <span>Verified KYC Tier 2</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end;">
+        <button class="btn btn-outline" onclick="closeInvestModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="confirmInvestment()">Confirm &amp; Mint Voucher</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentRate = 0.22;
+    let currentMin = 50000;
+    let currentName = 'Plateau Tech Summit 2026';
+
+    function selectEvent(name, rate, min) {
+      currentName = name;
+      currentRate = rate;
+      currentMin = min;
+
+      const select = document.getElementById('event-select');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].dataset.name === name) {
+          select.selectedIndex = i;
+          break;
+        }
       }
+
+      const input = document.getElementById('invest-amount');
+      if (parseFloat(input.value) < min) {
+        input.value = min;
+      }
+      calculateReturns();
     }
 
-    // Seed logs
-    addLogEntry('order.settled', samplePayloads['order.settled'], 12);
-    addLogEntry('payment.authorized', samplePayloads['payment.authorized'], 15);
-    addLogEntry('kyc.verification_passed', samplePayloads['kyc.verification_passed'], 9);
+    function onDropdownChange() {
+      const select = document.getElementById('event-select');
+      const option = select.options[select.selectedIndex];
+      currentRate = parseFloat(option.value);
+      currentMin = parseFloat(option.dataset.min);
+      currentName = option.dataset.name;
 
-    dispatchBtn.addEventListener('click', () => {
-      try {
-        const parsed = JSON.parse(payloadEditor.value);
-        dispatchBtn.disabled = true;
-        dispatchBtn.innerHTML = '<span>⏳ Processing via Queue Worker...</span>';
-
-        setTimeout(() => {
-          const latency = Math.floor(Math.random() * 12) + 8;
-          addLogEntry(topicSelect.value, parsed, latency);
-          totalCount++;
-          countEvents.textContent = totalCount.toLocaleString();
-          valLatency.textContent = latency + '.4 ms';
-
-          dispatchBtn.disabled = false;
-          dispatchBtn.innerHTML = '<span>⚡ Emit Webhook Event</span>';
-          updatePayload();
-        }, 300);
-      } catch (e) {
-        alert('Invalid JSON in payload editor. Please correct formatting.');
+      const input = document.getElementById('invest-amount');
+      if (parseFloat(input.value) < currentMin) {
+        input.value = currentMin;
       }
-    });
+      calculateReturns();
+    }
+
+    function calculateReturns() {
+      const amountInput = document.getElementById('invest-amount');
+      const val = parseFloat(amountInput.value) || 0;
+      const profit = val * currentRate;
+      const total = val + profit;
+
+      document.getElementById('res-principal').textContent = '₦' + val.toLocaleString();
+      document.getElementById('res-yield-pct').textContent = (currentRate * 100).toFixed(1) + '%';
+      document.getElementById('res-profit').textContent = '+₦' + Math.round(profit).toLocaleString();
+      document.getElementById('res-total').textContent = '₦' + Math.round(total).toLocaleString();
+    }
+
+    function openInvestModal() {
+      const val = parseFloat(document.getElementById('invest-amount').value) || 0;
+      const profit = val * currentRate;
+
+      document.getElementById('modal-event').textContent = currentName;
+      document.getElementById('modal-principal').textContent = '₦' + val.toLocaleString();
+      document.getElementById('modal-return').textContent = '+₦' + Math.round(profit).toLocaleString() + ' (' + (currentRate * 100).toFixed(0) + '%)';
+      document.getElementById('investModal').style.display = 'flex';
+    }
+
+    function closeInvestModal() {
+      document.getElementById('investModal').style.display = 'none';
+    }
+
+    function confirmInvestment() {
+      alert('✓ Position Confirmed! Your investment position certificate has been minted into your EventInvest portfolio ledger.');
+      closeInvestModal();
+    }
+
+    // Initialize
+    calculateReturns();
   </script>
 </body>
 </html>

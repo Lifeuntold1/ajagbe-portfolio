@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0E18"/>
+      <stop offset="100%" stop-color="#14192A"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Browser Header -->
+  <rect x="30" y="30" width="740" height="36" rx="6" fill="#182035" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="55" cy="48" r="5" fill="#EF4444"/>
+  <circle cx="72" cy="48" r="5" fill="#F59E0B"/>
+  <circle cx="89" cy="48" r="5" fill="#10B981"/>
+  <text x="110" y="52" fill="#7DD3FC" font-family="'JetBrains Mono', monospace" font-size="12">quantumplators.unijos.internal/class-of-2024/profiles</text>
+
+  <!-- Left: Student Registry Directory Preview -->
+  <rect x="40" y="90" width="460" height="370" rx="8" fill="#101524" stroke="rgba(255,255,255,0.1)"/>
+  <text x="65" y="125" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">DEPARTMENT OF PHYSICS · CLASS OF 2024 REGISTRY</text>
+
+  <!-- Student Card 1 -->
+  <rect x="65" y="145" width="410" height="85" rx="6" fill="#192238" stroke="#0284C7"/>
+  <circle cx="95" cy="180" r="18" fill="#0284C7"/>
+  <text x="89" y="185" fill="#FFFFFF" font-family="'DM Sans', sans-serif" font-weight="bold" font-size="12">AO</text>
+  <text x="125" y="172" fill="#F8FAFC" font-family="'DM Sans', sans-serif" font-size="14" font-weight="bold">Ajagbe Emmanuel Oluwatobi</text>
+  <text x="125" y="190" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="10">Theoretical Physics · Dissertation: Numerical Wave Packets</text>
+  <text x="125" y="210" fill="#94A3B8" font-family="'DM Sans', sans-serif" font-size="10" font-style="italic">"Measure first, build second, test until it works."</text>
+
+  <!-- Student Card 2 -->
+  <rect x="65" y="240" width="410" height="85" rx="6" fill="#161D30" stroke="rgba(255,255,255,0.06)"/>
+  <circle cx="95" cy="275" r="18" fill="#10B981"/>
+  <text x="89" y="280" fill="#FFFFFF" font-family="'DM Sans', sans-serif" font-weight="bold" font-size="12">NG</text>
+  <text x="125" y="267" fill="#F8FAFC" font-family="'DM Sans', sans-serif" font-size="14" font-weight="bold">Gofwan Nathaniel Daniel</text>
+  <text x="125" y="285" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="10">Applied Geophysics · Subsurface Aquifer Delineation</text>
+  <text x="125" y="305" fill="#94A3B8" font-family="'DM Sans', sans-serif" font-size="10" font-style="italic">"Decoding the unseen layers beneath our feet."</text>
+
+  <!-- Bottom Strip -->
+  <rect x="65" y="335" width="410" height="95" rx="6" fill="#141A2B"/>
+  <text x="80" y="360" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">ASTRO HYBRID ARCHITECTURE · ZERO HOSTING COST</text>
+  <text x="80" y="385" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="12">Live Google Sheets Netlify Function Proxy Sync</text>
+  <text x="80" y="410" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="11">FYB Week Gallery · Awards Voting · Sign-Out Archives</text>
+
+  <!-- Right: Community Impact -->
+  <rect x="520" y="90" width="240" height="175" rx="8" fill="#101524" stroke="#0284C7"/>
+  <text x="540" y="120" fill="#7DD3FC" font-family="'JetBrains Mono', monospace" font-size="12">GRADUATE REGISTRY</text>
+  <text x="540" y="170" fill="#38BDF8" font-family="'Playfair Display', serif" font-size="44" font-weight="bold">100%</text>
+  <text x="540" y="200" fill="#F1F5F9" font-family="'JetBrains Mono', monospace" font-size="11">Cohort Profiles Recorded</text>
+  <text x="540" y="225" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="11">● Permanent Digital Home</text>
+  <text x="540" y="245" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">Zero Printing Deadlines</text>
+
+  <rect x="520" y="285" width="240" height="175" rx="8" fill="#101524" stroke="rgba(255,255,255,0.1)"/>
+  <text x="540" y="315" fill="#7DD3FC" font-family="'JetBrains Mono', monospace" font-size="12">TECH STACK</text>
+  <rect x="540" y="335" width="200" height="32" rx="4" fill="#182035"/>
+  <text x="550" y="355" fill="#10B981" font-family="'JetBrains Mono', monospace" font-size="11">✓ Astro Framework</text>
+  <rect x="540" y="375" width="200" height="32" rx="4" fill="#182035"/>
+  <text x="550" y="395" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="11">✓ Netlify Serverless</text>
+  <text x="540" y="440" fill="#F59E0B" font-family="'JetBrains Mono', monospace" font-size="11">Class of 2024 Permanent</text>
+</svg>
