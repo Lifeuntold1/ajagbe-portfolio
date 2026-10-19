@@ -8,9 +8,11 @@
   <!-- FOUC Blocking Theme Switcher -->
   <script>
     (function() {
-      const theme = localStorage.getItem('theme') || 'light';
-      if (theme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
       }
     })();
   </script>

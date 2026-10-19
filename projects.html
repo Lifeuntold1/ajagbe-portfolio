@@ -8,9 +8,11 @@
   <!-- FOUC Blocking Theme Switcher -->
   <script>
     (function() {
-      const theme = localStorage.getItem('theme') || 'light';
-      if (theme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
       }
     })();
   </script>
@@ -115,7 +117,7 @@
               <p style="margin-bottom: var(--space-4);">
                 A multi-vendor marketplace featuring affiliate commission models, customizable filters, and high-speed database configurations handling concurrent transactions with sub-second response times.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">nexusmkt.com.ng — live</span>
                 <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Marketplace</a>
               </div>
@@ -138,7 +140,7 @@
               <p style="margin-bottom: var(--space-4);">
                 A property directory UI featuring advanced structural filters, responsive maps, dynamic mortgage calculator, and tailored registration leads templates for high-ticket transactions.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">High-conversion real estate UI</span>
                 <a href="projects/jaoos/index.html" class="btn btn-primary">View Prototype</a>
               </div>
@@ -160,7 +162,7 @@
               <p style="margin-bottom: var(--space-4);">
                 A custom Python parsing tool configured to clean experimental physics datasets and render publication-ready Matplotlib visual models with exact error margin calculations.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Computational analysis</span>
                 <a href="projects/physlab/index.html" class="btn btn-primary">View Documentation</a>
               </div>
@@ -182,7 +184,7 @@
               <p style="margin-bottom: var(--space-4);">
                 A patient appointment registration layout designed with high contrast viewports and simple navigation flow for healthcare providers and senior patients.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Healthcare UX architecture</span>
                 <a href="projects/careconnect/index.html" class="btn btn-primary">View Case Study</a>
               </div>
@@ -204,7 +206,7 @@
               <p style="margin-bottom: var(--space-4);">
                 A conversion-focused sales funnel copy project designed using structured marketing copy formulas, value propositions, and active voice triggers that increase sign-up conversions.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">+20% conversion lift</span>
                 <a href="projects/taskflow/index.html" class="btn btn-primary">Read The Copy</a>
               </div>
@@ -226,7 +228,7 @@
               <p style="margin-bottom: var(--space-4);">
                 An academic documentation and resource hub engineered for quick navigation, deep citation referencing, and highly structured content taxonomy.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Academic knowledge base</span>
                 <a href="projects/scholarhub/index.html" class="btn btn-primary">View Hub Design</a>
               </div>
@@ -248,7 +250,7 @@
               <p style="margin-bottom: var(--space-4);">
                 A technical coaching syllabus mapping python scripts directly to statistical physics formulas, differential equations, and data visualization routines.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Technical curriculum</span>
                 <a href="projects/p4p/index.html" class="btn btn-primary">View Curriculum</a>
               </div>
@@ -270,7 +272,7 @@
               <p style="margin-bottom: var(--space-4);">
                 A Python web-scraping and data processing script that parses targeted online repositories to evaluate, clean, and catalog trend metrics automatically.
               </p>
-              <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--space-3); border-top: 1px solid var(--border); padding-top: var(--space-4);">
+              <div class="project-showcase-footer">
                 <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Automated pipeline</span>
                 <a href="projects/trendanalyzer/index.html" class="btn btn-primary">View Analysis Code</a>
               </div>

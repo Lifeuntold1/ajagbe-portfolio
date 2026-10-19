@@ -8,9 +8,11 @@
   <!-- FOUC Blocking Theme Switcher -->
   <script>
     (function() {
-      const theme = localStorage.getItem('theme') || 'light';
+      const theme = localStorage.getItem('theme') || 'dark';
       if (theme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
       }
     })();
   </script>
@@ -89,6 +91,10 @@
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
+            <div class="status-pill">
+              <span class="status-dot"></span>
+              <span>Available for high-impact contracts</span>
+            </div>
             <p class="hero-location mono">eoajagbe.name.ng / Jos, Nigeria</p>
             <h1 class="hero-title">
               <span class="hero-line-1">The web, built</span>
@@ -117,16 +123,16 @@
       <div class="container">
         <div class="numbers-grid">
           <div class="number-item">
-            <div class="number-value">7+ Years</div>
-            <div class="number-label">Active Development</div>
+            <div class="number-value" data-counter="7" data-suffix="+">7+</div>
+            <div class="number-label">Years Experience</div>
           </div>
           <div class="number-item">
-            <div class="number-value">12 Systems Shipped</div>
-            <div class="number-label">Production Deployments</div>
+            <div class="number-value" data-counter="12">12</div>
+            <div class="number-label">Systems Shipped</div>
           </div>
           <div class="number-item">
-            <div class="number-value">3 Active Platforms</div>
-            <div class="number-label">Maintained Systems</div>
+            <div class="number-value" data-counter="3">3</div>
+            <div class="number-label">Active Platforms</div>
           </div>
         </div>
       </div>
@@ -206,8 +212,8 @@
             <div class="about-strip-divider"></div>
             <div class="about-strip-stats">
               <div class="about-stat-row">
-                <span>Currently</span>
-                <span>Final-year Physics Education, University of Jos</span>
+                <span>Education</span>
+                <span>B.Sc. Physics Graduate, University of Jos</span>
               </div>
               <div class="about-stat-row">
                 <span>Based</span>
@@ -229,15 +235,28 @@
       </div>
     </section>
 
-    <!-- SECTION 7: Selected Work (Carousel) -->
-    <section class="projects-section" id="projects" aria-label="Selected Production Projects">
-      <div class="projects-sticky-viewport">
-        <div class="container projects-header">
-          <h2>Selected Work</h2>
-          <p>Production systems, live platforms, and real client outcomes.</p>
+    <!-- SECTION 7: Selected Work (Interactive Carousel) -->
+    <section class="projects-section section" id="projects" aria-label="Selected Production Projects">
+      <div class="container">
+        <div class="projects-slider-header">
+          <div class="reveal-item">
+            <span class="section-label">Selected Works</span>
+            <h2>Production Systems &amp; Platforms</h2>
+            <p>Live platforms, high-conversion web architectures, and proven client outcomes.</p>
+          </div>
+          <div class="projects-slider-controls">
+            <button id="projects-prev" class="slider-arrow" aria-label="Previous project" disabled>←</button>
+            <div id="projects-dots" class="slider-dots" role="tablist" aria-label="Project slides">
+              <button class="slider-dot active" data-slide="0" role="tab" aria-selected="true" aria-label="Slide 1"></button>
+              <button class="slider-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Slide 2"></button>
+              <button class="slider-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Slide 3"></button>
+            </div>
+            <button id="projects-next" class="slider-arrow" aria-label="Next project">→</button>
+          </div>
         </div>
-        <div class="projects-scroll-container">
-          <div class="projects-track">
+
+        <div id="projects-window" class="projects-carousel-window">
+          <div id="projects-track" class="projects-carousel-track">
             <!-- Card 1 -->
             <article class="project-carousel-card">
               <div class="project-card-header">
@@ -255,7 +274,7 @@
               </div>
               <div class="project-card-footer">
                 <span class="project-card-metric mono">nexusmkt.com.ng — live</span>
-                <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="text-link">View Platform</a>
+                <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="text-link">View Platform →</a>
               </div>
             </article>
 
@@ -276,7 +295,7 @@
               </div>
               <div class="project-card-footer">
                 <span class="project-card-metric mono">High-conversion real estate UI</span>
-                <a href="projects.html#jaoos" class="text-link">View Case Study</a>
+                <a href="projects.html#jaoos" class="text-link">View Case Study →</a>
               </div>
             </article>
 
@@ -297,13 +316,14 @@
               </div>
               <div class="project-card-footer">
                 <span class="project-card-metric mono">Active since 2017 — eoajagbe.name.ng</span>
-                <a href="about.html" class="text-link">View Case Study</a>
+                <a href="about.html" class="text-link">View Case Study →</a>
               </div>
             </article>
           </div>
         </div>
-        <div class="container projects-view-all">
-          <a href="projects.html" class="text-link">See all projects</a>
+
+        <div class="projects-view-all" style="margin-top: var(--space-8); text-align: center;">
+          <a href="projects.html" class="btn btn-secondary">Explore All 8 Projects →</a>
         </div>
       </div>
     </section>

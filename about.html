@@ -8,16 +8,18 @@
   <!-- FOUC Blocking Theme Switcher -->
   <script>
     (function() {
-      const theme = localStorage.getItem('theme') || 'light';
-      if (theme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
       }
     })();
   </script>
 
   <title>About Ajagbe Emmanuel | Physics &amp; Web Systems</title>
   <meta name="description" content="Ajagbe Emmanuel Oluwatobi has 7+ years of experience building web applications and writing technical copy. Learn how a background in Physics informs web engineering.">
-  <meta name="keywords" content="about ajagbe emmanuel, fullstack engineer, Laravel, WordPress, Physics education, Jos Nigeria">
+  <meta name="keywords" content="about ajagbe emmanuel, fullstack engineer, Laravel, WordPress, BSc Physics, Physics graduate, Jos Nigeria">
   <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
   <meta name="robots" content="index, follow">
 
@@ -114,7 +116,7 @@
               From scaling high-conversion systems like <strong><a href="projects.html#taskflow" class="text-link">TaskFlow</a></strong> and <strong><a href="projects.html#jaoos" class="text-link">Jaoos Estates</a></strong> to building customized web databases like <strong><a href="projects.html#nexus" class="text-link">Nexus Market</a></strong>, I focus on structural stability and clean semantic configurations.
             </p>
             <p>
-              I studied Physics at the University of Jos. Physics teaches you to isolate the core problem, measure accurately, and build without assumptions. That analytical foundation defines every line of code and every piece of technical copy I deliver.
+              I am a graduate of Physics (B.Sc. Physics) from the University of Jos. Physics teaches you to isolate the core problem, measure accurately, and build without assumptions. That analytical foundation defines every line of code and every piece of technical copy I deliver.
             </p>
           </div>
         </div>
@@ -271,6 +273,13 @@
             <h3 class="timeline-role">Frontend Specialist &amp; Content Strategist · Remote Projects</h3>
             <p class="timeline-desc">
               Built responsive user interfaces with semantic HTML, CSS, and modern JavaScript. Optimized website loading times and improved on-page SEO structures across various client portals.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-period">Education</div>
+            <h3 class="timeline-role">B.Sc. Physics Graduate · University of Jos</h3>
+            <p class="timeline-desc">
+              Rigorous analytical foundation in theoretical and experimental physics, mathematical logic, and empirical problem solving applied directly to software and system architecture.
             </p>
           </div>
         </div>
