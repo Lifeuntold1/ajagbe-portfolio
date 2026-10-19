@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- FOUC Blocking Theme Switcher -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    })();
+  </script>
+
+  <title>In-Build Systems · Page 3 | Ajagbe Emmanuel - Web Systems &amp; Software</title>
+  <meta name="description" content="Active architectural blueprints, double-entry banking engines, arbitrage bots, and institutional systems currently under build by Ajagbe Emmanuel.">
+  <meta name="keywords" content="in-build projects, banking core, arbitrage bot, unijos platform, Ajagbe Emmanuel, software blueprints">
+  <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://eoajagbe.name.ng/projects-page-3.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="In-Build Systems · Page 3 | Ajagbe Emmanuel - Web Systems &amp; Software">
+  <meta property="og:description" content="Active engineering pipelines, database schemas, and architectural blueprints under active development.">
+  <meta property="og:url" content="https://eoajagbe.name.ng/projects-page-3.html">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="In-Build Systems · Page 3 | Ajagbe Emmanuel - Web Systems &amp; Software">
+  <meta name="twitter:description" content="Active engineering pipelines, database schemas, and architectural blueprints.">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+  <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Ajagbe Emmanuel Home">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo">
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle visual theme">
+          <span id="theme-icon">☾</span>
+        </button>
+        <a href="contact.html" class="btn btn-outline-nav desktop-only">Hire Me</a>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-overlay-link">Home</a>
+    <a href="about.html" class="mobile-overlay-link">About</a>
+    <a href="services.html" class="mobile-overlay-link">Services</a>
+    <a href="projects.html" class="mobile-overlay-link active">Projects</a>
+    <a href="contact.html" class="mobile-overlay-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section section-primary" style="padding-bottom: var(--space-8);">
+      <div class="container reveal-item">
+        <span class="section-label">Active Development · Page 3 of 3</span>
+        <h1>Systems in active build. Engineering blueprints.</h1>
+        <p class="lead-text" style="max-width: 680px; margin-top: var(--space-4);">
+          Architectural schemas, data models, and active engineering pipelines currently under construction across banking, arbitrage bots, university infrastructure, and automated dispatch.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section class="section section-secondary" style="padding-top: var(--space-8);">
+      <div class="container">
+        <div class="projects-gallery-grid">
+
+          <!-- In-Build 1: ApexBank Core -->
+          <article class="project-showcase-row" id="apexbank">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/apexbank.svg" alt="ApexBank Core double-entry ledger architecture" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div>
+                <span class="in-build-badge"><span class="in-build-dot"></span> Sprint 4/6 · Active Alpha</span>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-block: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Laravel 11</span>
+                <span class="tag">Double-Entry Ledger</span>
+                <span class="tag">ISO 20022</span>
+                <span class="tag">Multi-Currency</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">ApexBank Core</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Enterprise multi-currency banking core featuring an immutable double-entry general ledger, segregated settlement accounts, and automated SWIFT/ISO 20022 wire mobilization state machine.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">apexbank.lifeuntold.internal — schema blueprint v2.4</span>
+                <a href="projects/in-build/apexbank.html" class="btn btn-primary">Inspect System Schema</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- In-Build 2: ArbitragePulse Bot -->
+          <article class="project-showcase-row" id="arbitrage-pulse">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/arbitrage-pulse.svg" alt="ArbitragePulse Bot L2 orderbook spread detector" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div>
+                <span class="in-build-badge"><span class="in-build-dot"></span> Sprint 3/5 · Orderbook Testing</span>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-block: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">WebSocket L2</span>
+                <span class="tag">High Frequency</span>
+                <span class="tag">Triangular Arbitrage</span>
+                <span class="tag">Binance/Bybit</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">ArbitragePulse Bot</h2>
+              <p style="margin-bottom: var(--space-4);">
+                High-frequency market-neutral cryptocurrency arbitrage bot. Continuously streams Level-2 order books to calculate cross-currency spreads and trigger atomic executions under 42ms latency.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">bot.arbitragepulse.internal — 42ms execution target</span>
+                <a href="projects/in-build/arbitrage-pulse.html" class="btn btn-primary">Inspect System Schema</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- In-Build 3: UniJos Central Data Platform -->
+          <article class="project-showcase-row" id="unijos-cdp">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/unijos-cdp.svg" alt="UniJos Central Data Platform research federation" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div>
+                <span class="in-build-badge"><span class="in-build-dot"></span> Sprint 5/6 · Integration Phase</span>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-block: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">PostgreSQL 16</span>
+                <span class="tag">Academic DOI</span>
+                <span class="tag">Multi-Tenancy</span>
+                <span class="tag">Senate Verified</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">UniJos Central Data Platform</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Centralized institutional research federation and credential validation platform for the University of Jos, connecting 12 faculties with automated DataCite DOI issuance and row-level tenant security.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">cdp.unijos.internal — 12 faculties federated</span>
+                <a href="projects/in-build/unijos-cdp.html" class="btn btn-primary">Inspect System Schema</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- In-Build 4: HyperDispatch Enterprise -->
+          <article class="project-showcase-row" id="hyperdispatch">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/hyperdispatch.svg" alt="HyperDispatch Enterprise GIS route optimization" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div>
+                <span class="in-build-badge"><span class="in-build-dot"></span> Sprint 2/5 · Benchmarking</span>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-block: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Geospatial GIS</span>
+                <span class="tag">TSP Solver</span>
+                <span class="tag">Fleet Routing</span>
+                <span class="tag">Lin-Kernighan</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">HyperDispatch Enterprise</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Autonomous multi-depot courier dispatch clustering engine. Solves traveling salesman routes for 4,000 waypoints in 680ms with sub-second disruption rerouting and fuel burn minimization.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">hyperdispatch.parcelify.internal — 4,000 waypoints/batch</span>
+                <a href="projects/in-build/hyperdispatch.html" class="btn btn-primary">Inspect System Schema</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- In-Build 5: Life Untold Whiteboard Studio -->
+          <article class="project-showcase-row" id="whiteboard-studio">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/whiteboard-studio.svg" alt="Life Untold Whiteboard Studio parametric animation engine" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div>
+                <span class="in-build-badge"><span class="in-build-dot"></span> Sprint 4/5 · SVG Parametric</span>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-block: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Parametric SVG</span>
+                <span class="tag">60 FPS Canvas</span>
+                <span class="tag">Kinematics</span>
+                <span class="tag">Video Export</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">Life Untold Whiteboard Studio</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Procedural educational animation engine converting markdown scripts into kinetic, hand-drawn vector video sequences with mathematical curve interpolation and hardware-accelerated MP4 rendering.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">whiteboard.lifeuntold.io — 60fps canvas renderer</span>
+                <a href="projects/in-build/whiteboard-studio.html" class="btn btn-primary">Inspect System Schema</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- In-Build 6: SecureEscrow Vault -->
+          <article class="project-showcase-row" id="secure-escrow">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/secure-escrow.svg" alt="SecureEscrow Vault 2-of-3 multi-signature settlement" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div>
+                <span class="in-build-badge"><span class="in-build-dot"></span> Sprint 3/4 · Security Audit</span>
+              </div>
+              <div style="display: flex; gap: var(--space-2); margin-block: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">2-of-3 Multi-Sig</span>
+                <span class="tag">Cryptographic Custody</span>
+                <span class="tag">Non-Custodial</span>
+                <span class="tag">Milestone Escrow</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">SecureEscrow Vault</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Multi-signature transactional escrow engine eliminating counterparty default risk in commercial freight, digital asset sales, and high-value software delivery with automated dispute arbitration.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">escrow.nexusmkt.internal — 100% deterministic</span>
+                <a href="projects/in-build/secure-escrow.html" class="btn btn-primary">Inspect System Schema</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination Controls -->
+        <nav class="pagination-nav" aria-label="Projects Gallery Pagination">
+          <a href="projects-page-2.html" class="pagination-prev">← Previous Page</a>
+          <a href="projects.html" class="pagination-link" aria-label="Go to Page 1">1</a>
+          <a href="projects-page-2.html" class="pagination-link" aria-label="Go to Page 2">2</a>
+          <span class="pagination-link active" aria-current="page">3 (In-Build)</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="closing-cta" aria-label="Start a Project">
+      <div class="container">
+        <div class="closing-cta-grid">
+          <div class="closing-cta-left">
+            <h2>Let's build something that works.</h2>
+            <p>I take on a small number of new projects each month. If you have a system to build or copy to fix, reach out.</p>
+          </div>
+          <div class="closing-cta-right">
+            <div class="closing-contact-info">
+              <span class="closing-contact-item">emmanuelajagbe6@gmail.com</span>
+              <span class="closing-contact-item">+234 703 631 6514 (WhatsApp)</span>
+              <span class="closing-contact-item">eoajagbe.name.ng</span>
+            </div>
+            <a href="contact.html" class="btn btn-cta-submit">Send a Project Brief</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-col-identity">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Logo" class="footer-logo">
+        <p class="footer-bio">
+          Ajagbe Emmanuel Oluwatobi<br>
+          Fullstack Engineer. Technical Copywriter.<br>
+          Jos, Nigeria.
+        </p>
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Pages</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="services.html#wordpress">WordPress Development</a></li>
+          <li><a href="services.html#laravel">Laravel / PHP</a></li>
+          <li><a href="services.html#woocommerce">WooCommerce</a></li>
+          <li><a href="services.html#seo">SEO Writing</a></li>
+          <li><a href="services.html#management">Management</a></li>
+          <li><a href="services.html#data">Data Analysis</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <div class="footer-contact-details">
+          <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
+          <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
+        </div>
+        <a href="contact.html" class="btn btn-outline-nav">Start a Project</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom-bar">
+      <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+      <a href="index.html">eoajagbe.name.ng</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

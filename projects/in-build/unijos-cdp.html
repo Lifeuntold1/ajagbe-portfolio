@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UniJos Central Data Platform | In-Build Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090B10;
+      --surface: #10141F;
+      --surface-elevated: #181E2E;
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #60A5FA;
+      --accent-warm: #C8A840;
+      --text: #F1F5F9;
+      --text-muted: #8292A6;
+      --font-display: "DM Serif Display", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 11, 16, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #93C5FD; }
+    .in-build-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-warm);
+      background: rgba(200, 168, 64, 0.12);
+      border: 1px solid rgba(200, 168, 64, 0.35);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-warm);
+      box-shadow: 0 0 6px var(--accent-warm);
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+    .hero-header {
+      margin-bottom: 32px;
+    }
+    .hero-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .hero-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+    }
+    .sprint-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sprint-info h3 { font-size: 1.05rem; margin-bottom: 2px; }
+    .sprint-info p { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
+    .progress-track {
+      width: 220px;
+      height: 8px;
+      background: var(--surface-elevated);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .progress-fill {
+      width: 72%;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 860px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .card h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+    .code-schema {
+      background: #040508;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #93C5FD;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+    .spec-list {
+      list-style: none;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .spec-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .spec-list li::before {
+      content: '●';
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <a href="../../projects-page-3.html" class="back-link">← Back to Projects (Page 3 - In-Build)</a>
+    <span class="in-build-tag"><span class="dot-pulse"></span> SPRINT 4 ACTIVE BUILD</span>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <h1>UniJos Central Data Platform</h1>
+      <p>Institutional research federation data lake designed for the University of Jos to catalog peer-reviewed physical science datasets, faculty citations, and experimental sensor telemetry.</p>
+    </div>
+
+    <div class="sprint-banner">
+      <div class="sprint-info">
+        <h3>Active Milestone: Data Federation Ingestion Pipeline &amp; DOI Registry</h3>
+        <p>Target Framework: React 18 · TypeScript · FastAPI (Python) · PostgreSQL 16</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 4px;">
+          <span>Sprint Completion</span>
+          <span style="color: var(--accent);">72%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Ingestion Schema -->
+      <section class="card">
+        <h2>PostgreSQL Metadata Architecture</h2>
+        <div class="code-schema">
+CREATE TABLE `research_datasets` (
+  `id` UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  `doi_identifier` VARCHAR(64) UNIQUE NOT NULL,
+  `faculty_id` VARCHAR(16) NOT NULL,
+  `department` VARCHAR(64) NOT NULL, -- e.g. 'Department of Physics'
+  `dataset_title` VARCHAR(255) NOT NULL,
+  `file_manifest_s3` JSONB NOT NULL,
+  `citation_count` INT DEFAULT 0,
+  `peer_review_status` ENUM('SUBMITTED', 'VERIFIED', 'PUBLISHED'),
+  `created_at` TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX idx_department_doi ON research_datasets (department, doi_identifier);
+        </div>
+        <ul class="spec-list">
+          <li>Automated JSONB validation for multi-dimensional experimental physics matrix payloads</li>
+          <li>Hierarchical department and faculty categorization matching University of Jos academic structure</li>
+          <li>Permanent CrossRef DOI resolution for all open-access publication records</li>
+        </ul>
+      </section>
+
+      <!-- Processing Engine -->
+      <section class="card">
+        <h2>Telemetry Ingestion Pipeline</h2>
+        <div class="code-schema">
+@app.post("/api/v1/telemetry/ingest")
+async def ingest_sensor_matrix(payload: ExperimentalTelemetrySchema):
+    # Verify faculty cryptographic signature
+    is_valid = verify_academic_signature(payload.signature, payload.faculty_key)
+    if not is_valid:
+        raise HTTPException(status_code=403, detail="Unverified researcher certificate")
+        
+    job = await queue.enqueue(
+        "process_experimental_matrix",
+        dataset_id=payload.dataset_id,
+        raw_matrix=payload.matrix_data
+    )
+    return {"status": "INGESTED", "job_id": job.id}
+        </div>
+        <ul class="spec-list">
+          <li><strong>Zero Data Corruption:</strong> Enforces SHA-256 hash checks on all research uploads before permanent archival</li>
+          <li><strong>Asynchronous Analysis:</strong> Celery workers compute standard deviations, linear regressions, and error margins</li>
+          <li><strong>Role-Based Access:</strong> Separate portals for Academic Staff, Examination Officers, and Postgraduate Fellows</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

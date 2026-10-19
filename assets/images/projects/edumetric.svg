@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091310"/>
+      <stop offset="100%" stop-color="#11221D"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#059669"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  
+  <!-- Browser Header -->
+  <rect x="30" y="30" width="740" height="36" rx="6" fill="#142C25" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="55" cy="48" r="5" fill="#EF4444"/>
+  <circle cx="72" cy="48" r="5" fill="#F59E0B"/>
+  <circle cx="89" cy="48" r="5" fill="#10B981"/>
+  <text x="110" y="52" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">edumetric.unijos.internal/cgpa-matrix</text>
+
+  <!-- Left: Course Matrix & Grades Table -->
+  <rect x="40" y="90" width="460" height="370" rx="8" fill="#0C1B17" stroke="rgba(255,255,255,0.1)"/>
+  <text x="65" y="125" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="bold">ACADEMIC AUDIT MATRIX (FACULTY OF NATURAL SCIENCES)</text>
+
+  <!-- Table Header -->
+  <rect x="65" y="145" width="410" height="30" rx="4" fill="#16312A"/>
+  <text x="75" y="165" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">CODE</text>
+  <text x="145" y="165" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">COURSE TITLE</text>
+  <text x="315" y="165" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">UNITS</text>
+  <text x="375" y="165" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">SCORE</text>
+  <text x="435" y="165" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">GP</text>
+
+  <!-- Row 1 -->
+  <rect x="65" y="180" width="410" height="32" fill="#102520" stroke="rgba(255,255,255,0.04)"/>
+  <text x="75" y="201" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">PHY 401</text>
+  <text x="145" y="201" fill="#F3F4F6" font-family="'DM Sans', sans-serif" font-size="12">Quantum Mechanics II</text>
+  <text x="325" y="201" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">3</text>
+  <text x="385" y="201" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">84 (A)</text>
+  <text x="440" y="201" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">15.0</text>
+
+  <!-- Row 2 -->
+  <rect x="65" y="215" width="410" height="32" fill="#0C1B17" stroke="rgba(255,255,255,0.04)"/>
+  <text x="75" y="236" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">PHY 405</text>
+  <text x="145" y="236" fill="#F3F4F6" font-family="'DM Sans', sans-serif" font-size="12">Solid State Physics</text>
+  <text x="325" y="236" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">3</text>
+  <text x="385" y="236" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">78 (A)</text>
+  <text x="440" y="236" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">15.0</text>
+
+  <!-- Row 3 -->
+  <rect x="65" y="250" width="410" height="32" fill="#102520" stroke="rgba(255,255,255,0.04)"/>
+  <text x="75" y="271" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">PHY 407</text>
+  <text x="145" y="271" fill="#F3F4F6" font-family="'DM Sans', sans-serif" font-size="12">Computational Modeling</text>
+  <text x="325" y="271" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">4</text>
+  <text x="385" y="271" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">92 (A)</text>
+  <text x="440" y="271" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">20.0</text>
+
+  <!-- Row 4 -->
+  <rect x="65" y="285" width="410" height="32" fill="#0C1B17" stroke="rgba(255,255,255,0.04)"/>
+  <text x="75" y="306" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">CSC 301</text>
+  <text x="145" y="306" fill="#F3F4F6" font-family="'DM Sans', sans-serif" font-size="12">Database Architecture</text>
+  <text x="325" y="306" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">3</text>
+  <text x="385" y="306" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="11">74 (AB)</text>
+  <text x="440" y="306" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="11">12.0</text>
+
+  <!-- Cumulative Bar -->
+  <rect x="65" y="335" width="410" height="100" rx="6" fill="#142C25"/>
+  <text x="80" y="360" fill="#E5E7EB" font-family="'JetBrains Mono', monospace" font-size="11">CUMULATIVE PERFORMANCE METRIC</text>
+  <text x="80" y="390" fill="#34D399" font-family="'DM Sans', sans-serif" font-size="15" font-weight="bold">Total Units Registered: 132 · Units Passed: 132</text>
+  <text x="80" y="415" fill="#9CA3AF" font-family="'JetBrains Mono', monospace" font-size="11">Honours Classification: First Class Standing</text>
+
+  <!-- Right: Score Summary -->
+  <rect x="520" y="90" width="240" height="175" rx="8" fill="#0C1B17" stroke="#059669"/>
+  <text x="540" y="120" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">WEIGHTED CGPA</text>
+  <text x="540" y="170" fill="#34D399" font-family="'Playfair Display', serif" font-size="44" font-weight="bold">4.72<tspan font-size="20" fill="#9CA3AF">/5.00</tspan></text>
+  <text x="540" y="200" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Senate Verified Record</text>
+  <text x="540" y="225" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="11">● Cryptographic Seal OK</text>
+  <text x="540" y="245" fill="#94A3B8" font-family="'JetBrains Mono', monospace" font-size="11">Audit Hash: e9a2c...b1</text>
+
+  <rect x="520" y="285" width="240" height="175" rx="8" fill="#0C1B17" stroke="rgba(255,255,255,0.1)"/>
+  <text x="540" y="315" fill="#6EE7B7" font-family="'JetBrains Mono', monospace" font-size="12">TRANSCRIPT SECURITY</text>
+  <rect x="540" y="335" width="200" height="32" rx="4" fill="#142C25"/>
+  <text x="550" y="355" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">✓ Instant PDF Generation</text>
+  <rect x="540" y="375" width="200" height="32" rx="4" fill="#142C25"/>
+  <text x="550" y="395" fill="#34D399" font-family="'JetBrains Mono', monospace" font-size="11">✓ Multi-Factor Verification</text>
+  <text x="540" y="440" fill="#E2E8F0" font-family="'JetBrains Mono', monospace" font-size="11">Zero Manual Grade Tampering</text>
+</svg>

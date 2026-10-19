@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HyperDispatch Enterprise | In-Build Route Engine Schema</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090D;
+      --surface: #0E131E;
+      --surface-elevated: #151C2C;
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #F59E0B;
+      --accent-warm: #C8A840;
+      --text: #F1F5F9;
+      --text-muted: #8292A6;
+      --font-display: "DM Serif Display", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(7, 9, 13, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #FBBF24; }
+    .in-build-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-warm);
+      background: rgba(200, 168, 64, 0.12);
+      border: 1px solid rgba(200, 168, 64, 0.35);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-warm);
+      box-shadow: 0 0 6px var(--accent-warm);
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+    .hero-header {
+      margin-bottom: 32px;
+    }
+    .hero-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .hero-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+    }
+    .sprint-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sprint-info h3 { font-size: 1.05rem; margin-bottom: 2px; }
+    .sprint-info p { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
+    .progress-track {
+      width: 220px;
+      height: 8px;
+      background: var(--surface-elevated);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .progress-fill {
+      width: 61%;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 4px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 860px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .card h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+    .code-schema {
+      background: #040508;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #FCD34D;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+    .spec-list {
+      list-style: none;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .spec-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .spec-list li::before {
+      content: '●';
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <a href="../../projects-page-3.html" class="back-link">← Back to Projects (Page 3 - In-Build)</a>
+    <span class="in-build-tag"><span class="dot-pulse"></span> SPRINT 3 ACTIVE BUILD</span>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <h1>HyperDispatch Route Optimizer</h1>
+      <p>Dynamic traveling salesperson problem (TSP) algorithm coupled with real-time GPS telemetry to minimize fleet fuel consumption across nationwide freight corridors.</p>
+    </div>
+
+    <div class="sprint-banner">
+      <div class="sprint-info">
+        <h3>Active Milestone: Heuristic Multi-Drop Route Clustering &amp; Cost Modeling</h3>
+        <p>Target Framework: Laravel 11 · Python Optimization Engine · MySQL Spatial GIS</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 4px;">
+          <span>Sprint Completion</span>
+          <span style="color: var(--accent);">61%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Routing Heuristic Schema -->
+      <section class="card">
+        <h2>Spatial Fleet Routing Schema</h2>
+        <div class="code-schema">
+CREATE TABLE `fleet_trips` (
+  `id` BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `trip_token` VARCHAR(32) UNIQUE NOT NULL,
+  `vehicle_id` VARCHAR(16) NOT NULL,
+  `origin_geom` POINT NOT NULL SRID 4326,
+  `dest_geom` POINT NOT NULL SRID 4326,
+  `waypoint_nodes` JSON NOT NULL,
+  `calculated_distance_km` DECIMAL(8, 2) NOT NULL,
+  `fuel_budget_litres` DECIMAL(8, 2) NOT NULL,
+  `spatial_index` SPATIAL KEY(`origin_geom`)
+);
+        </div>
+        <ul class="spec-list">
+          <li>MySQL Spatial indexing (SRID 4326) enabling sub-millisecond geofence proximity lookups</li>
+          <li>Dynamic waypoint insertion avoiding high-congestion urban arterial bottlenecks</li>
+          <li>Automated carbon emission and fuel consumption estimation per payload metric ton</li>
+        </ul>
+      </section>
+
+      <!-- Worker Pipeline -->
+      <section class="card">
+        <h2>Autonomous Dispatch Pipeline</h2>
+        <div class="code-schema">
+// Route Optimization Job Dispatch
+public function handle(ConsignmentBatch $batch): OptimizedRoute
+{
+    $distanceMatrix = $this->gisService->buildMatrix($batch->consignments);
+    $optimizedStops = $this->solver->solveClusteredTSP($distanceMatrix);
+    
+    return DB::transaction(function() use ($optimizedStops, $batch) {
+        return RouteManifest::createFromStops($batch->id, $optimizedStops);
+    });
+}
+        </div>
+        <ul class="spec-list">
+          <li><strong>Real-Time Re-routing:</strong> Automatically recalculates ETA when driver is delayed past 20-minute threshold</li>
+          <li><strong>Load Balancing:</strong> Distributes heavy multi-drop consignments across available gross axle ratings</li>
+          <li><strong>Proof of Delivery:</strong> Cryptographic timestamp capture upon recipient biometric OTP verification</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

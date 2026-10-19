@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OmniVault IP | Cryptographic Asset Escrow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0C;
+      --surface: #121318;
+      --surface-elevated: #1A1C24;
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #E2B93B;
+      --accent-hover: #F6D060;
+      --text: #F4F4F6;
+      --text-muted: #848794;
+      --success: #10B981;
+      --font-display: "DM Serif Display", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(10, 10, 12, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent-hover); }
+    .badge-vault {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent);
+      background: rgba(226, 185, 59, 0.1);
+      border: 1px solid rgba(226, 185, 59, 0.3);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+    .hero-header {
+      margin-bottom: 36px;
+    }
+    .hero-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .hero-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 860px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .card h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    input, select, textarea {
+      width: 100%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      padding: 12px 14px;
+      border-radius: 8px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+    .btn-mint {
+      width: 100%;
+      background: var(--accent);
+      color: #0A0A0C;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      margin-top: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-mint:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+    .vault-certificate {
+      background: var(--surface-elevated);
+      border: 1px solid var(--accent);
+      border-radius: 8px;
+      padding: 20px;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      margin-top: 20px;
+      display: none;
+    }
+    .cert-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .cert-label { color: var(--text-muted); }
+    .cert-val { color: var(--text); font-weight: 500; }
+    .cert-hash {
+      word-break: break-all;
+      color: var(--accent);
+      background: rgba(226, 185, 59, 0.08);
+      padding: 8px;
+      border-radius: 4px;
+      margin-top: 10px;
+      font-size: 0.75rem;
+    }
+    .registry-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .registry-item {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      padding: 14px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .reg-title { font-weight: 600; font-size: 0.95rem; }
+    .reg-sub { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+    .reg-badge {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      background: rgba(16, 185, 129, 0.1);
+      color: var(--success);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
+    <span class="badge-vault">🔒 Ledger State: Immutable</span>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <h1>OmniVault IP Escrow</h1>
+      <p>Cryptographic intellectual property depository calculating SHA-256 asset provenance digests, milestone release criteria, and license verification records.</p>
+    </div>
+
+    <div class="grid-layout">
+      <!-- Deposition Form -->
+      <section class="card">
+        <h2>Deposit Digital Asset</h2>
+        <div class="form-group">
+          <label for="asset-name">Asset Title / Identifier</label>
+          <input type="text" id="asset-name" value="Laravel Nexus Multi-Vendor Core Engine">
+        </div>
+        <div class="form-group">
+          <label for="asset-type">Asset Classification</label>
+          <select id="asset-type">
+            <option value="Software Source Code">Software Source Code (Proprietary Engine)</option>
+            <option value="Academic Publication Dataset">Academic Publication Dataset (Raw Experimental)</option>
+            <option value="Brand Identity & Trademark">Brand Identity &amp; Digital Trademark Master</option>
+            <option value="Video Media Master">Whiteboard Animation Video Masters</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="licensor-name">Assignee / Depositor Identity</label>
+          <input type="text" id="licensor-name" value="Ajagbe Emmanuel Oluwatobi">
+        </div>
+        <div class="form-group">
+          <label for="escrow-terms">Escrow Release Condition</label>
+          <input type="text" id="escrow-terms" value="Milestone 4 Client Signoff &amp; Full Final Settlement">
+        </div>
+
+        <button class="btn-mint" id="mint-btn">Generate Verifiable Provenance Certificate</button>
+
+        <div class="vault-certificate" id="cert-box">
+          <div class="cert-row">
+            <span class="cert-label">Status</span>
+            <span class="cert-val" style="color: var(--success);">✓ SECURED IN ESCROW</span>
+          </div>
+          <div class="cert-row">
+            <span class="cert-label">Asset Ref</span>
+            <span class="cert-val" id="cert-ref">VAULT-8921-X</span>
+          </div>
+          <div class="cert-row">
+            <span class="cert-label">Timestamp</span>
+            <span class="cert-val" id="cert-time">2026-10-19T10:45:00Z</span>
+          </div>
+          <div class="cert-label" style="margin-top: 10px;">SHA-256 Provenance Fingerprint:</div>
+          <div class="cert-hash" id="cert-hash">e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</div>
+        </div>
+      </section>
+
+      <!-- Active Vault Ledgers -->
+      <section class="card">
+        <h2>Active Depository Assets</h2>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 16px;">
+          Verified intellectual property records anchored with immutable cryptographic milestones.
+        </p>
+
+        <div class="registry-list" id="reg-list">
+          <div class="registry-item">
+            <div>
+              <div class="reg-title">Nexus Market Multi-Vendor Source</div>
+              <div class="reg-sub">SHA-256: 7d4a98f...e109 | Licensor: Life Untold</div>
+            </div>
+            <span class="reg-badge">Escrow Active</span>
+          </div>
+
+          <div class="registry-item">
+            <div>
+              <div class="reg-title">Jaoos Estates 3D Architectural CADs</div>
+              <div class="reg-sub">SHA-256: 12f08bc...4a18 | Client: Jaoos Luxury</div>
+            </div>
+            <span class="reg-badge">Escrow Active</span>
+          </div>
+
+          <div class="registry-item">
+            <div>
+              <div class="reg-title">PhysLab Experimental Dataset 2026</div>
+              <div class="reg-sub">SHA-256: 99a12cf...88e1 | Author: E. Ajagbe</div>
+            </div>
+            <span class="reg-badge">Verified</span>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const mintBtn = document.getElementById('mint-btn');
+    const certBox = document.getElementById('cert-box');
+    const assetName = document.getElementById('asset-name');
+    const assetType = document.getElementById('asset-type');
+    const licensorName = document.getElementById('licensor-name');
+    const certRef = document.getElementById('cert-ref');
+    const certTime = document.getElementById('cert-time');
+    const certHash = document.getElementById('cert-hash');
+    const regList = document.getElementById('reg-list');
+
+    function pseudoSha256(str) {
+      let hash = 0;
+      for (let i = 0; i < str.length; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+      }
+      const hex = Math.abs(hash).toString(16).padStart(8, '0');
+      return hex + '89fc1c149afbf4c8' + hex + 'ae41e4649b934ca495991b' + hex;
+    }
+
+    mintBtn.addEventListener('click', () => {
+      const name = assetName.value.trim() || 'Untitled Asset';
+      const ref = 'VAULT-' + Math.floor(Math.random() * 8999 + 1000) + '-NG';
+      const hash = pseudoSha256(name + Date.now());
+
+      certRef.textContent = ref;
+      certTime.textContent = new Date().toISOString();
+      certHash.textContent = hash;
+      certBox.style.display = 'block';
+
+      // Prepend to registry
+      const item = document.createElement('div');
+      item.className = 'registry-item';
+      item.innerHTML = `
+        <div>
+          <div class="reg-title">${name}</div>
+          <div class="reg-sub">SHA-256: ${hash.substring(0, 8)}... | Owner: ${licensorName.value}</div>
+        </div>
+        <span class="reg-badge">Escrow Active</span>
+      `;
+      regList.insertBefore(item, regList.firstChild);
+
+      mintBtn.textContent = '✓ Escrow Deposition Confirmed';
+      setTimeout(() => {
+        mintBtn.textContent = 'Generate Verifiable Provenance Certificate';
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

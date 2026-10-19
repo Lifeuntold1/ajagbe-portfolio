@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EventBroker Pro | Asynchronous Webhook Telemetry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090B10;
+      --surface: #11141D;
+      --surface-elevated: #171C28;
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #38BDF8;
+      --accent-hover: #0EA5E9;
+      --accent-warm: #C8A840;
+      --text: #F1F5F9;
+      --text-muted: #808EA0;
+      --success: #10B981;
+      --font-display: "DM Serif Display", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(9, 11, 16, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent-hover); }
+    .badge-status {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--success);
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 6px var(--success);
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+    .hero-header {
+      margin-bottom: 32px;
+    }
+    .hero-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .hero-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 720px;
+    }
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    @media (max-width: 768px) {
+      .metrics-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+    .metric-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+    }
+    .metric-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .metric-value {
+      font-family: var(--font-mono);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+    }
+    @media (max-width: 860px) {
+      .grid-layout { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+    .card h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+    select, input, textarea {
+      width: 100%;
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      padding: 10px 14px;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    select:focus, input:focus, textarea:focus {
+      border-color: var(--accent);
+    }
+    textarea {
+      height: 180px;
+      resize: vertical;
+      line-height: 1.45;
+    }
+    .btn-dispatch {
+      width: 100%;
+      background: var(--accent);
+      color: #090B10;
+      font-family: var(--font-mono);
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-dispatch:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+    .btn-dispatch:active { transform: scale(0.98); }
+    .log-stream {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      height: 380px;
+      overflow-y: auto;
+      padding-right: 6px;
+    }
+    .log-entry {
+      background: var(--surface-elevated);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--success);
+      padding: 12px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      animation: fadeIn 0.3s ease;
+    }
+    .log-header {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .log-topic {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    .log-meta {
+      color: #94A3B8;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <a href="../../projects-page-2.html" class="back-link">← Back to Projects (Page 2)</a>
+    <div class="badge-status">
+      <span class="status-dot"></span>
+      <span>Cluster Healthy · 0.00% Loss</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <h1>EventBroker Pro</h1>
+      <p>Asynchronous event bus and high-throughput webhook telemetry debugger simulating message ingestion, idempotency hashing, and worker acknowledgement.</p>
+    </div>
+
+    <!-- Live Metrics Strip -->
+    <div class="metrics-bar">
+      <div class="metric-card">
+        <div class="metric-label">Ingested Events</div>
+        <div class="metric-value" id="count-events">1,429</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Avg P99 Latency</div>
+        <div class="metric-value" id="val-latency">14.2 ms</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Ack Rate</div>
+        <div class="metric-value" style="color: var(--success);" id="val-ack">100.0%</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-label">Active Consumers</div>
+        <div class="metric-value" style="color: var(--accent-warm);">8 Workers</div>
+      </div>
+    </div>
+
+    <div class="grid-layout">
+      <!-- Event Dispatcher Panel -->
+      <section class="card">
+        <h2>Emit Test Event</h2>
+        <div class="form-group">
+          <label for="topic-select">Routing Topic</label>
+          <select id="topic-select">
+            <option value="order.settled">order.settled — E-Commerce Settlement</option>
+            <option value="payment.authorized">payment.authorized — Gateway Webhook</option>
+            <option value="kyc.verification_passed">kyc.verification_passed — Identity System</option>
+            <option value="logistics.waypoint_reached">logistics.waypoint_reached — GPS Dispatch</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="endpoint-input">Target Endpoint URL</label>
+          <input type="text" id="endpoint-input" value="https://api.nexusmkt.com.ng/v1/webhooks/consumer">
+        </div>
+
+        <div class="form-group">
+          <label for="payload-editor">JSON Event Payload</label>
+          <textarea id="payload-editor"></textarea>
+        </div>
+
+        <button class="btn-dispatch" id="dispatch-btn">
+          <span>⚡ Emit Webhook Event</span>
+        </button>
+      </section>
+
+      <!-- Live Stream Console -->
+      <section class="card">
+        <h2>
+          <span>Live Consumer Telemetry</span>
+          <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--text-muted);">Real-Time Stream</span>
+        </h2>
+        <div class="log-stream" id="log-stream">
+          <!-- Initial entries populated via JS -->
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const samplePayloads = {
+      'order.settled': {
+        event_id: 'evt_983f41a8',
+        timestamp: new Date().toISOString(),
+        order_ref: 'NX-99412',
+        currency: 'NGN',
+        amount: 85400.00,
+        vendor_id: 'vnd_0821',
+        customer_email: 'buyer@example.com',
+        escrow_status: 'HELD'
+      },
+      'payment.authorized': {
+        event_id: 'evt_7721b02c',
+        timestamp: new Date().toISOString(),
+        transaction_id: 'tx_auth_44102',
+        gateway: 'Paystack_Dedicated_Node',
+        card_brand: 'Mastercard',
+        auth_code: 'AUTH_89104',
+        risk_score: 0.02
+      },
+      'kyc.verification_passed': {
+        event_id: 'evt_1204c89a',
+        timestamp: new Date().toISOString(),
+        account_id: 'usr_88291',
+        bvn_verified: true,
+        tier: 3,
+        compliance_check_duration_ms: 184
+      },
+      'logistics.waypoint_reached': {
+        event_id: 'evt_3391d10e',
+        timestamp: new Date().toISOString(),
+        consignment_id: 'CSG-8819',
+        carrier_code: 'PARCELIFY-EXPRESS',
+        coordinates: { lat: 9.8965, lng: 8.8583 },
+        status: 'OUT_FOR_FINAL_DELIVERY'
+      }
+    };
+
+    const topicSelect = document.getElementById('topic-select');
+    const payloadEditor = document.getElementById('payload-editor');
+    const dispatchBtn = document.getElementById('dispatch-btn');
+    const logStream = document.getElementById('log-stream');
+    const countEvents = document.getElementById('count-events');
+    const valLatency = document.getElementById('val-latency');
+
+    let totalCount = 1429;
+
+    function updatePayload() {
+      const topic = topicSelect.value;
+      const data = Object.assign({}, samplePayloads[topic]);
+      data.event_id = 'evt_' + Math.random().toString(36).substring(2, 10);
+      data.timestamp = new Date().toISOString();
+      payloadEditor.value = JSON.stringify(data, null, 2);
+    }
+
+    topicSelect.addEventListener('change', updatePayload);
+    updatePayload();
+
+    function addLogEntry(topic, data, latency) {
+      const entry = document.createElement('div');
+      entry.className = 'log-entry';
+      entry.innerHTML = `
+        <div class="log-header">
+          <span class="log-topic">${topic}</span>
+          <span>HTTP 200 OK · ${latency}ms</span>
+        </div>
+        <div class="log-meta">ID: ${data.event_id || 'evt_gen'} | Node: worker-node-0${Math.floor(Math.random()*4)+1}</div>
+        <div style="color: #64748B; font-size: 0.72rem; margin-top: 2px;">Signature: sha256_hmac_${Math.random().toString(36).substring(2, 12)}</div>
+      `;
+      logStream.insertBefore(entry, logStream.firstChild);
+      if (logStream.children.length > 20) {
+        logStream.removeChild(logStream.lastChild);
+      }
+    }
+
+    // Seed logs
+    addLogEntry('order.settled', samplePayloads['order.settled'], 12);
+    addLogEntry('payment.authorized', samplePayloads['payment.authorized'], 15);
+    addLogEntry('kyc.verification_passed', samplePayloads['kyc.verification_passed'], 9);
+
+    dispatchBtn.addEventListener('click', () => {
+      try {
+        const parsed = JSON.parse(payloadEditor.value);
+        dispatchBtn.disabled = true;
+        dispatchBtn.innerHTML = '<span>⏳ Processing via Queue Worker...</span>';
+
+        setTimeout(() => {
+          const latency = Math.floor(Math.random() * 12) + 8;
+          addLogEntry(topicSelect.value, parsed, latency);
+          totalCount++;
+          countEvents.textContent = totalCount.toLocaleString();
+          valLatency.textContent = latency + '.4 ms';
+
+          dispatchBtn.disabled = false;
+          dispatchBtn.innerHTML = '<span>⚡ Emit Webhook Event</span>';
+          updatePayload();
+        }, 300);
+      } catch (e) {
+        alert('Invalid JSON in payload editor. Please correct formatting.');
+      }
+    });
+  </script>
+</body>
+</html>

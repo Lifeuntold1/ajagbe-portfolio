@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ApexBank Core | In-Build System Schema</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #080B10;
+      --surface: #101520;
+      --surface-elevated: #161D2C;
+      --border: rgba(255, 255, 255, 0.09);
+      --accent: #38BDF8;
+      --accent-warm: #C8A840;
+      --text: #F1F5F9;
+      --text-muted: #8493A8;
+      --font-display: "DM Serif Display", serif;
+      --font-body: "Inter", sans-serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-bar {
+      border-bottom: 1px solid var(--border);
+      background: rgba(8, 11, 16, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: #7DD3FC; }
+    .in-build-tag {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--accent-warm);
+      background: rgba(200, 168, 64, 0.12);
+      border: 1px solid rgba(200, 168, 64, 0.35);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .dot-pulse {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-warm);
+      box-shadow: 0 0 6px var(--accent-warm);
+    }
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+    .hero-header {
+      margin-bottom: 32px;
+    }
+    .hero-header h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+    .hero-header p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+    }
+    .sprint-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .sprint-info h3 { font-size: 1.05rem; margin-bottom: 2px; }
+    .sprint-info p { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
+    .progress-track {
+      width: 220px;
+      height: 8px;
+      background: var(--surface-elevated);
+      border-radius: 4px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .progress-fill {
+      width: 68%;
+      height: 100%;
+      background: var(--accent-warm);
+      border-radius: 4px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+    @media (max-width: 860px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+    }
+    .card h2 {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      margin-bottom: 16px;
+    }
+    .code-schema {
+      background: #040508;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: #93C5FD;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+    .spec-list {
+      list-style: none;
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .spec-list li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .spec-list li::before {
+      content: '●';
+      color: var(--accent);
+      font-size: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-bar">
+    <a href="../../projects-page-3.html" class="back-link">← Back to Projects (Page 3 - In-Build)</a>
+    <span class="in-build-tag"><span class="dot-pulse"></span> SPRINT 3 ACTIVE BUILD</span>
+  </header>
+
+  <main class="container">
+    <div class="hero-header">
+      <h1>ApexBank Core Platform</h1>
+      <p>Dual-node transactional ledger architecture handling high-concurrency internal transfers, global SWIFT wire relays, and multi-currency cryptographic clearing.</p>
+    </div>
+
+    <div class="sprint-banner">
+      <div class="sprint-info">
+        <h3>Active Milestone: Ledger Reversal &amp; Audit Pipeline</h3>
+        <p>Target Framework: Laravel 11 · Redis Queue Workers · MySQL 8 InnoDB Strict</p>
+      </div>
+      <div>
+        <div style="display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 0.75rem; margin-bottom: 4px;">
+          <span>Sprint Completion</span>
+          <span style="color: var(--accent-warm);">68%</span>
+        </div>
+        <div class="progress-track"><div class="progress-fill"></div></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <!-- Database Relational Schema -->
+      <section class="card">
+        <h2>Double-Entry Relational Schema</h2>
+        <div class="code-schema">
+CREATE TABLE `accounts` (
+  `id` BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `account_number` VARCHAR(16) UNIQUE NOT NULL,
+  `user_id` BIGINT UNSIGNED NOT NULL,
+  `currency` VARCHAR(3) DEFAULT 'USD',
+  `balance_cents` BIGINT NOT NULL DEFAULT 0,
+  `status` ENUM('ACTIVE', 'FROZEN', 'TIER_LIMITED'),
+  `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE `ledger_entries` (
+  `id` BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  `transaction_ref` VARCHAR(32) UNIQUE NOT NULL,
+  `debit_account_id` BIGINT UNSIGNED NOT NULL,
+  `credit_account_id` BIGINT UNSIGNED NOT NULL,
+  `amount_cents` BIGINT NOT NULL,
+  `transfer_mode` ENUM('INTRA_BANK', 'GLOBAL_WIRE'),
+  `verification_hash` VARCHAR(64) NOT NULL
+);
+        </div>
+        <ul class="spec-list">
+          <li>Row-level pessimistic locking (`SELECT ... FOR UPDATE`) preventing race-condition overdraws</li>
+          <li>Strict non-negative integer balance constraints enforced at database layer</li>
+          <li>SHA-256 cryptographic chaining between consecutive ledger rows for zero-tampering auditability</li>
+        </ul>
+      </section>
+
+      <!-- Worker Pipeline & Security Nodes -->
+      <section class="card">
+        <h2>Dual Mobilization Routing Nodes</h2>
+        <div class="code-schema">
+// Route Dispatch Logic
+$router->post('/api/v1/mobilize', function (Request $req) {
+  $validated = $req->validate([
+    'destination_node' => 'required|in:INTRA_LEDGER,GLOBAL_SWIFT',
+    'idempotency_key'  => 'required|unique:idempotency_records',
+    'security_pin'     => 'required|digits:4',
+    'mfa_token'        => 'required|string'
+  ]);
+
+  return DispatchLedgerWorker::dispatchSync($validated);
+});
+        </div>
+        <ul class="spec-list">
+          <li><strong>Internal Transfer Node:</strong> Instant atomic database commit for intra-bank capital movements</li>
+          <li><strong>Global Wire Relay:</strong> Multi-stage compliance hold demanding admin-assigned COT/TAX/IMF verification</li>
+          <li><strong>Worker Queues:</strong> High-throughput Redis cluster routing automated settlement notifications</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

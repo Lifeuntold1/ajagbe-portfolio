@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- FOUC Blocking Theme Switcher -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme') || 'dark';
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.removeAttribute('data-theme');
+      }
+    })();
+  </script>
+
+  <title>Selected Projects · Page 2 | Ajagbe Emmanuel - Web Systems &amp; Software</title>
+  <meta name="description" content="Explore advanced client platforms, real-time telemetry systems, scientific simulators, and copy audit tools built by Ajagbe Emmanuel.">
+  <meta name="keywords" content="web systems, Laravel, telemetry, computational physics, copy audit, Ajagbe Emmanuel">
+  <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://eoajagbe.name.ng/projects-page-2.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Selected Projects · Page 2 | Ajagbe Emmanuel - Web Systems &amp; Software">
+  <meta property="og:description" content="Interactive client platforms, real-time telemetry pipelines, and computational engines built by Ajagbe Emmanuel.">
+  <meta property="og:url" content="https://eoajagbe.name.ng/projects-page-2.html">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Selected Projects · Page 2 | Ajagbe Emmanuel - Web Systems &amp; Software">
+  <meta name="twitter:description" content="Interactive client platforms, real-time telemetry pipelines, and computational engines.">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+
+  <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Ajagbe Emmanuel Home">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo">
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle visual theme">
+          <span id="theme-icon">☾</span>
+        </button>
+        <a href="contact.html" class="btn btn-outline-nav desktop-only">Hire Me</a>
+        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" aria-label="Mobile Navigation">
+    <a href="index.html" class="mobile-overlay-link">Home</a>
+    <a href="about.html" class="mobile-overlay-link">About</a>
+    <a href="services.html" class="mobile-overlay-link">Services</a>
+    <a href="projects.html" class="mobile-overlay-link active">Projects</a>
+    <a href="contact.html" class="mobile-overlay-link">Contact</a>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section section-primary" style="padding-bottom: var(--space-8);">
+      <div class="container reveal-item">
+        <span class="section-label">Case Studies · Page 2 of 3</span>
+        <h1>Advanced architectures. Interactive systems.</h1>
+        <p class="lead-text" style="max-width: 680px; margin-top: var(--space-4);">
+          Eight specialized systems covering spatial real estate valuation, high-throughput distributed queues, cryptographic IP escrow, and numerical physics modeling.
+        </p>
+      </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section class="section section-secondary" style="padding-top: var(--space-8);">
+      <div class="container">
+        <div class="projects-gallery-grid">
+
+          <!-- Project 1: SkyFort Luxury Residences -->
+          <article class="project-showcase-row" id="skyfort">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/skyfort.jpg" alt="SkyFort Luxury Residences real estate architecture" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Laravel 11</span>
+                <span class="tag">Inertia.js</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">Financial Modeling</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">SkyFort Luxury Residences</h2>
+              <p style="margin-bottom: var(--space-4);">
+                A premier property investment platform featuring dynamic floor plan filtering, interactive layout visualization, and an instantaneous mortgage amortization engine with real-time equity projection.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">skyfortresidences.ng — live simulation</span>
+                <a href="projects/skyfort/index.html" class="btn btn-primary">Launch Simulator</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: EventBroker Pro -->
+          <article class="project-showcase-row" id="eventbroker">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/event-broker.svg" alt="EventBroker Pro distributed event ingestion pipeline" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Node.js</span>
+                <span class="tag">Redis Streams</span>
+                <span class="tag">WebSockets</span>
+                <span class="tag">Telemetry</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">EventBroker Pro</h2>
+              <p style="margin-bottom: var(--space-4);">
+                High-throughput distributed webhook ingestion engine. Features live queue telemetry, zero-drop backpressure handling, and sub-millisecond dispatch to worker clusters with automated retry circuits.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">event-broker.nexusmkt.internal — 1,429 msg/sec</span>
+                <a href="projects/eventbroker/index.html" class="btn btn-primary">Launch Telemetry</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: OmniVault IP -->
+          <article class="project-showcase-row" id="omnivault">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/omnivault.svg" alt="OmniVault IP cryptographic escrow engine" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">SHA-256</span>
+                <span class="tag">Web Crypto API</span>
+                <span class="tag">Audit Vault</span>
+                <span class="tag">Legal Tech</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">OmniVault IP</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Client-side cryptographic asset verification and intellectual property notarization. Computes tamper-proof SHA-256 fingerprinted certificates for software repositories, legal contracts, and media assets.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">omnivault.lifeuntold.io — immutable proof</span>
+                <a href="projects/omnivault/index.html" class="btn btn-primary">Launch Vault</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: QuantumWave Simulator -->
+          <article class="project-showcase-row" id="quantumwave">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/quantumwave.svg" alt="QuantumWave numerical Schrödinger equation solver" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">BSc Physics</span>
+                <span class="tag">Numerical Analysis</span>
+                <span class="tag">HTML5 Canvas</span>
+                <span class="tag">Crank-Nicolson</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">QuantumWave Simulator</h2>
+              <p style="margin-bottom: var(--space-4);">
+                A numerical physics laboratory solving the 1D Time-Dependent Schrödinger Equation. Simulates Gaussian wave packet dispersion, barrier transmission coefficients, and quantum tunneling phenomena in real time.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">quantum.physlab.internal — numerical solver</span>
+                <a href="projects/quantumwave/index.html" class="btn btn-primary">Launch Solver</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: KinetiCopy Studio -->
+          <article class="project-showcase-row" id="kineticopy">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/kineticopy.svg" alt="KinetiCopy Studio copywriting audit and headline engine" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Editorial NLP</span>
+                <span class="tag">Spartan Copy</span>
+                <span class="tag">Cadence Engine</span>
+                <span class="tag">Conversion CRO</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">KinetiCopy Studio</h2>
+              <p style="margin-bottom: var(--space-4);">
+                An automated copywriting auditor built on Gary Provost's sentence cadence theory. Identifies passive voice, strikes out banned corporate buzzwords, and outputs 6 battle-tested high-converting headline frameworks.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">kineticopy.lifeuntold.internal — audit studio</span>
+                <a href="projects/kineticopy/index.html" class="btn btn-primary">Launch Studio</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: LogiTrack Dispatch -->
+          <article class="project-showcase-row" id="logitrack">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/logitrack.svg" alt="LogiTrack urban courier route optimization engine" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">GIS Routing</span>
+                <span class="tag">Traveling Salesman</span>
+                <span class="tag">Fleet Telemetry</span>
+                <span class="tag">Dispatch SLA</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">LogiTrack Dispatch</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Route optimization and telemetry engine for last-mile logistics operations. Computes shortest-path multi-stop delivery sequences, cuts fuel burn by 18.6%, and delivers live geofenced proof-of-delivery alerts.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">logitrack.parcelify.internal — 99.4% SLA</span>
+                <a href="projects/logitrack/index.html" class="btn btn-primary">Launch Dispatcher</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: EduMetric EIMS -->
+          <article class="project-showcase-row" id="edumetric">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/edumetric.svg" alt="EduMetric institutional academic audit and CGPA engine" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Higher Ed EIMS</span>
+                <span class="tag">CGPA Matrix</span>
+                <span class="tag">University of Jos</span>
+                <span class="tag">Senate Compliance</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">EduMetric EIMS</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Enterprise educational management matrix designed for academic audit compliance. Computes 5.0 CGPA weightings across multi-course credit loads, prevents grade tampering, and creates verified digital transcripts.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">edumetric.unijos.internal — verified audit</span>
+                <a href="projects/edumetric/index.html" class="btn btn-primary">Launch EIMS</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Sentira Urgency Analyzer -->
+          <article class="project-showcase-row" id="sentira">
+            <div class="project-showcase-media">
+              <img src="assets/images/projects/sentira.svg" alt="Sentira lexical diversity and urgency radar" loading="lazy">
+            </div>
+            <div class="project-showcase-info">
+              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
+                <span class="tag">Lexical Analysis</span>
+                <span class="tag">Type-Token Ratio</span>
+                <span class="tag">Spider Chart</span>
+                <span class="tag">CRO Propensity</span>
+              </div>
+              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">Sentira Urgency Analyzer</h2>
+              <p style="margin-bottom: var(--space-4);">
+                Multidimensional NLP radar tool evaluating sales copy urgency, emotional intensity, clarity, and lexical freshness. Generates an instant radar diagram and conversion propensity score from raw sales text.
+              </p>
+              <div class="project-showcase-footer">
+                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">sentira.nlp.internal — 88.7% CRO model</span>
+                <a href="projects/sentira/index.html" class="btn btn-primary">Launch Radar</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination Controls -->
+        <nav class="pagination-nav" aria-label="Projects Gallery Pagination">
+          <a href="projects.html" class="pagination-prev">← Previous Page</a>
+          <a href="projects.html" class="pagination-link" aria-label="Go to Page 1">1</a>
+          <span class="pagination-link active" aria-current="page">2</span>
+          <a href="projects-page-3.html" class="pagination-link" aria-label="Go to Page 3 (In-Build Systems)">3 (In-Build)</a>
+          <a href="projects-page-3.html" class="pagination-next">Next Page →</a>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="closing-cta" aria-label="Start a Project">
+      <div class="container">
+        <div class="closing-cta-grid">
+          <div class="closing-cta-left">
+            <h2>Let's build something that works.</h2>
+            <p>I take on a small number of new projects each month. If you have a system to build or copy to fix, reach out.</p>
+          </div>
+          <div class="closing-cta-right">
+            <div class="closing-contact-info">
+              <span class="closing-contact-item">emmanuelajagbe6@gmail.com</span>
+              <span class="closing-contact-item">+234 703 631 6514 (WhatsApp)</span>
+              <span class="closing-contact-item">eoajagbe.name.ng</span>
+            </div>
+            <a href="contact.html" class="btn btn-cta-submit">Send a Project Brief</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-col-identity">
+        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Logo" class="footer-logo">
+        <p class="footer-bio">
+          Ajagbe Emmanuel Oluwatobi<br>
+          Fullstack Engineer. Technical Copywriter.<br>
+          Jos, Nigeria.
+        </p>
+        <div class="footer-social-links">
+          <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3>Pages</h3>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Services</h3>
+        <ul class="footer-links-list">
+          <li><a href="services.html#wordpress">WordPress Development</a></li>
+          <li><a href="services.html#laravel">Laravel / PHP</a></li>
+          <li><a href="services.html#woocommerce">WooCommerce</a></li>
+          <li><a href="services.html#seo">SEO Writing</a></li>
+          <li><a href="services.html#management">Management</a></li>
+          <li><a href="services.html#data">Data Analysis</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>Get in Touch</h3>
+        <div class="footer-contact-details">
+          <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
+          <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
+        </div>
+        <a href="contact.html" class="btn btn-outline-nav">Start a Project</a>
+      </div>
+    </div>
+
+    <div class="container footer-bottom-bar">
+      <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
+      <a href="index.html">eoajagbe.name.ng</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
