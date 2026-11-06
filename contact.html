@@ -18,8 +18,8 @@
   </script>
 
   <title>Contact | Ajagbe Emmanuel - Start a Conversation</title>
-  <meta name="description" content="Reach out to Ajagbe Emmanuel Oluwatobi for custom Laravel applications, WordPress architectures, and technical copywriting inquiries. Responses within 12 hours.">
-  <meta name="keywords" content="contact web developer, hire Laravel developer, hire WordPress specialist, Jos Nigeria, technical copywriter">
+  <meta name="description" content="Contact Ajagbe Emmanuel Oluwatobi for web development, WordPress builds, and technical copywriting contracts. Based in Jos, Nigeria.">
+  <meta name="keywords" content="hire Laravel developer, hire WordPress developer Nigeria, contact Ajagbe Emmanuel, Jos Plateau State">
   <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
   <meta name="robots" content="index, follow">
 
@@ -28,229 +28,373 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Contact | Ajagbe Emmanuel - Start a Conversation">
-  <meta property="og:description" content="Reach out to Ajagbe Emmanuel Oluwatobi for custom Laravel applications, WordPress architectures, and technical copywriting inquiries.">
+  <meta property="og:description" content="Contact Ajagbe Emmanuel Oluwatobi for web development, WordPress builds, and technical copywriting contracts. Based in Jos, Nigeria.">
   <meta property="og:url" content="https://eoajagbe.name.ng/contact.html">
-  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
 
-  <!-- Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact | Ajagbe Emmanuel - Start a Conversation">
-  <meta name="twitter:description" content="Reach out to Ajagbe Emmanuel Oluwatobi for custom Laravel applications, WordPress architectures, and technical copywriting inquiries.">
-  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <meta name="twitter:description" content="Contact Ajagbe Emmanuel Oluwatobi for web development, WordPress builds, and technical copywriting contracts.">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contact Ajagbe Emmanuel Oluwatobi",
+    "url": "https://eoajagbe.name.ng/contact.html",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Ajagbe Emmanuel Oluwatobi",
+      "email": "mailto:emmanuelajagbe6@gmail.com",
+      "telephone": "+2347036316514",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jos",
+        "addressRegion": "Plateau State",
+        "addressCountry": "Nigeria"
+      }
+    }
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+
+  <!-- Preconnected Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" aria-hidden="true">
+    <div class="scroll-progress-fill"></div>
+  </div>
+
+  <!-- Header & Navigation -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo" aria-label="Ajagbe Emmanuel Home">
-        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo">
-      </a>
+      <div class="brand-wrapper">
+        <a href="index.html" class="site-logo" aria-label="Ajagbe Emmanuel Home">
+          <span>Ajagbe</span>
+          <span class="dot"></span>
+          <span>Emmanuel</span>
+        </a>
+      </div>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#work" class="nav-link">Work</a>
         <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="projects.html" class="nav-link">Projects</a>
         <a href="contact.html" class="nav-link active">Contact</a>
       </nav>
 
-      <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle visual theme">
+      <div class="header-controls">
+        <div class="status-clock-chip" title="Live Local Time in Jos, Nigeria">
+          <span class="status-dot-pulse"></span>
+          <span class="mono" id="live-clock-wat">Jos WAT</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
           <span id="theme-icon">☾</span>
         </button>
-        <a href="contact.html" class="btn btn-outline-nav desktop-only">Hire Me</a>
-        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+
+        <a href="contact.html" class="btn btn-outline" style="padding: 10px 20px;">Hire Me</a>
+
+        <button class="menu-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="line"></span>
+          <span class="line"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Overlay -->
-  <div class="mobile-overlay" aria-label="Mobile Navigation">
-    <a href="index.html" class="mobile-overlay-link">Home</a>
-    <a href="about.html" class="mobile-overlay-link">About</a>
-    <a href="services.html" class="mobile-overlay-link">Services</a>
-    <a href="projects.html" class="mobile-overlay-link">Projects</a>
-    <a href="contact.html" class="mobile-overlay-link active">Contact</a>
+  <!-- Mobile Fullscreen Overlay -->
+  <div class="mobile-menu-overlay" aria-label="Mobile Navigation">
+    <div class="mobile-menu-head">
+      <a href="index.html" class="site-logo">
+        <span>Ajagbe</span>
+        <span class="dot"></span>
+        <span>Emmanuel</span>
+      </a>
+      <button class="mobile-menu-close btn btn-outline" style="padding: 6px 14px;">Close</button>
+    </div>
+
+    <nav class="mobile-menu-links">
+      <a href="index.html#work" class="mobile-menu-link">Work</a>
+      <a href="services.html" class="mobile-menu-link">Services</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="projects.html" class="mobile-menu-link">Projects</a>
+      <a href="contact.html" class="mobile-menu-link">Contact</a>
+    </nav>
+
+    <div class="mobile-menu-foot">
+      <span class="mono">Jos, Nigeria</span>
+      <span class="mono">Reply: within 12h</span>
+    </div>
   </div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="section section-primary" style="padding-bottom: var(--space-8);">
-      <div class="container reveal-item">
-        <span class="section-label">Inquiry</span>
-        <h1>Start a conversation.</h1>
-        <p class="lead-text" style="max-width: 680px; margin-top: var(--space-4);">
-          Fill out the form below or reach out directly. I respond within 12 hours.
+  <main id="main-content">
+
+    <!-- Contact Hero Header -->
+    <section class="section" style="padding-top: calc(var(--header-height) + var(--space-12)); padding-bottom: var(--space-8);">
+      <div class="container">
+        <span class="mono" style="color: var(--accent);">01 — Direct Channel</span>
+        <h1 style="font-size: var(--text-hero); line-height: 0.98; margin-block: var(--space-4);">
+          Tell me what you <span class="font-accent">need built</span>.
+        </h1>
+        <p style="font-size: var(--text-lead); max-width: 680px; color: var(--ink-2); line-height: 1.6;">
+          Share your project scope, technical requirements, or business objectives. I review every submission personally and reply within 12 hours.
         </p>
       </div>
     </section>
 
-    <!-- Contact & Form Section -->
-    <section class="section section-secondary">
-      <div class="container">
-        <div class="contact-layout-grid">
+    <!-- Two-Column Form & Direct Channels Layout -->
+    <section class="section hairline-t" style="padding-top: var(--space-12);" aria-label="Contact Channels &amp; Inquiry Form">
+      <div class="container contact-layout-grid">
 
-          <!-- Channels Column -->
-          <div class="contact-channels-wrap reveal-item">
-            <h2>Direct Channels</h2>
-            <div class="contact-channel-block">
-              <span>Electronic Mail</span>
-              <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
+        <!-- Left Column: Direct Contact & Verified Details -->
+        <div>
+          <span class="mono" style="color: var(--accent); margin-bottom: var(--space-2); display: block;">Direct Channels</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.05; margin-bottom: var(--space-6);">Direct communication. Zero agency layers.</h2>
+
+          <div style="margin-bottom: var(--space-8);">
+            <a href="mailto:emmanuelajagbe6@gmail.com" class="copy-email-link" data-email="emmanuelajagbe6@gmail.com" title="Click to copy email address">
+              <span>emmanuelajagbe6@gmail.com</span>
+              <span class="copy-feedback-toast">Copied</span>
+            </a>
+            <p class="mono" style="color: var(--muted); margin-top: var(--space-2);">Click the email address above to copy it to your clipboard.</p>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: var(--space-4); margin-bottom: var(--space-8);">
+            <div>
+              <span class="mono" style="color: var(--muted); display: block;">WhatsApp</span>
+              <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-lg); font-weight: 500; color: var(--ink);">+234 703 631 6514</a>
             </div>
 
-            <div class="contact-channel-block">
-              <span>Direct / WhatsApp</span>
-              <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
+            <div>
+              <span class="mono" style="color: var(--muted); display: block;">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-lg); font-weight: 500; color: var(--ink);">linkedin.com/in/ajagbeemmanueloluwatobi</a>
             </div>
 
-            <div class="contact-channel-block">
-              <span>Social Profiles</span>
-              <div style="display: flex; gap: var(--space-4); margin-top: var(--space-1);">
-                <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer" class="text-link" style="font-family: var(--font-body); font-size: var(--type-sm);">LinkedIn</a>
-                <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" class="text-link" style="font-family: var(--font-body); font-size: var(--type-sm);">GitHub</a>
-                <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer" class="text-link" style="font-family: var(--font-body); font-size: var(--type-sm);">Facebook</a>
+            <div>
+              <span class="mono" style="color: var(--muted); display: block;">GitHub</span>
+              <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer" style="font-size: var(--text-body-lg); font-weight: 500; color: var(--ink);">github.com/Lifeuntold1</a>
+            </div>
+
+            <div>
+              <span class="mono" style="color: var(--muted); display: block;">Turnaround Guarantee</span>
+              <span style="font-size: var(--text-body-lg); font-weight: 600; color: var(--accent);">I reply within 12 hours.</span>
+            </div>
+          </div>
+
+          <div style="padding: var(--space-6); border: 1px solid var(--line); background-color: var(--bg-2);">
+            <span class="mono" style="color: var(--accent); display: block; margin-bottom: var(--space-2);">Office &amp; Engineering Base</span>
+            <p class="mono" style="color: var(--ink); line-height: 1.8; margin: 0;">
+              Location: Jos, Plateau State, Nigeria.<br>
+              Affiliations: NAPS Nigeria, GDG Jos, Microsoft Developers Group.<br>
+              Timezone: West Africa Time (WAT, UTC+1).
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Form with Floating Labels -->
+        <div>
+          <span class="mono" style="color: var(--accent); margin-bottom: var(--space-2); display: block;">Project Inquiry Form</span>
+          <h2 style="font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.05; margin-bottom: var(--space-6);">Send project brief</h2>
+
+          <!-- Success Alert -->
+          <div id="form-success-box" class="form-status-alert" role="alert">
+            <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2); color: var(--ink);">Inquiry received.</h3>
+            <p style="color: var(--ink-2); line-height: 1.6;">
+              Thank you for reaching out. I have received your project details and will reply to your email within 12 hours.
+            </p>
+          </div>
+
+          <!-- Error Alert -->
+          <div id="form-error-box" class="form-status-alert" role="alert" style="border-color: #e53e3e;">
+            <h3 style="font-size: 1.5rem; margin-bottom: var(--space-2); color: var(--ink);">Submission notice.</h3>
+            <p style="color: var(--ink-2); line-height: 1.6;">
+              Could not submit form automatically. Please write to me directly at <a href="mailto:emmanuelajagbe6@gmail.com" style="text-decoration: underline; font-weight: 600;">emmanuelajagbe6@gmail.com</a>.
+            </p>
+          </div>
+
+          <!-- Form Element -->
+          <form class="contact-form" action="https://formspree.io/f/xbdddqwv" method="POST">
+            <div class="floating-field-group">
+              <input type="text" id="form-name" name="name" class="floating-input" placeholder=" " required>
+              <label for="form-name" class="floating-label">Full Name</label>
+            </div>
+
+            <div class="floating-field-group">
+              <input type="email" id="form-email" name="email" class="floating-input" placeholder=" " required>
+              <label for="form-email" class="floating-label">Email Address</label>
+            </div>
+
+            <div class="floating-field-group">
+              <select id="form-service" name="service" class="floating-select" required>
+                <option value="" disabled selected hidden></option>
+                <option value="Custom Web / SaaS Development">Websites and web apps (Laravel / React / MySQL)</option>
+                <option value="WordPress Theme Development">WordPress and WooCommerce</option>
+                <option value="Website Copy">Website copy &amp; conversion writing</option>
+                <option value="Monthly Care Plans">Monthly care plans and maintenance</option>
+                <option value="Business Automation">Business automation &amp; notification scripts</option>
+                <option value="Data Dashboards">Data dashboards (Python / Excel)</option>
+                <option value="Technical Coaching">Tech coaching &amp; computational training</option>
+              </select>
+              <label for="form-service" class="floating-label">Service Required</label>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+              <div class="floating-field-group">
+                <select id="form-budget" name="budget" class="floating-select" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="Small project">Small project</option>
+                  <option value="Medium project">Medium project</option>
+                  <option value="Large project">Large project</option>
+                  <option value="Not sure yet">Not sure yet</option>
+                </select>
+                <label for="form-budget" class="floating-label">Project Scope</label>
+              </div>
+
+              <div class="floating-field-group">
+                <select id="form-timeline" name="timeline" class="floating-select">
+                  <option value="" disabled selected hidden></option>
+                  <option value="Flexible">Flexible</option>
+                  <option value="Urgent (< 1 week)">Urgent (&lt; 1 week)</option>
+                  <option value="1-4 Weeks">1–4 Weeks</option>
+                  <option value="1+ Months">1 Month+</option>
+                </select>
+                <label for="form-timeline" class="floating-label">Timeline</label>
               </div>
             </div>
 
-            <div class="onboarding-card">
-              <h4>Client Onboarding</h4>
-              <p>
-                I take on a limited number of new projects each month. The more detail you give in the form, the faster I can assess fit and respond with a clear next step.
+            <div class="floating-field-group">
+              <textarea id="form-message" name="message" class="floating-textarea" placeholder=" " required></textarea>
+              <label for="form-message" class="floating-label">Technical Scope &amp; Details</label>
+            </div>
+
+            <button type="submit" id="form-submit-btn" class="btn btn-primary" style="width: 100%; padding-block: 18px;">
+              Send Project Inquiry &rarr;
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Frequently Asked Questions (Two sentences per answer) -->
+    <section class="section hairline-t" aria-label="Frequently Asked Questions">
+      <div class="container">
+        <div style="margin-bottom: var(--space-8);">
+          <span class="mono" style="color: var(--accent);">02 — Clarifications</span>
+          <h2 style="font-size: var(--text-h2); margin-top: var(--space-2);">Frequently asked questions.</h2>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8);">
+            <!-- FAQ 1 -->
+            <div style="padding: var(--space-6); border: 1px solid var(--line); background-color: var(--bg-2);">
+              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--ink);">Where are you based and how do you work with remote clients?</h3>
+              <p style="font-size: var(--text-body); color: var(--ink-2); line-height: 1.6;">
+                I am based in Jos, Plateau State, Nigeria. I work with clients anywhere through clear asynchronous communication, private staging links, and direct messaging.
+              </p>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div style="padding: var(--space-6); border: 1px solid var(--line); background-color: var(--bg-2);">
+              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--ink);">What technologies do you use for development?</h3>
+              <p style="font-size: var(--text-body); color: var(--ink-2); line-height: 1.6;">
+                My core production stack includes PHP with Laravel, React.js, JavaScript, and MySQL, alongside custom WordPress and WooCommerce. I also build automated data pipelines and scripts using Python.
+              </p>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div style="padding: var(--space-6); border: 1px solid var(--line); background-color: var(--bg-2);">
+              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--ink);">How does your physics training influence web engineering?</h3>
+              <p style="font-size: var(--text-body); color: var(--ink-2); line-height: 1.6;">
+                Physics trained me to isolate the exact variable causing a bottleneck rather than guessing. I apply this experimental discipline to database query optimization, accessibility compliance, and conversion copywriting.
+              </p>
+            </div>
+
+            <!-- FAQ 4 -->
+            <div style="padding: var(--space-6); border: 1px solid var(--line); background-color: var(--bg-2);">
+              <h3 style="font-size: 1.25rem; margin-bottom: var(--space-3); color: var(--ink);">What is your typical turnaround and reply time?</h3>
+              <p style="font-size: var(--text-body); color: var(--ink-2); line-height: 1.6;">
+                I reply to every inquiry within 12 hours. Project timelines depend on scope, typically ranging from one to four weeks for defined milestones.
               </p>
             </div>
           </div>
-
-          <!-- Form Column -->
-          <div class="form-shell">
-            <form action="https://formspree.io/f/xbdddqwv" method="POST">
-              <div class="form-pair-grid">
-                <div class="form-field">
-                  <label for="form-name">Full Name</label>
-                  <input type="text" id="form-name" name="name" placeholder="Your name" required>
-                </div>
-
-                <div class="form-field">
-                  <label for="form-email">Email Address</label>
-                  <input type="email" id="form-email" name="email" placeholder="name@domain.com" required>
-                </div>
-
-                <div class="form-field form-span-2">
-                  <label for="form-service">Service Required</label>
-                  <select id="form-service" name="service" required>
-                    <option value="" disabled selected>Select service required...</option>
-                    <option value="Custom Web / SaaS Development">Custom Web / SaaS Development</option>
-                    <option value="WordPress Theme Development">WordPress Development</option>
-                    <option value="WooCommerce Integration">WooCommerce Store Development</option>
-                    <option value="Conversion Copywriting">Conversion Copywriting</option>
-                    <option value="Academic Support">Academic Research</option>
-                    <option value="Data Analytics">Data Analysis (Excel / PowerBI / Python)</option>
-                    <option value="Technical Coding Coaching">Technical Coaching</option>
-                  </select>
-                </div>
-
-                <div class="form-field">
-                  <label for="form-budget">Project Scope</label>
-                  <select id="form-budget" name="budget" required>
-                    <option value="" disabled selected>Select project scope...</option>
-                    <option value="Small">Small project</option>
-                    <option value="Medium">Medium project</option>
-                    <option value="Large">Large system / platform</option>
-                    <option value="Consultation">Consultation / Retainer</option>
-                  </select>
-                </div>
-
-                <div class="form-field">
-                  <label for="form-timeline">Timeline</label>
-                  <select id="form-timeline" name="timeline">
-                    <option value="Flexible">Flexible</option>
-                    <option value="Urgent (< 1 week)">Urgent (&lt; 1 week)</option>
-                    <option value="1-4 Weeks">1–4 Weeks</option>
-                    <option value="1+ Months">1 Month+</option>
-                  </select>
-                </div>
-
-                <div class="form-field form-span-2">
-                  <label for="form-message">Technical Scope &amp; Details</label>
-                  <textarea id="form-message" name="message" rows="5" placeholder="Define the problem you need solved, current stack, or key goals..." required></textarea>
-                </div>
-              </div>
-
-              <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-4); height: 50px;">Send Project Inquiry</button>
-            </form>
-          </div>
-
         </div>
       </div>
     </section>
+
   </main>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col footer-col-identity">
-        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Logo" class="footer-logo">
-        <p class="footer-bio">
-          Ajagbe Emmanuel Oluwatobi<br>
-          Fullstack Engineer. Technical Copywriter.<br>
-          Jos, Nigeria.
-        </p>
-        <div class="footer-social-links">
-          <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col">
+          <h3>Ajagbe Emmanuel</h3>
+          <p style="color: var(--inverse-ink-2); line-height: 1.6; margin-bottom: var(--space-4);">
+            Fullstack engineer &amp; technical copywriter. 7+ years building for clients.
+          </p>
+          <div class="mono" style="color: var(--inverse-muted);">Jos, Nigeria</div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html#web">Websites &amp; Apps</a></li>
+            <li><a href="services.html#wordpress">WordPress &amp; WooCommerce</a></li>
+            <li><a href="services.html#copy">Website Copy</a></li>
+            <li><a href="services.html#care">Care Plans &amp; Fixes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Network</h3>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:emmanuelajagbe6@gmail.com">Direct Email</a></li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="footer-col">
-        <h3>Pages</h3>
-        <ul class="footer-links-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Services</h3>
-        <ul class="footer-links-list">
-          <li><a href="services.html#wordpress">WordPress Development</a></li>
-          <li><a href="services.html#laravel">Laravel / PHP</a></li>
-          <li><a href="services.html#woocommerce">WooCommerce</a></li>
-          <li><a href="services.html#seo">SEO Writing</a></li>
-          <li><a href="services.html#management">Management</a></li>
-          <li><a href="services.html#data">Data Analysis</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Get in Touch</h3>
-        <div class="footer-contact-details">
-          <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
-          <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
-        </div>
-        <a href="contact.html" class="btn btn-outline-nav">Start a Project</a>
-      </div>
+    <div class="footer-wordmark-container" aria-hidden="true">
+      <div class="footer-giant-wordmark">Ajagbe Emmanuel</div>
     </div>
 
     <div class="container footer-bottom-bar">
-      <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
-      <a href="index.html">eoajagbe.name.ng</a>
+      <span>&copy; <span id="footer-year">2026</span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</span>
+      <span class="mono">eoajagbe.name.ng</span>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
   <script src="assets/js/main.js" defer></script>
 </body>

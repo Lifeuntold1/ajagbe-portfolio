@@ -18,8 +18,8 @@
   </script>
 
   <title>Selected Projects | Ajagbe Emmanuel - Web Systems &amp; Software</title>
-  <meta name="description" content="Production-ready Laravel applications, custom WordPress architectures, and data visualization tools built by Ajagbe Emmanuel.">
-  <meta name="keywords" content="web projects, Laravel portfolio, WordPress showcase, Nigeria developer, case studies">
+  <meta name="description" content="Production web applications, custom WordPress platforms, and computational software shipped by Ajagbe Emmanuel Oluwatobi.">
+  <meta name="keywords" content="web developer portfolio, Laravel projects, WordPress projects, Nigeria developer, Ajagbe Emmanuel">
   <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
   <meta name="robots" content="index, follow">
 
@@ -28,429 +28,454 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Selected Projects | Ajagbe Emmanuel - Web Systems &amp; Software">
-  <meta property="og:description" content="Production-ready Laravel applications, custom WordPress architectures, and data visualization tools built by Ajagbe Emmanuel.">
+  <meta property="og:description" content="Production web applications, custom WordPress platforms, and computational software shipped by Ajagbe Emmanuel Oluwatobi.">
   <meta property="og:url" content="https://eoajagbe.name.ng/projects.html">
-  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/projects/nexus-market.png">
 
-  <!-- Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Selected Projects | Ajagbe Emmanuel - Web Systems &amp; Software">
-  <meta name="twitter:description" content="Production-ready Laravel applications, custom WordPress architectures, and data visualization tools.">
-  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <meta name="twitter:description" content="Production web applications, custom WordPress platforms, and computational software shipped by Ajagbe Emmanuel Oluwatobi.">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/projects/nexus-market.png">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Selected Projects by Ajagbe Emmanuel Oluwatobi",
+    "url": "https://eoajagbe.name.ng/projects.html",
+    "creator": {
+      "@type": "Person",
+      "name": "Ajagbe Emmanuel Oluwatobi"
+    }
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+
+  <!-- Preconnected Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" aria-hidden="true">
+    <div class="scroll-progress-fill"></div>
+  </div>
+
+  <!-- Header & Navigation -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo" aria-label="Ajagbe Emmanuel Home">
-        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo">
-      </a>
+      <div class="brand-wrapper">
+        <a href="index.html" class="site-logo" aria-label="Ajagbe Emmanuel Home">
+          <span>Ajagbe</span>
+          <span class="dot"></span>
+          <span>Emmanuel</span>
+        </a>
+      </div>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#work" class="nav-link">Work</a>
         <a href="services.html" class="nav-link">Services</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="projects.html" class="nav-link active">Projects</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle visual theme">
+      <div class="header-controls">
+        <div class="status-clock-chip" title="Live Local Time in Jos, Nigeria">
+          <span class="status-dot-pulse"></span>
+          <span class="mono" id="live-clock-wat">Jos WAT</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
           <span id="theme-icon">☾</span>
         </button>
-        <a href="contact.html" class="btn btn-outline-nav desktop-only">Hire Me</a>
-        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+
+        <a href="contact.html" class="btn btn-outline" style="padding: 10px 20px;">Hire Me</a>
+
+        <button class="menu-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="line"></span>
+          <span class="line"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Overlay -->
-  <div class="mobile-overlay" aria-label="Mobile Navigation">
-    <a href="index.html" class="mobile-overlay-link">Home</a>
-    <a href="about.html" class="mobile-overlay-link">About</a>
-    <a href="services.html" class="mobile-overlay-link">Services</a>
-    <a href="projects.html" class="mobile-overlay-link active">Projects</a>
-    <a href="contact.html" class="mobile-overlay-link">Contact</a>
+  <!-- Mobile Fullscreen Overlay -->
+  <div class="mobile-menu-overlay" aria-label="Mobile Navigation">
+    <div class="mobile-menu-head">
+      <a href="index.html" class="site-logo">
+        <span>Ajagbe</span>
+        <span class="dot"></span>
+        <span>Emmanuel</span>
+      </a>
+      <button class="mobile-menu-close btn btn-outline" style="padding: 6px 14px;">Close</button>
+    </div>
+
+    <nav class="mobile-menu-links">
+      <a href="index.html#work" class="mobile-menu-link">Work</a>
+      <a href="services.html" class="mobile-menu-link">Services</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="projects.html" class="mobile-menu-link">Projects</a>
+      <a href="contact.html" class="mobile-menu-link">Contact</a>
+    </nav>
+
+    <div class="mobile-menu-foot">
+      <span class="mono">Jos, Nigeria</span>
+      <span class="mono">Reply: within 12h</span>
+    </div>
   </div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="section section-primary" style="padding-bottom: var(--space-8);">
-      <div class="container reveal-item">
-        <span class="section-label">Case Studies · Page 1 of 3</span>
-        <h1>Shipped systems. Measured results.</h1>
-        <p class="lead-text" style="max-width: 680px; margin-top: var(--space-4);">
-          Concrete web platforms, custom backend database systems, and analytical software implementations.
+  <main id="main-content">
+
+    <!-- Projects Hero Header -->
+    <section class="section" style="padding-top: calc(var(--header-height) + var(--space-12)); padding-bottom: var(--space-8);">
+      <div class="container">
+        <span class="mono" style="color: var(--accent);">01 — Production Catalog</span>
+        <h1 style="font-size: var(--text-hero); line-height: 0.98; margin-block: var(--space-4);">
+          Work I have <span class="font-accent">shipped</span>.
+        </h1>
+        <p style="font-size: var(--text-lead); max-width: 680px; color: var(--ink-2); line-height: 1.6;">
+          Selected web systems, digital platforms, and computational tools. Hover on desktop to preview. Click any record to inspect the technical case.
         </p>
       </div>
     </section>
 
-    <!-- Projects Gallery -->
-    <section class="section section-secondary" style="padding-top: var(--space-8);">
+    <!-- Cursor Follower Floating Thumbnail (Desktop M3 / M10) -->
+    <div class="floating-preview-thumbnail" aria-hidden="true">
+      <img src="assets/images/projects/nexus-market.png" alt="Interactive Preview" id="preview-floating-img" width="280" height="175">
+    </div>
+
+    <!-- Projects List & Detailed Case Rows -->
+    <section class="section hairline-t" style="padding-top: var(--space-8);" aria-label="Project Case Studies">
       <div class="container">
-        <div class="projects-gallery-grid">
 
-          <!-- Project 1: Nexus Market -->
-          <article class="project-showcase-row" id="nexus">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/nexus-market.png" alt="Nexus Market multi-vendor marketplace platform" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Laravel</span>
-                <span class="tag">PHP</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">Bootstrap</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">Nexus Market</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> E-commerce vendors face steep commission fees on international platforms while suffering frequent payment settlement disputes and slow local currency payouts.
-              </div>
+        <div class="project-rows-table">
 
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Engineered an independent multi-vendor marketplace featuring isolated seller dashboards, automated affiliate commission tracking, and high-speed database queries handling concurrent buyer carts.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Sub-second query response times under high-volume multi-vendor transactions, zero inventory sync latency, and immediate local currency payout settlement.
+          <!-- 01: Nexus Market -->
+          <article class="project-showcase-row hairline-b" id="nexus" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/nexus-market.png">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Nexus Market</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">Laravel</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">PHP</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2024 &middot; E-Commerce</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">01/08</div>
               </div>
 
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">nexusmkt.com.ng — live</span>
-                <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Marketplace</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                  <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                    A multi-vendor marketplace with vendor dashboards, product inventory and affiliate tracking. Handles concurrent customer checkout carts with automated local currency payout settlement.
+                  </p>
+                  <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                    <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Live Platform &rarr;</a>
+                    <span class="mono" style="color: var(--muted);">Status: Live at nexusmkt.com.ng</span>
+                  </div>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 2: Jaoos Luxury Estates -->
-          <article class="project-showcase-row" id="jaoos">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/jaoos-estates.png" alt="Jaoos Luxury Estates property showcase" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-                <span class="tag">Figma</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">Jaoos Luxury Estates</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> Luxury real estate agencies lose high-ticket property buyers due to generic listing templates that fail to convey architectural prestige or provide clear mortgage financing models.
+          <!-- 02: Jaoos Luxury Estates -->
+          <article class="project-showcase-row hairline-b" id="jaoos" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/jaoos-estates.png">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Jaoos Luxury Estates</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Real Estate</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">02/08</div>
               </div>
 
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Designed an editorial property showcase featuring structural filters, responsive location maps, a dynamic mortgage calculator, and high-conversion buyer lead-capture funnels.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Increased verified buyer inquiry volume by 38% and reduced sales cycle friction for eight-figure estate acquisitions.
-              </div>
-
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">High-conversion real estate UI</span>
-                <a href="projects/jaoos/index.html" class="btn btn-primary">View Prototype</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  An editorial property showcase engineered for high-ticket residential listings. Features property filter categories, a dynamic mortgage calculator and direct buyer inquiry routing.
+                </p>
+                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                  <a href="projects/jaoos/index.html" class="btn btn-outline">View Prototype &rarr;</a>
+                  <span class="mono" style="color: var(--muted);">Status: Prototype</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 3: PhysLab Visualizer -->
-          <article class="project-showcase-row" id="physlab">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/physlab-visualizer.png" alt="PhysLab Visualizer data dashboard" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Python</span>
-                <span class="tag">Pandas</span>
-                <span class="tag">Matplotlib</span>
-                <span class="tag">Physics</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">PhysLab Visualizer</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> Laboratory researchers waste hundreds of hours manually plotting experimental readings in spreadsheets, prone to transcription errors and inaccurate error margin curves.
+          <!-- 03: Life Untold -->
+          <article class="project-showcase-row hairline-b" id="life-untold" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/lifeuntold-brand.svg">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Life Untold</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">Brand Architecture</span>
+                    <span class="tag">Content Strategy</span>
+                    <span class="tag">SEO</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2017 &middot; Media Brand</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">03/08</div>
               </div>
 
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Engineered a custom Python computational parsing tool using Pandas and Matplotlib to clean noisy sensor data and plot publication-ready visual models with exact error margins.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Slashed plot generation time by 85% and guaranteed mathematical reproducibility for departmental academic papers.
-              </div>
-
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Computational analysis</span>
-                <a href="projects/physlab/index.html" class="btn btn-primary">View Documentation</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  An independent storytelling and brand identity platform active since 2017. Houses digital brand essays, technical guides and The Healing Series video documentation.
+                </p>
+                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                  <a href="about.html" class="btn btn-outline">Read The Brand Story &rarr;</a>
+                  <span class="mono" style="color: var(--muted);">Status: Active Enterprise</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 4: CareConnect -->
-          <article class="project-showcase-row" id="careconnect">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/careconnect.png" alt="CareConnect healthcare platform" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">UI/UX Design</span>
-                <span class="tag">Prototyping</span>
-                <span class="tag">Accessibility</span>
-                <span class="tag">Healthcare</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">CareConnect Healthcare Portal</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> Senior patients and non-tech-savvy users struggle with overwhelming hospital booking portals, causing missed appointments and congested triage queues.
+          <!-- 04: PhysLab Visualizer -->
+          <article class="project-showcase-row hairline-b" id="physlab" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/physlab-visualizer.png">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">PhysLab Visualizer</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">Python</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Matplotlib</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2024 &middot; Physics Lab</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">04/08</div>
               </div>
 
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Architected a high-contrast healthcare appointment portal with WCAG AAA accessibility, generous tap targets, and an intuitive 3-step registration flow.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Lowered hospital front-desk appointment triage call load by 45% and achieved 100% completion rates among first-time senior patients.
-              </div>
-
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Healthcare UX architecture</span>
-                <a href="projects/careconnect/index.html" class="btn btn-primary">View Case Study</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  A Python computational tool for processing laboratory sensor data and plotting experimental readings. Generates publication-ready physics charts with exact statistical error-margin curves.
+                </p>
+                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                  <a href="projects/physlab/index.html" class="btn btn-outline">View Documentation &rarr;</a>
+                  <span class="mono" style="color: var(--muted);">Status: Working Lab Software</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 5: TaskFlow Landing Page -->
-          <article class="project-showcase-row" id="taskflow">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/taskflow.png" alt="TaskFlow SaaS landing page" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Conversion Copy</span>
-                <span class="tag">CRO Strategy</span>
-                <span class="tag">HTML5 / CSS3</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">TaskFlow CRO Landing Page</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> SaaS platforms frequently build robust software but struggle to acquire users because their landing pages rely on vague corporate buzzwords that fail to explain the product's actual value.
-              </div>
-
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Wrote direct-response Spartan copy structured around pain-relief positioning, active-voice sentence cadences, and immediate social proof triggers.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Delivered an authentic +20% conversion lift in visitor-to-trial signups without requiring costly ad spend adjustments.
+          <!-- 05: CareConnect Healthcare Portal -->
+          <article class="project-showcase-row hairline-b" id="careconnect" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/careconnect.png">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">CareConnect Healthcare Portal</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">UI/UX Design</span>
+                    <span class="tag">WCAG AAA</span>
+                    <span class="tag">Healthcare</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Healthcare</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">05/08</div>
               </div>
 
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">+20% conversion lift</span>
-                <a href="projects/taskflow/index.html" class="btn btn-primary">Read The Copy</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  A high-contrast medical appointment portal designed for senior patients and accessible clinic booking. Features WCAG AAA contrast ratios, clear screen-reader landmarks and a 3-step registration flow.
+                </p>
+                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                  <a href="projects/careconnect/index.html" class="btn btn-outline">View Case Study &rarr;</a>
+                  <span class="mono" style="color: var(--muted);">Status: Prototype Case Study</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 6: The Scholar's Hub -->
-          <article class="project-showcase-row" id="scholarhub">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/scholars-hub.png" alt="The Scholar's Hub knowledge base" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Information Architecture</span>
-                <span class="tag">Content Strategy</span>
-                <span class="tag">WordPress</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">The Scholar's Hub</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> Academic publishing and research repositories suffer from chaotic category nesting, making critical papers and open-access journals nearly impossible to locate.
-              </div>
-
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Structured a hardened WordPress architecture with intuitive academic taxonomies, instant citation reference cards, and high-speed search indexing.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Halved average time-to-discovery for university scholars and sustained high page engagement across thousands of research entries.
+          <!-- 06: TaskFlow CRO Landing Page -->
+          <article class="project-showcase-row hairline-b" id="taskflow" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/taskflow.png">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">TaskFlow CRO Landing Page</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">Conversion Copy</span>
+                    <span class="tag">CRO Strategy</span>
+                    <span class="tag">HTML5 / CSS3</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2024 &middot; Copywriting</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">06/08</div>
               </div>
 
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Academic knowledge base</span>
-                <a href="projects/scholarhub/index.html" class="btn btn-primary">View Hub Design</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  A conversion-focused SaaS landing page built with Spartan direct-response sales copy. Structured with pain-relief positioning and immediate value propositions that produced a 20% conversion lift.
+                </p>
+                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                  <a href="projects/taskflow/index.html" class="btn btn-outline">Read The Copy &rarr;</a>
+                  <span class="mono" style="color: var(--muted);">Metric: +20% Conversion Lift</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 7: Python 4 Physics -->
-          <article class="project-showcase-row" id="p4p">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/python4physics.png" alt="Python 4 Physics educational curriculum" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Curriculum Design</span>
-                <span class="tag">Python</span>
-                <span class="tag">Computational Physics</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">Python 4 Physics Syllabus</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> University science undergraduates struggle with computational physics because standard programming courses teach generic web code rather than scientific calculus and matrix modeling.
-              </div>
-
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Authored and deployed a specialized curriculum connecting core physics differential equations directly to executable NumPy and Matplotlib routines.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Successfully coached over 120 physics undergraduates through advanced numerical laboratory modeling exams.
+          <!-- 07: The Scholar's Hub -->
+          <article class="project-showcase-row hairline-b" id="scholarhub" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/scholars-hub.png">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">The Scholar's Hub</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">WordPress</span>
+                    <span class="tag">Taxonomy</span>
+                    <span class="tag">SEO</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Academic Hub</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">07/08</div>
               </div>
 
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Technical curriculum</span>
-                <a href="projects/p4p/index.html" class="btn btn-primary">View Curriculum</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  An academic documentation repository and journal indexing site built on WordPress. Organizes departmental research papers with clear category taxonomies and instant search discovery.
+                </p>
+                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                  <a href="projects/scholarhub/index.html" class="btn btn-outline">View Hub Design &rarr;</a>
+                  <span class="mono" style="color: var(--muted);">Status: Academic Knowledge Base</span>
+                </div>
               </div>
             </div>
           </article>
 
-          <!-- Project 8: Trend Analyzer Script -->
-          <article class="project-showcase-row" id="trendanalyzer">
-            <div class="project-showcase-media">
-              <img src="assets/images/projects/trend-analyzer.png" alt="Trend Analyzer dashboard" loading="lazy">
-            </div>
-            <div class="project-showcase-info">
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-2); flex-wrap: wrap;">
-                <span class="tag">Python</span>
-                <span class="tag">Scrapy</span>
-                <span class="tag">Seaborn</span>
-                <span class="tag">Automation</span>
-              </div>
-              <h2 style="font-size: var(--type-xl); margin-block: var(--space-2);">Automated Trend Analyzer</h2>
-              
-              <div style="margin-bottom: var(--space-3); font-size: var(--type-sm); color: var(--accent-warm);">
-                <strong>The Industry Gap:</strong> Market researchers spend dozens of manual hours copying data from fragmented online repositories, yielding stale analysis and human copy-paste errors.
+          <!-- 08: Python 4 Physics Syllabus -->
+          <article class="project-showcase-row hairline-b" id="p4p" style="padding-block: var(--space-8);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
+              <div class="project-row-interactive" data-preview-src="assets/images/projects/python4physics.png">
+                <div>
+                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Python 4 Physics Syllabus</h2>
+                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
+                    <span class="tag">Python</span>
+                    <span class="tag">Physics</span>
+                    <span class="tag">Curriculum</span>
+                  </div>
+                </div>
+                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Education</div>
+                <div class="mono" style="color: var(--accent); align-self: center;">08/08</div>
               </div>
 
-              <p style="margin-bottom: var(--space-3);">
-                <strong>How I Came In:</strong> Built an automated web-scraping and data extraction pipeline using Python, Scrapy, and Seaborn to parse, clean, and catalog trend metrics automatically.
-              </p>
-
-              <div style="margin-bottom: var(--space-4); font-size: var(--type-sm); color: var(--text-secondary);">
-                <strong>Significance &amp; Outcome:</strong> Compressed a 3-day manual research process into a 90-second automated data pipeline with verified schema consistency.
-              </div>
-
-              <div class="project-showcase-footer">
-                <span class="mono" style="font-size: var(--type-xs); color: var(--accent-warm);">Automated pipeline</span>
-                <a href="projects/trendanalyzer/index.html" class="btn btn-primary">View Analysis Code</a>
+              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  A computational programming curriculum connecting numerical methods directly to university physics differential equations. Coached over 120 undergraduate students through laboratory modeling assessments.
+                </p>
+                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
+                  <a href="projects/p4p/index.html" class="btn btn-outline">View Curriculum &rarr;</a>
+                  <span class="mono" style="color: var(--muted);">Scope: 120+ Students Coached</span>
+                </div>
               </div>
             </div>
           </article>
 
         </div>
-
-        <!-- Pagination Controls -->
-        <nav class="pagination-nav" aria-label="Projects Gallery Pagination">
-          <span class="pagination-link active" aria-current="page">1</span>
-          <a href="projects-page-2.html" class="pagination-link" aria-label="Go to Page 2">2</a>
-          <a href="projects-page-3.html" class="pagination-link" aria-label="Go to Page 3 (In-Build Systems)">3 (In-Build)</a>
-          <a href="projects-page-2.html" class="pagination-next">Next Page →</a>
-        </nav>
       </div>
     </section>
 
-    <!-- Closing CTA -->
-    <section class="closing-cta" aria-label="Start a Project">
-      <div class="container">
-        <div class="closing-cta-grid">
-          <div class="closing-cta-left">
-            <h2>Let's build something that works.</h2>
-            <p>I take on a small number of new projects each month. If you have a system to build or copy to fix, reach out.</p>
+    <!-- Closing Section (Reused From Home Page) -->
+    <section class="closing-section" aria-label="Start Conversation">
+      <div class="container closing-grid">
+        <div>
+          <h2 class="closing-title">Tell me what you need built.</h2>
+          <div>
+            <a href="mailto:emmanuelajagbe6@gmail.com" class="copy-email-link" data-email="emmanuelajagbe6@gmail.com" title="Click to copy email">
+              <span>emmanuelajagbe6@gmail.com</span>
+              <span class="copy-feedback-toast">Copied</span>
+            </a>
           </div>
-          <div class="closing-cta-right">
-            <div class="closing-contact-info">
-              <span class="closing-contact-item">emmanuelajagbe6@gmail.com</span>
-              <span class="closing-contact-item">+234 703 631 6514 (WhatsApp)</span>
-              <span class="closing-contact-item">eoajagbe.name.ng</span>
-            </div>
-            <a href="contact.html" class="btn btn-cta-submit">Send a Project Brief</a>
+          <p class="mono" style="color: var(--inverse-muted); margin-bottom: var(--space-6);">I reply within 12 hours.</p>
+
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Send a project brief</a>
+            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+          <div class="mono" style="color: var(--inverse-muted); line-height: 1.8;">
+            Availability: Taking projects now.<br>
+            Timezone: West Africa Time (WAT, UTC+1).<br>
+            Delivery: Sub-second performance benchmarks guaranteed.
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col footer-col-identity">
-        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Logo" class="footer-logo">
-        <p class="footer-bio">
-          Ajagbe Emmanuel Oluwatobi<br>
-          Fullstack Engineer. Technical Copywriter.<br>
-          Jos, Nigeria.
-        </p>
-        <div class="footer-social-links">
-          <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col">
+          <h3>Ajagbe Emmanuel</h3>
+          <p style="color: var(--inverse-ink-2); line-height: 1.6; margin-bottom: var(--space-4);">
+            Fullstack engineer &amp; technical copywriter. 7+ years building for clients.
+          </p>
+          <div class="mono" style="color: var(--inverse-muted);">Jos, Nigeria</div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links-list">
+            <li><a href="services.html#web">Websites &amp; Apps</a></li>
+            <li><a href="services.html#wordpress">WordPress &amp; WooCommerce</a></li>
+            <li><a href="services.html#copy">Website Copy</a></li>
+            <li><a href="services.html#care">Care Plans &amp; Fixes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Network</h3>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:emmanuelajagbe6@gmail.com">Direct Email</a></li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="footer-col">
-        <h3>Pages</h3>
-        <ul class="footer-links-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Services</h3>
-        <ul class="footer-links-list">
-          <li><a href="services.html#wordpress">WordPress Development</a></li>
-          <li><a href="services.html#laravel">Laravel / PHP</a></li>
-          <li><a href="services.html#woocommerce">WooCommerce</a></li>
-          <li><a href="services.html#seo">SEO Writing</a></li>
-          <li><a href="services.html#management">Management</a></li>
-          <li><a href="services.html#data">Data Analysis</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Get in Touch</h3>
-        <div class="footer-contact-details">
-          <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
-          <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
-        </div>
-        <a href="contact.html" class="btn btn-outline-nav">Start a Project</a>
-      </div>
+    <div class="footer-wordmark-container" aria-hidden="true">
+      <div class="footer-giant-wordmark">Ajagbe Emmanuel</div>
     </div>
 
     <div class="container footer-bottom-bar">
-      <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
-      <a href="index.html">eoajagbe.name.ng</a>
+      <span>&copy; <span id="footer-year">2026</span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</span>
+      <span class="mono">eoajagbe.name.ng</span>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
   <script src="assets/js/main.js" defer></script>
 </body>

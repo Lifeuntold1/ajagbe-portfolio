@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none">
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  
+  <!-- Outer hairline frame -->
+  <rect x="40" y="40" width="1120" height="550" stroke="#222222" stroke-width="1"/>
+  <rect x="52" y="52" width="1096" height="526" stroke="#161616" stroke-width="1"/>
+  
+  <!-- Corner registration ticks -->
+  <path d="M 60 70 L 80 70 M 70 60 L 70 80" stroke="#888888" stroke-width="1.5"/>
+  <path d="M 1120 70 L 1140 70 M 1130 60 L 1130 80" stroke="#888888" stroke-width="1.5"/>
+  <path d="M 60 560 L 80 560 M 70 550 L 70 570" stroke="#888888" stroke-width="1.5"/>
+  <path d="M 1120 560 L 1140 560 M 1130 550 L 1130 570" stroke="#888888" stroke-width="1.5"/>
+
+  <!-- Telemetry Header -->
+  <text x="90" y="110" font-family="'JetBrains Mono', monospace" font-size="14" fill="#D4FF3A" letter-spacing="3">AJAGBE EMMANUEL OLUWATOBI</text>
+  <text x="1110" y="110" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="14" fill="#888888" letter-spacing="1.5">eoajagbe.name.ng · JOS, NIGERIA</text>
+
+  <line x1="90" y1="130" x2="1110" y2="130" stroke="#222222" stroke-width="1"/>
+
+  <!-- Main Headline -->
+  <text x="90" y="240" font-family="'Bricolage Grotesque', sans-serif" font-weight="800" font-size="64" fill="#F5F5F0" letter-spacing="-1.5">The Physicist Who</text>
+  <text x="90" y="315" font-family="'Bricolage Grotesque', sans-serif" font-weight="800" font-size="64" fill="#F5F5F0" letter-spacing="-1.5">Builds the Web.</text>
+
+  <!-- Description -->
+  <text x="90" y="385" font-family="'Instrument Sans', sans-serif" font-size="22" fill="#A0A0A0">BSc Physics Graduate &amp; Full Stack Web Developer.</text>
+  <text x="90" y="420" font-family="'Instrument Sans', sans-serif" font-size="20" fill="#707070">High-performance applications with mathematical precision and disciplined systems.</text>
+
+  <!-- Footer Stats / Stack -->
+  <line x1="90" y1="480" x2="1110" y2="480" stroke="#222222" stroke-width="1"/>
+  
+  <text x="90" y="525" font-family="'JetBrains Mono', monospace" font-size="13" fill="#D4FF3A">STACK: TYPESCRIPT · LARAVEL · MYSQL · PYTHON · HTML5</text>
+  <text x="1110" y="525" text-anchor="end" font-family="'JetBrains Mono', monospace" font-size="13" fill="#888888">COORDINATES: 09°53′47″N · 08°53′30″E</text>
+</svg>

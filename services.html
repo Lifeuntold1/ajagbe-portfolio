@@ -18,8 +18,8 @@
   </script>
 
   <title>Services | Ajagbe Emmanuel - Web Systems &amp; Technical Copy</title>
-  <meta name="description" content="Eight ways I help businesses and research teams: Laravel SaaS, WordPress, WooCommerce, Conversion Copywriting, Data Analysis, and SEO.">
-  <meta name="keywords" content="web developer services, Laravel development, WordPress themes, WooCommerce, copywriting, data analysis, SEO, Jos Nigeria">
+  <meta name="description" content="Web development in Laravel and React, custom WordPress themes, and conversion copywriting. Engineered in Jos, Nigeria.">
+  <meta name="keywords" content="web development services, Laravel Nigeria, WordPress WooCommerce developer, conversion copywriting Jos">
   <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
   <meta name="robots" content="index, follow">
 
@@ -28,303 +28,426 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Services | Ajagbe Emmanuel - Web Systems &amp; Technical Copy">
-  <meta property="og:description" content="Eight ways I help businesses and research teams: Laravel SaaS, WordPress, WooCommerce, Conversion Copywriting, Data Analysis, and SEO.">
+  <meta property="og:description" content="Web development in Laravel and React, custom WordPress themes, and conversion copywriting. Engineered in Jos, Nigeria.">
   <meta property="og:url" content="https://eoajagbe.name.ng/services.html">
-  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
 
-  <!-- Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Services | Ajagbe Emmanuel - Web Systems &amp; Technical Copy">
-  <meta name="twitter:description" content="Eight ways I help businesses and research teams: Laravel SaaS, WordPress, WooCommerce, Conversion Copywriting, Data Analysis, and SEO.">
-  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/ajagbe-emmanuel.jpg">
+  <meta name="twitter:description" content="Web development in Laravel and React, custom WordPress themes, and conversion copywriting.">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "provider": {
+      "@type": "Person",
+      "name": "Ajagbe Emmanuel Oluwatobi"
+    },
+    "serviceType": "Web Systems Engineering & Technical Copywriting",
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Engineering & Copywriting Services"
+    }
+  }
+  </script>
 
   <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
+
+  <!-- Preconnected Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Scroll Progress Bar -->
+  <div class="scroll-progress-bar" aria-hidden="true">
+    <div class="scroll-progress-fill"></div>
+  </div>
+
+  <!-- Header & Navigation -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand-logo" aria-label="Ajagbe Emmanuel Home">
-        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Oluwatobi Logo">
-      </a>
+      <div class="brand-wrapper">
+        <a href="index.html" class="site-logo" aria-label="Ajagbe Emmanuel Home">
+          <span>Ajagbe</span>
+          <span class="dot"></span>
+          <span>Emmanuel</span>
+        </a>
+      </div>
 
       <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="about.html" class="nav-link">About</a>
+        <a href="index.html#work" class="nav-link">Work</a>
         <a href="services.html" class="nav-link active">Services</a>
+        <a href="about.html" class="nav-link">About</a>
         <a href="projects.html" class="nav-link">Projects</a>
         <a href="contact.html" class="nav-link">Contact</a>
       </nav>
 
-      <div class="header-actions">
-        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle visual theme">
+      <div class="header-controls">
+        <div class="status-clock-chip" title="Live Local Time in Jos, Nigeria">
+          <span class="status-dot-pulse"></span>
+          <span class="mono" id="live-clock-wat">Jos WAT</span>
+        </div>
+
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
           <span id="theme-icon">☾</span>
         </button>
-        <a href="contact.html" class="btn btn-outline-nav desktop-only">Hire Me</a>
-        <button class="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+
+        <a href="contact.html" class="btn btn-outline" style="padding: 10px 20px;">Hire Me</a>
+
+        <button class="menu-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <span class="line"></span>
+          <span class="line"></span>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Overlay -->
-  <div class="mobile-overlay" aria-label="Mobile Navigation">
-    <a href="index.html" class="mobile-overlay-link">Home</a>
-    <a href="about.html" class="mobile-overlay-link">About</a>
-    <a href="services.html" class="mobile-overlay-link active">Services</a>
-    <a href="projects.html" class="mobile-overlay-link">Projects</a>
-    <a href="contact.html" class="mobile-overlay-link">Contact</a>
+  <!-- Mobile Fullscreen Overlay -->
+  <div class="mobile-menu-overlay" aria-label="Mobile Navigation">
+    <div class="mobile-menu-head">
+      <a href="index.html" class="site-logo">
+        <span>Ajagbe</span>
+        <span class="dot"></span>
+        <span>Emmanuel</span>
+      </a>
+      <button class="mobile-menu-close btn btn-outline" style="padding: 6px 14px;">Close</button>
+    </div>
+
+    <nav class="mobile-menu-links">
+      <a href="index.html#work" class="mobile-menu-link">Work</a>
+      <a href="services.html" class="mobile-menu-link">Services</a>
+      <a href="about.html" class="mobile-menu-link">About</a>
+      <a href="projects.html" class="mobile-menu-link">Projects</a>
+      <a href="contact.html" class="mobile-menu-link">Contact</a>
+    </nav>
+
+    <div class="mobile-menu-foot">
+      <span class="mono">Jos, Nigeria</span>
+      <span class="mono">Reply: within 12h</span>
+    </div>
   </div>
 
-  <main>
-    <!-- Hero Section -->
-    <section class="section section-primary" style="padding-bottom: var(--space-8);">
-      <div class="container reveal-item">
-        <span class="section-label">Capabilities</span>
-        <h1>Eight ways I can help your business.</h1>
-        <p class="lead-text" style="max-width: 680px; margin-top: var(--space-4);">
-          Digital software solutions engineered for direct conversions. From scalable databases to technical messaging.
-        </p>
-      </div>
-    </section>
+  <main id="main-content">
 
-    <!-- 01: Laravel / SaaS -->
-    <section class="section section-primary service-section-wrap" id="laravel">
-      <span class="service-watermark" aria-hidden="true">01</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">Fullstack</span>
-        <h2>Custom Laravel &amp; SaaS Architectures</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          I construct database structures rather than basic layout templates. Whether your system operates in education, logistics, publishing, or eCommerce, I engineer secure applications that automate routine data workflows.
-        </p>
-        <ul class="service-feature-list">
-          <li>Fullstack Database Architecture (PHP / Laravel Stack)</li>
-          <li>Secure Operational Portals &amp; User Dashboards</li>
-          <li>Custom RESTful API Pipelines &amp; Integrations</li>
-          <li>Optimized MySQL Relational Schemas &amp; Indexing</li>
-        </ul>
-        <p><a href="projects.html#nexus" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- 02: WordPress Themes -->
-    <section class="section section-secondary service-section-wrap" id="wordpress">
-      <span class="service-watermark" aria-hidden="true">02</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">WordPress</span>
-        <h2>Custom WordPress Themes &amp; Blocks</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          I build custom WordPress solutions from the ground up without using heavy page-builder plugins. Your administrative team receives a lightweight, secure content environment that loads fast on every device.
-        </p>
-        <ul class="service-feature-list">
-          <li>Semantic Gutenberg Block Construction</li>
-          <li>Lean Theme Logic Free of Unnecessary Plugins</li>
-          <li>PageSpeed Optimization Targeting 90+ Mobile Scores</li>
-          <li>Structured Content Schemas for Long-Term Maintenance</li>
-        </ul>
-        <p><a href="projects.html#jaoos" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- 03: WooCommerce -->
-    <section class="section section-primary service-section-wrap" id="woocommerce">
-      <span class="service-watermark" aria-hidden="true">03</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">eCommerce</span>
-        <h2>WooCommerce Stores &amp; Systems</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          Turn casual visitors into repeat buyers with checkout funnels optimized for speed. I configure custom product catalogs, integrate regional payment gateways, and automate customer order notifications.
-        </p>
-        <ul class="service-feature-list">
-          <li>Custom Checkout Optimization to Reduce Cart Drop-Off</li>
-          <li>Payment Gateway API Integrations (Paystack, Flutterwave, Stripe)</li>
-          <li>Inventory Synchronization &amp; Order Management Logic</li>
-          <li>Wholesale &amp; Affiliate Pricing Customizations</li>
-        </ul>
-        <p><a href="projects.html#nexus" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- 04: Copywriting -->
-    <section class="section section-secondary service-section-wrap" id="copywriting">
-      <span class="service-watermark" aria-hidden="true">04</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">Messaging</span>
-        <h2>Conversion &amp; Technical Copywriting</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          Software requires clear words to sell. I write direct, active copy that explains complex products simply, eliminates confusion, and leads potential clients to take immediate action.
-        </p>
-        <ul class="service-feature-list">
-          <li>High-Converting SaaS &amp; Service Landing Page Copy</li>
-          <li>Technical Documentation &amp; User Manuals</li>
-          <li>Email Welcome Sequences &amp; Product Launch Campaigns</li>
-          <li>Brand Positioning Strategy &amp; Core Value Messaging</li>
-        </ul>
-        <p><a href="projects.html#taskflow" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- 05: Academic Research -->
-    <section class="section section-primary service-section-wrap" id="academic">
-      <span class="service-watermark" aria-hidden="true">05</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">Science</span>
-        <h2>Academic Research &amp; Computational Physics</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          Leveraging an academic Physics foundation to format research papers, analyze mathematical simulations, and structure technical reports according to strict scientific standards.
-        </p>
-        <ul class="service-feature-list">
-          <li>LaTeX Document Preparation &amp; Mathematical Typesetting</li>
-          <li>Numerical Simulations &amp; Computational Physics Modeling</li>
-          <li>Literature Reviews &amp; Systematic Data Compilation</li>
-          <li>Clear Diagramming of Experimental Methodologies</li>
-        </ul>
-        <p><a href="projects.html#physlab" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- 06: Data Analysis -->
-    <section class="section section-secondary service-section-wrap" id="data">
-      <span class="service-watermark" aria-hidden="true">06</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">Analytics</span>
-        <h2>Data Analysis &amp; Visualization</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          I turn unstructured datasets into clear visual summaries. Using Python and specialized data tools, I uncover key trends and build reporting views that support informed business decisions.
-        </p>
-        <ul class="service-feature-list">
-          <li>Data Cleaning &amp; Normalization (Python, Pandas, NumPy)</li>
-          <li>Interactive Visualizations &amp; Trend Dashboards (Power BI, Excel)</li>
-          <li>Automated Web Scraping &amp; Data Pipeline Extraction</li>
-          <li>Statistical Correlation &amp; Performance Reporting</li>
-        </ul>
-        <p><a href="projects.html#trendanalyzer" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- 07: Technical Coaching -->
-    <section class="section section-primary service-section-wrap" id="coaching">
-      <span class="service-watermark" aria-hidden="true">07</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">Education</span>
-        <h2>Technical Coding Coaching</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          Structured mentorship for developers and students looking to master core programming fundamentals, computational thinking, and production deployment workflows.
-        </p>
-        <ul class="service-feature-list">
-          <li>One-on-One Practical Web Development Tutoring (HTML, CSS, JS, PHP)</li>
-          <li>Python for Science &amp; Data Analysis Fundamentals</li>
-          <li>Code Review, Architectural Audits, and Best Practices</li>
-          <li>Guidance on Real-World Freelance &amp; Engineering Workflows</li>
-        </ul>
-        <p><a href="projects.html#p4p" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- 08: SEO -->
-    <section class="section section-secondary service-section-wrap" id="seo">
-      <span class="service-watermark" aria-hidden="true">08</span>
-      <div class="container service-content-wrap reveal-item">
-        <span class="tag" style="margin-bottom: var(--space-2);">Visibility</span>
-        <h2>Search Engine Optimization (SEO)</h2>
-        <p class="lead-text" style="max-width: 760px; margin-top: var(--space-2);">
-          Build long-term organic traffic with technical SEO built directly into your website's source code. I align schema markup, metadata, and site hierarchy to search engine standards.
-        </p>
-        <ul class="service-feature-list">
-          <li>Technical Architecture &amp; Core Web Vitals Auditing</li>
-          <li>Structured Schema Markup Integration (JSON-LD)</li>
-          <li>Keyword Research &amp; Content Silo Mapping</li>
-          <li>On-Page Optimization of Semantic HTML Elements</li>
-        </ul>
-        <p><a href="projects.html#taskflow" class="text-link">See example →</a></p>
-      </div>
-    </section>
-
-    <!-- Closing CTA -->
-    <section class="closing-cta" aria-label="Start a Project">
+    <!-- Services Hero Header -->
+    <section class="section" style="padding-top: calc(var(--header-height) + var(--space-12)); padding-bottom: var(--space-8);">
       <div class="container">
-        <div class="closing-cta-grid">
-          <div class="closing-cta-left">
-            <h2>Let's build something that works.</h2>
-            <p>I take on a small number of new projects each month. If you have a system to build or copy to fix, reach out.</p>
-          </div>
-          <div class="closing-cta-right">
-            <div class="closing-contact-info">
-              <span class="closing-contact-item">emmanuelajagbe6@gmail.com</span>
-              <span class="closing-contact-item">+234 703 631 6514 (WhatsApp)</span>
-              <span class="closing-contact-item">eoajagbe.name.ng</span>
+        <span class="mono" style="color: var(--accent);">01 — Service Architecture</span>
+        <h1 style="font-size: var(--text-hero); line-height: 0.98; margin-block: var(--space-4);">
+          What I can build <span class="font-accent">and write</span> for you.
+        </h1>
+        <p style="font-size: var(--text-lead); max-width: 680px; color: var(--ink-2); line-height: 1.6;">
+          Eight structured service modules. From standalone landing pages to high-concurrency web systems and automated business pipelines.
+        </p>
+      </div>
+    </section>
+
+    <!-- Sticky Card Stack (M6 Interactive Deck) -->
+    <section class="section hairline-t" style="padding-top: var(--space-8);" aria-label="Service Modules Stack">
+      <div class="container">
+        <div class="sticky-stack-container">
+
+          <!-- Card 1: Websites and web apps -->
+          <article class="sticky-service-card" id="web">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">01</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">Websites and web apps</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Custom web platforms built in Laravel, React and MySQL. Designed for speed, database stability and clean code you can maintain.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#nexus" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Fullstack Laravel and React architecture</li>
+                  <li>Relational MySQL schema design</li>
+                  <li>Restricted vendor and customer dashboards</li>
+                  <li>Verified sub-second query performance</li>
+                </ul>
+              </div>
             </div>
-            <a href="contact.html" class="btn btn-cta-submit">Send a Project Brief</a>
+          </article>
+
+          <!-- Card 2: WordPress and WooCommerce -->
+          <article class="sticky-service-card" id="wordpress">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">02</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">WordPress and WooCommerce</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Custom WordPress themes and WooCommerce online stores with zero template bloat. Fast loading, secure and simple for your team to manage.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#scholarhub" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Lightweight custom block and theme build</li>
+                  <li>WooCommerce checkout and payment integration</li>
+                  <li>Product catalog filtering and search setup</li>
+                  <li>Security hardening and caching configuration</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Website copy -->
+          <article class="sticky-service-card" id="copy">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">03</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">Website copy</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Direct sales copy and landing page text written to convert readers into buyers. Every word states the outcome and prompts one clear action.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#taskflow" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Value-proposition hero headlines</li>
+                  <li>Direct-response body copy and microcopy</li>
+                  <li>Conversion-focused call to action labels</li>
+                  <li>Customer anxiety objection handling</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: SEO setup -->
+          <article class="sticky-service-card" id="seo">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">04</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">SEO setup</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Technical search engine optimization built straight into the HTML. Your site gains clean indexing, structured schema and rich link previews.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#scholarhub" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Metadata titles, descriptions and canonical links</li>
+                  <li>Open Graph and Twitter social card cards</li>
+                  <li>JSON-LD structured data implementation</li>
+                  <li>Automated sitemap.xml and robots.txt</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Monthly care plans -->
+          <article class="sticky-service-card" id="care">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">05</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">Monthly care plans</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Ongoing maintenance that prevents downtime and fixes bugs before your customers notice. Includes software updates, backups and fast bug fixes.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#nexus" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Weekly off-site encrypted backups</li>
+                  <li>Core engine and security patch updates</li>
+                  <li>Priority bug resolution within 12 hours</li>
+                  <li>Uptime and server health monitoring</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Business automation -->
+          <article class="sticky-service-card" id="automation">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">06</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">Business automation</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Simple scripts and notification hooks connecting your website to your business operations. Automates client reminders, invoices and data entry.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#trendanalyzer" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Instant WhatsApp client booking notifications</li>
+                  <li>Automated invoice generation triggers</li>
+                  <li>Webhook data pipelines to Google Sheets</li>
+                  <li>Lead qualification form routing</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 7: Data dashboards -->
+          <article class="sticky-service-card" id="dashboards">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">07</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">Data dashboards</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Custom data analysis pipelines and visualization tools using Python and Excel. Turns messy spreadsheets into clear operational charts.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#physlab" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Automated Python data cleaning scripts</li>
+                  <li>Matplotlib and Seaborn statistical plots</li>
+                  <li>Business metrics reporting dashboards</li>
+                  <li>Error-margin tracking and data validation</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 8: Tech coaching -->
+          <article class="sticky-service-card" id="coaching">
+            <div class="stack-card-grid">
+              <div class="stack-card-num">08</div>
+              <div>
+                <h2 style="font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: var(--space-3); line-height: 1.1;">Tech coaching</h2>
+                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                  Structured coaching in Python programming, web engineering and numerical physics modeling. Built over 120 successful student coaching cases.
+                </p>
+                <div style="margin-top: var(--space-6);">
+                  <a href="projects.html#p4p" class="btn btn-outline" style="padding: 8px 18px;">See an example &rarr;</a>
+                </div>
+              </div>
+              <div>
+                <span class="mono" style="color: var(--muted); text-transform: uppercase;">Key Deliverables</span>
+                <ul class="stack-deliverables-list">
+                  <li>Step-by-step programming curriculum</li>
+                  <li>Scientific Python and matrix operations</li>
+                  <li>Hands-on code reviews and debugging sessions</li>
+                  <li>Practical computational lab assessments</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing Section (Reused From Home Page) -->
+    <section class="closing-section" aria-label="Start Conversation">
+      <div class="container closing-grid">
+        <div>
+          <h2 class="closing-title">Tell me what you need built.</h2>
+          <div>
+            <a href="mailto:emmanuelajagbe6@gmail.com" class="copy-email-link" data-email="emmanuelajagbe6@gmail.com" title="Click to copy email">
+              <span>emmanuelajagbe6@gmail.com</span>
+              <span class="copy-feedback-toast">Copied</span>
+            </a>
+          </div>
+          <p class="mono" style="color: var(--inverse-muted); margin-bottom: var(--space-6);">I reply within 12 hours.</p>
+
+          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary">Send a project brief</a>
+            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp</a>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: flex-end;">
+          <div class="mono" style="color: var(--inverse-muted); line-height: 1.8;">
+            Availability: Taking projects now.<br>
+            Timezone: West Africa Time (WAT, UTC+1).<br>
+            Delivery: Direct engineer contact from start to launch.
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
+  <!-- Site Footer -->
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col footer-col-identity">
-        <img src="assets/images/ajagbe-emmanuel-portfolio-logo.png" alt="Ajagbe Emmanuel Logo" class="footer-logo">
-        <p class="footer-bio">
-          Ajagbe Emmanuel Oluwatobi<br>
-          Fullstack Engineer. Technical Copywriter.<br>
-          Jos, Nigeria.
-        </p>
-        <div class="footer-social-links">
-          <a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.facebook.com/ajagbeemmanuel.oluwatobi" target="_blank" rel="noopener noreferrer">Facebook</a>
+    <div class="container">
+      <div class="footer-columns-grid">
+        <div class="footer-col">
+          <h3>Ajagbe Emmanuel</h3>
+          <p style="color: var(--inverse-ink-2); line-height: 1.6; margin-bottom: var(--space-4);">
+            Fullstack engineer &amp; technical copywriter. 7+ years building for clients.
+          </p>
+          <div class="mono" style="color: var(--inverse-muted);">Jos, Nigeria</div>
+        </div>
+
+        <div class="footer-col">
+          <h3>Pages</h3>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Services</h3>
+          <ul class="footer-links-list">
+            <li><a href="#web">Websites &amp; Apps</a></li>
+            <li><a href="#wordpress">WordPress &amp; WooCommerce</a></li>
+            <li><a href="#copy">Website Copy</a></li>
+            <li><a href="#care">Care Plans &amp; Fixes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Network</h3>
+          <ul class="footer-links-list">
+            <li><a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="mailto:emmanuelajagbe6@gmail.com">Direct Email</a></li>
+          </ul>
         </div>
       </div>
+    </div>
 
-      <div class="footer-col">
-        <h3>Pages</h3>
-        <ul class="footer-links-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Services</h3>
-        <ul class="footer-links-list">
-          <li><a href="services.html#wordpress">WordPress Development</a></li>
-          <li><a href="services.html#laravel">Laravel / PHP</a></li>
-          <li><a href="services.html#woocommerce">WooCommerce</a></li>
-          <li><a href="services.html#seo">SEO Writing</a></li>
-          <li><a href="services.html#management">Management</a></li>
-          <li><a href="services.html#data">Data Analysis</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3>Get in Touch</h3>
-        <div class="footer-contact-details">
-          <a href="mailto:emmanuelajagbe6@gmail.com">emmanuelajagbe6@gmail.com</a>
-          <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">+234 703 631 6514</a>
-        </div>
-        <a href="contact.html" class="btn btn-outline-nav">Start a Project</a>
-      </div>
+    <div class="footer-wordmark-container" aria-hidden="true">
+      <div class="footer-giant-wordmark">Ajagbe Emmanuel</div>
     </div>
 
     <div class="container footer-bottom-bar">
-      <p>&copy; <span id="footer-year"></span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</p>
-      <a href="index.html">eoajagbe.name.ng</a>
+      <span>&copy; <span id="footer-year">2026</span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</span>
+      <span class="mono">eoajagbe.name.ng</span>
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
   <script src="assets/js/main.js" defer></script>
 </body>
