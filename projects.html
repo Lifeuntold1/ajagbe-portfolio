@@ -1,25 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- FOUC Blocking Theme Switcher -->
-  <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 'dark';
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-      }
-    })();
-  </script>
-
   <title>Selected Projects | Ajagbe Emmanuel - Web Systems &amp; Software</title>
   <meta name="description" content="Production web applications, custom WordPress platforms, and computational software shipped by Ajagbe Emmanuel Oluwatobi.">
-  <meta name="keywords" content="web developer portfolio, Laravel projects, WordPress projects, Nigeria developer, Ajagbe Emmanuel">
+  <meta name="keywords" content="web developer portfolio, Laravel projects Nigeria, WordPress showcase, React web applications, computational physics software">
   <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
   <meta name="robots" content="index, follow">
 
@@ -30,34 +18,32 @@
   <meta property="og:title" content="Selected Projects | Ajagbe Emmanuel - Web Systems &amp; Software">
   <meta property="og:description" content="Production web applications, custom WordPress platforms, and computational software shipped by Ajagbe Emmanuel Oluwatobi.">
   <meta property="og:url" content="https://eoajagbe.name.ng/projects.html">
-  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/projects/nexus-market.png">
+  <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Selected Projects | Ajagbe Emmanuel - Web Systems &amp; Software">
   <meta name="twitter:description" content="Production web applications, custom WordPress platforms, and computational software shipped by Ajagbe Emmanuel Oluwatobi.">
-  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/projects/nexus-market.png">
+  <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
-    "name": "Selected Projects by Ajagbe Emmanuel Oluwatobi",
+    "name": "Selected Projects by Ajagbe Emmanuel",
     "url": "https://eoajagbe.name.ng/projects.html",
-    "creator": {
-      "@type": "Person",
-      "name": "Ajagbe Emmanuel Oluwatobi"
-    }
+    "description": "Production web systems and computational applications engineered by Ajagbe Emmanuel Oluwatobi."
   }
   </script>
 
-  <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
-
-  <!-- Preconnected Typography -->
+  <!-- Typography Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:italic@0;1&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -65,355 +51,359 @@
   <!-- Accessible Skip Link -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Scroll Progress Bar -->
-  <div class="scroll-progress-bar" aria-hidden="true">
-    <div class="scroll-progress-fill"></div>
-  </div>
+  <!-- Header / Navigation -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="Ajagbe Emmanuel Home">
+        <img src="assets/images/emmanuel-portrait.jpg" alt="Ajagbe Emmanuel" class="nav-avatar" width="36" height="36">
+        <span>Ajagbe Emmanuel</span>
+        <span class="nav-status-badge">
+          <span class="status-dot"></span> Available
+        </span>
+      </a>
 
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand-wrapper">
-        <a href="index.html" class="site-logo" aria-label="Ajagbe Emmanuel Home">
-          <span>Ajagbe</span>
-          <span class="dot"></span>
-          <span>Emmanuel</span>
-        </a>
-      </div>
-
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="index.html#work" class="nav-link">Work</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="projects.html" class="nav-link active">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link is-active">Projects</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
 
-      <div class="header-controls">
-        <div class="status-clock-chip" title="Live Local Time in Jos, Nigeria">
-          <span class="status-dot-pulse"></span>
-          <span class="mono" id="live-clock-wat">Jos WAT</span>
-        </div>
-
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
-          <span id="theme-icon">☾</span>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Night/Paper Theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
         </button>
-
-        <a href="contact.html" class="btn btn-outline" style="padding: 10px 20px;">Hire Me</a>
-
-        <button class="menu-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span class="line"></span>
-          <span class="line"></span>
+        <button class="menu-toggle-btn" aria-label="Open Mobile Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Fullscreen Overlay -->
-  <div class="mobile-menu-overlay" aria-label="Mobile Navigation">
-    <div class="mobile-menu-head">
-      <a href="index.html" class="site-logo">
-        <span>Ajagbe</span>
-        <span class="dot"></span>
-        <span>Emmanuel</span>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a></li>
+      <li><a href="projects.html" class="mobile-nav-link is-active">Projects <span>&rarr;</span></a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services <span>&rarr;</span></a></li>
+      <li><a href="about.html" class="mobile-nav-link">About <span>&rarr;</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact <span>&rarr;</span></a></li>
+    </ul>
+
+    <div style="margin-top: auto; padding-top: var(--space-8);">
+      <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; text-align: center;">
+        Chat on WhatsApp
       </a>
-      <button class="mobile-menu-close btn btn-outline" style="padding: 6px 14px;">Close</button>
-    </div>
-
-    <nav class="mobile-menu-links">
-      <a href="index.html#work" class="mobile-menu-link">Work</a>
-      <a href="services.html" class="mobile-menu-link">Services</a>
-      <a href="about.html" class="mobile-menu-link">About</a>
-      <a href="projects.html" class="mobile-menu-link">Projects</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
-    </nav>
-
-    <div class="mobile-menu-foot">
-      <span class="mono">Jos, Nigeria</span>
-      <span class="mono">Reply: within 12h</span>
+      <p class="mono-sm" style="text-align: center; margin-top: var(--space-3); color: var(--muted);">
+        Jos, Nigeria &middot; <span class="lagos-clock">WAT</span>
+      </p>
     </div>
   </div>
 
   <main id="main-content">
-
-    <!-- Projects Hero Header -->
-    <section class="section" style="padding-top: calc(var(--header-height) + var(--space-12)); padding-bottom: var(--space-8);">
+    <!-- Projects Page Hero -->
+    <section class="section page-hero">
       <div class="container">
-        <span class="mono" style="color: var(--accent);">01 — Production Catalog</span>
-        <h1 style="font-size: var(--text-hero); line-height: 0.98; margin-block: var(--space-4);">
-          Work I have <span class="font-accent">shipped</span>.
-        </h1>
-        <p style="font-size: var(--text-lead); max-width: 680px; color: var(--ink-2); line-height: 1.6;">
-          Selected web systems, digital platforms, and computational tools. Hover on desktop to preview. Click any record to inspect the technical case.
+        <span class="page-hero-eyebrow">
+          <span class="status-beacon"></span> 01 &middot; Production Portfolio
+        </span>
+        <h1 class="page-hero-title">Selected Projects</h1>
+        <p class="page-hero-lead">
+          Production web applications, custom platforms, and computational software shipped by Ajagbe Emmanuel Oluwatobi.
         </p>
+
+        <!-- Pagination Tabs -->
+        <div style="display: flex; gap: var(--space-2); margin-top: var(--space-6); flex-wrap: wrap;">
+          <a href="projects.html" class="page-pill-btn is-active">Page 1 (Featured)</a>
+          <a href="projects-page-2.html" class="page-pill-btn">Page 2 (Web &amp; Identity)</a>
+          <a href="projects-page-3.html" class="page-pill-btn">Page 3 (In-Build &amp; SaaS)</a>
+        </div>
       </div>
     </section>
 
-    <!-- Cursor Follower Floating Thumbnail (Desktop M3 / M10) -->
-    <div class="floating-preview-thumbnail" aria-hidden="true">
-      <img src="assets/images/projects/nexus-market.png" alt="Interactive Preview" id="preview-floating-img" width="280" height="175">
-    </div>
-
-    <!-- Projects List & Detailed Case Rows -->
-    <section class="section hairline-t" style="padding-top: var(--space-8);" aria-label="Project Case Studies">
+    <!-- Projects Feed Grid -->
+    <section class="section hairline-t" aria-label="Project Case Studies">
       <div class="container">
-
-        <div class="project-rows-table">
+        <div class="projects-feed-grid">
 
           <!-- 01: Nexus Market -->
-          <article class="project-showcase-row hairline-b" id="nexus" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/nexus-market.png">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Nexus Market</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">Laravel</span>
-                    <span class="tag">MySQL</span>
-                    <span class="tag">PHP</span>
-                  </div>
+          <article class="project-showcase-card" id="nexus">
+            <div class="project-media-box">
+              <img src="assets/images/projects/nexus-market.png" alt="Nexus Market eCommerce Platform" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">01 &middot; Live Production</span>
+                  <span class="mono-sm" style="color: var(--muted);">2024 &middot; E-Commerce</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2024 &middot; E-Commerce</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">01/08</div>
+                <h2 class="project-title">Nexus Market</h2>
+                <p class="project-desc">
+                  A multi-vendor marketplace with vendor dashboards, product inventory and affiliate tracking. Handles concurrent customer checkout carts with automated local currency payout settlement via Paystack.
+                </p>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">Laravel</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">Paystack</span>
+                  <span class="tag">Multi-Vendor</span>
+                </div>
               </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                  <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
-                    A multi-vendor marketplace with vendor dashboards, product inventory and affiliate tracking. Handles concurrent customer checkout carts with automated local currency payout settlement.
-                  </p>
-                  <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                    <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Live Platform &rarr;</a>
-                    <span class="mono" style="color: var(--muted);">Status: Live at nexusmkt.com.ng</span>
-                  </div>
-                </div>
+              <div>
+                <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  Visit Live Platform &rarr;
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 02: Jaoos Luxury Estates -->
-          <article class="project-showcase-row hairline-b" id="jaoos" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/jaoos-estates.png">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Jaoos Luxury Estates</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-                    <span class="tag">JavaScript</span>
-                  </div>
+          <article class="project-showcase-card" id="jaoos">
+            <div class="project-media-box">
+              <img src="assets/images/projects/jaoos-estates.png" alt="Jaoos Luxury Estates Portal" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">02 &middot; Client Portal</span>
+                  <span class="mono-sm" style="color: var(--muted);">2023 &middot; Real Estate</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Real Estate</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">02/08</div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
-                  An editorial property showcase engineered for high-ticket residential listings. Features property filter categories, a dynamic mortgage calculator and direct buyer inquiry routing.
+                <h2 class="project-title">Jaoos Luxury Estates</h2>
+                <p class="project-desc">
+                  A residential real estate catalog with custom property filtering, high-resolution media galleries, and direct agent inquiries via WhatsApp and email integrations.
                 </p>
-                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                  <a href="projects/jaoos/index.html" class="btn btn-outline">View Prototype &rarr;</a>
-                  <span class="mono" style="color: var(--muted);">Status: Prototype</span>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">HTML5</span>
+                  <span class="tag">CSS Grid</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">Lead Routing</span>
                 </div>
+              </div>
+              <div>
+                <a href="projects/jaoos/index.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  View Live Case Study &rarr;
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 03: Life Untold -->
-          <article class="project-showcase-row hairline-b" id="life-untold" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/lifeuntold-brand.svg">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Life Untold</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">Brand Architecture</span>
-                    <span class="tag">Content Strategy</span>
-                    <span class="tag">SEO</span>
-                  </div>
+          <article class="project-showcase-card" id="life-untold">
+            <div class="project-media-box">
+              <img src="assets/images/projects/lifeuntold-brand.svg" alt="Life Untold Brand System" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">03 &middot; Brand Identity</span>
+                  <span class="mono-sm" style="color: var(--muted);">Active Since 2017</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2017 &middot; Media Brand</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">03/08</div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
-                  An independent storytelling and brand identity platform active since 2017. Houses digital brand essays, technical guides and The Healing Series video documentation.
+                <h2 class="project-title">Life Untold</h2>
+                <p class="project-desc">
+                  An independent storytelling and brand identity platform active since 2017. Houses digital brand essays, technical guides, and The Healing Series multimedia documentation.
                 </p>
-                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                  <a href="about.html" class="btn btn-outline">Read The Brand Story &rarr;</a>
-                  <span class="mono" style="color: var(--muted);">Status: Active Enterprise</span>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">Brand Architecture</span>
+                  <span class="tag">Content Strategy</span>
+                  <span class="tag">Editorial Design</span>
                 </div>
+              </div>
+              <div>
+                <a href="contact.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  Request Brand Deck &rarr;
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 04: PhysLab Visualizer -->
-          <article class="project-showcase-row hairline-b" id="physlab" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/physlab-visualizer.png">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">PhysLab Visualizer</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">Python</span>
-                    <span class="tag">Pandas</span>
-                    <span class="tag">Matplotlib</span>
-                  </div>
+          <article class="project-showcase-card" id="physlab">
+            <div class="project-media-box">
+              <img src="assets/images/projects/physlab-visualizer.png" alt="PhysLab Interactive Physics Engine" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">04 &middot; Computational</span>
+                  <span class="mono-sm" style="color: var(--muted);">2024 &middot; Simulation</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2024 &middot; Physics Lab</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">04/08</div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
-                  A Python computational tool for processing laboratory sensor data and plotting experimental readings. Generates publication-ready physics charts with exact statistical error-margin curves.
+                <h2 class="project-title">PhysLab Visualizer</h2>
+                <p class="project-desc">
+                  An interactive physics simulation engine rendering mechanical wave propagation, harmonic oscillators, and parameter tuning in real-time at 60 FPS using HTML5 Canvas.
                 </p>
-                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                  <a href="projects/physlab/index.html" class="btn btn-outline">View Documentation &rarr;</a>
-                  <span class="mono" style="color: var(--muted);">Status: Working Lab Software</span>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">Canvas API</span>
+                  <span class="tag">Kinematics</span>
+                  <span class="tag">Vanilla JS</span>
                 </div>
+              </div>
+              <div>
+                <a href="projects/physlab/index.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  Launch Visualizer &rarr;
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 05: CareConnect Healthcare Portal -->
-          <article class="project-showcase-row hairline-b" id="careconnect" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/careconnect.png">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">CareConnect Healthcare Portal</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">UI/UX Design</span>
-                    <span class="tag">WCAG AAA</span>
-                    <span class="tag">Healthcare</span>
-                  </div>
+          <!-- 05: CareConnect -->
+          <article class="project-showcase-card" id="careconnect">
+            <div class="project-media-box">
+              <img src="assets/images/projects/careconnect.png" alt="CareConnect Telemedicine System" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">05 &middot; Health Tech</span>
+                  <span class="mono-sm" style="color: var(--muted);">2023 &middot; Telemedicine</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Healthcare</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">05/08</div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
-                  A high-contrast medical appointment portal designed for senior patients and accessible clinic booking. Features WCAG AAA contrast ratios, clear screen-reader landmarks and a 3-step registration flow.
+                <h2 class="project-title">CareConnect</h2>
+                <p class="project-desc">
+                  Patient triage, clinic scheduling, and doctor appointment booking interface optimized for accessibility and low-bandwidth connections.
                 </p>
-                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                  <a href="projects/careconnect/index.html" class="btn btn-outline">View Case Study &rarr;</a>
-                  <span class="mono" style="color: var(--muted);">Status: Prototype Case Study</span>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">React</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">Accessible UI</span>
                 </div>
+              </div>
+              <div>
+                <a href="contact.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  Inquire Case Study &rarr;
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 06: TaskFlow CRO Landing Page -->
-          <article class="project-showcase-row hairline-b" id="taskflow" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/taskflow.png">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">TaskFlow CRO Landing Page</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">Conversion Copy</span>
-                    <span class="tag">CRO Strategy</span>
-                    <span class="tag">HTML5 / CSS3</span>
-                  </div>
+          <!-- 06: TaskFlow -->
+          <article class="project-showcase-card" id="taskflow">
+            <div class="project-media-box">
+              <img src="assets/images/projects/taskflow.png" alt="TaskFlow Sprint Board" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">06 &middot; Productivity</span>
+                  <span class="mono-sm" style="color: var(--muted);">2023 &middot; SaaS App</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2024 &middot; Copywriting</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">06/08</div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
-                  A conversion-focused SaaS landing page built with Spartan direct-response sales copy. Structured with pain-relief positioning and immediate value propositions that produced a 20% conversion lift.
+                <h2 class="project-title">TaskFlow</h2>
+                <p class="project-desc">
+                  A drag-and-drop sprint planner with priority tagging, custom columns, and localStorage state persistence. Sub-100ms response time with zero external frameworks.
                 </p>
-                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                  <a href="projects/taskflow/index.html" class="btn btn-outline">Read The Copy &rarr;</a>
-                  <span class="mono" style="color: var(--muted);">Metric: +20% Conversion Lift</span>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Drag &amp; Drop</span>
+                  <span class="tag">Zero Bloat</span>
                 </div>
+              </div>
+              <div>
+                <a href="projects/taskflow/index.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  Open App Demo &rarr;
+                </a>
               </div>
             </div>
           </article>
 
           <!-- 07: The Scholar's Hub -->
-          <article class="project-showcase-row hairline-b" id="scholarhub" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/scholars-hub.png">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">The Scholar's Hub</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">WordPress</span>
-                    <span class="tag">Taxonomy</span>
-                    <span class="tag">SEO</span>
-                  </div>
+          <article class="project-showcase-card" id="scholarhub">
+            <div class="project-media-box">
+              <img src="assets/images/projects/scholars-hub.png" alt="Scholar's Hub Academic Platform" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">07 &middot; Education</span>
+                  <span class="mono-sm" style="color: var(--muted);">2022 &middot; Academic Portal</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Academic Hub</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">07/08</div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
-                  An academic documentation repository and journal indexing site built on WordPress. Organizes departmental research papers with clear category taxonomies and instant search discovery.
+                <h2 class="project-title">The Scholar&apos;s Hub</h2>
+                <p class="project-desc">
+                  Academic resource portal serving student researchers with curated departmental syllabi, past examination archives, and peer discussion boards.
                 </p>
-                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                  <a href="projects/scholarhub/index.html" class="btn btn-outline">View Hub Design &rarr;</a>
-                  <span class="mono" style="color: var(--muted);">Status: Academic Knowledge Base</span>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">PHP</span>
+                  <span class="tag">MySQL</span>
+                  <span class="tag">Document Indexing</span>
                 </div>
+              </div>
+              <div>
+                <a href="projects/scholarhub/index.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  View Live Portal &rarr;
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- 08: Python 4 Physics Syllabus -->
-          <article class="project-showcase-row hairline-b" id="p4p" style="padding-block: var(--space-8);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div class="project-row-interactive" data-preview-src="assets/images/projects/python4physics.png">
-                <div>
-                  <h2 style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05;">Python 4 Physics Syllabus</h2>
-                  <div style="margin-top: var(--space-2); display: flex; gap: var(--space-2); flex-wrap: wrap;">
-                    <span class="tag">Python</span>
-                    <span class="tag">Physics</span>
-                    <span class="tag">Curriculum</span>
-                  </div>
+          <!-- 08: Python 4 Physics -->
+          <article class="project-showcase-card" id="p4p">
+            <div class="project-media-box">
+              <img src="assets/images/projects/python4physics.png" alt="Python 4 Physics Curriculum" loading="lazy">
+            </div>
+            <div class="project-details-box">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-2);">
+                  <span class="mono-sm" style="color: var(--accent);">08 &middot; Computational</span>
+                  <span class="mono-sm" style="color: var(--muted);">2024 &middot; Curriculum</span>
                 </div>
-                <div class="mono" style="color: var(--muted); align-self: center;">2023 &middot; Education</div>
-                <div class="mono" style="color: var(--accent); align-self: center;">08/08</div>
-              </div>
-
-              <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-6);">
-                <p style="font-size: var(--text-body-lg); line-height: 1.6; color: var(--ink-2);">
+                <h2 class="project-title">Python 4 Physics</h2>
+                <p class="project-desc">
                   A computational programming curriculum connecting numerical methods directly to university physics differential equations. Coached over 120 undergraduate students through laboratory modeling assessments.
                 </p>
-                <div style="display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap;">
-                  <a href="projects/p4p/index.html" class="btn btn-outline">View Curriculum &rarr;</a>
-                  <span class="mono" style="color: var(--muted);">Scope: 120 Students Coached</span>
+                <div style="display: flex; gap: var(--space-2); flex-wrap: wrap; margin-bottom: var(--space-4);">
+                  <span class="tag">Python</span>
+                  <span class="tag">NumPy</span>
+                  <span class="tag">Curriculum</span>
                 </div>
+              </div>
+              <div>
+                <a href="projects/p4p/index.html" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.875rem;">
+                  View Curriculum &rarr;
+                </a>
               </div>
             </div>
           </article>
 
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-nav">
+          <a href="projects.html" class="page-pill-btn is-active">Page 1</a>
+          <a href="projects-page-2.html" class="page-pill-btn">Page 2 &rarr;</a>
+          <a href="projects-page-3.html" class="page-pill-btn">Page 3 (In-Build) &rarr;</a>
         </div>
       </div>
     </section>
 
-    <!-- Closing Section (Reused From Home Page) -->
-    <section class="closing-section" aria-label="Start Conversation">
-      <div class="container closing-grid">
-        <div>
-          <h2 class="closing-title">Tell me what you need built.</h2>
-          <div>
-            <a href="mailto:emmanuelajagbe6@gmail.com" class="copy-email-link" data-email="emmanuelajagbe6@gmail.com" title="Click to copy email">
-              <span>emmanuelajagbe6@gmail.com</span>
-              <span class="copy-feedback-toast">Copied</span>
+    <!-- Closing Callout -->
+    <section class="section hairline-t" aria-label="Start Conversation">
+      <div class="container">
+        <div class="closing-banner">
+          <span class="mono" style="color: var(--accent);">02 &middot; Custom Builds</span>
+          <h2 class="closing-title">Have a specific project in mind?</h2>
+          <p class="closing-lead">
+            Whether you need a multi-vendor platform, a custom SaaS tool, or a responsive client portal, let's engineer it.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary" style="padding: 14px 28px;">
+              Send Project Brief &rarr;
             </a>
-          </div>
-          <p class="mono" style="color: var(--inverse-muted); margin-bottom: var(--space-6);">I reply within 12 hours.</p>
-
-          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">Send a project brief</a>
-            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp</a>
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="mono" style="color: var(--inverse-muted); line-height: 1.8;">
-            Availability: Taking projects now.<br>
-            Timezone: West Africa Time (WAT, UTC+1).<br>
-            Delivery: Sub-second performance benchmarks guaranteed.
+            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 14px 28px;">
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>
@@ -423,38 +413,40 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-columns-grid">
-        <div class="footer-col">
-          <h3>Ajagbe Emmanuel</h3>
-          <p style="color: var(--inverse-ink-2); line-height: 1.6; margin-bottom: var(--space-4);">
-            Fullstack engineer &amp; technical copywriter. 5 plus years building for clients.
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <strong style="font-size: 1.15rem; font-family: var(--font-display);">Ajagbe Emmanuel Oluwatobi</strong>
+          <p>
+            BSc Physics Graduate (University of Jos), Full-Stack Web Engineer, and Founder of Life Untold Enterprises.
           </p>
-          <div class="mono" style="color: var(--inverse-muted);">Jos, Nigeria</div>
+          <span class="mono-sm" style="display: inline-block; margin-top: var(--space-3); color: var(--accent);">
+            &bull; Available for worldwide contracts
+          </span>
         </div>
 
-        <div class="footer-col">
-          <h3>Pages</h3>
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Navigation</span>
           <ul class="footer-links-list">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h3>Services</h3>
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Featured Work</span>
           <ul class="footer-links-list">
-            <li><a href="services.html#web">Websites &amp; Apps</a></li>
-            <li><a href="services.html#wordpress">WordPress &amp; WooCommerce</a></li>
-            <li><a href="services.html#copy">Website Copy</a></li>
-            <li><a href="services.html#care">Care Plans &amp; Fixes</a></li>
+            <li><a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer">Nexus Market</a></li>
+            <li><a href="projects/jaoos/index.html">Jaoos Estates</a></li>
+            <li><a href="projects/physlab/index.html">PhysLab Visualizer</a></li>
+            <li><a href="projects/taskflow/index.html">TaskFlow App</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h3>Network</h3>
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Connect</span>
           <ul class="footer-links-list">
             <li><a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
@@ -471,7 +463,7 @@
 
     <div class="container footer-bottom-bar">
       <span>&copy; <span id="footer-year">2026</span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</span>
-      <span class="mono">eoajagbe.name.ng</span>
+      <span class="mono">eoajagbe.name.ng &middot; Jos, Nigeria</span>
     </div>
   </footer>
 
@@ -513,8 +505,7 @@
     </a>
   </nav>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <!-- Client Script -->
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
