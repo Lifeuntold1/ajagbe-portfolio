@@ -1,25 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- FOUC Blocking Theme Switcher -->
-  <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 'dark';
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-      }
-    })();
-  </script>
-
-  <title>About Ajagbe Emmanuel | Physics &amp; Web Systems</title>
-  <meta name="description" content="Fullstack developer and technical copywriter, BSc Physics graduate from the University of Jos. Building client web systems and writing conversion copy since 2017.">
-  <meta name="keywords" content="About Ajagbe Emmanuel, fullstack engineer, University of Jos physics, Life Untold Enterprises, technical writer Nigeria">
+  <title>About Ajagbe Emmanuel | Full-Stack Web Engineer &amp; Physics Graduate</title>
+  <meta name="description" content="Biography and technical discipline of Ajagbe Emmanuel Oluwatobi. BSc Physics graduate from University of Jos, full-stack web engineer, and founder of Life Untold.">
+  <meta name="keywords" content="About Ajagbe Emmanuel, fullstack engineer Nigeria, University of Jos physics, Life Untold Enterprises, technical writer Jos">
   <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
   <meta name="robots" content="index, follow">
 
@@ -28,14 +16,16 @@
   <!-- Open Graph -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="About Ajagbe Emmanuel | Physics &amp; Web Systems">
-  <meta property="og:description" content="Fullstack developer and technical copywriter, BSc Physics graduate from the University of Jos. Building client web systems and writing conversion copy since 2017.">
+  <meta property="og:description" content="Full-stack developer and technical copywriter, BSc Physics graduate from the University of Jos. Building client web systems and writing conversion copy since 2017.">
   <meta property="og:url" content="https://eoajagbe.name.ng/about.html">
   <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="About Ajagbe Emmanuel | Physics &amp; Web Systems">
-  <meta name="twitter:description" content="Fullstack developer and technical copywriter, BSc Physics graduate from the University of Jos.">
+  <meta name="twitter:description" content="Full-stack developer and technical copywriter, BSc Physics graduate from the University of Jos.">
   <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
 
   <!-- JSON-LD Structured Data -->
@@ -46,175 +36,149 @@
     "mainEntity": {
       "@type": "Person",
       "name": "Ajagbe Emmanuel Oluwatobi",
-      "jobTitle": "Fullstack Web Developer & Technical Copywriter",
+      "url": "https://eoajagbe.name.ng/about.html",
+      "image": "https://eoajagbe.name.ng/assets/images/emmanuel-portrait.jpg",
+      "jobTitle": "Full-Stack Web Engineer & Technical Writer",
       "alumniOf": "University of Jos",
-      "knowsAbout": ["Physics", "Laravel", "React", "WordPress", "Technical Copywriting", "MySQL"]
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jos",
+        "addressRegion": "Plateau State",
+        "addressCountry": "NG"
+      }
     }
   }
   </script>
 
-  <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
-
-  <!-- Preconnected Typography -->
+  <!-- Typography Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:italic@0;1&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Accessible Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Header / Navigation -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="Ajagbe Emmanuel Home">
+        <img src="assets/images/emmanuel-portrait.jpg" alt="Ajagbe Emmanuel" class="nav-avatar" width="36" height="36">
+        <span>Ajagbe Emmanuel</span>
+        <span class="nav-status-badge">
+          <span class="status-dot"></span> Available
+        </span>
+      </a>
 
-  <!-- Top Scroll Progress Bar -->
-  <div class="scroll-progress-bar" aria-hidden="true">
-    <div class="scroll-progress-fill"></div>
-  </div>
-
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand-wrapper">
-        <a href="index.html" class="site-logo" aria-label="Ajagbe Emmanuel Home">
-          <span>Ajagbe</span>
-          <span class="dot"></span>
-          <span>Emmanuel</span>
-        </a>
-      </div>
-
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="index.html#work" class="nav-link">Work</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="about.html" class="nav-link active">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link is-active">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
 
-      <div class="header-controls">
-        <div class="status-clock-chip" title="Live Local Time in Jos, Nigeria">
-          <span class="status-dot-pulse"></span>
-          <span class="mono" id="live-clock-wat">Jos WAT</span>
-        </div>
-
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
-          <span id="theme-icon">☾</span>
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" aria-label="Toggle Night/Paper Theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
         </button>
-
-        <a href="contact.html" class="btn btn-outline" style="padding: 10px 20px;">Hire Me</a>
-
-        <button class="menu-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span class="line"></span>
-          <span class="line"></span>
+        <button class="menu-toggle-btn" aria-label="Open Mobile Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Fullscreen Overlay -->
-  <div class="mobile-menu-overlay" aria-label="Mobile Navigation">
-    <div class="mobile-menu-head">
-      <a href="index.html" class="site-logo">
-        <span>Ajagbe</span>
-        <span class="dot"></span>
-        <span>Emmanuel</span>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link">Home <span>&rarr;</span></a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects <span>&rarr;</span></a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services <span>&rarr;</span></a></li>
+      <li><a href="about.html" class="mobile-nav-link is-active">About <span>&rarr;</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact <span>&rarr;</span></a></li>
+    </ul>
+
+    <div style="margin-top: auto; padding-top: var(--space-8);">
+      <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; text-align: center;">
+        Chat on WhatsApp
       </a>
-      <button class="mobile-menu-close btn btn-outline" style="padding: 6px 14px;">Close</button>
-    </div>
-
-    <nav class="mobile-menu-links">
-      <a href="index.html#work" class="mobile-menu-link">Work</a>
-      <a href="services.html" class="mobile-menu-link">Services</a>
-      <a href="about.html" class="mobile-menu-link">About</a>
-      <a href="projects.html" class="mobile-menu-link">Projects</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
-    </nav>
-
-    <div class="mobile-menu-foot">
-      <span class="mono">Jos, Nigeria</span>
-      <span class="mono">7+ years building for clients</span>
+      <p class="mono-sm" style="text-align: center; margin-top: var(--space-3); color: var(--muted);">
+        Jos, Nigeria &middot; <span class="lagos-clock">WAT</span>
+      </p>
     </div>
   </div>
 
   <main id="main-content">
-
-    <!-- About Page Hero Header -->
-    <section class="section" style="padding-top: calc(var(--header-height) + var(--space-12)); padding-bottom: var(--space-8);">
+    <!-- Header Hero -->
+    <section class="section" style="padding-top: clamp(2rem, 5vw, 4rem); padding-bottom: var(--space-8);">
       <div class="container">
-        <span class="mono" style="color: var(--accent);">01 — Background &amp; Discipline</span>
-        <h1 style="font-size: var(--text-hero); line-height: 0.98; margin-block: var(--space-4);">
-          Physics first. <span class="font-accent">Then</span> websites.
+        <span class="mono" style="color: var(--accent);">01 &middot; Background &amp; Philosophy</span>
+        <h1 style="font-size: var(--text-hero); line-height: 1.12; margin-block: var(--space-4); max-width: 820px;">
+          Physics first. Then web systems.
         </h1>
         <p style="font-size: var(--text-lead); max-width: 680px; color: var(--ink-2); line-height: 1.6;">
-          Seven plus years of shipping web software for clients, grounded in the experimental rigor of physical sciences.
+          Seven plus years of shipping software for clients, grounded in the experimental rigor and analytical precision of physical sciences.
         </p>
       </div>
     </section>
 
-    <!-- Year Roller Odometer (M7 Milestone Engine) -->
-    <section class="odometer-pinned-section hairline-t hairline-b" aria-label="Career Milestones Timeline">
-      <div class="container odometer-wrapper">
-        <div>
-          <span class="mono" style="color: var(--accent); margin-bottom: var(--space-2); display: block;">Milestones 2017 &ndash; 2026</span>
-          <div class="odometer-display" aria-label="Rolling Year Display">
-            <div class="odometer-digit-strip">
-              <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-            </div>
-            <div class="odometer-digit-strip">
-              <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-            </div>
-            <div class="odometer-digit-strip">
-              <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-            </div>
-            <div class="odometer-digit-strip">
-              <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
-            </div>
-          </div>
-          <span class="mono" style="color: var(--muted); font-size: var(--text-mono-sm);">Scroll down to advance chronological records</span>
-        </div>
-
-        <div class="odometer-milestone-panel">
-          <h2 id="milestone-title-display" style="font-size: clamp(1.8rem, 3.2vw, 2.8rem); line-height: 1.15; margin-bottom: var(--space-4); color: var(--ink);">
-            Started client web development &amp; founded Life Untold
-          </h2>
-          <p id="milestone-detail-display" style="font-size: var(--text-body-lg); color: var(--ink-2); line-height: 1.6;">
-            Began building websites for local businesses and independent clients while establishing the Life Untold brand.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bio Section with Full Section 6.2 Text and Photo (M10) -->
-    <section class="section" aria-label="Biography Narrative">
+    <!-- Biography Narrative & Approved Portrait -->
+    <section class="section hairline-t" aria-label="Biography Narrative">
       <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: start;">
-          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-12);">
+        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-10); align-items: start;">
+          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-10);">
             <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
               <div>
-                <span class="mono" style="color: var(--accent);">02 — Biography</span>
-                <h2 style="font-size: var(--text-h2); margin-top: var(--space-2); margin-bottom: var(--space-6);">How the code and copy connect.</h2>
+                <span class="mono" style="color: var(--accent);">02 &middot; Biography</span>
+                <h2 style="font-size: var(--text-h2); line-height: 1.15; margin-top: var(--space-2); margin-bottom: var(--space-6);">
+                  How analytical logic meets digital architecture.
+                </h2>
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-12);">
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-10);">
               <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-                <div style="display: flex; flex-direction: column; gap: var(--space-6); font-size: var(--text-lead); line-height: 1.65; color: var(--ink-2);">
+                <div style="display: flex; flex-direction: column; gap: var(--space-6); font-size: var(--text-lead); line-height: 1.65; color: var(--ink-2); max-width: 720px;">
                   <p>
-                    I study Physics at the University of Jos. I have also been building websites for clients since 2017. The two fit together better than you would expect.
+                    I am a full-stack web developer and a graduate of Physics from the University of Jos. I have been building websites for clients since 2017, starting with custom HTML and PHP, moving into Laravel backends, WordPress client systems, and modern React interfaces.
                   </p>
                   <p>
-                    Physics gave me a habit. When something breaks, I measure before I guess. A slow page has a cause. A page that does not convert has a cause. I find the cause and fix that one thing.
+                    Studying physics changed how I write software. Physics trains you to eliminate assumptions, inspect the boundary conditions, and build mathematical models that match reality. On the web, that means normalized database design, zero unnecessary JavaScript bloat, clean error handling, and performance that holds up under real network constraints.
                   </p>
                   <p>
-                    I write the copy as well as the code, so the words and the layout are planned together. You deal with one person from the first call to launch day.
+                    I also craft the copy as well as the code. Having words and system architecture planned together means clients get cohesive digital platforms that communicate value clearly and convert visitors without ambiguity.
                   </p>
                   <p>
-                    I live in Jos. That means I can sit with a business owner in person, and I can also ship for clients in other countries. I run Life Untold Enterprises, edit for the National Association of Physics Students Nigeria, and take part in the Google Developer Group and Microsoft Developers Group in Jos.
+                    Based in Jos, Plateau State, Nigeria, I work with local business owners and ship for clients worldwide. I direct Life Untold Enterprises, serve as Editor-in-Chief for the National Association of Physics Students (NAPS), and actively participate in Google Developer Group (GDG Jos) and Microsoft Developers Group.
                   </p>
                 </div>
 
-                <div class="hero-portrait-stage" style="max-width: 440px; margin-top: var(--space-6);">
-                  <div class="hero-photo-wrapper reveal-clip">
-                    <img src="assets/images/emmanuel-identity-badge.svg" alt="Ajagbe Emmanuel Oluwatobi technical identity dossier and physics schematic" width="440" height="550" loading="lazy">
+                <!-- Approved Studio Portrait -->
+                <div class="hero-portrait-stage" style="max-width: 420px; margin-top: var(--space-6);">
+                  <img src="assets/images/emmanuel-portrait.jpg" alt="Ajagbe Emmanuel Oluwatobi portrait in studio" width="420" height="525" loading="lazy">
+                  <div class="hero-status-pill">
+                    <span style="display: flex; align-items: center; gap: 8px;">
+                      <span class="status-beacon"></span>
+                      <strong>Ajagbe Emmanuel</strong>
+                    </span>
+                    <span class="mono" style="color: var(--accent);">Jos, NG</span>
                   </div>
                 </div>
               </div>
@@ -224,132 +188,128 @@
       </div>
     </section>
 
-    <!-- Typographic Skills List (No Pills, No Progress Bars) -->
+    <!-- Technical Capabilities Matrix -->
     <section class="section hairline-t" aria-label="Technical Capabilities">
       <div class="container">
         <div style="margin-bottom: var(--space-8);">
-          <span class="mono" style="color: var(--accent);">03 — Technical Capabilities</span>
-          <h2 style="font-size: var(--text-h2); margin-top: var(--space-2);">Three disciplined groups.</h2>
+          <span class="mono" style="color: var(--accent);">03 &middot; Technical Capabilities</span>
+          <h2 style="font-size: var(--text-h2); line-height: 1.15; margin-top: var(--space-2);">
+            Disciplined tools. Zero fluff.
+          </h2>
         </div>
 
-        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-12);">
-            <!-- Group 1: Build -->
-            <div>
-              <span class="mono" style="color: var(--accent); display: block; margin-bottom: var(--space-2);">Group 01</span>
-              <h3 style="font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: var(--space-4);">Build</h3>
-              <p style="font-size: var(--text-body); line-height: 1.8; color: var(--ink-2);">
-                PHP and Laravel<br>
-                React<br>
-                JavaScript<br>
-                MySQL<br>
-                WordPress and WooCommerce
-              </p>
-            </div>
-
-            <!-- Group 2: Write -->
-            <div>
-              <span class="mono" style="color: var(--accent); display: block; margin-bottom: var(--space-2);">Group 02</span>
-              <h3 style="font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: var(--space-4);">Write</h3>
-              <p style="font-size: var(--text-body); line-height: 1.8; color: var(--ink-2);">
-                Website copy<br>
-                SEO content<br>
-                Technical writing
-              </p>
-            </div>
-
-            <!-- Group 3: Measure -->
-            <div>
-              <span class="mono" style="color: var(--accent); display: block; margin-bottom: var(--space-2);">Group 03</span>
-              <h3 style="font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: var(--space-4);">Measure</h3>
-              <p style="font-size: var(--text-body); line-height: 1.8; color: var(--ink-2);">
-                Python<br>
-                Power BI<br>
-                Excel<br>
-                Google Analytics
-              </p>
+        <div class="bento-grid">
+          <div class="bento-card">
+            <h3 class="bento-title">Backend Architecture</h3>
+            <p class="bento-desc">
+              Laravel, PHP 8+, MySQL, PostgreSQL, REST APIs, Token Authentication, Payment Gateways (Paystack &amp; Flutterwave), Webhooks, and Multi-Vendor Systems.
+            </p>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">Laravel</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">MySQL</span>
             </div>
           </div>
-        </div>
 
-        <!-- Currently Block in Mono -->
-        <div style="margin-top: var(--space-12); padding: var(--space-6); border: 1px solid var(--line); background-color: var(--bg-2);">
-          <span class="mono" style="color: var(--accent); display: block; margin-bottom: var(--space-2);">Currently &mdash; 2026 Status</span>
-          <p class="mono" style="color: var(--ink); line-height: 1.8; margin: 0;">
-            Studying: Physics Education, University of Jos.<br>
-            Based: Jos, Plateau State, Nigeria.<br>
-            Open to: client projects, engineering retainers, and full-time roles.
-          </p>
+          <div class="bento-card">
+            <h3 class="bento-title">Frontend &amp; Interface Design</h3>
+            <p class="bento-desc">
+              TypeScript, Modern React, Semantic HTML5, CSS Grid, Fluid Typography, Canvas API, Motion physics, and Accessible UI (WCAG AA compliant).
+            </p>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Canvas</span>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <h3 class="bento-title">Publishing &amp; Brand Systems</h3>
+            <p class="bento-desc">
+              WordPress custom theme engineering, Technical documentation, Editorial direction, Lead magnets, and High-converting sales copy.
+            </p>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">WordPress</span>
+              <span class="tag">Conversion Copy</span>
+              <span class="tag">SEO</span>
+            </div>
+          </div>
+
+          <div class="bento-card">
+            <h3 class="bento-title">Computational Physics</h3>
+            <p class="bento-desc">
+              Numerical analysis, Wave mechanics simulation, Scientific Python (NumPy, SciPy), Data visualization, and Mathematical algorithm optimization.
+            </p>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">Python</span>
+              <span class="tag">Simulation</span>
+              <span class="tag">Physics</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Closing Section (Reused From Home Page) -->
-    <section class="closing-section" aria-label="Start Conversation">
-      <div class="container closing-grid">
-        <div>
-          <h2 class="closing-title">Tell me what you need built.</h2>
-          <div>
-            <a href="mailto:emmanuelajagbe6@gmail.com" class="copy-email-link" data-email="emmanuelajagbe6@gmail.com" title="Click to copy email">
-              <span>emmanuelajagbe6@gmail.com</span>
-              <span class="copy-feedback-toast">Copied</span>
+    <!-- Closing Callout -->
+    <section class="section hairline-t" aria-label="Get in Touch">
+      <div class="container">
+        <div class="closing-banner">
+          <span class="mono" style="color: var(--accent);">04 &middot; Direct Contact</span>
+          <h2 class="closing-title">Ready to build something exceptional?</h2>
+          <p class="closing-lead">
+            Whether you need a full-stack platform built or a brand technical audit, I'm available for new collaborations.
+          </p>
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary" style="padding: 14px 28px;">
+              Start a Conversation &rarr;
             </a>
-          </div>
-          <p class="mono" style="color: var(--inverse-muted); margin-bottom: var(--space-6);">I reply within 12 hours.</p>
-
-          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">Send a project brief</a>
-            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp</a>
-          </div>
-        </div>
-
-        <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="mono" style="color: var(--inverse-muted); line-height: 1.8;">
-            Experience: 7+ years building for clients.<br>
-            Organizations: NAPS Nigeria, GDG Jos, Microsoft Developers Group.<br>
-            Scope: Fullstack builds, WordPress stores &amp; conversion copy.
+            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 14px 28px;">
+              Chat on WhatsApp
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Site Footer -->
+  <!-- FOOTER (FIXED: Wordmark never cut off) -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-columns-grid">
-        <div class="footer-col">
-          <h3>Ajagbe Emmanuel</h3>
-          <p style="color: var(--inverse-ink-2); line-height: 1.6; margin-bottom: var(--space-4);">
-            Fullstack engineer &amp; technical copywriter. 7+ years building for clients.
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <strong style="font-size: 1.15rem; font-family: var(--font-display);">Ajagbe Emmanuel Oluwatobi</strong>
+          <p>
+            BSc Physics Graduate (University of Jos), Full-Stack Web Engineer, and Founder of Life Untold Enterprises.
           </p>
-          <div class="mono" style="color: var(--inverse-muted);">Jos, Nigeria</div>
+          <span class="mono-sm" style="display: inline-block; margin-top: var(--space-3); color: var(--accent);">
+            &bull; Available for worldwide contracts
+          </span>
         </div>
 
-        <div class="footer-col">
-          <h3>Pages</h3>
-          <ul class="footer-links-list">
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Navigation</span>
+          <ul class="footer-links-list" style="margin-top: var(--space-3);">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h3>Services</h3>
-          <ul class="footer-links-list">
-            <li><a href="services.html#web">Websites &amp; Apps</a></li>
-            <li><a href="services.html#wordpress">WordPress &amp; WooCommerce</a></li>
-            <li><a href="services.html#copy">Website Copy</a></li>
-            <li><a href="services.html#care">Care Plans &amp; Fixes</a></li>
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Featured Work</span>
+          <ul class="footer-links-list" style="margin-top: var(--space-3);">
+            <li><a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer">Nexus Market</a></li>
+            <li><a href="projects/jaoos/index.html">Jaoos Estates</a></li>
+            <li><a href="projects/physlab/index.html">PhysLab Visualizer</a></li>
+            <li><a href="projects/taskflow/index.html">TaskFlow App</a></li>
           </ul>
         </div>
 
-        <div class="footer-col">
-          <h3>Network</h3>
-          <ul class="footer-links-list">
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Connect</span>
+          <ul class="footer-links-list" style="margin-top: var(--space-3);">
             <li><a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
@@ -359,18 +319,56 @@
       </div>
     </div>
 
+    <!-- Scaled Footer Wordmark (Never cut off) -->
     <div class="footer-wordmark-container" aria-hidden="true">
       <div class="footer-giant-wordmark">Ajagbe Emmanuel</div>
     </div>
 
     <div class="container footer-bottom-bar">
       <span>&copy; <span id="footer-year">2026</span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</span>
-      <span class="mono">eoajagbe.name.ng</span>
+      <span class="mono">eoajagbe.name.ng &middot; Jos, Nigeria</span>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <!-- MOBILE APP BOTTOM NAVIGATION BAR -->
+  <nav class="mobile-app-bar" aria-label="Mobile Quick Navigation">
+    <a href="index.html" class="mobile-app-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="projects.html" class="mobile-app-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+      <span>Works</span>
+    </a>
+    <a href="services.html" class="mobile-app-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="mobile-app-item is-active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="mobile-app-item" style="color: #25D366;">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span>Chat</span>
+    </a>
+  </nav>
+
+  <!-- Client Script -->
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>

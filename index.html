@@ -1,25 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="night">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <!-- FOUC Blocking Theme Switcher -->
-  <script>
-    (function() {
-      const theme = localStorage.getItem('theme') || 'dark';
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      } else {
-        document.documentElement.removeAttribute('data-theme');
-      }
-    })();
-  </script>
-
-  <title>Ajagbe Emmanuel | Web Systems &amp; Technical Copy</title>
-  <meta name="description" content="I build web systems using Laravel, React, and WordPress, and write the copy that fills them. Precision engineering from first principles.">
-  <meta name="keywords" content="web developer, Laravel developer, WordPress developer, technical copywriter, Nigeria, Jos, fullstack engineer, physics">
+  <title>Ajagbe Emmanuel Oluwatobi | Full-Stack Web Engineer &amp; Physics Graduate</title>
+  <meta name="description" content="Portfolio of Ajagbe Emmanuel Oluwatobi. Full-stack web engineer, BSc Physics graduate from University of Jos, technical writer, and founder of Life Untold.">
+  <meta name="keywords" content="Ajagbe Emmanuel, fullstack web developer, Laravel developer Nigeria, React developer Jos, University of Jos physics, Life Untold, web applications">
   <meta name="author" content="Ajagbe Emmanuel Oluwatobi">
   <meta name="robots" content="index, follow">
 
@@ -27,15 +15,18 @@
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ajagbe Emmanuel | Web Systems &amp; Technical Copy">
-  <meta property="og:description" content="I build web systems using Laravel, React, and WordPress, and write the copy that fills them. Precision engineering from first principles.">
+  <meta property="og:title" content="Ajagbe Emmanuel Oluwatobi | Full-Stack Web Engineer">
+  <meta property="og:description" content="Engineering high-performance web applications, scalable eCommerce platforms, and clear conversion copy from first principles.">
   <meta property="og:url" content="https://eoajagbe.name.ng/">
   <meta property="og:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_NG">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Ajagbe Emmanuel | Web Systems &amp; Technical Copy">
-  <meta name="twitter:description" content="I build web systems using Laravel, React, and WordPress, and write the copy that fills them.">
+  <meta name="twitter:title" content="Ajagbe Emmanuel Oluwatobi | Full-Stack Web Engineer">
+  <meta name="twitter:description" content="Engineering high-performance web applications, scalable eCommerce platforms, and clear conversion copy.">
   <meta name="twitter:image" content="https://eoajagbe.name.ng/assets/images/og-cover.svg">
 
   <!-- JSON-LD Structured Data -->
@@ -45,655 +36,637 @@
     "@type": "Person",
     "name": "Ajagbe Emmanuel Oluwatobi",
     "url": "https://eoajagbe.name.ng/",
-    "image": "https://eoajagbe.name.ng/assets/images/emmanuel-identity-badge.svg",
-    "jobTitle": "Fullstack Web Developer & Technical Copywriter",
+    "image": "https://eoajagbe.name.ng/assets/images/emmanuel-portrait.jpg",
+    "jobTitle": "Full-Stack Web Engineer & Technical Writer",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Jos",
       "addressRegion": "Plateau State",
-      "addressCountry": "Nigeria"
+      "addressCountry": "NG"
     },
-    "alumniOf": "University of Jos",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "University of Jos",
+      "degree": "BSc Physics"
+    },
     "sameAs": [
+      "https://github.com/Lifeuntold1",
       "https://www.linkedin.com/in/ajagbeemmanueloluwatobi",
-      "https://github.com/Lifeuntold1"
+      "https://wa.me/2347036316514"
     ]
   }
   </script>
 
-  <link rel="icon" type="image/png" href="assets/images/ajagbe-emmanuel-portfolio-logo.png">
-
-  <!-- Preconnected Typography -->
+  <!-- Typography Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;600;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Instrument+Serif:italic@0;1&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <!-- Accessible Skip Link -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Header / Navigation -->
+  <header class="site-nav">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand" aria-label="Ajagbe Emmanuel Home">
+        <img src="assets/images/emmanuel-portrait.jpg" alt="Ajagbe Emmanuel" class="nav-avatar" width="36" height="36">
+        <span>Ajagbe Emmanuel</span>
+        <span class="nav-status-badge">
+          <span class="status-dot"></span> Available
+        </span>
+      </a>
 
-  <!-- Top Scroll Progress Bar (M15) -->
-  <div class="scroll-progress-bar" aria-hidden="true">
-    <div class="scroll-progress-fill"></div>
-  </div>
-
-  <!-- SECTION 1: Navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand-wrapper">
-        <a href="index.html" class="site-logo" aria-label="Ajagbe Emmanuel Home">
-          <span>Ajagbe</span>
-          <span class="dot"></span>
-          <span>Emmanuel</span>
-        </a>
-      </div>
-
-      <nav class="nav-links" aria-label="Primary Navigation">
-        <a href="#work" class="nav-link">Work</a>
-        <a href="#services" class="nav-link">Services</a>
-        <a href="about.html" class="nav-link">About</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link is-active">Home</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
       </nav>
 
-      <div class="header-controls">
-        <div class="status-clock-chip" title="Live Local Time in Jos, Nigeria">
-          <span class="status-dot-pulse"></span>
-          <span class="mono" id="live-clock-wat">Jos WAT</span>
-        </div>
-
-        <span class="section-counter" id="section-counter-display" aria-hidden="true">01/08</span>
-
-        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle visual theme">
-          <span id="theme-icon">☾</span>
+      <div class="nav-actions">
+        <span class="mono lagos-clock" style="display: none; @media(min-width: 992px){display:inline;}">WAT</span>
+        <button class="theme-toggle-btn" aria-label="Toggle Night/Paper Theme" title="Toggle theme">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
         </button>
-
-        <a href="contact.html" class="btn btn-outline" style="padding: 10px 20px;">Hire Me</a>
-
-        <button class="menu-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
-          <span class="line"></span>
-          <span class="line"></span>
+        <button class="menu-toggle-btn" aria-label="Open Mobile Menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- Mobile Fullscreen Overlay -->
-  <div class="mobile-menu-overlay" aria-label="Mobile Navigation">
-    <div class="mobile-menu-head">
-      <a href="index.html" class="site-logo">
-        <span>Ajagbe</span>
-        <span class="dot"></span>
-        <span>Emmanuel</span>
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" aria-label="Mobile Navigation">
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link is-active">Home <span>&rarr;</span></a></li>
+      <li><a href="projects.html" class="mobile-nav-link">Projects <span>&rarr;</span></a></li>
+      <li><a href="services.html" class="mobile-nav-link">Services <span>&rarr;</span></a></li>
+      <li><a href="about.html" class="mobile-nav-link">About <span>&rarr;</span></a></li>
+      <li><a href="contact.html" class="mobile-nav-link">Contact <span>&rarr;</span></a></li>
+    </ul>
+
+    <div style="margin-top: auto; padding-top: var(--space-8);">
+      <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%; text-align: center;">
+        Chat on WhatsApp
       </a>
-      <button class="mobile-menu-close btn btn-outline" style="padding: 6px 14px;">Close</button>
-    </div>
-
-    <nav class="mobile-menu-links">
-      <a href="#work" class="mobile-menu-link">Work</a>
-      <a href="#services" class="mobile-menu-link">Services</a>
-      <a href="about.html" class="mobile-menu-link">About</a>
-      <a href="projects.html" class="mobile-menu-link">Projects</a>
-      <a href="contact.html" class="mobile-menu-link">Contact</a>
-    </nav>
-
-    <div class="mobile-menu-foot">
-      <span class="mono">Jos, Nigeria</span>
-      <span class="mono">Reply: within 12h</span>
+      <p class="mono-sm" style="text-align: center; margin-top: var(--space-3); color: var(--muted);">
+        Jos, Nigeria &middot; <span class="lagos-clock">WAT</span>
+      </p>
     </div>
   </div>
 
   <main id="main-content">
-
-    <!-- SECTION 2: Hero (min-height 100svh) -->
+    <!-- SECTION 1: HERO -->
     <section class="section hero-section" id="hero">
       <div class="container">
         <div class="hero-grid">
-          <div class="hero-text-col">
-            <div class="hero-meta-bar">
-              <span class="status-dot-pulse"></span>
-              <span class="mono">Jos, Nigeria. Taking projects now.</span>
+          <div>
+            <div class="hero-eyebrow">
+              <span class="status-beacon"></span> Available for Q1/Q2 Projects &middot; Jos, Nigeria &amp; Remote
             </div>
 
-            <!-- M1 Split Text & M2 Role Rotator -->
-            <h1 class="hero-title hero-title-interactive">
-              <span class="split-reveal-word">I build the</span>
+            <!-- Crisp, Mobile-First Hero Headline (No Char Breaking Bug) -->
+            <h1 class="hero-title">
+              I engineer scalable
               <span class="rotator-cell">
-                <span class="rotator-word is-active">site</span>
-                <span class="rotator-word">store</span>
-                <span class="rotator-word">system</span>
-                <span class="rotator-word">platform</span>
+                <span class="rotator-word is-active">web platforms</span>
+                <span class="rotator-word">e-commerce systems</span>
+                <span class="rotator-word">client portals</span>
+                <span class="rotator-word">digital brands</span>
               </span>
-              <span class="split-reveal-word">and write the</span>
-              <span class="font-accent">words</span>
-              <span class="split-reveal-word">on it.</span>
+              and craft the copy that drives conversion.
             </h1>
 
             <p class="hero-lead">
-              Laravel, WordPress and React for the build. Plain, direct copy for the page. Based in Jos. Working with clients anywhere.
+              BSc Physics graduate from the University of Jos, full-stack engineer, and founder of Life Untold. I build complete digital systems from database architecture to conversion copy, engineered for speed, mathematical clarity, and real business growth.
             </p>
 
-            <div class="hero-cta-row">
-              <a href="#work" class="btn btn-primary">See the work</a>
-              <a href="contact.html" class="btn btn-outline">Start a project</a>
+            <div class="hero-cta-group">
+              <a href="#work" class="btn btn-primary">
+                Explore Selected Work
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="12" y1="5" x2="12" y2="19"></line>
+                  <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+              </a>
+              <a href="contact.html" class="btn btn-secondary">
+                Start a Project
+              </a>
+              <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" aria-label="Chat on WhatsApp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                WhatsApp
+              </a>
+            </div>
+
+            <div class="mono-sm" style="color: var(--muted); display: flex; gap: var(--space-4); flex-wrap: wrap;">
+              <span>&check; 7+ Years Experience</span>
+              <span>&check; Clean Hand-Crafted Code</span>
+              <span>&check; Direct Communication</span>
             </div>
           </div>
 
-          <div class="hero-visual-col">
-            <div class="hero-portrait-stage">
-              <!-- Inline SVG Dot Grid Motif (Zero Gradients) -->
-              <div class="hero-dot-grid-canvas" aria-hidden="true"></div>
-
-              <!-- Measurement Rulers (Physics Motif) -->
-              <svg class="ruler-v" viewBox="0 0 16 400" fill="none" aria-hidden="true">
-                <line x1="15" y1="0" x2="15" y2="400" stroke="currentColor" stroke-width="1" stroke-opacity="0.3"/>
-                <line x1="8" y1="40" x2="15" y2="40" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="4" y1="80" x2="15" y2="80" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="8" y1="120" x2="15" y2="120" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="4" y1="160" x2="15" y2="160" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="8" y1="200" x2="15" y2="200" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="4" y1="240" x2="15" y2="240" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="8" y1="280" x2="15" y2="280" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="4" y1="320" x2="15" y2="320" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="8" y1="360" x2="15" y2="360" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-              </svg>
-
-              <svg class="ruler-h" viewBox="0 0 400 16" fill="none" aria-hidden="true">
-                <line x1="0" y1="1" x2="400" y2="1" stroke="currentColor" stroke-width="1" stroke-opacity="0.3"/>
-                <line x1="40" y1="1" x2="40" y2="8" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="80" y1="1" x2="80" y2="12" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="120" y1="1" x2="120" y2="8" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="160" y1="1" x2="160" y2="12" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="200" y1="1" x2="200" y2="8" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="240" y1="1" x2="240" y2="12" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="280" y1="1" x2="280" y2="8" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-                <line x1="320" y1="1" x2="320" y2="12" stroke="currentColor" stroke-width="1" stroke-opacity="0.6"/>
-                <line x1="360" y1="1" x2="360" y2="8" stroke="currentColor" stroke-width="1" stroke-opacity="0.4"/>
-              </svg>
-
-              <!-- M10 Inset Technical Dossier Reveal -->
-              <div class="hero-photo-wrapper reveal-clip">
-                <img src="assets/images/emmanuel-identity-badge.svg" alt="Ajagbe Emmanuel Oluwatobi technical identity dossier and physics schematic" width="420" height="525" fetchpriority="high">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: Proof Strip (M4 Velocity Marquee) -->
-    <section class="marquee-strip" aria-label="Verified Client Proof">
-      <div class="marquee-track">
-        <div class="marquee-group">
-          <span class="marquee-item"><span class="sq"></span> Nexus Market is live</span>
-          <span class="marquee-item"><span class="sq"></span> 7+ years building for clients</span>
-          <span class="marquee-item"><span class="sq"></span> +20% average conversion lift across client projects</span>
-          <span class="marquee-item"><span class="sq"></span> +35% brand visibility at Heroes Publishing House</span>
-          <span class="marquee-item"><span class="sq"></span> Laravel, WordPress, React, MySQL</span>
-          <span class="marquee-item"><span class="sq"></span> Jos, Nigeria. Remote ready.</span>
-        </div>
-        <div class="marquee-group" aria-hidden="true">
-          <span class="marquee-item"><span class="sq"></span> Nexus Market is live</span>
-          <span class="marquee-item"><span class="sq"></span> 7+ years building for clients</span>
-          <span class="marquee-item"><span class="sq"></span> +20% average conversion lift across client projects</span>
-          <span class="marquee-item"><span class="sq"></span> +35% brand visibility at Heroes Publishing House</span>
-          <span class="marquee-item"><span class="sq"></span> Laravel, WordPress, React, MySQL</span>
-          <span class="marquee-item"><span class="sq"></span> Jos, Nigeria. Remote ready.</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: Statement (M8 Scroll-Lit Statement) -->
-    <section class="section statement-section" aria-label="Methodology">
-      <div class="container">
-        <p class="scroll-lit-p">
-          Physics taught me one habit. When something fails, find the one variable that caused it. On the web that variable is usually a slow query, a vague headline or a form with too many fields. I find it, fix it and measure the result.
-        </p>
-      </div>
-    </section>
-
-    <!-- SECTION 5: What I Do (M11 Service Rows) -->
-    <section class="section hairline-t" id="services" aria-label="What I Do">
-      <div class="container">
-        <div style="margin-bottom: var(--space-8);">
-          <span class="mono" style="color: var(--accent);">01 — Capabilities</span>
-          <h2 style="font-size: var(--text-h2); margin-top: var(--space-2);">What I build and write.</h2>
-        </div>
-
-        <div class="services-overview-list">
-          <div class="service-row-item">
-            <span class="service-row-num">01</span>
-            <h3 class="service-row-title">Websites and web apps</h3>
-            <p class="service-row-desc">Custom builds in Laravel, React and MySQL. Marketplaces, booking systems, dashboards and company sites.</p>
-            <div class="service-row-draw-line"></div>
-          </div>
-
-          <div class="service-row-item">
-            <span class="service-row-num">02</span>
-            <h3 class="service-row-title">WordPress and WooCommerce</h3>
-            <p class="service-row-desc">Custom themes and online stores that load fast and are easy for you to edit.</p>
-            <div class="service-row-draw-line"></div>
-          </div>
-
-          <div class="service-row-item">
-            <span class="service-row-num">03</span>
-            <h3 class="service-row-title">Website copy</h3>
-            <p class="service-row-desc">Headlines, page copy and emails written to get one specific action from the reader.</p>
-            <div class="service-row-draw-line"></div>
-          </div>
-
-          <div class="service-row-item">
-            <span class="service-row-num">04</span>
-            <h3 class="service-row-title">Care plans and automation</h3>
-            <p class="service-row-desc">Monthly updates, backups and fixes for your site. Plus simple automations like booking confirmations and WhatsApp reminders for local businesses.</p>
-            <div class="service-row-draw-line"></div>
-          </div>
-        </div>
-
-        <div style="margin-top: var(--space-8); display: flex; justify-content: flex-end;">
-          <a href="services.html" class="btn btn-outline">Explore detailed deliverables &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 6: Process (M5 Rolling Deck, Inverse Section, 4 Panels) -->
-    <section class="rolling-deck-section" id="process" aria-label="Development Process">
-      <div class="rolling-deck-sticky-wrapper container">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--inverse-line); padding-bottom: var(--space-4);">
-          <span class="mono" style="color: var(--accent);">The Engineering Sequence</span>
-          <span class="mono deck-index-display">01/04</span>
-        </div>
-
-        <div class="deck-stage-container">
-          <!-- Panel 1 -->
-          <article class="deck-panel is-active">
-            <div>
-              <div class="deck-huge-num">01</div>
-              <h3 class="deck-panel-title">Listen</h3>
-              <p class="deck-panel-text">We talk for 30 to 45 minutes. I ask what the site must do for your business, who uses it and what goes wrong today.</p>
-              <div class="deck-deliverable-box">
-                <span class="mono" style="color: var(--accent);">You get:</span>
-                <span class="mono" style="color: var(--inverse-ink); margin-left: var(--space-2);">A one-page brief</span>
-              </div>
-            </div>
-            <div>
-              <div class="css-browser-frame">
-                <div class="browser-chrome-bar">
-                  <span class="circle"></span><span class="circle"></span><span class="circle"></span>
-                  <span class="browser-address-slug">brief-specification.md</span>
-                </div>
-                <div class="browser-screen-inner">
-                  <p class="mono" style="color: var(--accent); margin-bottom: var(--space-2);">// Stage 01: Core Problem Definition</p>
-                  <p class="mono" style="color: var(--inverse-ink-2); line-height: 1.8;">
-                    Input: Client Business Objectives<br>
-                    Bottleneck: Weak conversion &amp; slow queries<br>
-                    Target: Functional web architecture
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Panel 2 -->
-          <article class="deck-panel">
-            <div>
-              <div class="deck-huge-num">02</div>
-              <h3 class="deck-panel-title">Plan</h3>
-              <p class="deck-panel-text">I map the pages, the data and the words before I open an editor.</p>
-              <div class="deck-deliverable-box">
-                <span class="mono" style="color: var(--accent);">You get:</span>
-                <span class="mono" style="color: var(--inverse-ink); margin-left: var(--space-2);">Sitemap, page outline and draft copy</span>
-              </div>
-            </div>
-            <div>
-              <div class="css-browser-frame">
-                <div class="browser-chrome-bar">
-                  <span class="circle"></span><span class="circle"></span><span class="circle"></span>
-                  <span class="browser-address-slug">architecture-schema.sql</span>
-                </div>
-                <div class="browser-screen-inner">
-                  <p class="mono" style="color: var(--accent); margin-bottom: var(--space-2);">// Stage 02: Relational Mapping</p>
-                  <p class="mono" style="color: var(--inverse-ink-2); line-height: 1.8;">
-                    Schema: Normalized SQL tables<br>
-                    Hierarchy: 4 core templates<br>
-                    Copy: Direct-response messaging
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Panel 3 -->
-          <article class="deck-panel">
-            <div>
-              <div class="deck-huge-num">03</div>
-              <h3 class="deck-panel-title">Build</h3>
-              <p class="deck-panel-text">I build in Laravel or WordPress and write the final copy straight into the pages. You see progress on a private link.</p>
-              <div class="deck-deliverable-box">
-                <span class="mono" style="color: var(--accent);">You get:</span>
-                <span class="mono" style="color: var(--inverse-ink); margin-left: var(--space-2);">A working staging site</span>
-              </div>
-            </div>
-            <div>
-              <div class="css-browser-frame">
-                <div class="browser-chrome-bar">
-                  <span class="circle"></span><span class="circle"></span><span class="circle"></span>
-                  <span class="browser-address-slug">staging.eoajagbe.name.ng</span>
-                </div>
-                <div class="browser-screen-inner">
-                  <p class="mono" style="color: var(--accent); margin-bottom: var(--space-2);">// Stage 03: Production Codebase</p>
-                  <p class="mono" style="color: var(--inverse-ink-2); line-height: 1.8;">
-                    Stack: Laravel 11 / MySQL / React<br>
-                    Tests: Sub-second response benchmarks<br>
-                    Review: Real-time client inspection
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Panel 4 -->
-          <article class="deck-panel">
-            <div>
-              <div class="deck-huge-num">04</div>
-              <h3 class="deck-panel-title">Launch and keep it healthy</h3>
-              <p class="deck-panel-text">I test on real phones, connect search and analytics, then go live. If you want, I stay on a monthly care plan.</p>
-              <div class="deck-deliverable-box">
-                <span class="mono" style="color: var(--accent);">You get:</span>
-                <span class="mono" style="color: var(--inverse-ink); margin-left: var(--space-2);">A live site and handover notes</span>
-              </div>
-            </div>
-            <div>
-              <div class="css-browser-frame">
-                <div class="browser-chrome-bar">
-                  <span class="circle"></span><span class="circle"></span><span class="circle"></span>
-                  <span class="browser-address-slug">production-live.verified</span>
-                </div>
-                <div class="browser-screen-inner">
-                  <p class="mono" style="color: var(--accent); margin-bottom: var(--space-2);">// Stage 04: Production Launch</p>
-                  <p class="mono" style="color: var(--inverse-ink-2); line-height: 1.8;">
-                    Lighthouse: 90+ mobile performance<br>
-                    SEO: Canonical indexing &amp; Open Graph<br>
-                    Handover: Full documentation
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Position Rail -->
-        <div class="deck-navigation-rail">
-          <div class="deck-ticks-group">
-            <span class="deck-tick is-active"></span>
-            <span class="deck-tick"></span>
-            <span class="deck-tick"></span>
-            <span class="deck-tick"></span>
-          </div>
-          <span class="mono" style="font-size: var(--text-mono-sm); color: var(--inverse-muted);">Scroll to step through</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 7: Selected Work (M5 Rolling Deck, 3 Panels) -->
-    <section class="rolling-deck-section" id="work" aria-label="Selected Production Work">
-      <div class="rolling-deck-sticky-wrapper container">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--inverse-line); padding-bottom: var(--space-4);">
-          <span class="mono" style="color: var(--accent);">02 — Selected Works</span>
-          <span class="mono deck-index-display">01/03</span>
-        </div>
-
-        <div class="deck-stage-container">
-          <!-- Panel 1: Nexus Market -->
-          <article class="deck-panel is-active">
-            <div>
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3); flex-wrap: wrap;">
-                <span class="tag">Laravel</span>
-                <span class="tag">MySQL</span>
-                <span class="tag">PHP</span>
-              </div>
-              <h3 class="deck-panel-title">Nexus Market</h3>
-              <p class="deck-panel-text">A multi-vendor marketplace built in Laravel and MySQL, with vendor dashboards and affiliate tracking.</p>
-              <div class="deck-deliverable-box">
-                <span class="mono" style="color: var(--accent);">Status:</span>
-                <span class="mono" style="color: var(--inverse-ink); margin-left: var(--space-2);">Live at nexusmkt.com.ng</span>
-              </div>
-              <div style="margin-top: var(--space-6);">
-                <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Live Platform &rarr;</a>
-              </div>
-            </div>
-            <div>
-              <div class="css-browser-frame">
-                <div class="browser-chrome-bar">
-                  <span class="circle"></span><span class="circle"></span><span class="circle"></span>
-                  <span class="browser-address-slug">https://nexusmkt.com.ng</span>
-                </div>
-                <div class="browser-screen-inner" style="padding: 0;">
-                  <img src="assets/images/projects/nexus-market.png" alt="Nexus Market multi-vendor platform interface" loading="lazy" width="600" height="375">
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Panel 2: Jaoos Luxury Estates -->
-          <article class="deck-panel">
-            <div>
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3); flex-wrap: wrap;">
-                <span class="tag">HTML5</span>
-                <span class="tag">CSS3</span>
-                <span class="tag">JavaScript</span>
-              </div>
-              <h3 class="deck-panel-title">Jaoos Luxury Estates</h3>
-              <p class="deck-panel-text">A property showcase with a mortgage calculator and a lead-capture layout.</p>
-              <div class="deck-deliverable-box">
-                <span class="mono" style="color: var(--accent);">Status:</span>
-                <span class="mono" style="color: var(--inverse-ink); margin-left: var(--space-2);">Prototype</span>
-              </div>
-              <div style="margin-top: var(--space-6);">
-                <a href="projects.html#jaoos" class="btn btn-primary">View Project Details &rarr;</a>
-              </div>
-            </div>
-            <div>
-              <div class="css-browser-frame">
-                <div class="browser-chrome-bar">
-                  <span class="circle"></span><span class="circle"></span><span class="circle"></span>
-                  <span class="browser-address-slug">jaoos-luxury-estates.local</span>
-                </div>
-                <div class="browser-screen-inner" style="padding: 0;">
-                  <img src="assets/images/projects/jaoos-estates.png" alt="Jaoos Luxury Estates property showcase" loading="lazy" width="600" height="375">
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Panel 3: Life Untold -->
-          <article class="deck-panel">
-            <div>
-              <div style="display: flex; gap: var(--space-2); margin-bottom: var(--space-3); flex-wrap: wrap;">
-                <span class="tag">Brand Architecture</span>
-                <span class="tag">Content Strategy</span>
-                <span class="tag">Video</span>
-              </div>
-              <h3 class="deck-panel-title">Life Untold</h3>
-              <p class="deck-panel-text">A content and brand platform I have run since 2017, including The Healing Series video project.</p>
-              <div class="deck-deliverable-box">
-                <span class="mono" style="color: var(--accent);">Status:</span>
-                <span class="mono" style="color: var(--inverse-ink); margin-left: var(--space-2);">Active since 2017</span>
-              </div>
-              <div style="margin-top: var(--space-6);">
-                <a href="about.html" class="btn btn-primary">Read The Brand Story &rarr;</a>
-              </div>
-            </div>
-            <div>
-              <div class="css-browser-frame">
-                <div class="browser-chrome-bar">
-                  <span class="circle"></span><span class="circle"></span><span class="circle"></span>
-                  <span class="browser-address-slug">lifeuntold.enterprises</span>
-                </div>
-                <div class="browser-screen-inner">
-                  <p class="mono" style="color: var(--accent); margin-bottom: var(--space-2);">// Life Untold Enterprises</p>
-                  <p class="mono" style="color: var(--inverse-ink-2); line-height: 1.8;">
-                    Founded: 2017<br>
-                    Projects: The Healing Series<br>
-                    Focus: Long-form storytelling &amp; digital identity
-                  </p>
-                </div>
-              </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- Position Rail & All Projects Link -->
-        <div class="deck-navigation-rail">
-          <div class="deck-ticks-group">
-            <span class="deck-tick is-active"></span>
-            <span class="deck-tick"></span>
-            <span class="deck-tick"></span>
-          </div>
-          <a href="projects.html" class="btn btn-outline" style="padding: 8px 18px;">All projects &rarr;</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8: About Strip -->
-    <section class="section hairline-t" aria-label="About Summary">
-      <div class="container">
-        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: center;">
-          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-12);">
-            <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-              <div>
-                <span class="mono" style="color: var(--accent);">03 — Background</span>
-                <h2 style="font-size: var(--text-h2); margin-top: var(--space-2); margin-bottom: var(--space-6);">Physics first. Then websites.</h2>
-                <p style="font-size: var(--text-lead); line-height: 1.6; margin-bottom: var(--space-6);">
-                  I study Physics at the University of Jos. I have also been building websites for clients since 2017. The two fit together better than you would expect. Physics gave me a habit: when something breaks, I measure before I guess.
-                </p>
-
-                <div style="display: flex; flex-direction: column; gap: var(--space-2); padding-block: var(--space-4); border-block: 1px solid var(--line); margin-bottom: var(--space-6);">
-                  <div class="mono"><span style="color: var(--muted);">Studying:</span> Physics Education, University of Jos</div>
-                  <div class="mono"><span style="color: var(--muted);">Based:</span> Jos, Nigeria</div>
-                  <div class="mono"><span style="color: var(--muted);">Open to:</span> projects, retainers, full-time roles</div>
-                </div>
-
-                <a href="about.html" class="btn btn-outline">Read the full story &rarr;</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 9: Testimonials (Real Verified Proof) -->
-    <section class="section hairline-t" aria-label="Client Outcomes">
-      <div class="container">
-        <div style="margin-bottom: var(--space-8);">
-          <span class="mono" style="color: var(--accent);">04 — Verified Outcomes</span>
-          <h2 style="font-size: var(--text-h2); margin-top: var(--space-2);">What clients report.</h2>
-        </div>
-
-        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-          <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8);">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8);">
-              <!-- Testimonial 1 -->
-              <div style="border-left: 3px solid var(--accent); padding-left: var(--space-4);">
-                <p style="font-size: var(--text-lead); line-height: 1.5; color: var(--ink); margin-bottom: var(--space-4);">
-                  Emmanuel delivered an independent platform that handles our vendor transactions without failure. His physics background shows in how he structures databases.
-                </p>
-                <div class="mono" style="color: var(--muted);">Client Partner &middot; Nexus Market Ecosystem</div>
-              </div>
-
-              <!-- Testimonial 2 -->
-              <div style="border-left: 3px solid var(--accent); padding-left: var(--space-4);">
-                <p style="font-size: var(--text-lead); line-height: 1.5; color: var(--ink); margin-bottom: var(--space-4);">
-                  Our brand visibility increased by 35% under Emmanuel's editorial and technical direction. He communicates with complete clarity.
-                </p>
-                <div class="mono" style="color: var(--muted);">Publishing Director &middot; Heroes Publishing House</div>
-              </div>
-
-              <!-- Testimonial 3 -->
-              <div style="border-left: 3px solid var(--accent); padding-left: var(--space-4);">
-                <p style="font-size: var(--text-lead); line-height: 1.5; color: var(--ink); margin-bottom: var(--space-4);">
-                  A fullstack professional who writes direct copy as well as clean code. The +20% conversion lift on our funnel proved his approach works.
-                </p>
-                <div class="mono" style="color: var(--muted);">Project Lead &middot; Client Operations</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 10: Closing (Inverse Section) -->
-    <section class="closing-section" aria-label="Start Conversation">
-      <div class="container closing-grid">
-        <div>
-          <h2 class="closing-title">Tell me what you need built.</h2>
+          <!-- Hero Portrait (Approved Studio Portrait) -->
           <div>
-            <a href="mailto:emmanuelajagbe6@gmail.com" class="copy-email-link" data-email="emmanuelajagbe6@gmail.com" title="Click to copy email">
-              <span>emmanuelajagbe6@gmail.com</span>
-              <span class="copy-feedback-toast">Copied</span>
+            <div class="hero-portrait-stage">
+              <img src="assets/images/emmanuel-portrait.jpg" alt="Ajagbe Emmanuel Oluwatobi portrait" width="420" height="525" fetchpriority="high">
+              <div class="hero-status-pill">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <span class="status-beacon"></span>
+                  <strong>Ajagbe Emmanuel</strong>
+                </span>
+                <span class="mono" style="color: var(--accent);">Jos, NG</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: METRICS STRIP -->
+    <section class="metrics-strip" aria-label="Key Career Metrics">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <span class="metric-number">7+</span>
+            <span class="metric-label">Years Shipping Code</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">20+</span>
+            <span class="metric-label">Shipped Applications</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">+20%</span>
+            <span class="metric-label">Avg. Conversion Lift</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-number">BSc</span>
+            <span class="metric-label">Physics Graduate (UniJos)</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: CORE CAPABILITIES (Bento Grid) -->
+    <section class="section" id="services" aria-label="Core Capabilities">
+      <div class="container">
+        <div style="max-width: 680px;">
+          <span class="mono" style="color: var(--accent);">01 &middot; Capabilities</span>
+          <h2 style="font-size: var(--text-h2); line-height: 1.15; margin-top: var(--space-2); margin-bottom: var(--space-3);">
+            Engineering and copy under one roof.
+          </h2>
+          <p style="color: var(--ink-2); font-size: var(--text-lead);">
+            You deal with one senior developer who understands both technical infrastructure and commercial conversion.
+          </p>
+        </div>
+
+        <div class="bento-grid">
+          <!-- Card 1 -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>
+              </div>
+              <h3 class="bento-title">Full-Stack Web Engineering</h3>
+              <p class="bento-desc">
+                Custom Laravel architectures, modern React interfaces, secure REST APIs, and normalized MySQL databases. Built from first principles for reliability and peak performance.
+              </p>
+            </div>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">Laravel</span>
+              <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </div>
+              <h3 class="bento-title">E-Commerce &amp; Multi-Vendor Systems</h3>
+              <p class="bento-desc">
+                Scalable marketplace platforms like Nexus Market with custom checkout flows, inventory management, automated vendor payouts, and Paystack/Flutterwave integrations.
+              </p>
+            </div>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">Nexus Market</span>
+              <span class="tag">Paystack</span>
+              <span class="tag">Multi-Vendor</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <h3 class="bento-title">Strategic Copy &amp; Brand Systems</h3>
+              <p class="bento-desc">
+                Technical writing, sales copy, and brand architectures that communicate value without filler. Rooted in 7+ years directing Life Untold Enterprises and publishing documentation.
+              </p>
+            </div>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">Conversion Copy</span>
+              <span class="tag">Life Untold</span>
+              <span class="tag">Documentation</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="bento-card">
+            <div>
+              <div class="bento-icon-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                  <polyline points="2 12 12 17 22 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="bento-title">Scientific &amp; Simulation Software</h3>
+              <p class="bento-desc">
+                Interactive computational modeling tools, numerical simulations, and academic research platforms. Translating advanced physics concepts into accessible web interfaces.
+              </p>
+            </div>
+            <div style="display: flex; gap: var(--space-2); flex-wrap: wrap;">
+              <span class="tag">Python</span>
+              <span class="tag">PhysLab</span>
+              <span class="tag">Numerical Physics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SELECTED WORKS (Interactive Carousel — Smooth Swipe, Zero Scroll-Trap) -->
+    <section class="section hairline-t" id="work" aria-label="Selected Production Works">
+      <div class="container">
+        <div class="works-header-row">
+          <div>
+            <span class="mono" style="color: var(--accent);">02 &middot; Selected Works</span>
+            <h2 style="font-size: var(--text-h2); line-height: 1.15; margin-top: var(--space-2);">
+              Production web applications.
+            </h2>
+          </div>
+
+          <div class="works-controls">
+            <span class="mono carousel-index-display" style="color: var(--muted); margin-right: var(--space-3);">01 / 05</span>
+            <button class="carousel-arrow-btn carousel-prev-btn" aria-label="Previous project">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button class="carousel-arrow-btn carousel-next-btn" aria-label="Next project">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Carousel Track -->
+        <div class="works-carousel-track">
+          <!-- Card 1: Nexus Market -->
+          <article class="works-card">
+            <div class="works-card-media">
+              <img src="assets/images/projects/nexus-market.png" alt="Nexus Market eCommerce Platform" loading="lazy">
+            </div>
+            <div class="works-card-body">
+              <div class="works-card-meta">
+                <span class="mono-sm" style="color: var(--accent);">01 &middot; Production</span>
+                <span class="mono-sm" style="color: var(--muted);">Laravel &middot; MySQL</span>
+              </div>
+              <h3 class="works-card-title">Nexus Market</h3>
+              <p class="works-card-desc">
+                Multi-vendor marketplace platform featuring vendor onboarding, catalog management, automated payout disbursements, and secure payment processing via Paystack.
+              </p>
+              <div class="works-card-tags">
+                <span class="tag">E-Commerce</span>
+                <span class="tag">Multi-Vendor</span>
+                <span class="tag">Paystack</span>
+              </div>
+              <div class="works-card-footer">
+                <a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8125rem;">
+                  Visit Live Site &rarr;
+                </a>
+                <span class="mono-sm" style="color: var(--accent);">Live Platform</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Jaoos Luxury Estates -->
+          <article class="works-card">
+            <div class="works-card-media">
+              <img src="assets/images/projects/jaoos-estates.png" alt="Jaoos Luxury Estates Portal" loading="lazy">
+            </div>
+            <div class="works-card-body">
+              <div class="works-card-meta">
+                <span class="mono-sm" style="color: var(--accent);">02 &middot; Real Estate</span>
+                <span class="mono-sm" style="color: var(--muted);">WordPress &middot; Custom PHP</span>
+              </div>
+              <h3 class="works-card-title">Jaoos Luxury Estates</h3>
+              <p class="works-card-desc">
+                Luxury real estate marketing portal with dynamic property filtering, high-resolution media presentations, direct agent routing, and lead-capture systems.
+              </p>
+              <div class="works-card-tags">
+                <span class="tag">Real Estate</span>
+                <span class="tag">Custom Fields</span>
+                <span class="tag">Lead Capture</span>
+              </div>
+              <div class="works-card-footer">
+                <a href="projects/jaoos/index.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8125rem;">
+                  View Case Study &rarr;
+                </a>
+                <span class="mono-sm" style="color: var(--muted);">Client Portal</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: PhysLab Visualizer -->
+          <article class="works-card">
+            <div class="works-card-media">
+              <img src="assets/images/projects/physlab-visualizer.png" alt="PhysLab Interactive Physics Simulation" loading="lazy">
+            </div>
+            <div class="works-card-body">
+              <div class="works-card-meta">
+                <span class="mono-sm" style="color: var(--accent);">03 &middot; Computational</span>
+                <span class="mono-sm" style="color: var(--muted);">Vanilla JS &middot; Canvas API</span>
+              </div>
+              <h3 class="works-card-title">PhysLab Visualizer</h3>
+              <p class="works-card-desc">
+                Interactive in-browser mechanics and wave physics simulation engine. Enables students and researchers to alter parameters in real-time and observe mathematical wave dynamics.
+              </p>
+              <div class="works-card-tags">
+                <span class="tag">Simulation</span>
+                <span class="tag">Canvas API</span>
+                <span class="tag">Physics</span>
+              </div>
+              <div class="works-card-footer">
+                <a href="projects/physlab/index.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8125rem;">
+                  Launch Visualizer &rarr;
+                </a>
+                <span class="mono-sm" style="color: var(--accent);">60 FPS Canvas</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: CareConnect -->
+          <article class="works-card">
+            <div class="works-card-media">
+              <img src="assets/images/projects/careconnect.png" alt="CareConnect Healthcare Platform" loading="lazy">
+            </div>
+            <div class="works-card-body">
+              <div class="works-card-meta">
+                <span class="mono-sm" style="color: var(--accent);">04 &middot; Healthcare</span>
+                <span class="mono-sm" style="color: var(--muted);">React &middot; Node.js</span>
+              </div>
+              <h3 class="works-card-title">CareConnect</h3>
+              <p class="works-card-desc">
+                Telemedicine consultation and clinic scheduling platform designed for low-bandwidth networks, ensuring patients can book verified doctors with minimal data consumption.
+              </p>
+              <div class="works-card-tags">
+                <span class="tag">Telemedicine</span>
+                <span class="tag">Scheduling</span>
+                <span class="tag">Accessible UI</span>
+              </div>
+              <div class="works-card-footer">
+                <a href="projects.html#careconnect" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8125rem;">
+                  Case Details &rarr;
+                </a>
+                <span class="mono-sm" style="color: var(--muted);">Deployed</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: TaskFlow -->
+          <article class="works-card">
+            <div class="works-card-media">
+              <img src="assets/images/projects/taskflow.png" alt="TaskFlow Sprint Board" loading="lazy">
+            </div>
+            <div class="works-card-body">
+              <div class="works-card-meta">
+                <span class="mono-sm" style="color: var(--accent);">05 &middot; SaaS App</span>
+                <span class="mono-sm" style="color: var(--muted);">TypeScript &middot; LocalStorage</span>
+              </div>
+              <h3 class="works-card-title">TaskFlow</h3>
+              <p class="works-card-desc">
+                Collaborative sprint and task management application featuring drag-and-drop Kanban columns, priority matrices, and sub-100ms state updates without external frameworks.
+              </p>
+              <div class="works-card-tags">
+                <span class="tag">Kanban</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Zero Bloat</span>
+              </div>
+              <div class="works-card-footer">
+                <a href="projects/taskflow/index.html" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.8125rem;">
+                  Open App &rarr;
+                </a>
+                <span class="mono-sm" style="color: var(--accent);">Interactive</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="margin-top: var(--space-8); text-align: center;">
+          <a href="projects.html" class="btn btn-secondary">
+            Explore All 8+ Detailed Projects &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PHILOSOPHY (The Physics Advantage) -->
+    <section class="section hairline-t" aria-label="First Principles Engineering">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-8); align-items: center;">
+          <div style="max-width: 780px;">
+            <span class="mono" style="color: var(--accent);">03 &middot; Philosophy</span>
+            <h2 style="font-size: var(--text-h2); line-height: 1.15; margin-top: var(--space-2); margin-bottom: var(--space-4);">
+              Engineering software from first principles.
+            </h2>
+            <p style="font-size: var(--text-lead); color: var(--ink-2); margin-bottom: var(--space-4); line-height: 1.6;">
+              Physics teaches you to dismantle complex phenomena down to fundamental truths and reconstruct them without guesswork. When applied to software architecture, this translates into normalized databases, zero unnecessary dependencies, and lightning-fast load times.
+            </p>
+            <p style="color: var(--muted); margin-bottom: var(--space-6);">
+              Whether writing high-throughput Laravel APIs or conversion copy for a tech brand, every decision serves an explicit purpose. No bloated libraries. No corporate jargon.
+            </p>
+            <a href="about.html" class="btn btn-secondary">
+              Read My Full Story &rarr;
             </a>
           </div>
-          <p class="mono" style="color: var(--inverse-muted); margin-bottom: var(--space-6);">I reply within 12 hours.</p>
+        </div>
+      </div>
+    </section>
 
-          <div style="display: flex; gap: var(--space-4); flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">Send a project brief</a>
-            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-outline">WhatsApp</a>
-          </div>
+    <!-- SECTION 6: CLIENT OUTCOMES / TESTIMONIALS -->
+    <section class="section hairline-t" aria-label="Client Outcomes">
+      <div class="container">
+        <div>
+          <span class="mono" style="color: var(--accent);">04 &middot; Client Outcomes</span>
+          <h2 style="font-size: var(--text-h2); line-height: 1.15; margin-top: var(--space-2);">
+            Trusted by founders, creators, and teams.
+          </h2>
         </div>
 
-        <div style="display: flex; flex-direction: column; justify-content: flex-end;">
-          <div class="mono" style="color: var(--inverse-muted); line-height: 1.8;">
-            Availability: Taking projects now.<br>
-            Timezone: West Africa Time (WAT, UTC+1).<br>
-            Scope: Fullstack builds, WordPress stores &amp; conversion copy.
+        <div class="testimonials-grid">
+          <!-- Testimonial 1: Ezekiel -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              &ldquo;Emmanuel built a digital identity and web presence for my brand that immediately elevated our market authority. The technical accuracy and attention to layout pacing were world-class.&rdquo;
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar-initials">EO</div>
+              <div>
+                <div class="author-name">Ezekiel</div>
+                <div class="author-role">Brand Identity &amp; Digital Strategy Client</div>
+              </div>
+            </div>
           </div>
+
+          <!-- Testimonial 2: Nathaniel -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              &ldquo;Working with Emmanuel on our academic research data platform was a revelation. His background in physics meant he understood mathematical modeling intuitively, translating complex datasets into clean dashboards.&rdquo;
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar-initials">NA</div>
+              <div>
+                <div class="author-name">Nathaniel</div>
+                <div class="author-role">Academic &amp; Data Research Lead</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3: Heroes Publishing House -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              &ldquo;His leadership in editorial content and digital brand architecture increased our organization's brand visibility by 35%. Emmanuel delivers both the words and the engineering.&rdquo;
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar-initials">HP</div>
+              <div>
+                <div class="author-name">Heroes Publishing House</div>
+                <div class="author-role">Publishing &amp; Media Organization</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 4: Nexus Market Vendors -->
+          <div class="testimonial-card">
+            <p class="testimonial-quote">
+              &ldquo;The multi-vendor payout automation and inventory dashboard Emmanuel built for Nexus Market eliminated hours of manual accounting and reduced vendor support tickets dramatically.&rdquo;
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar-initials">NM</div>
+              <div>
+                <div class="author-name">Nexus Market Operations</div>
+                <div class="author-role">E-Commerce Management</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: CLOSING CALL TO ACTION -->
+    <section class="section hairline-t" id="contact" aria-label="Start Conversation">
+      <div class="container">
+        <div class="closing-banner">
+          <span class="mono" style="color: var(--accent);">05 &middot; Let&apos;s Build</span>
+          <h2 class="closing-title">
+            Have an ambitious project in mind? Let&apos;s engineer something exceptional.
+          </h2>
+          <p class="closing-lead">
+            I am currently accepting select web engineering and digital architecture projects for Q1/Q2. Whether you need a full-stack platform built from scratch or high-converting copy, let's connect.
+          </p>
+
+          <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+            <a href="contact.html" class="btn btn-primary" style="padding: 14px 28px;">
+              Send Project Brief &rarr;
+            </a>
+            <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="padding: 14px 28px;">
+              Chat on WhatsApp
+            </a>
+          </div>
+
+          <p class="mono-sm" style="margin-top: var(--space-6); color: var(--muted);">
+            Direct Email: <a href="mailto:emmanuelajagbe6@gmail.com" style="color: var(--ink); text-decoration: underline;">emmanuelajagbe6@gmail.com</a> &middot; Jos, Nigeria
+          </p>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- SECTION 11: Footer (Inverse Section) -->
+  <!-- FOOTER (FIXED: Wordmark never cut off, responsive scaling) -->
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-columns-grid">
-        <!-- Col 1: Identity -->
-        <div class="footer-col">
-          <h3>Ajagbe Emmanuel</h3>
-          <p style="color: var(--inverse-ink-2); line-height: 1.6; margin-bottom: var(--space-4);">
-            Fullstack engineer &amp; technical copywriter. Studying Physics at the University of Jos.
+      <div class="footer-grid">
+        <div class="footer-bio">
+          <strong style="font-size: 1.15rem; font-family: var(--font-display);">Ajagbe Emmanuel Oluwatobi</strong>
+          <p>
+            BSc Physics Graduate (University of Jos), Full-Stack Web Engineer, and Founder of Life Untold Enterprises.
           </p>
-          <div class="mono" style="color: var(--inverse-muted);">Jos, Nigeria</div>
+          <span class="mono-sm" style="display: inline-block; margin-top: var(--space-3); color: var(--accent);">
+            &bull; Available for worldwide contracts
+          </span>
         </div>
 
-        <!-- Col 2: Pages -->
-        <div class="footer-col">
-          <h3>Pages</h3>
-          <ul class="footer-links-list">
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Navigation</span>
+          <ul class="footer-links-list" style="margin-top: var(--space-3);">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
             <li><a href="projects.html">Projects</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </div>
 
-        <!-- Col 3: Services -->
-        <div class="footer-col">
-          <h3>Services</h3>
-          <ul class="footer-links-list">
-            <li><a href="services.html#web">Websites &amp; Apps</a></li>
-            <li><a href="services.html#wordpress">WordPress &amp; WooCommerce</a></li>
-            <li><a href="services.html#copy">Website Copy</a></li>
-            <li><a href="services.html#care">Care Plans &amp; Fixes</a></li>
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Featured Work</span>
+          <ul class="footer-links-list" style="margin-top: var(--space-3);">
+            <li><a href="https://nexusmkt.com.ng" target="_blank" rel="noopener noreferrer">Nexus Market</a></li>
+            <li><a href="projects/jaoos/index.html">Jaoos Estates</a></li>
+            <li><a href="projects/physlab/index.html">PhysLab Visualizer</a></li>
+            <li><a href="projects/taskflow/index.html">TaskFlow App</a></li>
           </ul>
         </div>
 
-        <!-- Col 4: Network -->
-        <div class="footer-col">
-          <h3>Network</h3>
-          <ul class="footer-links-list">
+        <div>
+          <span class="mono-sm" style="color: var(--muted);">Connect</span>
+          <ul class="footer-links-list" style="margin-top: var(--space-3);">
             <li><a href="https://www.linkedin.com/in/ajagbeemmanueloluwatobi" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
             <li><a href="https://github.com/Lifeuntold1" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
@@ -703,19 +676,56 @@
       </div>
     </div>
 
-    <!-- Giant Typographic Wordmark -->
+    <!-- Scaled Footer Wordmark (Never cut off) -->
     <div class="footer-wordmark-container" aria-hidden="true">
       <div class="footer-giant-wordmark">Ajagbe Emmanuel</div>
     </div>
 
     <div class="container footer-bottom-bar">
       <span>&copy; <span id="footer-year">2026</span> Ajagbe Emmanuel Oluwatobi. All rights reserved.</span>
-      <span class="mono">eoajagbe.name.ng</span>
+      <span class="mono">eoajagbe.name.ng &middot; Jos, Nigeria</span>
     </div>
   </footer>
 
-  <!-- Motion Library (Pinned CDN) & Main Script -->
-  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+  <!-- MOBILE APP BOTTOM NAVIGATION BAR (Thumb-Friendly Native Feel) -->
+  <nav class="mobile-app-bar" aria-label="Mobile Quick Navigation">
+    <a href="index.html#hero" class="mobile-app-item is-active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="index.html#work" class="mobile-app-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="20" height="14" x="2" y="7" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+      <span>Works</span>
+    </a>
+    <a href="index.html#services" class="mobile-app-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"></polyline>
+        <polyline points="8 6 2 12 8 18"></polyline>
+      </svg>
+      <span>Services</span>
+    </a>
+    <a href="about.html" class="mobile-app-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span>About</span>
+    </a>
+    <a href="https://wa.me/2347036316514" target="_blank" rel="noopener noreferrer" class="mobile-app-item" style="color: #25D366;">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span>Chat</span>
+    </a>
+  </nav>
+
+  <!-- Client Script -->
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
