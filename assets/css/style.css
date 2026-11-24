@@ -9,6 +9,34 @@
    1. TOKENS & THEMES (Deep Obsidian Night & Clean Paper Light)
    -------------------------------------------------------------------------- */
 
+/* Metric-Matched Font Fallbacks (Zero Web-Font Swap CLS) */
+@font-face {
+  font-family: "Bricolage Fallback";
+  src: local("Arial"), local("Segoe UI");
+  size-adjust: 104%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Instrument Serif Fallback";
+  src: local("Georgia"), local("Times New Roman");
+  size-adjust: 86%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: "Instrument Sans Fallback";
+  src: local("Arial"), local("Segoe UI");
+  size-adjust: 99%;
+  ascent-override: 96%;
+  descent-override: 24%;
+  line-gap-override: 0%;
+}
+
 :root {
   /* Default Night Theme */
   --bg: #0B0F19;
@@ -36,9 +64,9 @@
   --input-border: rgba(255, 255, 255, 0.12);
 
   /* Typography Families */
-  --font-display: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  --font-accent: "Instrument Serif", Georgia, serif;
-  --font-body: "Instrument Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Bricolage Grotesque", "Bricolage Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-accent: "Instrument Serif", "Instrument Serif Fallback", Georgia, serif;
+  --font-body: "Instrument Sans", "Instrument Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-mono: "DM Mono", "Courier New", monospace;
 
   /* Fluid Mobile-First Type Scale */
@@ -76,6 +104,13 @@
   --radius-2xl: 32px;
   --radius-full: 9999px;
 
+  /* Legacy Token Aliases (Secondary Case-Study Pages) */
+  --type-xl: clamp(1.35rem, 2.5vw, 1.85rem);
+  --type-sm: 0.9375rem;
+  --type-xs: 0.8125rem;
+  --accent-warm: var(--accent-coral);
+  --text-secondary: var(--ink-2);
+
   /* Transitions */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 200ms;
@@ -96,10 +131,10 @@
   --line-strong: rgba(0, 0, 0, 0.16);
   --ink: #0F172A;
   --ink-2: #334155;
-  --muted: #64748B;
-  --accent: #059669;
-  --accent-cyan: #0284C7;
-  --accent-coral: #EA580C;
+  --muted: #475569;
+  --accent: #047857;
+  --accent-cyan: #0369A1;
+  --accent-coral: #C2410C;
   --on-accent: #FFFFFF;
   --inverse-bg: #0B0F19;
   --inverse-bg-2: #111827;
@@ -259,14 +294,24 @@ img, svg {
   height: 72px;
 }
 
+.nav-brand-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
 .nav-brand,
 .brand-wrapper {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: var(--space-3);
   font-weight: 700;
   font-size: 1.05rem;
   letter-spacing: -0.02em;
+}
+
+.nav-brand picture {
+  display: contents;
 }
 
 .site-logo {
@@ -305,6 +350,29 @@ img, svg {
   font-family: var(--font-mono);
   font-size: 11px;
   color: var(--accent);
+}
+
+@media (max-width: 520px) {
+  .nav-status-badge {
+    display: none;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    padding-inline: 1rem;
+  }
+  .nav-brand {
+    font-size: 0.9375rem;
+    gap: var(--space-2);
+  }
+  .nav-avatar {
+    width: 32px;
+    height: 32px;
+  }
+  .nav-actions {
+    gap: 6px;
+  }
 }
 
 .status-dot,
@@ -510,8 +578,8 @@ img, svg {
 
 .btn-whatsapp {
   background-color: #25D366;
-  color: #FFFFFF;
-  font-weight: 600;
+  color: #052E16;
+  font-weight: 700;
 }
 
 .btn-whatsapp:hover {
@@ -596,16 +664,24 @@ img, svg {
   display: block;
   line-height: 1.15;
   white-space: nowrap;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: transform 500ms var(--ease-out), opacity 500ms ease;
+  visibility: hidden;
+  transform: translateY(105%);
+  transition: transform 320ms var(--ease-out), visibility 0s linear 320ms;
   pointer-events: none;
 }
 
 .rotator-word.is-active {
-  opacity: 1;
+  visibility: visible;
   transform: translateY(0%);
+  transition: transform 320ms var(--ease-out), visibility 0s;
   pointer-events: auto;
+}
+
+.rotator-word.is-exiting {
+  visibility: hidden;
+  transform: translateY(-105%);
+  transition: transform 320ms var(--ease-out), visibility 0s linear 320ms;
+  pointer-events: none;
 }
 
 .hero-lead {
@@ -637,11 +713,17 @@ img, svg {
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.28);
 }
 
+.hero-portrait-stage picture {
+  display: block;
+  width: 100%;
+}
+
 .hero-portrait-stage img {
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center 15%;
   display: block;
   border-radius: var(--radius-2xl);
   transition: transform 600ms var(--ease-out);
@@ -882,6 +964,12 @@ img, svg {
   position: relative;
 }
 
+.works-card-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .works-card-media img {
   width: 100%;
   height: 100%;
@@ -1034,13 +1122,22 @@ img, svg {
 
 
 
+@media (max-width: 520px) {
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    padding: 6px 12px;
+    gap: 6px;
+    border-radius: var(--radius-lg);
+  }
+  .status-beacon {
+    flex-shrink: 0;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-title {
-    font-size: clamp(1.85rem, 8vw, 2.5rem);
+    font-size: clamp(1.7rem, 7.1vw, 2.35rem);
     line-height: 1.15;
-  }
-  .rotator-cell {
-    display: inline-block;
   }
 }
 
@@ -1198,6 +1295,13 @@ img, svg {
   background: #000;
 }
 
+.project-media-box picture,
+.project-showcase-media picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .project-media-box img,
 .project-showcase-media img {
   width: 100%;
@@ -1265,8 +1369,6 @@ img, svg {
   border-color: var(--accent);
   color: var(--accent);
 }
-  justify-content: space-between;
-}
 
 .project-title {
   font-family: var(--font-display);
@@ -1287,6 +1389,7 @@ img, svg {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-12);
 }
@@ -1592,6 +1695,32 @@ img, svg {
 }
 
 
+
+/* Grid Children Intrinsic Width Guard (Prevents 320px Overflow) */
+.hero-grid > *,
+.bento-grid > *,
+.stack-card-grid > *,
+.project-showcase-card > *,
+.project-showcase-row > *,
+.contact-layout-grid > *,
+.footer-grid > * {
+  min-width: 0;
+}
+
+.hero-eyebrow {
+  max-width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  line-height: 1.4;
+}
+
+.project-showcase-footer .mono,
+.closing-contact-item,
+.direct-channel-card a {
+  overflow-wrap: anywhere;
+  max-width: 100%;
+}
+
 /* --------------------------------------------------------------------------
    ADDITIONAL UTILITIES & COMPONENT ALIASES
    -------------------------------------------------------------------------- */
@@ -1601,6 +1730,25 @@ img, svg {
   font-size: var(--text-mono-sm);
   color: var(--muted);
   letter-spacing: 0.04em;
+}
+
+.nav-actions .lagos-clock {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .nav-actions .lagos-clock {
+    display: inline;
+  }
+}
+
+.mobile-app-item--chat {
+  color: #34D399;
+}
+
+[data-theme="paper"] .mobile-app-item--chat,
+[data-theme="light"] .mobile-app-item--chat {
+  color: #047857;
 }
 
 .carousel-index-display {

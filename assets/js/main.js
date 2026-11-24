@@ -1,7 +1,7 @@
 /**
  * AJAGBE EMMANUEL OLUWATOBI — PORTFOLIO CLIENT ENGINE
  * Concept: Physicist who builds the web. Mathematical precision & human warmth.
- * Mobile-First · Touch-Friendly Carousel · Smooth Transitions · Zero Layout Shifts
+ * Mobile-First · Zero Forced Reflow · Smooth Transitions · WCAG AA Compliant
  */
 
 (function () {
@@ -10,21 +10,39 @@
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   /* --------------------------------------------------------------------------
-     1. THEME TOGGLE (Night / Paper with smooth persistence)
+     0. NON-BLOCKING WEB FONT ACTIVATION
+     -------------------------------------------------------------------------- */
+  function activateAsyncFonts() {
+    const links = document.querySelectorAll('link[data-async-font]');
+    links.forEach((link) => {
+      if (link.media !== "all") {
+        link.media = "all";
+      }
+    });
+  }
+
+  /* --------------------------------------------------------------------------
+     1. THEME TOGGLE (Night / Paper with smooth persistence, zero wasted recalc)
      -------------------------------------------------------------------------- */
   function initTheme() {
-    const savedTheme = localStorage.getItem("eo_theme") || "night";
-    document.documentElement.setAttribute("data-theme", savedTheme);
+    const raw = localStorage.getItem("eo_theme") || localStorage.getItem("theme");
+    let savedTheme = "night";
+    if (raw === "paper" || raw === "light") {
+      savedTheme = "paper";
+    }
+
+    const root = document.documentElement;
+    if (root.getAttribute("data-theme") !== savedTheme) {
+      root.setAttribute("data-theme", savedTheme);
+    }
 
     const toggles = document.querySelectorAll(".theme-toggle-btn");
     toggles.forEach((btn) => {
       btn.addEventListener("click", () => {
-        const current = document.documentElement.getAttribute("data-theme") || "night";
+        const current = root.getAttribute("data-theme") || "night";
         const next = current === "night" ? "paper" : "night";
-        document.documentElement.setAttribute("data-theme", next);
+        root.setAttribute("data-theme", next);
         localStorage.setItem("eo_theme", next);
-
-        // Update button aria label
         btn.setAttribute("aria-label", `Switch to ${next === "night" ? "light" : "dark"} mode`);
       });
     });
@@ -37,27 +55,30 @@
     const clockEls = document.querySelectorAll(".lagos-clock");
     if (!clockEls.length) return;
 
+    let formatter = null;
+    try {
+      formatter = new Intl.DateTimeFormat("en-GB", {
+        timeZone: "Africa/Lagos",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+      });
+    } catch (e) {
+      formatter = null;
+    }
+
     function update() {
-      try {
-        const now = new Date();
-        const options = {
-          timeZone: "Africa/Lagos",
-          hour: "2-digit",
-          minute: "2-digit",
-          second: "2-digit",
-          hour12: false
-        };
-        const formatter = new Intl.DateTimeFormat("en-GB", options);
-        const timeStr = formatter.format(now);
-        clockEls.forEach((el) => {
-          el.textContent = `${timeStr} WAT`;
-        });
-      } catch (e) {
-        // Fallback
-        const now = new Date();
-        clockEls.forEach((el) => {
-          el.textContent = `${now.getHours()}:${String(now.getMinutes()).padStart(2, "0")} WAT`;
-        });
+      if (document.hidden) return;
+      const now = new Date();
+      const timeStr = formatter
+        ? formatter.format(now)
+        : `${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+      const label = `${timeStr} WAT`;
+      for (let i = 0; i < clockEls.length; i++) {
+        if (clockEls[i].textContent !== label) {
+          clockEls[i].textContent = label;
+        }
       }
     }
 
@@ -66,9 +87,10 @@
   }
 
   /* --------------------------------------------------------------------------
-     3. ROLE ROTATOR (Clean word transitions — NO character breaking)
+     3. ROLE ROTATOR (Pure CSS class transitions — zero forced layout)
      -------------------------------------------------------------------------- */
   function initRoleRotator() {
+    if (prefersReduced) return;
     const rotatorCell = document.querySelector(".rotator-cell");
     if (!rotatorCell) return;
 
@@ -79,28 +101,28 @@
     const intervalMs = 2800;
 
     setInterval(() => {
-      words[currentIndex].classList.remove("is-active");
-      words[currentIndex].style.transform = "translateY(-100%)";
-      words[currentIndex].style.opacity = "0";
+      if (document.hidden) return;
 
+      const prevWord = words[currentIndex];
       currentIndex = (currentIndex + 1) % words.length;
+      const nextWord = words[currentIndex];
 
-      words[currentIndex].classList.add("is-active");
-      words[currentIndex].style.transform = "translateY(0%)";
-      words[currentIndex].style.opacity = "1";
-
-      // Reset others
-      words.forEach((w, idx) => {
-        if (idx !== currentIndex) {
-          w.style.transform = "translateY(100%)";
-          w.style.opacity = "0";
+      for (let i = 0; i < words.length; i++) {
+        if (words[i] !== prevWord) {
+          words[i].classList.remove("is-exiting");
         }
-      });
+      }
+
+      prevWord.classList.remove("is-active");
+      prevWord.classList.add("is-exiting");
+      prevWord.setAttribute("aria-hidden", "true");
+      nextWord.classList.add("is-active");
+      nextWord.setAttribute("aria-hidden", "false");
     }, intervalMs);
   }
 
   /* --------------------------------------------------------------------------
-     4. SELECTED WORKS INTERACTIVE CAROUSEL (Smooth swipe/click, zero trap)
+     4. SELECTED WORKS INTERACTIVE CAROUSEL (Zero Forced Reflow)
      -------------------------------------------------------------------------- */
   function initWorksCarousel() {
     const track = document.querySelector(".works-carousel-track");
@@ -114,37 +136,56 @@
 
     if (totalCount === 0) return;
 
-    function getCardWidth() {
-      const card = cards[0];
-      const gap = parseInt(window.getComputedStyle(track).gap) || 24;
-      return card.offsetWidth + gap;
+    let cachedStride = 504; // Sensible desktop default before first ResizeObserver report
+    if ("ResizeObserver" in window) {
+      const ro = new ResizeObserver((entries) => {
+        if (entries[0]) {
+          const cardW = entries[0].contentRect.width;
+          if (cardW > 0) {
+            cachedStride = cardW + 24;
+          }
+        }
+      });
+      ro.observe(cards[0]);
     }
 
+    if (counterDisplay) {
+      counterDisplay.textContent = `01 / 0${totalCount}`;
+    }
+
+    let scrollRaf = 0;
     function updateIndex() {
-      const scrollLeft = track.scrollLeft;
-      const cardWidth = getCardWidth();
-      const activeIdx = Math.min(Math.round(scrollLeft / cardWidth), totalCount - 1);
+      scrollRaf = 0;
+      const activeIdx = Math.min(Math.round(track.scrollLeft / cachedStride), totalCount - 1);
       if (counterDisplay) {
-        counterDisplay.textContent = `0${activeIdx + 1} / 0${totalCount}`;
+        const text = `0${Math.max(0, activeIdx) + 1} / 0${totalCount}`;
+        if (counterDisplay.textContent !== text) {
+          counterDisplay.textContent = text;
+        }
       }
     }
 
     if (prevBtn) {
       prevBtn.addEventListener("click", () => {
-        const cardWidth = getCardWidth();
-        track.scrollBy({ left: -cardWidth, behavior: "smooth" });
+        track.scrollBy({ left: -cachedStride, behavior: prefersReduced ? "auto" : "smooth" });
       });
     }
 
     if (nextBtn) {
       nextBtn.addEventListener("click", () => {
-        const cardWidth = getCardWidth();
-        track.scrollBy({ left: cardWidth, behavior: "smooth" });
+        track.scrollBy({ left: cachedStride, behavior: prefersReduced ? "auto" : "smooth" });
       });
     }
 
-    track.addEventListener("scroll", updateIndex, { passive: true });
-    updateIndex();
+    track.addEventListener(
+      "scroll",
+      () => {
+        if (!scrollRaf) {
+          scrollRaf = requestAnimationFrame(updateIndex);
+        }
+      },
+      { passive: true }
+    );
   }
 
   /* --------------------------------------------------------------------------
@@ -155,12 +196,15 @@
     const drawer = document.querySelector(".mobile-drawer");
     if (!menuBtn || !drawer) return;
 
+    function closeDrawer() {
+      drawer.classList.remove("is-open");
+      menuBtn.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+
     menuBtn.addEventListener("click", () => {
-      const isOpen = drawer.classList.contains("is-open");
-      if (isOpen) {
-        drawer.classList.remove("is-open");
-        menuBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
+      if (drawer.classList.contains("is-open")) {
+        closeDrawer();
       } else {
         drawer.classList.add("is-open");
         menuBtn.setAttribute("aria-expanded", "true");
@@ -170,74 +214,41 @@
 
     const drawerLinks = drawer.querySelectorAll("a");
     drawerLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        drawer.classList.remove("is-open");
-        menuBtn.setAttribute("aria-expanded", "false");
-        document.body.style.overflow = "";
-      });
+      link.addEventListener("click", closeDrawer);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && drawer.classList.contains("is-open")) {
+        closeDrawer();
+        menuBtn.focus();
+      }
     });
   }
 
   /* --------------------------------------------------------------------------
-     6. MOBILE BOTTOM APP BAR (Syncs with scroll)
-     -------------------------------------------------------------------------- */
-  function initMobileAppBar() {
-    const appItems = document.querySelectorAll(".mobile-app-item");
-    if (!appItems.length) return;
-
-    const sections = ["hero", "services", "work", "about", "contact"];
-
-    function onScroll() {
-      const scrollPos = window.scrollY + 200;
-      let currentSection = "";
-
-      for (const id of sections) {
-        const el = document.getElementById(id);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPos >= top && scrollPos < top + height) {
-            currentSection = id;
-          }
-        }
-      }
-
-      if (currentSection) {
-        appItems.forEach((item) => {
-          const href = item.getAttribute("href");
-          if (href && href.includes(`#${currentSection}`)) {
-            item.classList.add("is-active");
-          } else {
-            item.classList.remove("is-active");
-          }
-        });
-      }
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-  }
-
-  /* --------------------------------------------------------------------------
-     7. DYNAMIC FOOTER YEAR
+     6. DYNAMIC FOOTER YEAR
      -------------------------------------------------------------------------- */
   function initFooterYear() {
     const yearEls = document.querySelectorAll("#footer-year, .current-year");
-    const year = new Date().getFullYear();
+    if (!yearEls.length) return;
+    const year = String(new Date().getFullYear());
     yearEls.forEach((el) => {
-      el.textContent = year;
+      if (el.textContent !== year) {
+        el.textContent = year;
+      }
     });
   }
 
   /* --------------------------------------------------------------------------
      INITIALIZATION
      -------------------------------------------------------------------------- */
+  activateAsyncFonts();
   document.addEventListener("DOMContentLoaded", () => {
     initTheme();
     initLagosClock();
     initRoleRotator();
     initWorksCarousel();
     initMobileDrawer();
-    initMobileAppBar();
     initFooterYear();
   });
 })();
